@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # skeleton2
 
 ## What is it
@@ -38,3 +39,7 @@ If you're receiving dependency errors you may be running a newer version of node
 
 
 
+=======
+# fanniemae-fe
+FE templates for FannieMae refresh
+>>>>>>> dfd06d13c8156d0cb5c4c78e0510d02a2de4d7d0
