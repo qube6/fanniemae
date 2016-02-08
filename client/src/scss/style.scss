@@ -1,0 +1,38 @@
+// style.scss - Usage: aggregation of core, third party and component styles
+
+@import 'variables';
+
+
+//
+// Load third party css (bower and otherwise):
+// --------------------------------------------------
+// bower
+// @import '../bower_components/owlcarousel2/src/owl.carousel.scss';
+
+@import '../bower_components/bower-custom-bootstrap/assets/stylesheets/bootstrap-custom';
+@import "compass/css3/transition";
+@import "compass/css3/appearance";
+@import "compass/css3/user-interface";
+@import "compass/css3/transform";
+
+
+//
+// Load core styles
+// --------------------------------------------------
+
+@import '_config';
+@import 'reset';
+@import 'utility';
+@import 'typography';
+@import 'forms';
+@import 'layout';
+@import 'base';
+
+
+//
+// component css aggregated and pulled here via gulp
+@import 'components-temp';
+
+
+
+

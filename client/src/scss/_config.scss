@@ -1,0 +1,22 @@
+$color-dark-blue: rgba(1, 23, 45, 1);
+$color-teal: rgba(0, 165, 189, 1); 
+$color-green: rgba(34, 179, 113, 1);
+$color-gray: rgba(50, 68, 86, 1);
+$color-dark-gray: rgba(70, 82, 94, 1);
+$color-dark-gray-50: rgba(70, 82, 94, .5);
+$color-light-gray-50: rgba(204, 209, 213, .5);
+$color-light: rgba(228, 228, 228, 1);
+$color-body-bg: rgba(230, 230, 230, 1);
+
+$font-lato: 'LatoWeb', sans-serif;
+$font-glypha: 'Glypha65', serif;
+
+$header-height-lg: 70px;
+$header-element-height: 40px;
+$header-element-spacing: ($header-height-lg - $header-element-height) / 2;
+
+$footer-height-lg: 70px;
+$footer-element-height: 40px;
+$footer-element-spacing: ($footer-height-lg - $footer-element-height) / 2;
+$footer-lead-width: 450px;
+

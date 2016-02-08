@@ -1,0 +1,38 @@
+// base.scss - Usage: global shared styles. Extend for specific components in component css
+
+body{
+  background: $color-body-bg;
+}
+
+.dropdown-toggle{
+  &:before, &:after{
+    height: 2px !important;
+  }
+}
+
+.site-logo{
+    position: relative;
+    left: 0;
+    width: auto;
+    @include center-y();
+  svg{
+    width: 189px;
+    height: 37px;
+    padding: 0;
+    @include svg-color(white);
+  }
+}
+
+.display-table{
+  display: table !important;
+}
+.table-row{
+  display: table-row !important;
+  width: 100%;
+}
+.table-cell{
+  display: table-cell !important;
+}
+.align-middle{
+  vertical-align: middle;
+}

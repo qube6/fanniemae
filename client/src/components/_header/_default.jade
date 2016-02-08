@@ -1,0 +1,116 @@
+header#navbar.navbar.navbar-default(role="banner") 
+  .navbar-header
+    button.navbar-toggle(type='button' )
+      span.sr-only Toggle navigation
+      span.icon-bar.one
+      span.icon-bar.two
+      span.icon-bar.three
+      span.hamburger-text MENU
+    a.site-logo.navbar-btn.pull-left(href="/" title="home")
+      svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none")
+        use(xlink:href="/media/FannieMae-Logo.svg#Logo")
+  nav.navbar-offcanvas.pull-right
+    .menu-sites(ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click='header-side-menu')
+      button.toggle-sites(ng-click="toggleActive('header-side-menu')")
+        | All Fannie Mae Sites
+        i
+      .sites-list
+        h1 Doing Business with Fannie Mae
+        ul.menu.nav
+          li(ng-class="{ 'open' : isActive('header-sites-list-1') }")
+            a(href ng-click="toggleActive('header-sites-list-1')")
+              h2 Lenders
+              button.dropdown-toggle
+            ul.submenu
+              li
+                a(href='https://www.fanniemae.com/singlefamily/index', target='_blank') Single Family
+              li
+                a(href='https://www.fanniemae.com/multifamily/index', target='_blank') Multi Family
+          li(ng-class="{ 'open' : isActive('header-sites-list-2') }")
+            a(href ng-click="toggleActive('header-sites-list-2')")
+              h2 Servicers
+              button.dropdown-toggle
+            ul.submenu
+              li
+                a(href='https://www.fanniemae.com/singlefamily/servicing', target='_blank') Single Family
+              li
+                a(href='https://www.fanniemae.com/multifamily/servicing', target='_blank') Multi Family
+          li
+            a(href='/capital-market-investors') 
+              h2 Capital Market Investors
+        h1 Homeownership & Renting
+        ul.menu.nav
+          li
+            a(href='http://knowyouroptions.com' target='_blank')
+              h2 Know your Options
+              .subhead For Owners, Renters & Buyers
+          li
+            a(href='http://homepath.com', target='_blank')
+              h2 HomePath
+              .subhead Find & Buy Homes
+    form.header-search-form.pull-right(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
+      input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
+      input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
+      a.header-search-btn(ng-click="toggleActive('header-search')")
+        i.fa.fa-search
+    ul.main-menu.pull-right
+      li
+        a(href='/about-us', title='') About Us
+        ul.menu.nav
+          li
+            a(href='/about-us/what-we-do', title='') What We Do
+          li
+            a(href='/about-us/leadership-team', title='') Leadership team
+          li
+            a(href='/about-us/awards-achievements') Awards & Achievements
+          li
+            a(href='/about-us/governance') Governance
+          li
+            a(href='/about-us/investor-relations', title='') Investor Relations
+          li
+            a(href='/about-us/giving-back') Giving Back
+      li
+        a(href='/research-and-insights', title='') Research & Insights
+        ul.menu.nav
+          li
+            a(href='/research-and-insights/271', title='') Consumer Research & Analysis
+          li
+            a(href='/research-and-insights/15', title='') Economic & Housing Outlook
+          li
+            a(href='/research-and-insights/272', title='') Home Purchase Sentiment Index
+          li
+            a(href='/research-and-insights/16', title='') Insights
+          li
+            a(href='/research-and-insights/17', title='') Mortgage Lender Sentiment Survey
+          li
+            a(href='/research-and-insights/18', title='') National Housing Survey
+      li
+        a(href='/news', title='Description of gucrisa.') Newsroom
+        ul.menu.nav
+          li
+            a(href='/news/press-center', title='') Press Center
+          li
+            a(href='/news/in-the-news', title='') In the News
+          li
+            a(href='/news/industry-news', title='') Industry News
+          li
+            a(href='/news/fact-sheet') Factsheet
+      li
+        a(href='/careers', title='') Careers
+        ul.menu.nav
+          li
+            a(href='/careers/job-search') Job Search
+          li
+            a(href='/careers/why-fannie-mae') Why Fannie Mae
+          li
+            a(href='/careers/what-we-offer') What We Offer
+          li
+            a(href='/careers/hiring-process') Hiring Process
+          li
+            a(href='/careers/who-we-seek') Who We Seek
+          li
+            a(href='/careers/university-recruiting') University Recruiting
+          li
+            a(href='/careers/locations', title='') Locations
+      li
+        a(href='/contact-us', title='Description of tho.') Contact Us

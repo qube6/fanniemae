@@ -1,0 +1,248 @@
+.footer{
+  height: $footer-height-lg;
+  .footer-lead{
+    background: $color-dark-blue;
+    height: 100%;
+    width: $footer-lead-width;
+    display: inline-block;
+    padding: 15px 30px;
+  }
+  .footer-menus {
+    width: calc(100% - #{$footer-lead-width});
+    display: inline-block;
+    height: 100%;
+    padding: $footer-element-spacing;
+    .footer-menu{
+      height: 100%;
+      margin: 0;
+    }li{
+      border-color: $color-light-gray-50;
+    }
+    li:last-child{
+      border: none;
+    }
+  }
+  .logo{
+    height: 100%;
+  }
+  .site-logo{
+    padding: 0;
+    height: 100%;
+    height: 30px;
+    svg{
+      height: 100%;
+      width: auto;
+    }
+  }
+  .copyright{
+    height: 100%;
+    padding-left: 40px;
+    border-left: 1px solid $color-light-gray-50;
+  }
+}
+.navbar{
+  height: $header-height-lg;
+  background: $color-dark-blue;
+}
+
+@media (min-width: 1200px){
+  .navbar-header{
+    height: 100%;
+    position: absolute;
+    padding-left: 30px;
+  }
+  .navbar-offcanvas{
+    width: 100%;
+  }
+}
+
+.site-logo{
+  padding: 0;
+}
+
+.main-menu{
+  > li{
+    &:hover ul{
+      max-height: 100vh;
+    }
+    a{
+      font-family: $font-lato;
+      padding: 0 20px;
+      line-height: $header-height-lg;
+    }
+    ul{
+      @include box-shadow(5px 5px 5px 0px rgba(0,0,0,0.25));
+      li a{
+        line-height: 20px;
+        color: $color-teal;
+      }
+    }
+  }
+}
+
+.menu-sites{
+  height: $header-element-height;
+  border-left: 1px solid $color-gray;
+  margin-top: $header-element-spacing;
+  .toggle-sites{
+    color: $color-teal;
+    text-transform: none;
+    font-size: 12px;
+    line-height: $header-element-height;
+    font-family: $font-lato;
+    i{
+      top: 18px;
+    }
+  }
+}
+
+.sites-list, .open .sites-list{
+  top: 100%;
+  margin-top: $header-element-spacing;
+  padding: 0 30px;
+  line-height: 1.75;
+  a:hover{
+    h2{
+      color: $color-light;
+      text-decoration: underline;
+    }
+    .dropdown-toggle:before, .dropdown-toggle:after{
+      background: white;
+    }
+  }
+  a:focus{
+    color: $color-teal;
+  }
+  h1{
+    font-family: $font-glypha;
+    color: $color-light;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1;
+    padding: 0 0 10px;
+    border-bottom: 2px solid $color-teal;
+    margin: 30px 0 0;
+  }
+  h2{
+    font-size: 16px;
+    margin: 0;
+  }
+  .subhead{
+    color: white;
+    font-size: 12px;
+  }
+  button.dropdown-toggle{
+    height: 100%;
+    &:before, &:after{
+      @include transition(transform 0.25s cubic-bezier(0.87, -0.41, 0.19, 1.44), opacity 0.25s linear);
+    }
+  }
+  ul{
+    border-collapse: collapse;
+    border: none;
+    li{
+      padding: 15px 0; 
+      border-color: $color-dark-gray-50;
+      &:after{
+        content: '' !important;
+      }
+      &:first-child{
+        border: none;
+      }
+    }
+  }
+  .submenu li{
+    padding: 0;
+    border: none;
+    a{
+      padding: 0 0 0 20px !important;
+      font-size: 14px;
+      &:hover{
+        color: $color-light;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.header-search-form {
+  position: relative;
+  margin: 0;
+  width: 0%;
+  min-width: 60px;
+  height: $header-height-lg;
+  float: right;
+  overflow: hidden;
+  background: transparent;
+  top: auto;
+
+  @include transition(width 0.3s);
+
+  -webkit-backface-visibility: hidden;
+
+  &.header-search-open, .no-js & {
+    width: 300px;
+  }
+}
+
+input[type="search"].header-search-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  background: #fff;
+  width: 100%;
+  height: $header-element-height;
+  top: $header-element-spacing;
+  margin: 0;
+  z-index: 5;
+  padding: $header-element-height / 2;
+
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  
+  @include input-placeholder{
+    color: $color-teal;
+    font-style: italic;
+  }
+}
+
+.header-search-btn, input[type="submit"].header-search-submit{
+  width: 60px;
+  height: $header-height-lg;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: $header-height-lg;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type="submit"].header-search-submit{
+  background: #fff; /* IE needs this */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+  filter: alpha(opacity=0); /* IE 5-7 */
+  opacity: 0;
+  color: transparent;
+  border: none;
+  outline: none;
+  z-index: -1;
+  &.header-search-active{
+    z-index: 10;
+  }
+}
+
+.header-search-btn{
+  z-index: 5;
+  color: $color-teal;
+  background: $color-dark-blue;
+  &:hover{
+    color: white;
+  }
+}
+
