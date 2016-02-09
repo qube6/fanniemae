@@ -1,35 +1,33 @@
 header#navbar.navbar.navbar-default(role="banner") 
   .navbar-header
-    button.navbar-toggle(type='button' )
+    button.navbar-toggle.pull-right(type='button' ng-click="toggleActive('header-mobile-menu')")
       span.sr-only Toggle navigation
       span.icon-bar.one
       span.icon-bar.two
       span.icon-bar.three
       span.hamburger-text MENU
     a.site-logo.navbar-btn.pull-left(href="/" title="home")
-      svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none")
+      svg.logo(role="img" title="Fannie ae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none")
         use(xlink:href="/media/FannieMae-Logo.svg#Logo")
   nav.navbar-offcanvas.pull-right
-    .menu-sites(ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click='header-side-menu')
-      button.toggle-sites(ng-click="toggleActive('header-side-menu')")
+    .menu-sites(ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu')
+      button.toggle-sites.desktop-only(ng-click="toggleActive('header-side-menu')")
         | All Fannie Mae Sites
         i
       .sites-list
         h1 Doing Business with Fannie Mae
         ul.menu.nav
-          li(ng-class="{ 'open' : isActive('header-sites-list-1') }")
-            a(href ng-click="toggleActive('header-sites-list-1')")
-              h2 Lenders
-              button.dropdown-toggle
+          li
+            h2 Lenders
+            button.dropdown-toggle(fm-toggle-parent-on-click)
             ul.submenu
               li
                 a(href='https://www.fanniemae.com/singlefamily/index', target='_blank') Single Family
               li
                 a(href='https://www.fanniemae.com/multifamily/index', target='_blank') Multi Family
-          li(ng-class="{ 'open' : isActive('header-sites-list-2') }")
-            a(href ng-click="toggleActive('header-sites-list-2')")
-              h2 Servicers
-              button.dropdown-toggle
+          li
+            h2 Servicers
+            button.dropdown-toggle(fm-toggle-parent-on-click)
             ul.submenu
               li
                 a(href='https://www.fanniemae.com/singlefamily/servicing', target='_blank') Single Family
@@ -48,14 +46,15 @@ header#navbar.navbar.navbar-default(role="banner")
             a(href='http://homepath.com', target='_blank')
               h2 HomePath
               .subhead Find & Buy Homes
-    form.header-search-form.pull-right(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
+    form.header-search-form.desktop-only(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
       input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
       input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
       a.header-search-btn(ng-click="toggleActive('header-search')")
         i.fa.fa-search
-    ul.main-menu.pull-right
+    ul.main-menu
       li
         a(href='/about-us', title='') About Us
+        button.dropdown-toggle.no-desktop(fm-toggle-parent-on-click)
         ul.menu.nav
           li
             a(href='/about-us/what-we-do', title='') What We Do
@@ -71,6 +70,7 @@ header#navbar.navbar.navbar-default(role="banner")
             a(href='/about-us/giving-back') Giving Back
       li
         a(href='/research-and-insights', title='') Research & Insights
+        button.dropdown-toggle.no-desktop(fm-toggle-parent-on-click)
         ul.menu.nav
           li
             a(href='/research-and-insights/271', title='') Consumer Research & Analysis
@@ -86,6 +86,7 @@ header#navbar.navbar.navbar-default(role="banner")
             a(href='/research-and-insights/18', title='') National Housing Survey
       li
         a(href='/news', title='Description of gucrisa.') Newsroom
+        button.dropdown-toggle.no-desktop(fm-toggle-parent-on-click)
         ul.menu.nav
           li
             a(href='/news/press-center', title='') Press Center
@@ -97,6 +98,7 @@ header#navbar.navbar.navbar-default(role="banner")
             a(href='/news/fact-sheet') Factsheet
       li
         a(href='/careers', title='') Careers
+        button.dropdown-toggle.no-desktop(fm-toggle-parent-on-click)
         ul.menu.nav
           li
             a(href='/careers/job-search') Job Search

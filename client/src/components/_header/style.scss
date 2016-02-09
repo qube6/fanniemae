@@ -3,45 +3,112 @@
   background: $color-dark-blue;
 }
 
-@media (min-width: 1200px){
-  .navbar-header{
-    height: 100%;
-    position: absolute;
-    padding-left: 30px;
+/* Logo and Mobile Menu */
+.navbar-header{
+  height: 100%;
+  position: absolute;
+  padding-left: 30px;
+  @media only screen and (max-width:$screen-lg-1) {
+    width: 100%;
   }
-  .navbar-offcanvas{
+  @media only screen and (max-width:$screen-sm-1) {
+    padding-left: 15px;
+  }
+}
+.site-logo{
+  padding: 0;
+  @media only screen and (max-width:$screen-lg-1) {
+    margin: 0;
+  }
+}
+.navbar-toggle{
+  position: relative;
+  margin: 0;
+}
+
+/* Nav Container */
+.navbar-offcanvas{
+  @media only screen and (max-width:$screen-lg-1) {
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    left: auto;
+    right: -$nav-width;
+    width: $nav-width;
+
+    .dropdown-toggle{
+      right: 0;
+      top: 0;
+      width: 55px;
+      padding-right: 30px;
+      height: 70px;
+      &:before, &:after{
+        background: $color-teal;
+      }
+    }
+  }
+  @media (min-width: $screen-lg){
     width: 100%;
   }
 }
 
-.site-logo{
-  padding: 0;
-}
-
+/* Drop-down Nav Menu */
 .main-menu{
   > li{
-    &:hover ul{
+    @media(max-width: $screen-lg-1){
+      display: block;
+      width: 100%;
+    }
+    &.open ul{
       max-height: 100vh;
+    }
+    @media(min-width: $screen-lg-1){
+      &:hover ul{
+        max-height: 100vh;
+        min-width: 200%;
+        max-width: 300px;
+      }
     }
     a{
       font-family: $font-lato;
       padding: 0 20px;
       line-height: $header-height-lg;
+      @media only screen and (max-width: $screen-lg-1){
+        font-size: 16px;
+      }
     }
     ul{
       @include box-shadow(5px 5px 5px 0px rgba(0,0,0,0.25));
+      @media only screen and (max-width: $screen-lg-1){
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+        background: $color-body-bg-50;
+      }
+      li:hover{
+        background: $color-light;
+      }
       li a{
         line-height: 20px;
         color: $color-teal;
+        @media only screen and (max-width: $screen-lg-1){
+          font-size: 14px;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
   }
 }
 
+/* All FannieMae Sites Button */
 .menu-sites{
   height: $header-element-height;
-  border-left: 1px solid $color-gray;
   margin-top: $header-element-spacing;
+  @media(min-width:$screen-lg){
+    border-left: 1px solid $color-gray;
+  }
   .toggle-sites{
     color: $color-teal;
     text-transform: none;
@@ -51,21 +118,41 @@
     i{
       top: 18px;
     }
+    @media screen only and (max-width: $screen-lg-1){
+      // display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      text-align: left;
+      padding: 0 20px;
+    }
   }
 }
 
+/* All FannieMae Sites Menu */
 .sites-list, .open .sites-list{
   top: 100%;
   margin-top: $header-element-spacing;
-  padding: 0 30px;
   line-height: 1.75;
+  opacity: 1;
+  @include transition(all 0.4s ease-in);
+  @media (min-width: $screen-lg){
+    padding: 0 30px;
+  }
   a:hover{
     h2{
       color: $color-light;
       text-decoration: underline;
+      @media only screen and (max-width: $screen-lg-1){
+        color: black;
+      }
     }
     .dropdown-toggle:before, .dropdown-toggle:after{
       background: white;
+      @media only screen and (max-width: $screen-lg-1){
+        background: black;
+      }
     }
   }
   a:focus{
@@ -73,25 +160,38 @@
   }
   h1{
     font-family: $font-glypha;
-    color: $color-light;
     font-size: 14px;
     font-weight: 700;
     text-align: left;
     line-height: 1;
-    padding: 0 0 10px;
     border-bottom: 2px solid $color-teal;
-    margin: 30px 0 0;
+    margin: 30px 20px 0;
+    padding: 0 0 10px;
+    @media (min-width: $screen-lg){
+      margin: 30px 0 0;
+      color: $color-light;
+    }
   }
   h2{
     font-size: 16px;
     margin: 0;
+    color: $color-teal;
+    @media only screen and (max-width: $screen-lg-1){
+      padding: 25px 25px 25px 20px;
+      color: black;
+    }
   }
   .subhead{
-    color: white;
+    color: $color-teal;
     font-size: 12px;
+    @media (min-width:$screen-lg){
+      color: white;
+    }
   }
   button.dropdown-toggle{
-    height: 100%;
+    @media (min-width: $screen-lg){
+      height: 80px;
+    }
     &:before, &:after{
       @include transition(transform 0.25s cubic-bezier(0.87, -0.41, 0.19, 1.44), opacity 0.25s linear);
     }
@@ -100,30 +200,54 @@
     border-collapse: collapse;
     border: none;
     li{
-      padding: 15px 0; 
       border-color: $color-dark-gray-50;
+      @media (min-width: $screen-lg){
+        padding: 15px 0; 
+        &:first-child{
+          border: none;
+        }
+      }
       &:after{
         content: '' !important;
       }
-      &:first-child{
-        border: none;
+      a h2{
+        @media only screen and (max-width:$screen-lg-1){
+          padding: 0;
+        }
       }
     }
   }
-  .submenu li{
-    padding: 0;
-    border: none;
-    a{
-      padding: 0 0 0 20px !important;
-      font-size: 14px;
-      &:hover{
-        color: $color-light;
-        text-decoration: underline;
+  .submenu {
+    margin-top: 10px;
+    @media only screen and (max-width: $screen-lg-1){
+      margin: 0;
+      background: $color-body-bg-50;
+      opacity: 1;
+    }
+    li{
+      padding: 0;
+      border: none;
+      @media only screen and (max-width:$screen-lg-1){
+        border-bottom: 1px solid $color-light;
+      }
+      a{
+        padding: 0 0 0 20px !important;
+        font-size: 14px;
+        @media only screen and (max-width:$screen-lg-1){
+          padding: 15px 20px !important;
+          display: block;
+        }
+        &:hover{
+          color: $color-light;
+          text-decoration: underline;
+        }
       }
     }
   }
 }
 
+
+/* Search Form */
 .header-search-form {
   position: relative;
   margin: 0;

@@ -40,6 +40,36 @@ ol.inline  > li {
   width: device-width;
 }
 
+.display-table{
+  display: table !important;
+}
+.table-row{
+  display: table-row !important;
+  width: 100%;
+}
+.table-cell{
+  display: table-cell !important;
+}
+.align-middle{
+  vertical-align: middle;
+}
+
+.desktop-only{
+   @media only screen and (max-width:$screen-lg-1) {
+    display: none;
+  }
+}
+.no-desktop{
+  @media (min-width: $screen-lg){
+    display: none;
+  }
+}
+.no-mobile{
+  @media (max-width: $screen-sm){
+    display: none;
+  }
+}
+
 /* Utility Mixins */
 
 @mixin clearfix {

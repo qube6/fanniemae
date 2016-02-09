@@ -6,20 +6,44 @@
     width: $footer-lead-width;
     display: inline-block;
     padding: 15px 30px;
+    @media only screen and (max-width:$screen-lg-1) {
+      width: 100%;
+    }
+    @media only screen and (max-width:$screen-lg-1) {
+      padding: 15px;
+    }
   }
   .footer-menus {
     width: calc(100% - #{$footer-lead-width});
     display: inline-block;
     height: 100%;
     padding: $footer-element-spacing;
+    background: white;
+    @media only screen and (max-width:$screen-lg-1) {
+      width: 100%;
+    }
+    @media only screen and (max-width:$screen-sm-1) {
+      height: auto;
+    }
     .footer-menu{
       height: 100%;
       margin: 0;
-    }li{
-      border-color: $color-light-gray-50;
+      @media only screen and (max-width:$screen-lg-1) {
+        margin: 0 auto;
+        width: 100%;
+      }
     }
-    li:last-child{
-      border: none;
+    li{
+      padding: 0 20px;
+      border-right: 1px solid $color-light-gray-50;
+      @media only screen and (max-width:$screen-sm-1) {
+        width: 50%;
+        float: left;
+        border: none;
+      }
+      &:last-child{
+        border: none;
+      }
     }
   }
   .logo{
@@ -38,5 +62,8 @@
     height: 100%;
     padding-left: 40px;
     border-left: 1px solid $color-light-gray-50;
+    @media only screen and (max-width:$screen-lg-1) {
+      padding-left: 20px;
+    }
   }
 }

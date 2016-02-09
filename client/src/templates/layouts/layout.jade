@@ -6,7 +6,7 @@ html(ng-app="fannieMae")
     block title
       title Default title
 
-  body(ng-controller="MainController")
+  body(ng-controller="MainController" ng-class="{ 'openNav' : isActive('header-mobile-menu') }")
 
     main
       header

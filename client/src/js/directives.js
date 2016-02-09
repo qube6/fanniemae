@@ -1,5 +1,6 @@
 angular.module('fannieMae.directives', [])
-.directive('fmCloseOnClick', [
+
+.directive('fmCloseOnClickAway', [
   '$document',
   function ($document) {
     var link = function ($scope, element, attrs) {
@@ -9,6 +10,23 @@ angular.module('fannieMae.directives', [])
         if(!element[0].contains($event.target)){
           $scope.toggleActive(name, false);
         }
+      });
+    };
+    
+    return {
+      restrict: 'A',
+      link: link
+    };
+}])
+
+.directive('fmToggleParentOnClick', [
+  '$document',
+  function ($document) {
+    var link = function ($scope, element, attrs) {
+      var cls = attrs.toggleClass || 'open';
+
+      element.on('click', function($event){
+        element.parent().toggleClass(cls);
       });
     };
     
