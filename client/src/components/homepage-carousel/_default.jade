@@ -4,11 +4,17 @@
       span(ng-repeat="slide in slides" ng-class="{active: $index==$parent.carouselIndex}" ng-click="$parent.carouselIndex = $index")
     li.fm-carousel-item
       figure.fm-carousel-figure
-        img(src="/media/home-carousel/image1-3x.png")
+        picture.fm-image
+          source(media="(max-width: 479px)" srcset="/media/home-carousel/image1_width_750.png")
+          source(media="(max-width: 1280px)" srcset="/media/home-carousel/image1_width_1280.png")
+          img(src="/media/home-carousel/image1_width_3840.png" alt="responsive image")
         figcaption.fm-carousel-caption
           p Returned $138B to tax payers, $21B more than we received from the U.S. Treasury.
     li.fm-carousel-item
         figure.fm-carousel-figure
-          img(src="/media/home-carousel/image1-3x.png")
+          picture.fm-image
+            source(media="(max-width: 479px)" srcset="/media/home-carousel/image1_width_750.png")
+            source(media="(max-width: 1280px)" srcset="/media/home-carousel/image1_width_1280.png")
+            img(src="/media/home-carousel/image1_width_3840.png" alt="responsive image")
           figcaption.fm-carousel-caption
             p New slide

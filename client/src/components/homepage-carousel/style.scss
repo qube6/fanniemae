@@ -1,5 +1,5 @@
 $aspect-ratio: (570 / 1200);
-$carousel-height-xs: $aspect-ratio * $screen-xs;
+$carousel-height-xs: 480px;
 $carousel-height-sm: $aspect-ratio * $screen-sm;
 $carousel-height-md: $aspect-ratio * $screen-md;
 $carousel-height-lg: $aspect-ratio * $screen-lg;
@@ -11,9 +11,11 @@ $carousel-height-xl: $aspect-ratio * $screen-xl;
 
 .pane-homepage-slider-slider-home{
   height: $carousel-height-xs;
+  max-height: calc(100vh - #{$header-height-lg});
 
   @media (min-width: $screen-sm){
     height: $carousel-height-sm;
+    max-height: none;
   }
   @media (min-width: $screen-md){
     height: $carousel-height-md;
@@ -24,37 +26,43 @@ $carousel-height-xl: $aspect-ratio * $screen-xl;
   @media (min-width: $screen-xl){
     height: $carousel-height-xl;
   }
-  .fm-carousel-figure{
+  .fm-carousel-figure .fm-image{
+    position: absolute;
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @include transform(translateY(-50%) translateX(-50%));
+    @include center-xy;
   }
   .fm-carousel-caption{
     color: white;
     font-family: $font-serif;
-    font-size: 40px;
-    line-height: 63px;
+    font-size: 36px;
+    line-height: 40px;
     position: absolute;
-    left: $homepage-carousel-left-align;
+    left: $homepage-carousel-left-align-xs;
     padding-bottom: 55px;
     padding-right: $homepage-carousel-left-align;
     width: calc(100% - #{$homepage-carousel-left-align});
     @include center-y();
     @include text-shadow(3px 6px 170.1px rgba(0, 0, 0, 0.59));
+    @media (min-width: $screen-sm){
+      left: $homepage-carousel-left-align;
+    }
     @media (min-width: $screen-lg){
       font-size: 52px;
+      line-height: 63px;
       padding-right: $header-site-list-width + 75px;
 
     }
   }
   .fm-carousel-controls{
     position: absolute;
-    bottom: 50px;
-    left: $homepage-carousel-left-align;
+    bottom: 30px;
+    left: $homepage-carousel-left-align-xs;
     z-index: 5;
+    @media (min-width: $screen-sm){
+      left: $homepage-carousel-left-align;
+      bottom: 50px;
+    }
     span {
       height: 8px;
       width: 8px;
