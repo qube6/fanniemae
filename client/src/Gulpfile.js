@@ -51,17 +51,16 @@ gulp.task('styles', function() {
     .pipe(concat('components-temp.scss'))
     .pipe(gulp.dest('./scss'));
   
-  gulp.src('./scss/style.scss')
+  return gulp.src('./scss/style.scss')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
         this.emit('end');
     }}))
     .pipe(compass({
-      css: 'static-css/',
+      css: '../build/styles/',
       sass: 'scss/'
     }))
-    .pipe(gulp.dest('../build/styles/'));
 });
 
 
@@ -92,7 +91,7 @@ gulp.task('copy-lib', function() {
   gulp.src('./js/lib/*')
     .pipe(changed('./js/lib/*'))
     .pipe(gulp.dest('../build/js/lib'));
-  gulp.src('./bower_components/**')
+  return gulp.src('./bower_components/**')
     .pipe(gulp.dest('../build/js/lib/bower_components'));
 });
 
@@ -106,6 +105,12 @@ gulp.task('copy-css', function() {
   gulp.src('./static-css/*.css')
     .pipe(changed('./static-css/*.css'))
     .pipe(gulp.dest('../build/styles/'));
+});
+
+gulp.task('copy-fonts', function() {
+  gulp.src('./fonts/*')
+    .pipe(changed('./fonts/*'))
+    .pipe(gulp.dest('../build/fonts/'));
 });
 
 /* Compile Jade Files, Styles, Scripts, and Libs, then inject all scripts into html */
@@ -139,8 +144,8 @@ gulp.task('watch', function() {
   //plain old copy stuff over
   gulp.watch('./js/lib/*.js', ['copy-lib']);
   gulp.watch('./data/*.json', ['copy-data']);
-  gulp.watch('./static-css/*.css', ['copy-css']);
   gulp.watch('./media/*', ['copy-media']);
+  gulp.watch('./fonts/*', ['copy-fonts']);
 
   //scripts
   gulp.watch([  './js/*.js',
@@ -150,6 +155,6 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['markup-scripts', 'server', 'copy-data', 'copy-media', 'watch' ]);
+gulp.task('default', ['markup-scripts', 'server', 'copy-data', 'copy-media', 'copy-fonts', 'watch', 'clean' ]);
 
 
