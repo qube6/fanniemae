@@ -110,7 +110,7 @@ gulp.task('copy-css', function() {
 gulp.task('copy-fonts', function() {
   gulp.src('./fonts/*')
     .pipe(changed('./fonts/*'))
-    .pipe(gulp.dest('../build/styles/fonts/'));
+    .pipe(gulp.dest('../build/fonts/'));
 });
 
 /* Compile Jade Files, Styles, Scripts, and Libs, then inject all scripts into html */
