@@ -25,6 +25,13 @@ $footer-lead-width: 450px;
 $homepage-carousel-left-align-xs: 11%;
 $homepage-carousel-left-align: 15%;
 
+$carousel-aspect-ratio: (570 / 1200);
+$carousel-height-xs: 480px;
+$carousel-height-sm: $carousel-aspect-ratio * $screen-sm;
+$carousel-height-md: $carousel-aspect-ratio * $screen-md;
+$carousel-height-lg: $carousel-aspect-ratio * $screen-lg;
+$carousel-height-xl: $carousel-aspect-ratio * $screen-xl;
+
 $nav-width: 275px;
 
 $screen-lg-1: $screen-lg - 1px;

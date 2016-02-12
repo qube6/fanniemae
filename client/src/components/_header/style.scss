@@ -136,10 +136,15 @@
   margin-top: $header-element-spacing;
   line-height: 1.75;
   opacity: 1;
-  margin-left: $homepage-carousel-left-align;
+  width: $header-site-list-width;
   @include transition(all 0.4s ease-in);
   @media (min-width: $screen-lg){
     padding: 0 30px;
+    min-height: $carousel-height-lg;
+  }
+  @media (min-width: $screen-xl){
+    padding: 0 30px;
+    min-height: $carousel-height-xl;
   }
   a:hover{
     h2{
