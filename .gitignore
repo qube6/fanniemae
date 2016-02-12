@@ -1,8 +1,10 @@
 /client/build/
+/client/temp/
 /client/src/node_modules/
 /client/src/bower_components/
 /client/src/.sass-cache/
 /client/src/scss/components-temp.scss
+/client/src/static-css/style.css
 npm-debug.log
 *.sublime*
 *.DS_Store

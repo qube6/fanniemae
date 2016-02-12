@@ -13,13 +13,17 @@ var gulp    = require('gulp'),
     concat = require('gulp-concat'),
     changed = require('gulp-changed'),
     path = require('path'),
-    plumber = require('gulp-plumber');
+    plumber = require('gulp-plumber'),
+    bowerFiles = require('main-bower-files'),
+    inject = require('gulp-inject'),
+    es = require('event-stream');
 
 
 gulp.task('lint', function() {
-  gulp.src('./js/*.js')
-    .pipe(jslint())
-    .pipe(jslint.reporter('default'));
+  gulp.src(['./js/*.js', '!./bower_components/**'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('scripts', function() {
@@ -54,7 +58,7 @@ gulp.task('styles', function() {
         this.emit('end');
     }}))
     .pipe(compass({
-      css: '../build/styles/css',
+      css: 'static-css/',
       sass: 'scss/'
     }))
     .pipe(gulp.dest('../build/styles/'));
@@ -67,7 +71,7 @@ gulp.task('markup', function() {
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest('../build/html'));
+    .pipe(gulp.dest('../temp/html'));
 });
 
 
@@ -88,6 +92,8 @@ gulp.task('copy-lib', function() {
   gulp.src('./js/lib/*')
     .pipe(changed('./js/lib/*'))
     .pipe(gulp.dest('../build/js/lib'));
+  gulp.src('./bower_components/**')
+    .pipe(gulp.dest('../build/js/lib/bower_components'));
 });
 
 gulp.task('copy-media', function() {
@@ -96,6 +102,25 @@ gulp.task('copy-media', function() {
     .pipe(gulp.dest('../build/media'));
 });
 
+gulp.task('copy-css', function() {
+  gulp.src('./static-css/*.css')
+    .pipe(changed('./static-css/*.css'))
+    .pipe(gulp.dest('../build/styles/'));
+});
+
+/* Compile Jade Files, Styles, Scripts, and Libs, then inject all scripts into html */
+gulp.task('markup-scripts', ['styles', 'markup', 'scripts', 'copy-css', 'copy-lib'], function(){ 
+    var target = gulp.src(['../temp/html/*.html', '../temp/html/**/*.html']);
+    var sources = gulp.src(['../build/styles/*.css', '../build/js/*.js'], {read: false});
+    var bower = gulp.src(bowerFiles({ paths: { bowerDirectory: '../build/js/lib/bower_components' } }), {read: false});
+
+    target
+      .pipe(inject(bower, {name: 'bower', ignorePath: '../build'}))
+      .pipe(inject(sources, {ignorePath: '../build'}))
+      .pipe(gulp.dest('../build/html'));
+});
+ 
+
 gulp.task('watch', function() {
 
   gulp.watch([  './components/**/*.jade',
@@ -103,7 +128,7 @@ gulp.task('watch', function() {
                 './templates/pages/index.jade',
                 './templates/pages/**/*.jade',
                 './templates/layouts/*.jade'
-              ], ['markup']);
+              ], ['markup-scripts']);
   
   //style sheets
   gulp.watch([  './scss/*.scss',
@@ -114,6 +139,8 @@ gulp.task('watch', function() {
   //plain old copy stuff over
   gulp.watch('./js/lib/*.js', ['copy-lib']);
   gulp.watch('./data/*.json', ['copy-data']);
+  gulp.watch('./static-css/*.css', ['copy-css']);
+  gulp.watch('./media/*', ['copy-media']);
 
   //scripts
   gulp.watch([  './js/*.js',
@@ -123,6 +150,6 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['scripts', 'styles', 'markup', 'server', 'copy-data', 'copy-lib', 'copy-media', 'watch' ]);
+gulp.task('default', ['markup-scripts', 'server', 'copy-data', 'copy-media', 'watch' ]);
 
 
