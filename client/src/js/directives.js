@@ -34,6 +34,16 @@ angular.module('fannieMae.directives', [])
       restrict: 'A',
       link: link
     };
+}])
+
+.directive('fmCarousel', [
+  function () {
+    var link = function ($scope, element, attrs) {
+      $scope.slides = element.find('li');
+    };
+    
+    return {
+      restrict: 'A',
+      link: link
+    };
 }]);
-
-

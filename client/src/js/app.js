@@ -1,4 +1,6 @@
 angular.module('fannieMae', [
   'fannieMae.controllers',
-  'fannieMae.directives'
+  'fannieMae.directives',
+  'angular-carousel',
+  'ngTouch'
 ]);

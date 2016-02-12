@@ -19,4 +19,4 @@ controller('MainController',
     $scope.setHeaderSubmit = function(prop){
       $scope.toggleActive(prop, $scope.header.search.length > 0);
     }
-});
+})

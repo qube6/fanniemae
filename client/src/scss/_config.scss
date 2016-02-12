@@ -9,17 +9,20 @@ $color-light: rgba(228, 228, 228, 1);
 $color-body-bg: rgba(230, 230, 230, 1);
 $color-body-bg-50: rgba(230, 230, 230, .5);
 
-$font-lato: 'LatoWeb', sans-serif;
-$font-glypha: 'Glypha65', serif;
+$font-sans-serif: 'LatoWeb', sans-serif;
+$font-serif: 'Glypha65', serif;
 
 $header-height-lg: 70px;
 $header-element-height: 40px;
 $header-element-spacing: ($header-height-lg - $header-element-height) / 2;
+$header-site-list-width: 385px;
 
 $footer-height-lg: 70px;
 $footer-element-height: 40px;
 $footer-element-spacing: ($footer-height-lg - $footer-element-height) / 2;
 $footer-lead-width: 450px;
+
+$homepage-carousel-left-align: 15%;
 
 $nav-width: 275px;
 

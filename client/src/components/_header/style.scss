@@ -70,7 +70,7 @@
       }
     }
     a{
-      font-family: $font-lato;
+      font-family: $font-sans-serif;
       padding: 0 20px;
       line-height: $header-height-lg;
       @media only screen and (max-width: $screen-lg-1){
@@ -114,7 +114,7 @@
     text-transform: none;
     font-size: 12px;
     line-height: $header-element-height;
-    font-family: $font-lato;
+    font-family: $font-sans-serif;
     i{
       top: 18px;
     }
@@ -136,6 +136,7 @@
   margin-top: $header-element-spacing;
   line-height: 1.75;
   opacity: 1;
+  margin-left: $homepage-carousel-left-align;
   @include transition(all 0.4s ease-in);
   @media (min-width: $screen-lg){
     padding: 0 30px;
@@ -159,7 +160,7 @@
     color: $color-teal;
   }
   h1{
-    font-family: $font-glypha;
+    font-family: $font-serif;
     font-size: 14px;
     font-weight: 700;
     text-align: left;

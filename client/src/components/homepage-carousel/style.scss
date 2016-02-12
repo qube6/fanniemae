@@ -1,0 +1,78 @@
+$aspect-ratio: (570 / 1200);
+$carousel-height-xs: $aspect-ratio * $screen-xs;
+$carousel-height-sm: $aspect-ratio * $screen-sm;
+$carousel-height-md: $aspect-ratio * $screen-md;
+$carousel-height-lg: $aspect-ratio * $screen-lg;
+$carousel-height-xl: $aspect-ratio * $screen-xl;
+
+.fm-homepage-carousel{
+  margin: 0 -15px;
+}
+
+.pane-homepage-slider-slider-home{
+  height: $carousel-height-xs;
+
+  @media (min-width: $screen-sm){
+    height: $carousel-height-sm;
+  }
+  @media (min-width: $screen-md){
+    height: $carousel-height-md;
+  }
+  @media (min-width: $screen-lg){
+    height: $carousel-height-lg;
+  }
+  @media (min-width: $screen-xl){
+    height: $carousel-height-xl;
+  }
+  .fm-carousel-figure{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translateY(-50%) translateX(-50%));
+  }
+  .fm-carousel-caption{
+    color: white;
+    font-family: $font-serif;
+    font-size: 40px;
+    line-height: 63px;
+    position: absolute;
+    left: $homepage-carousel-left-align;
+    padding-bottom: 55px;
+    padding-right: $homepage-carousel-left-align;
+    width: calc(100% - #{$homepage-carousel-left-align});
+    @include center-y();
+    @include text-shadow(3px 6px 170.1px rgba(0, 0, 0, 0.59));
+    @media (min-width: $screen-lg){
+      font-size: 52px;
+      padding-right: $header-site-list-width + 75px;
+
+    }
+  }
+  .fm-carousel-controls{
+    position: absolute;
+    bottom: 50px;
+    left: $homepage-carousel-left-align;
+    z-index: 5;
+    span {
+      height: 8px;
+      width: 8px;
+      background: white;
+      border-radius: 50%;
+      z-index: 5;
+      display: inline-block;
+      margin: 0 5px;
+      position: relative;
+      cursor: pointer;
+      &.active{
+        height: 12px;
+        width: 12px;
+        background: transparent;
+        border: 2px solid white;
+        top: 2px;
+        cursor: default;
+      }
+    }
+  }
+}
