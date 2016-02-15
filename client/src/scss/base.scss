@@ -93,7 +93,7 @@ body{
 .cta{
   width: 100%;
   height: $cta-height;
-  line-height: 65px;
+  line-height: $cta-height;
   font-size: 16px;
   color: $color-teal;
   display: block;
@@ -102,10 +102,10 @@ body{
     color: white;
   }
   .icon{
-    font-size: 30px;
+    font-size: 28px;
     padding: 0 20px;
     position: relative;
-    top: 7px;
+    top: ($cta-height - 28px) / 4;
   }
 }
 
@@ -113,11 +113,30 @@ body{
   font-family: $font-serif;
 }
 
+.dark-bg{
+  background: $color-dark-blue;
+  @extend .color-white;
+}
+.white-bg{
+  background: white;
+  @extend .color-dark;
+}
+
 .color-white{
   color: white;
 }
 a.color-white:hover{
   color: $color-teal;
+}
+
+.color-dark{
+  color: $color-dark-blue;
+}
+.color-dark a{
+  color: $color-dark-blue;
+  &:hover{
+    color: $color-teal;
+  }
 }
 
 .padding-30{

@@ -5,13 +5,48 @@
 }
 
 .content-row{
-  padding: 15px 0;
+  padding-top: 30px;
   float: left;
   margin: 0 -10px;
   width: calc(100% + 20px);
   // gutter
   > *{
     padding: 0 10px;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .equal-height-sm-row{
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-spacing: 20px 0;
+    border-collapse: separate;
+    margin: 0 -10px;
+    width: calc(100% + 20px);
+  }
+  .row-sm-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .col-sm-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+  }
+  .col-sm-top {
+    vertical-align: top;
+  }
+  .col-sm-middle {
+    vertical-align: middle;
+  }
+  .col-sm-bottom {
+    vertical-align: bottom;
   }
 }
 

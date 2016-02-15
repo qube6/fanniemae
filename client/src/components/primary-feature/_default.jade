@@ -1,9 +1,5 @@
-- var config = config || { "align":"left", "imgSrc" : "/media/primary-feature-1.png", "type": "Newsroom", "title" : "Green Financing Leader Fannie Mae Announces Green Rewards for Multifamily", "date" : "May 14, 2015" }
+- var config = config || { "theme": "dark-bg", "align":"left", "imgSrc" : "/media/primary-feature-1.png", "type": "Newsroom", "title" : "Green Financing Leader Fannie Mae Announces Green Rewards for Multifamily", "date" : "May 14, 2015", "ctaText" : "Read More" }
 figure.fm-primary-feature.col-sm-6
   img.fm-primary-feature-img(src=config.imgSrc)
-  figcaption.fm-primary-feature-caption.color-white.padding-30(class="fm-overhang-#{config.align}")
-    .fm-type.font-serif= config.type
-    a.fm-title.color-white(href="#")= config.title
-    .fm-date= config.date
-    a.cta(href="#") Read more
-      span.icon.fm-arrow-right-circle
+  figcaption.fm-primary-feature-caption(class="fm-overhang-#{config.align}")
+    include ../secondary-feature/_default.jade
