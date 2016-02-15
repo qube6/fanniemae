@@ -50,8 +50,17 @@
   @media (min-width: $screen-lg){
     width: 100%;
   }
+
+  /* Icon treatments */
   span.icon{
-    font-size: 25px;
+    font-size: 30px;
+  }
+  [class*="fm-plus"], [class*="fm-minus"]{
+    @include transform(rotate(180deg));
+    @include transition(transform 0.2s ease-in);
+  }
+  [class*="fm-plus"]{
+    @include transform(rotate(0deg));
   }
 }
 
@@ -73,7 +82,6 @@
       }
     }
     a{
-      font-family: $font-sans-serif;
       padding: 0 20px;
       line-height: $header-height-lg;
       @media only screen and (max-width: $screen-lg-1){
@@ -105,6 +113,7 @@
   }
 }
 
+
 /* All FannieMae Sites Button */
 .menu-sites{
   height: $header-element-height;
@@ -118,16 +127,17 @@
     text-transform: none;
     font-size: 12px;
     line-height: $header-element-height;
-    font-family: $font-sans-serif;
-    padding: 0 70px 0 0;
+    padding: 0 60px 0 10px;
     height: $header-element-height;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
     span.icon{
       position: absolute;
-      right: 35px;
-      @include center-y();
+      right: 30px;
+      top: 6px;
     }
     @media screen only and (max-width: $screen-lg-1){
-      // display: block;
       width: 100%;
       background: transparent;
       border: none;
@@ -173,7 +183,6 @@
     color: $color-teal;
   }
   h1{
-    font-family: $font-serif;
     font-size: 14px;
     font-weight: 700;
     text-align: left;
@@ -202,13 +211,19 @@
       color: white;
     }
   }
-  button.dropdown-toggle{
-    @media (min-width: $screen-lg){
-      height: 80px;
-    }
-    &:before, &:after{
-      @include transition(transform 0.25s cubic-bezier(0.87, -0.41, 0.19, 1.44), opacity 0.25s linear);
-    }
+  button.icon.fm-plus {
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    color: $color-teal;
+    padding: 0;
+  }
+  li.open ul{
+    margin-top: 10px;
   }
   ul{
     border-collapse: collapse;
@@ -232,7 +247,6 @@
     }
   }
   .submenu {
-    margin-top: 10px;
     @media only screen and (max-width: $screen-lg-1){
       margin: 0;
       background: $color-body-bg-50;
