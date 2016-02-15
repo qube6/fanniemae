@@ -55,7 +55,7 @@ ol.inline  > li {
 }
 
 .desktop-only{
-   @media only screen and (max-width:$screen-lg-1) {
+   @media only screen and (max-width:$screen-md-max) {
     display: none;
   }
 }

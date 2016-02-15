@@ -1,1 +1,40 @@
-//TBD. replace old grid?
+@media (min-width: $screen-lg) and (max-width: 1400px){
+  .container{
+      width: 1150px;
+  }
+}
+
+.content-row{
+  padding: 15px 0;
+  float: left;
+  margin: 0 -10px;
+  width: calc(100% + 20px);
+  // gutter
+  > *{
+    padding: 0 10px;
+  }
+}
+
+$overhang-sm: -15px;
+$overhang-lg: -50px;
+
+[class*="fm-overhang"]{
+  position: absolute;
+}
+.fm-overhang-left{
+  @media(min-width: $screen-sm){
+    left: $overhang-sm;
+  }
+  @media(min-width: $screen-lg){
+    left: $overhang-lg;
+  }
+}
+.fm-overhang-right{
+  @media(min-width: $screen-sm){
+    left: auto;
+    right: $overhang-sm;
+  }
+  @media(min-width: $screen-lg){
+    right: $overhang-lg;
+  }
+}

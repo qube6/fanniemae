@@ -52,7 +52,7 @@ body{
   &:after {
     @include transform(rotate(90deg)); 
   }
-  @media only screen and (max-width:$screen-lg-1) {
+  @media only screen and (max-width:$screen-md-max) {
       right: 12px;
       top: 7px; 
   }
@@ -90,6 +90,36 @@ body{
   }
 }
 
+.cta{
+  width: 100%;
+  height: $cta-height;
+  line-height: 65px;
+  font-size: 16px;
+  color: $color-teal;
+  display: block;
+  text-align: right;
+  &:hover{
+    color: white;
+  }
+  .icon{
+    font-size: 30px;
+    padding: 0 20px;
+    position: relative;
+    top: 7px;
+  }
+}
+
 .font-serif{
   font-family: $font-serif;
+}
+
+.color-white{
+  color: white;
+}
+a.color-white:hover{
+  color: $color-teal;
+}
+
+.padding-30{
+  padding: 30px;
 }

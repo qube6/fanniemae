@@ -19,6 +19,10 @@
     text-transform: none;
     line-height: 1;
 
+    /* avoid underlines */
+    display: inline-block;
+    text-decoration: none;
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

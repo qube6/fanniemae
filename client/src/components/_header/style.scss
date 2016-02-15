@@ -8,16 +8,16 @@
   height: 100%;
   position: absolute;
   padding-left: 30px;
-  @media only screen and (max-width:$screen-lg-1) {
+  @media only screen and (max-width:$screen-md-max) {
     width: 100%;
   }
-  @media only screen and (max-width:$screen-sm-1) {
+  @media only screen and (max-width:$screen-xs-max) {
     padding-left: 15px;
   }
 }
 .site-logo{
   padding: 0;
-  @media only screen and (max-width:$screen-lg-1) {
+  @media only screen and (max-width:$screen-md-max) {
     margin: 0;
   }
 }
@@ -28,7 +28,7 @@
 
 /* Nav Container */
 .navbar-offcanvas{
-  @media only screen and (max-width:$screen-lg-1) {
+  @media only screen and (max-width:$screen-md-max) {
     height: 100vh;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -67,14 +67,14 @@
 /* Drop-down Nav Menu */
 .main-menu{
   > li{
-    @media(max-width: $screen-lg-1){
+    @media(max-width: $screen-md-max){
       display: block;
       width: 100%;
     }
     &.open ul{
       max-height: 100vh;
     }
-    @media(min-width: $screen-lg-1){
+    @media(min-width: $screen-md-max){
       &:hover ul{
         max-height: 100vh;
         min-width: 200%;
@@ -84,13 +84,13 @@
     a{
       padding: 0 20px;
       line-height: $header-height-lg;
-      @media only screen and (max-width: $screen-lg-1){
+      @media only screen and (max-width: $screen-md-max){
         font-size: 16px;
       }
     }
     ul{
       @include box-shadow(5px 5px 5px 0px rgba(0,0,0,0.25));
-      @media only screen and (max-width: $screen-lg-1){
+      @media only screen and (max-width: $screen-md-max){
         position: relative;
         width: 100%;
         box-shadow: none;
@@ -102,7 +102,7 @@
       li a{
         line-height: 20px;
         color: $color-teal;
-        @media only screen and (max-width: $screen-lg-1){
+        @media only screen and (max-width: $screen-md-max){
           font-size: 14px;
         }
         &:hover{
@@ -137,7 +137,7 @@
       right: 30px;
       top: 6px;
     }
-    @media screen only and (max-width: $screen-lg-1){
+    @media screen only and (max-width: $screen-md-max){
       width: 100%;
       background: transparent;
       border: none;
@@ -168,13 +168,13 @@
     h2{
       color: $color-light;
       text-decoration: underline;
-      @media only screen and (max-width: $screen-lg-1){
+      @media only screen and (max-width: $screen-md-max){
         color: black;
       }
     }
     .dropdown-toggle:before, .dropdown-toggle:after{
       background: white;
-      @media only screen and (max-width: $screen-lg-1){
+      @media only screen and (max-width: $screen-md-max){
         background: black;
       }
     }
@@ -199,7 +199,7 @@
     font-size: 16px;
     margin: 0;
     color: $color-teal;
-    @media only screen and (max-width: $screen-lg-1){
+    @media only screen and (max-width: $screen-md-max){
       padding: 25px 25px 25px 20px;
       color: black;
     }
@@ -240,14 +240,14 @@
         content: '' !important;
       }
       a h2{
-        @media only screen and (max-width:$screen-lg-1){
+        @media only screen and (max-width:$screen-md-max){
           padding: 0;
         }
       }
     }
   }
   .submenu {
-    @media only screen and (max-width: $screen-lg-1){
+    @media only screen and (max-width: $screen-md-max){
       margin: 0;
       background: $color-body-bg-50;
       opacity: 1;
@@ -255,13 +255,13 @@
     li{
       padding: 0;
       border: none;
-      @media only screen and (max-width:$screen-lg-1){
+      @media only screen and (max-width:$screen-md-max){
         border-bottom: 1px solid $color-light;
       }
       a{
         padding: 0 0 0 20px !important;
         font-size: 14px;
-        @media only screen and (max-width:$screen-lg-1){
+        @media only screen and (max-width:$screen-md-max){
           padding: 15px 20px !important;
           display: block;
         }
