@@ -41,12 +41,23 @@ angular.module('fannieMae.directives', [])
     var link = function ($scope, element, attrs) {
       $scope.slides = element.find('li');
 
-      $scope.$watch('carouselIndex', function(){
+      $scope.isActiveSlide = function(i){
+        return i == $scope.carouselIndex;
+      }
+      $scope.setActiveSlide = function(i){
+        $scope.carouselIndex = i;
+        updateVideoZIndex();
+      }
+
+      $scope.$watch('carouselIndex', updateVideoZIndex);
+
+      // Bug with Angular-Carousel means sometimes video z-index is set too high */
+      var updateVideoZIndex = function(){
         if ($scope.carouselIndex == undefined) return;
         var li = $scope.slides[$scope.carouselIndex];
         var video = li.getElementsByTagName("video");
         if (video.length > 0 ) video[0].style.zIndex = "0";
-      });
+      }
 
     };
     
@@ -79,6 +90,7 @@ angular.module('fannieMae.directives', [])
     }
     return {
       restrict: 'A',
-      link: link
+      link: link,
+      scope: {}
     };
 });

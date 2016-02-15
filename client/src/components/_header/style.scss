@@ -50,6 +50,9 @@
   @media (min-width: $screen-lg){
     width: 100%;
   }
+  span.icon{
+    font-size: 25px;
+  }
 }
 
 /* Drop-down Nav Menu */
@@ -106,6 +109,7 @@
 .menu-sites{
   height: $header-element-height;
   margin-top: $header-element-spacing;
+  width: 215px;
   @media(min-width:$screen-lg){
     border-left: 1px solid $color-gray;
   }
@@ -115,8 +119,12 @@
     font-size: 12px;
     line-height: $header-element-height;
     font-family: $font-sans-serif;
-    i{
-      top: 18px;
+    padding: 0 70px 0 0;
+    height: $header-element-height;
+    span.icon{
+      position: absolute;
+      right: 35px;
+      @include center-y();
     }
     @media screen only and (max-width: $screen-lg-1){
       // display: block;
@@ -309,6 +317,8 @@ input[type="search"].header-search-input {
   line-height: $header-height-lg;
   text-align: center;
   cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
 }
 
 input[type="submit"].header-search-submit{
@@ -331,5 +341,9 @@ input[type="submit"].header-search-submit{
   background: $color-dark-blue;
   &:hover{
     color: white;
+  }
+  span.icon{
+    position: absolute;
+    @include center-xy();
   }
 }

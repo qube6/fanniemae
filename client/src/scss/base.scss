@@ -68,6 +68,9 @@ body{
 }
 
 .fm-video-player{
+  video, video source{
+    z-index: 0 !important;
+  }
   .fm-play-circle, .fm-pause-circle{
     position: absolute;
     @include center-xy();

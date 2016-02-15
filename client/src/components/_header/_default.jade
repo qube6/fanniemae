@@ -13,7 +13,7 @@ header#navbar.navbar.navbar-default(role="banner" sticky-header)
     .menu-sites(ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu')
       button.toggle-sites.desktop-only(ng-click="toggleActive('header-side-menu')")
         | All Fannie Mae Sites
-        i
+        span.icon.fm-plus-circle
       .sites-list
         h1 Doing Business with Fannie Mae
         ul.menu.nav
@@ -49,8 +49,8 @@ header#navbar.navbar.navbar-default(role="banner" sticky-header)
     form.header-search-form.desktop-only(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
       input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
       input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
-      a.header-search-btn(ng-click="toggleActive('header-search')")
-        i.fa.fa-search
+      button.header-search-btn(type="button" ng-click="toggleActive('header-search')")
+        span.icon.fm-search-circle
     ul.main-menu
       li
         a(href='/about-us', title='') About Us
