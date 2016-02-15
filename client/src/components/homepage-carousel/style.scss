@@ -1,9 +1,3 @@
-$aspect-ratio: (570 / 1200);
-$carousel-height-xs: 480px;
-$carousel-height-sm: $aspect-ratio * $screen-sm;
-$carousel-height-md: $aspect-ratio * $screen-md;
-$carousel-height-lg: $aspect-ratio * $screen-lg;
-$carousel-height-xl: $aspect-ratio * $screen-xl;
 
 .fm-homepage-carousel{
   margin: 0 -15px;
@@ -26,30 +20,39 @@ $carousel-height-xl: $aspect-ratio * $screen-xl;
   @media (min-width: $screen-xl){
     height: $carousel-height-xl;
   }
-  .fm-carousel-figure .fm-image{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    @include center-xy;
+  .fm-carousel-figure{
+    height: 100%;
+    padding-bottom: 50px;
+    position: relative;
+    @media (min-width: $screen-sm){
+      padding-bottom: 70px;
+    }
+    img, video{
+      position: absolute;
+      width: 100%;
+      height: auto;
+      @include center-xy;
+    }
   }
   .fm-carousel-caption{
     color: white;
     font-family: $font-serif;
     font-size: 36px;
-    line-height: 40px;
-    position: absolute;
+    line-height: 39px;
+    position: relative;
     left: $homepage-carousel-left-align-xs;
-    padding-bottom: 55px;
     padding-right: $homepage-carousel-left-align;
     width: calc(100% - #{$homepage-carousel-left-align});
+    max-height: 100%;
+    overflow: hidden;
     @include center-y();
-    @include text-shadow(3px 6px 170.1px rgba(0, 0, 0, 0.59));
+    // @include text-shadow(3px 6px 170.1px rgba(0, 0, 0, 0.59));
     @media (min-width: $screen-sm){
       left: $homepage-carousel-left-align;
     }
     @media (min-width: $screen-lg){
       font-size: 52px;
-      line-height: 63px;
+      line-height: 60px;
       padding-right: $header-site-list-width + 75px;
 
     }

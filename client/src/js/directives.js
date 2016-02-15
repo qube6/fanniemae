@@ -40,10 +40,45 @@ angular.module('fannieMae.directives', [])
   function () {
     var link = function ($scope, element, attrs) {
       $scope.slides = element.find('li');
+
+      $scope.$watch('carouselIndex', function(){
+        if ($scope.carouselIndex == undefined) return;
+        var li = $scope.slides[$scope.carouselIndex];
+        var video = li.getElementsByTagName("video");
+        if (video.length > 0 ) video[0].style.zIndex = "0";
+      });
+
     };
     
     return {
       restrict: 'A',
       link: link
     };
-}]);
+}])
+
+.directive('fmVideoPlayer', 
+  function() {
+    var link = function ($scope, element, attrs) {
+      $scope.videoPaused = true;
+
+      $scope.controlVideo = function($event) {
+        var video = $event.currentTarget.nextElementSibling;
+        if ($scope.videoPaused){
+          video.play();
+        } else{
+          video.pause()
+        }
+        $scope.videoPaused = !$scope.videoPaused;
+      }
+
+      $scope.pauseVideo = function($event, pauseOnly) {
+        var video = $event.currentTarget;
+        video.pause()
+        $scope.videoPaused = true;
+      }
+    }
+    return {
+      restrict: 'A',
+      link: link
+    };
+});

@@ -66,3 +66,23 @@ body{
     @include transform(rotate(180deg)); 
   }
 }
+
+.fm-video-player{
+  .fm-play-circle, .fm-pause-circle{
+    position: absolute;
+    @include center-xy();
+    z-index: 10;
+    cursor: pointer;
+    font-size: 60px;
+    color: white;
+  }
+
+  .fm-pause-circle{
+    @include animation(fadeOut 2s forwards);
+    &:hover{
+      @media (min-width:$screen-lg){
+        @include animation(fade-in .5s forwards);
+      }
+    }
+  }
+}

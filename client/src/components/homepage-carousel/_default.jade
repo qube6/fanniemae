@@ -11,10 +11,31 @@
         figcaption.fm-carousel-caption
           p Returned $138B to tax payers, $21B more than we received from the U.S. Treasury.
     li.fm-carousel-item
-        figure.fm-carousel-figure
-          picture.fm-image
-            source(media="(max-width: 479px)" srcset="/media/home-carousel/image1_width_750.png")
-            source(media="(max-width: 1280px)" srcset="/media/home-carousel/image1_width_1280.png")
-            img(src="/media/home-carousel/image1_width_3840.png" alt="responsive image")
-          figcaption.fm-carousel-caption
-            p New slide
+      figure.fm-carousel-figure.fm-video-player(fm-video-player ng-class=" { 'isPlaying' : !videoPaused } ")
+        span(ng-click="controlVideo($event)" ng-class=" videoPaused ? \'fm-play-circle\' : \'fm-pause-circle\' ")
+        video.fm-image( preload='auto', ng-click="pauseVideo($event)")
+          // MP4 must be first for iPad!
+          source(src='http://techslides.com/demos/sample-videos/small.mp4', type='video/mp4')
+          // Safari / iOS, IE9
+          source(src='http://techslides.com/demos/sample-videos/small.webm', type='video/webm')
+          // Chrome10+, Ffx4+, Opera10.6+
+          source(src='http://techslides.com/demos/sample-videos/small.ogv', type='video/ogg')
+          // Firefox3.6+ / Opera 10.5+
+          // fallback to Flash:
+          object(type='application/x-shockwave-flash', data='player.swf')
+            // Firefox uses the `data` attribute above, IE/Safari uses the param below
+            param(name='movie', value='player.swf')
+            param(name='flashvars', value='autostart=false&controlbar=over&image=http://lorempixel.com/1280/638/city/5/&file=http://techslides.com/demos/sample-videos/small.mp4')
+            // fallback image
+            img(src='http://lorempixel.com/1280/638/city/5/' alt='HTML5 Video Backup', title='No video playback capabilities')
+        figcaption.fm-carousel-caption
+          p Video with short caption
+    li.fm-carousel-item
+      figure.fm-carousel-figure
+        picture.fm-image
+          source(media="(max-width: 479px)" srcset="http://lorempixel.com/750/1110/city/4/")
+          source(media="(max-width: 1280px)" srcset="http://lorempixel.com/1280/638/city/4/")
+          img(src="http://lorempixel.com/1280/638/city/4/" alt="responsive image")
+        figcaption.fm-carousel-caption
+          p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor delectus alias, laudantium molestiae rem. Dolore, accusamus ad distinctio iste praesentium
+          p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor delectus alias, laudantium molestiae rem. Dolore, accusamus ad distinctio iste praesentium
