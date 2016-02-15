@@ -7,8 +7,11 @@ block top-content
   include ../../components/homepage-carousel/_default.jade
 
 block content
-  include ../../components/primary-feature/_default.jade
-  include ../../components/primary-feature/_default.jade
-  include ../../components/secondary-feature/_default.jade
-  include ../../components/secondary-feature/_default.jade
-  include ../../components/secondary-feature/_default.jade
+  .content-row
+    include ../../components/primary-feature/_default.jade
+    - config = { "align":"right", "imgSrc" : "/media/primary-feature-2.png", "type": "Research & Insights", "title" : "More Consumers Positive On Housing, But Not Quite Ready to Leave the Sidelines", "date" : "May 7, 2015" }
+    include ../../components/primary-feature/_default.jade
+  .content-row
+    include ../../components/secondary-feature/_default.jade
+    include ../../components/secondary-feature/_default.jade
+    include ../../components/secondary-feature/_default.jade

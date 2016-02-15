@@ -1,0 +1,42 @@
+.fm-primary-feature{
+  position: relative;
+  .fm-primary-feature-img{
+    width: 100%;
+    height: auto;
+  }
+  .fm-primary-feature-caption{
+    height: 70%;
+    width: 60%;
+    bottom: 40px;
+    padding-bottom: $cta-height;
+    background: $color-dark-blue;
+    @media (max-width: $screen-xs-max){
+      position: relative;
+      margin: 0 15px;
+      margin-top: -25%;
+      width: calc(100% - 30px);
+    }
+  }
+  .fm-title{
+    font-size: 16px;
+    display: block;
+    margin: 20px 0;
+    @media (min-width: $screen-lg){
+      font-size: 24px;
+    }
+  }
+  .fm-date{
+    font-size: 12px;
+  }
+  .fm-type{
+    font-size: 16px;
+    @media (min-width: $screen-lg){
+      font-size: 14px;
+    }
+  }
+  .cta{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
