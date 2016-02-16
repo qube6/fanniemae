@@ -52,7 +52,7 @@
   }
 
   /* Icon treatments */
-  span.icon{
+  .icon{
     font-size: 30px;
   }
   [class*="fm-plus"], [class*="fm-minus"]{
@@ -61,6 +61,12 @@
   }
   [class*="fm-plus"]{
     @include transform(rotate(0deg));
+  }
+  button[type="button"]{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
   }
 }
 
@@ -87,6 +93,12 @@
       @media only screen and (max-width: $screen-md-max){
         font-size: 16px;
       }
+    }
+    button{
+      position: absolute;
+      top: 20px;
+      right: 0;
+      color: $color-teal;
     }
     ul{
       @include box-shadow(5px 5px 5px 0px rgba(0,0,0,0.25));
@@ -118,7 +130,10 @@
 .menu-sites{
   height: $header-element-height;
   margin-top: $header-element-spacing;
-  width: 215px;
+  width: 100%;
+  @media (min-width: $screen-sm){
+    width: 215px;
+  }
   @media(min-width:$screen-lg){
     border-left: 1px solid $color-gray;
   }
@@ -154,7 +169,7 @@
   margin-top: $header-element-spacing;
   line-height: 1.75;
   opacity: 1;
-  width: $header-site-list-width;
+  width: 100%;
   @include transition(all 0.4s ease-in);
   @media (min-width: $screen-lg){
     padding: 0 30px;
@@ -212,18 +227,21 @@
     }
   }
   button.icon.fm-plus {
-    background: transparent;
-    border: none;
     font-size: 30px;
-    font-weight: bold;
     position: absolute;
-    right: 0;
-    top: 9px;
     color: $color-teal;
     padding: 0;
+    top: 20px;
+    right: 20px;
+    @media (min-width: $screen-sm){
+      right: 0;
+      top: 9px; 
+    }
   }
   li.open ul{
-    margin-top: 10px;
+    @media (min-width: $screen-sm){
+      margin-top: 10px;
+    }
   }
   ul{
     border-collapse: collapse;

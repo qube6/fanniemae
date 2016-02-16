@@ -1,5 +1,8 @@
 .fm-primary-feature{
   position: relative;
+  @media (max-width: $screen-xs-max){
+    margin: 25px 0;
+  }
   .fm-primary-feature-img{
     width: 100%;
     height: auto;
@@ -21,8 +24,11 @@
       padding-bottom: 60%;
     }
     .fm-secondary-feature{
-      height: 100%;
-      position: absolute;
+      margin-top: 0;
+      @media (min-width: $screen-sm){
+        height: 100%;
+        position: absolute;
+      }
     }
   }
 }

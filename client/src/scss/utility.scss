@@ -56,17 +56,17 @@ ol.inline  > li {
 
 .desktop-only{
    @media only screen and (max-width:$screen-md-max) {
-    display: none;
+    display: none !important;
   }
 }
 .no-desktop{
   @media (min-width: $screen-lg){
-    display: none;
+    display: none !important;
   }
 }
 .no-mobile{
   @media (max-width: $screen-sm){
-    display: none;
+    display: none !important;
   }
 }
 
