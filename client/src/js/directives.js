@@ -74,59 +74,45 @@ angular.module('fannieMae.directives', [])
 .directive('fmStickyHeader', ['$window', 
   function($window) {
     var stickies = [],
+        currentFixed = null,
         scroll = function scroll() {
           angular.forEach(stickies, function($sticky, index) {
-            var sticky = $sticky[0],
-                pos = $sticky.data('pos');
+            var wrapper = $sticky.find('fm-sticky'),
+                pos = $sticky.data('pos'),
+                height = $sticky.data('height'),
+                curPos = $window.pageYOffset,
+                isFixed = pos < curPos;
             
-            if (pos <= $window.pageYOffset) {
-              $sticky.addClass("fixed");
+            wrapper.toggleClass("fixed", isFixed);
 
-              var $next = stickies[index + 1];
-              if ($next == undefined) return;
-              var next = $next ? $next[0] : null,
-                  npos = $next.data('pos');
-
-              if (next && next.offsetTop >= npos - next.clientHeight)
-                $sticky.addClass("absolute").css("top", npos - sticky.clientHeight + 'px');
+            if (isFixed){
+              currentFixed = $sticky;
             } else {
-              var $prev = stickies[index - 1],
-                  prev = $prev ? $prev[0] : null;
-
-              $sticky.removeClass("fixed");
-
-              if (prev && $window.pageYOffset <= pos - prev.clientHeight)
-                $prev.removeClass("absolute").removeAttr("style");
+              if (pos <= ($window.pageYOffset + currentFixed.data('height'))){
+                currentFixed.addClass("absolute").css("top", curPos + 'px');
+              } else{
+                currentFixed.removeClass("absolute").css("top", '');
+              }
             }
           });
         },
         compile = function compile(element, attrs, transclude) {
-          return function($scope, element, attrs) {
-            var sticky = element.children()[0],
-                $sticky = angular.element(sticky);
-
-            element.css('height', sticky.clientHeight + 'px');
-
-            $sticky.data('pos', sticky.offsetTop);
-            stickies.push($sticky);
-          }
         },
         link = function($scope, element, attrs) {
-            var sticky = element.children()[0],
-                $sticky = angular.element(sticky);
-
-            element.css('height', sticky.clientHeight + 'px');
-
-            $sticky.data('pos', sticky.offsetTop);
-            stickies.push($sticky);
-          };
+          var pos = element[0].offsetTop;
+          var height = element[0].clientHeight;
+          element.data('pos', pos);
+          element.data('height', height);
+          element.css('height', height + 'px');
+          stickies.push(element);
+        };
 
     angular.element($window).off('scroll', scroll).on('scroll', scroll);
     
     return {
       restrict: 'A',
       transclude: true,
-      template: '<fm-sticky ng-transclude></fm-sticky>',
+      template: '<fm-sticky class="wrapper" ng-transclude></fm-sticky>',
       link: link
     };
 }])

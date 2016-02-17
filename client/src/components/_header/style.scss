@@ -1,6 +1,9 @@
 .navbar{
   height: $header-height-lg;
   background: $color-dark-blue;
+  .wrapper{
+    background: $color-dark-blue;
+  }
 }
 
 /* Logo and Mobile Menu */
