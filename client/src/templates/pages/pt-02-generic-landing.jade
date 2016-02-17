@@ -4,14 +4,16 @@ block title
   title PT02 Generic Landing
 
 block top-content
-  -var config={withImage : false, title: 'About Us', caption: 'We help to ensure that qualified homebuyers across the nation have access to mortgage credit in good times and bad, and that quality, affordable rental housing is available.'};
+  -var config={withImage : true, title: 'About Us', caption: 'We help to ensure that qualified homebuyers across the nation have access to mortgage credit in good times and bad, and that quality, affordable rental housing is available.'};
   include ../../components/overview/_default.jade
   include ../../components/top-navigation/_default.jade
+  .breadcrumb-social-wrap
+    include ../../components/breadcrumb/_default.jade
+    include ../../components/social-share/_default.jade
 
 block content
   
-  include ../../components/breadcrumb/_default.jade
-  include ../../components/social-share/_default.jade
+  
   include ../../components/image-slider/_default.jade
   include ../../components/image-slider/_default.jade
   include ../../components/image-slider/_default.jade
