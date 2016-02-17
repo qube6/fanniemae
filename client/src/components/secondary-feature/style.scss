@@ -16,6 +16,12 @@
     font-size: 14px;
   }
 }
+.fm-link{
+  font-size: 18px;
+}
+.fm-title ~ .fm-link{
+  margin-bottom: 0;
+}
 .cta{
   display: block;
   position: absolute;
@@ -32,10 +38,8 @@
 .fm-secondary-feature{
   position: relative;
   padding-bottom: $cta-height + 30px;
-  .fake-link{
-    color: $color-teal;
-  }
   @media (max-width: $screen-xs-max){
     margin-top: 30px;
+    min-height: 255px;
   }
 }

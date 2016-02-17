@@ -35,6 +35,11 @@
     left: auto;
     right: -$nav-width;
     width: $nav-width;
+    top: $header-height-lg;
+    @include transition(all 0.4s ease-in);
+    &.open-nav{
+      right: 0;
+    }
 
     .dropdown-toggle{
       right: 0;
@@ -90,6 +95,7 @@
     a{
       padding: 0 20px;
       line-height: $header-height-lg;
+      font-size: 14px;
       @media only screen and (max-width: $screen-md-max){
         font-size: 16px;
       }
@@ -97,7 +103,8 @@
     button{
       position: absolute;
       top: 20px;
-      right: 0;
+      right: 15px;
+      padding: 0;
       color: $color-teal;
     }
     ul{
@@ -131,7 +138,7 @@
   height: $header-element-height;
   margin-top: $header-element-spacing;
   width: 100%;
-  @media (min-width: $screen-sm){
+  @media (min-width: $screen-lg){
     width: 215px;
   }
   @media(min-width:$screen-lg){
@@ -147,6 +154,9 @@
     display: inline-block;
     text-align: left;
     width: 100%;
+    &:hover{
+      color: white;
+    }
     span.icon{
       position: absolute;
       right: 30px;
@@ -171,6 +181,9 @@
   opacity: 1;
   width: 100%;
   @include transition(all 0.4s ease-in);
+  @media (min-width: $screen-lg){
+    width: $header-site-list-width;
+  }
   @media (min-width: $screen-lg){
     padding: 0 30px;
     min-height: $carousel-height-lg;
@@ -226,20 +239,20 @@
       color: white;
     }
   }
-  button.icon.fm-plus {
+  button.icon{
     font-size: 30px;
     position: absolute;
     color: $color-teal;
     padding: 0;
     top: 20px;
     right: 20px;
-    @media (min-width: $screen-sm){
+    @media (min-width: $screen-lg){
       right: 0;
       top: 9px; 
     }
   }
   li.open ul{
-    @media (min-width: $screen-sm){
+    @media (min-width: $screen-lg){
       margin-top: 10px;
     }
   }
@@ -367,7 +380,7 @@ input[type="submit"].header-search-submit{
   }
 }
 
-.header-search-btn{
+.navbar-offcanvas button.header-search-btn{
   z-index: 5;
   color: $color-teal;
   background: $color-dark-blue;

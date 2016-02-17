@@ -4,10 +4,10 @@ angular.module('fannieMae.directives', [])
   '$document',
   function ($document) {
     var link = function ($scope, element, attrs) {
-      var name = attrs.fmCloseOnClick;
+      var name = attrs.fmCloseOnClickAway;
 
       $document.on('click', function($event){
-        if(!element[0].contains($event.target)){
+        if(!element[0].contains($event.target)  && $scope.isActive(name)){
           $scope.toggleActive(name, false);
         }
       });
@@ -19,14 +19,17 @@ angular.module('fannieMae.directives', [])
     };
 }])
 
-.directive('fmToggleParentOnClick', [
+.directive('fmToggleClass', [
   '$document',
   function ($document) {
     var link = function ($scope, element, attrs) {
-      var cls = attrs.toggleClass || 'open';
+      var cls = attrs.fmToggleClass || 'open';
 
       element.on('click', function($event){
-        element.parent().toggleClass(cls);
+        element.toggleClass(cls);
+        if (attrs.fmToggleParent){
+          element.parent().toggleClass(attrs.fmToggleParent)
+        }
       });
     };
     
@@ -63,6 +66,67 @@ angular.module('fannieMae.directives', [])
     
     return {
       restrict: 'A',
+      link: link
+    };
+}])
+
+
+.directive('fmStickyHeader', ['$window', 
+  function($window) {
+    var stickies = [],
+        scroll = function scroll() {
+          angular.forEach(stickies, function($sticky, index) {
+            var sticky = $sticky[0],
+                pos = $sticky.data('pos');
+            
+            if (pos <= $window.pageYOffset) {
+              $sticky.addClass("fixed");
+
+              var $next = stickies[index + 1];
+              if ($next == undefined) return;
+              var next = $next ? $next[0] : null,
+                  npos = $next.data('pos');
+
+              if (next && next.offsetTop >= npos - next.clientHeight)
+                $sticky.addClass("absolute").css("top", npos - sticky.clientHeight + 'px');
+            } else {
+              var $prev = stickies[index - 1],
+                  prev = $prev ? $prev[0] : null;
+
+              $sticky.removeClass("fixed");
+
+              if (prev && $window.pageYOffset <= pos - prev.clientHeight)
+                $prev.removeClass("absolute").removeAttr("style");
+            }
+          });
+        },
+        compile = function compile(element, attrs, transclude) {
+          return function($scope, element, attrs) {
+            var sticky = element.children()[0],
+                $sticky = angular.element(sticky);
+
+            element.css('height', sticky.clientHeight + 'px');
+
+            $sticky.data('pos', sticky.offsetTop);
+            stickies.push($sticky);
+          }
+        },
+        link = function($scope, element, attrs) {
+            var sticky = element.children()[0],
+                $sticky = angular.element(sticky);
+
+            element.css('height', sticky.clientHeight + 'px');
+
+            $sticky.data('pos', sticky.offsetTop);
+            stickies.push($sticky);
+          };
+
+    angular.element($window).off('scroll', scroll).on('scroll', scroll);
+    
+    return {
+      restrict: 'A',
+      transclude: true,
+      template: '<fm-sticky ng-transclude></fm-sticky>',
       link: link
     };
 }])

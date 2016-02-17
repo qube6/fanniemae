@@ -6,10 +6,10 @@ html(ng-app="fannieMae")
     block title
       title Default title
 
-  body(ng-controller="MainController" ng-class="{ 'openNav' : isActive('header-mobile-menu') }")
+  body(ng-controller="MainController")
 
     main
-      header
+      block header
         include ../../components/_header/_default.jade
       .container-fluid
         .row

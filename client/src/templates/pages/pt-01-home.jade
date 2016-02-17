@@ -3,6 +3,9 @@ extends ../layouts/layout-one-column
 block title
   title PT01 Home
 
+block header
+  include ../../components/_header/_default.jade
+
 block top-content
   include ../../components/homepage-carousel/_default.jade
 
@@ -15,7 +18,7 @@ block content
     .equal-height-sm-row
       - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg", "type" : "Survey", "title" : "Lenders Expect Benefits from the GSE 97% LTV Products and the FHA Mortgage Insurance Premium Reduction", "date" : "April 23, 2015", "ctaText" : "Read More"}
       include ../../components/secondary-feature/_default.jade
-      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg", "type" : "Twitter", "title" : "Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <span class='fake-link'>http://bit.ly/1FHNQTY</span>", "date" : "May 22, 2015", "ctaText" : "Follow Us on Twitter"}
+      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg", "type" : "Twitter", "title" : "Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a>", "date" : "May 22, 2015", "ctaText" : "Follow Us on Twitter"}
       include ../../components/secondary-feature/_default.jade
       - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg", "type" : "Mortgage Lender Sentiment Survey", "title" : "Further Easing of Mortgage Credit Standards on the Horizon.", "date" : "May 8, 2015", "ctaText" : "Watch Video"}
       include ../../components/secondary-feature/_default.jade

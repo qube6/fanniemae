@@ -1,7 +1,8 @@
 - var config = config || { "theme" : "white-bg", "className": "col-sm-4", "type" : "Survey", "title" : "Lenders Expect Benefits from the GSE 97% LTV Products and the FHA Mortgage Insurance Premium Reduction", "date" : "April 23, 2015", "ctaText" : "Read More"}
 .fm-secondary-feature.padding-30(class="#{config.className} #{config.theme}")
   .fm-type.font-serif= config.type
-  a.fm-title.color-white(href="#")!= config.title
+  .fm-title.color-white
+    a(href="#")!= config.title
   .fm-date= config.date
   a.cta(href="#")= config.ctaText
     span.icon.fm-arrow-right-circle
