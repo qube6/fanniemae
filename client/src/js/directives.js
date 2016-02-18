@@ -1,5 +1,18 @@
 angular.module('fannieMae.directives', [])
 
+.directive('fmOpenOnLoad', [
+  '$document',
+  function ($document) {
+    var link = function ($scope, element, attrs) {
+      $scope.toggleActive(attrs.fmOpenOnLoad, true);
+    };
+    
+    return {
+      restrict: 'A',
+      link: link
+    };
+}])
+
 .directive('fmCloseOnClickAway', [
   '$document',
   function ($document) {

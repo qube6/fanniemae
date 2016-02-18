@@ -159,6 +159,7 @@ fm-sticky {
   color: white;
 }
 .color-white a, a.color-white{
+  color: white;
   &:hover{
     color: $color-teal;
   }

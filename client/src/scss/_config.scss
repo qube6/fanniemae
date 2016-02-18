@@ -20,7 +20,8 @@ $header-site-list-width: 385px;
 $footer-height-lg: 70px;
 $footer-element-height: 40px;
 $footer-element-spacing: ($footer-height-lg - $footer-element-height) / 2;
-$footer-lead-width: 450px;
+$footer-lead-width-lg: 450px;
+$footer-lead-width-sm: 325px;
 
 $homepage-carousel-left-align-xs: 11%;
 $homepage-carousel-left-align: 15%;
@@ -37,5 +38,6 @@ $nav-width: 275px;
 $cta-height: 50px;
 
 $screen-md-max: $screen-lg - 1px;
+$screen-sm-max: $screen-md - 1px;
 $screen-xs-max: $screen-sm - 1px;
 

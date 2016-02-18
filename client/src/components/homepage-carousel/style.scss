@@ -46,8 +46,8 @@
     width: calc(100% - #{$homepage-carousel-left-align});
     max-height: 100%;
     overflow: hidden;
+    padding: 10px;
     @include center-y();
-    // @include text-shadow(3px 6px 170.1px rgba(0, 0, 0, 0.59));
     @media (min-width: $screen-sm){
       left: $homepage-carousel-left-align;
     }
@@ -60,11 +60,16 @@
     .icon:before{
       font-size: 75%;
     }
+    a{
+      color: white;
+      @include text-shadow(0 0 14px rgba(0, 0, 0, 0.6));
+    }
   }
   .fm-carousel-controls{
     position: absolute;
     bottom: 30px;
     left: $homepage-carousel-left-align-xs;
+    margin-left: 10px;
     z-index: 5;
     @media (min-width: $screen-sm){
       left: $homepage-carousel-left-align;

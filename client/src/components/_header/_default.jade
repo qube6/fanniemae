@@ -1,6 +1,7 @@
+-var sideMenuOpen = sideMenuOpen || false
 header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
   .navbar-header
-    button.navbar-toggle.pull-right(type="button" ng-click="toggleActive('header-mobile-menu')")
+    button.navbar-toggle.pull-right(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
       span.sr-only Toggle navigation
       span.icon-bar.one
       span.icon-bar.two
@@ -10,7 +11,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
       svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
         use(xlink:href="/media/FannieMae-Logo.svg#Logo")
   nav.navbar-offcanvas.pull-right(ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away='header-mobile-menu')
-    .menu-sites(ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu')
+    .menu-sites(class= sideMenuOpen ?  "open" : undefined fm-open-on-load= sideMenuOpen ? 'header-side-menu' : undefined ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu')
       button.toggle-sites.desktop-only(type="button" ng-click="toggleActive('header-side-menu')")
         | All Fannie Mae Sites
         span.icon(ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
