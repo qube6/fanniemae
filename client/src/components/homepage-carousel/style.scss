@@ -1,6 +1,7 @@
 
 .fm-homepage-carousel{
   margin: 0 -15px;
+  position: relative;
 }
 
 .pane-homepage-slider-slider-home{
@@ -65,34 +66,34 @@
       @include text-shadow(0 0 14px rgba(0, 0, 0, 0.6));
     }
   }
-  .fm-carousel-controls{
-    position: absolute;
-    bottom: 30px;
-    left: $homepage-carousel-left-align-xs;
-    margin-left: 10px;
+}
+.fm-carousel-controls{
+  position: absolute;
+  bottom: 30px;
+  left: $homepage-carousel-left-align-xs;
+  margin-left: 10px;
+  z-index: 5;
+  @media (min-width: $screen-sm){
+    left: $homepage-carousel-left-align;
+    bottom: 50px;
+  }
+  span {
+    height: 8px;
+    width: 8px;
+    background: white;
+    border-radius: 50%;
     z-index: 5;
-    @media (min-width: $screen-sm){
-      left: $homepage-carousel-left-align;
-      bottom: 50px;
-    }
-    span {
-      height: 8px;
-      width: 8px;
-      background: white;
-      border-radius: 50%;
-      z-index: 5;
-      display: inline-block;
-      margin: 0 5px;
-      position: relative;
-      cursor: pointer;
-      &.active{
-        height: 12px;
-        width: 12px;
-        background: transparent;
-        border: 2px solid white;
-        top: 2px;
-        cursor: default;
-      }
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+    cursor: pointer;
+    &.active{
+      height: 12px;
+      width: 12px;
+      background: transparent;
+      border: 2px solid white;
+      top: 2px;
+      cursor: default;
     }
   }
 }
