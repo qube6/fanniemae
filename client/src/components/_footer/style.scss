@@ -5,23 +5,28 @@
   .footer-lead{
     background: $color-dark-blue;
     height: 100%;
-    width: $footer-lead-width;
+    width: $footer-lead-width-lg;
     display: inline-block;
     padding: 15px 30px;
-    @media only screen and (max-width:$screen-md-max) {
+    @media only screen and (max-width:$screen-sm-max) {
       width: 100%;
     }
-    @media only screen and (max-width:$screen-md-max) {
-      padding: 15px;
+    @media only screen and (max-width:$screen-xs-max) {
+      padding: 15px 0;
+      text-align: center;
+      > *{
+        float: none !important;
+        display: inline-block;
+      }
     }
   }
   .footer-menus {
-    width: calc(100% - #{$footer-lead-width});
+    width: calc(100% - #{$footer-lead-width-lg});
     display: inline-block;
     height: 100%;
     padding: $footer-element-spacing;
     background: white;
-    @media only screen and (max-width:$screen-md-max) {
+    @media only screen and (max-width:$screen-sm-max) {
       width: 100%;
     }
     @media only screen and (max-width:$screen-xs-max) {
@@ -30,7 +35,7 @@
     .footer-menu{
       height: 100%;
       margin: 0;
-      @media only screen and (max-width:$screen-md-max) {
+      @media only screen and (max-width:$screen-sm-max) {
         margin: 0 auto;
         width: 100%;
       }
@@ -59,12 +64,20 @@
       height: 100%;
       width: auto;
     }
+    @media (max-width: $screen-xs-max){
+      padding-top: 5px;
+    }
   }
   .copyright{
     height: 100%;
     padding-left: 40px;
     border-left: 1px solid $color-light-gray-50;
-    @media only screen and (max-width:$screen-md-max) {
+    float: right;
+    @media only screen and (max-width:$screen-sm-max) {
+      float: left;
+      margin-left: 10px;
+    }
+    @media only screen and (max-width:$screen-sm-max) {
       padding-left: 20px;
     }
   }

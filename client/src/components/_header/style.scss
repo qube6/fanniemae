@@ -1,4 +1,4 @@
-.navbar{
+.navbar, .navbar .wrapper{
   height: $header-height-lg;
   background: $color-dark-blue;
 }
@@ -139,7 +139,7 @@
   margin-top: $header-element-spacing;
   width: 100%;
   @media (min-width: $screen-lg){
-    width: 215px;
+    width: 230px;
   }
   @media(min-width:$screen-lg){
     border-left: 1px solid $color-gray;
@@ -147,7 +147,7 @@
   .toggle-sites{
     color: $color-teal;
     text-transform: none;
-    font-size: 12px;
+    font-size: 14px;
     line-height: $header-element-height;
     padding: 0 60px 0 10px;
     height: $header-element-height;
@@ -187,6 +187,7 @@
   @media (min-width: $screen-lg){
     padding: 0 30px;
     min-height: $carousel-height-lg;
+    opacity: .85;
   }
   @media (min-width: $screen-xl){
     padding: 0 30px;
@@ -323,7 +324,7 @@
   -webkit-backface-visibility: hidden;
 
   &.header-search-open, .no-js & {
-    width: 300px;
+    width: 15%;
   }
 }
 

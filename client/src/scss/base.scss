@@ -2,6 +2,7 @@
 
 body{
   background: $color-body-bg;
+  @include transform(none !important);
 }
 
 .site-logo{
@@ -17,25 +18,19 @@ body{
   }
 }
 
-.fm-sticky-header,
-fm-sticky {
+[fm-sticky-header] .wrapper {
   display: block;
+  z-index: 99;
+  background: $color-body-bg;
 }
-.fm-sticky-header>fm-sticky {
-  background: #2B3E50;
-  padding-left: 20px;
-  line-height: 40px;
-  z-index: 1;
-  color: #fff;
-}
-.fm-sticky-header>fm-sticky.fixed {
+[fm-sticky-header] .wrapper.fixed {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 0;
 }
-.fm-sticky-header>fm-sticky.fixed.absolute {
+[fm-sticky-header] .wrapper.fixed.absolute {
   position: absolute;
+  z-index: 98;
 }
 
 
@@ -165,6 +160,7 @@ fm-sticky {
   color: white;
 }
 .color-white a, a.color-white{
+  color: white;
   &:hover{
     color: $color-teal;
   }

@@ -52,7 +52,8 @@
   }
 }
 
-$overhang-sm: -15px;
+$overhang-sm: -5px;
+$overhang-md: -15px;
 $overhang-lg: -50px;
 
 [class*="fm-overhang"]{
@@ -62,6 +63,9 @@ $overhang-lg: -50px;
   @media(min-width: $screen-sm){
     left: $overhang-sm;
   }
+  @media(min-width: $screen-md){
+    left: $overhang-md;
+  }
   @media(min-width: $screen-lg){
     left: $overhang-lg;
   }
@@ -70,6 +74,9 @@ $overhang-lg: -50px;
   @media(min-width: $screen-sm){
     left: auto;
     right: $overhang-sm;
+  }
+  @media(min-width: $screen-md){
+    right: $overhang-md;
   }
   @media(min-width: $screen-lg){
     right: $overhang-lg;
