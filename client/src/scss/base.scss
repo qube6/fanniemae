@@ -2,6 +2,7 @@
 
 body{
   background: $color-body-bg;
+  @include transform(none !important);
 }
 
 .site-logo{
@@ -17,10 +18,10 @@ body{
   }
 }
 
-[fm-sticky-header],
-fm-sticky {
+[fm-sticky-header] .wrapper {
   display: block;
   z-index: 99;
+  background: $color-body-bg;
 }
 [fm-sticky-header] .wrapper.fixed {
   position: fixed;

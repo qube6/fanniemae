@@ -83,7 +83,6 @@ angular.module('fannieMae.directives', [])
     };
 }])
 
-
 .directive('fmStickyHeader', ['$window', 
   function($window) {
     var stickies = [],
@@ -100,11 +99,13 @@ angular.module('fannieMae.directives', [])
 
             if (isFixed){
               currentFixed = $sticky;
-            } else {
-              if (pos <= ($window.pageYOffset + currentFixed.data('height'))){
-                currentFixed.addClass("absolute").css("top", curPos + 'px');
-              } else{
-                currentFixed.removeClass("absolute").css("top", '');
+            } else if (currentFixed != null) {
+              var currentWrapper = currentFixed.find('fm-sticky'),
+                  bottom = pos - currentFixed.data('height');
+              if (curPos >= bottom){
+                currentWrapper.addClass("absolute").css("top", bottom + 'px');
+              } else {
+                currentWrapper.removeClass("absolute").css("top", '');
               }
             }
           });
@@ -112,7 +113,7 @@ angular.module('fannieMae.directives', [])
         compile = function compile(element, attrs, transclude) {
         },
         link = function($scope, element, attrs) {
-          var pos = element[0].offsetTop;
+          var pos = findPos(element[0]).top;
           var height = element[0].clientHeight;
           element.data('pos', pos);
           element.data('height', height);
