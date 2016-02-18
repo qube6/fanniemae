@@ -1,0 +1,46 @@
+.breadcrumb-social-wrap{
+  position: relative;
+  @include clearfix;
+}
+.breadcrumb{
+  float: left;
+  @media (max-width: $screen-sm){
+    float: none;
+    text-align: center;
+  }
+  ul{
+    padding: 5px 0; //-match up with the social sharing
+  }
+  li{
+    display: inline-block;
+    font-size: 12px;
+    color:#808080;
+    position: relative;
+    margin: 0 5px;
+    line-height: 18px; //-match up with the social sharing
+    &:first-child{
+      margin-left: 0;
+    }    
+    &:after{
+      color:#000;
+      content:"\f0da";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      text-decoration: inherit;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      right: -7px;
+    }
+    &:last-child:after{
+      display: none;
+    }
+  }
+  a{
+    color: #000;
+    &:hover:after{
+      text-decoration: none;
+    }
+    
+  }
+}

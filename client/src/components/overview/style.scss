@@ -1,0 +1,80 @@
+section.overview{
+  background: #01172d;
+  color: #fff;
+  margin: 0 -15px;
+  position: relative;
+  min-height: 220px;  
+  .caption{
+    h1{
+      font-size: 52px;
+      font-family: $font-serif;
+      font-weight: bold;
+    }
+    p{
+      font-size: 26px;
+    }
+  }
+  @media (min-width: 600px) {
+  }
+  @media (min-width: 1080px) {
+  }
+  .image-wrap{
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  img.hero{
+    max-width: none;
+    max-height: none; 
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;    
+    width: 600px;
+    margin-left: -300px;
+    @media (min-width: 600px) {
+      width: 1280px;
+      margin-left: -640px
+    }
+    @media (min-width: 1080px) {
+      width: 2000px;
+      margin-left: -1000px;
+    }
+  }  
+  &.with-image{
+    margin-bottom: 25px;
+    .image-wrap{
+      min-height: 360px;
+      transition: min-height .2s;
+      @media (max-width: 600px) {
+        min-height: 300px;
+      }
+      @media (min-width: 1080px) {
+        min-height: 380px;
+      }
+    }
+    
+    .caption{
+      position: absolute;
+      width: 760px;
+      margin: 0 auto;
+      bottom: -25px;
+      left: 50%;
+      margin-left: -380px;      
+      p{
+        padding: 50px;
+        margin: 0;
+        background: #01172d;        
+      }
+      @media (max-width: 760px) {
+        width: auto;
+        margin: 0;
+        position: static;
+        padding: 30px;
+        p{
+          padding: 0;
+        }
+      }
+    }
+  }
+}
