@@ -10,11 +10,11 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
     a.site-logo.navbar-btn.pull-left(href="/" title="home")
       svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
         use(xlink:href="/media/FannieMae-Logo.svg#Logo")
-  nav.navbar-offcanvas.pull-right(ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away='header-mobile-menu')
-    .menu-sites(class= sideMenuOpen ?  "open" : undefined fm-open-on-load= sideMenuOpen ? 'header-side-menu' : undefined ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu')
+  nav.navbar-offcanvas.pull-right(ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away='header-mobile-menu' hm-Swiperight="toggleActive('header-mobile-menu', false)")
+    .menu-sites(class= sideMenuOpen ?  "open" : undefined fm-open-on-load= sideMenuOpen ? 'header-side-menu' : undefined ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu' hm-Swiperight="toggleActive('header-side-menu', false)")
       button.toggle-sites.desktop-only(type="button" ng-click="toggleActive('header-side-menu')")
         | All Fannie Mae Sites
-        span.icon(ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
+        span.icon(aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
       .sites-list
         h1.font-serif Doing Business with Fannie Mae
         ul.menu.nav
@@ -51,11 +51,11 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
       input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
       input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
       button.header-search-btn(type="button" ng-click="toggleActive('header-search')")
-        span.icon.fm-search-circle
+        span.icon.fm-search-circle(aria-hidden="true" )
     ul.main-menu
       li
         a(href='/about-us', title='') About Us
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open")
+        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
         ul.menu.nav
           li
             a(href='/about-us/what-we-do', title='') What We Do
@@ -71,7 +71,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='/about-us/giving-back') Giving Back
       li
         a(href='/research-and-insights', title='') Research & Insights
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open")
+        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
         ul.menu.nav
           li
             a(href='/research-and-insights/271', title='') Consumer Research & Analysis
@@ -87,7 +87,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='/research-and-insights/18', title='') National Housing Survey
       li
         a(href='/news', title='Description of gucrisa.') Newsroom
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open")
+        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
         ul.menu.nav
           li
             a(href='/news/press-center', title='') Press Center
@@ -99,7 +99,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='/news/fact-sheet') Factsheet
       li
         a(href='/careers', title='') Careers
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open")
+        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
         ul.menu.nav
           li
             a(href='/careers/job-search') Job Search

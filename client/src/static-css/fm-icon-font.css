@@ -26,6 +26,10 @@
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    @media screen and handheld and (max-device-width: 1200px){
+        font-weight: normal;
+    }
 }
 
 .fm-arrow-left-circle:before {

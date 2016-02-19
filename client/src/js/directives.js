@@ -107,6 +107,11 @@ angular.module('fannieMae.directives', [])
               } else {
                 currentWrapper.removeClass("absolute").css("top", '');
               }
+              //special case for header
+              if (curPos == 0 && bottom < 0){
+                currentWrapper.removeClass("absolute").css("top", '');
+                currentFixed = null;
+              }
             }
           });
         },

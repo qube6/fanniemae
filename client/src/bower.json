@@ -16,11 +16,13 @@
   ],
   "dependencies": {
     "angular-carousel": "^1.0.1",
-    "angular-touch": "^1.5.0"
+    "angular-touch": "^1.5.0",
+    "angular-hammer": "monospaced/angular-hammer#^1.2.4",
+    "svgxuse": "^1.1.7"
   },
   "overrides": {
-      "angular": {
-        "ignore" : "true"
-      }
+    "angular": {
+      "ignore": "true"
     }
+  }
 }
