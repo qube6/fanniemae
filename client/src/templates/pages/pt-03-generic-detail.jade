@@ -3,10 +3,20 @@ extends ../layouts/layout-two-column
 block title
   title PT03 Generic Detail
 
+block top-content
+  -var config={withImage : false, title: 'Board Committees', caption: 'Overview text that concisely describes the section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
+  include ../../components/overview/_default.jade
+  .breadcrumb-social-wrap.content-row
+    -var config={ parent : 'About Us', child : 'Board Committees'}
+    include ../../components/breadcrumb/_default.jade
+    include ../../components/social-share/_default.jade
+
 block content
-  .article-wrapper.white-bg
-    include ../../components/rich-text-block/_default.jade
-    include ../../components/accordian/_default.jade
+  article.article-wrapper.padding-30
+    .rich-text-block
+      p Lorem ipsum dolor sit amet, an labores fastidii usu, postea convenire conclusionemque an quo. Errem ocurreret sea id, postea scripta prompta sea id, cu senserit philosophia vel.
+      p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te. No vel iudico dolores oporteat, facilisi molestiae consequat no vim, ex urbanitas liberavisse nam. o vel iudico dolores oporteat, facilisi molestiae consequat no vim, ex urbanitas liberavisse nam.
+      include ../../components/accordian/_default.jade
 
 block rail
   include ../../components/rail-navigation/_default.jade
