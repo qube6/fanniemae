@@ -1,6 +1,10 @@
 .breadcrumb-social-wrap{
   position: relative;
   @include clearfix;
+  margin-bottom: 10px;
+  @media (max-width: $screen-sm){
+    margin-bottom:30px;
+  }
 }
 .breadcrumb{
   float: left;
