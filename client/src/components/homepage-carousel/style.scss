@@ -43,11 +43,10 @@
     line-height: 39px;
     position: relative;
     left: $homepage-carousel-left-align-xs;
-    padding-right: $homepage-carousel-left-align;
     width: calc(100% - #{$homepage-carousel-left-align});
     max-height: 100%;
     overflow: hidden;
-    padding: 10px;
+    padding: $carousel-text-shadow $homepage-carousel-left-align $carousel-text-shadow $carousel-text-shadow;
     @include center-y();
     @media (min-width: $screen-sm){
       left: $homepage-carousel-left-align;
@@ -63,7 +62,7 @@
     }
     a{
       color: white;
-      @include text-shadow(0 0 14px rgba(0, 0, 0, 0.6));
+      @include text-shadow(0 0 $carousel-text-shadow rgba(0, 0, 0, 0.6));
     }
   }
 }
@@ -71,7 +70,7 @@
   position: absolute;
   bottom: 30px;
   left: $homepage-carousel-left-align-xs;
-  margin-left: 10px;
+  margin-left: $carousel-text-shadow;
   z-index: 5;
   @media (min-width: $screen-sm){
     left: $homepage-carousel-left-align;

@@ -35,6 +35,9 @@
     .footer-menu{
       height: 100%;
       margin: 0;
+      @media (max-width: $screen-md-max){
+        width: 100%;
+      }
       @media only screen and (max-width:$screen-sm-max) {
         margin: 0 auto;
         width: 100%;
@@ -62,7 +65,7 @@
     height: 30px;
     svg{
       height: 100%;
-      width: auto;
+      width: 151px;
     }
     @media (max-width: $screen-xs-max){
       padding-top: 5px;

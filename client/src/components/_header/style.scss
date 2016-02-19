@@ -29,7 +29,7 @@
 /* Nav Container */
 .navbar-offcanvas{
   @media only screen and (max-width:$screen-md-max) {
-    height: 100vh;
+    height: calc(100vh - #{$header-height-lg});
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     left: auto;
@@ -102,8 +102,10 @@
     }
     button{
       position: absolute;
-      top: 20px;
-      right: 15px;
+      height: 70px;
+      top: 0;
+      width: 65px;
+      right: 0;
       padding: 0;
       color: $color-teal;
     }
@@ -340,7 +342,8 @@ input[type="search"].header-search-input {
   top: $header-element-spacing;
   margin: 0;
   z-index: 5;
-  padding: $header-element-height / 2;
+  padding: 0 10px;
+  border-radius: 0;
 
   -webkit-appearance: none;
   -webkit-border-radius: 0px;

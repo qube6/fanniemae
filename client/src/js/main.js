@@ -3,6 +3,9 @@ controller('MainController',
   function($scope, $timeout) {
 
     $scope.toggle = {};
+    $scope.header = {
+      'search' : ''
+    };
 
     $scope.toggleActive = function(prop, state){
       if (!$scope.toggle.hasOwnProperty(prop)) $scope.toggle[prop] = false;
