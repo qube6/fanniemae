@@ -1,0 +1,143 @@
+.fm-basic-carousel-wrap{
+  position: relative;
+  margin-bottom: 60px;
+  @include clearfix;
+  right: -50px;
+  @media (max-width: $screen-sm){
+    right: 0;
+    margin-bottom: 30px;
+  }
+}
+.fm-basic-carousel{
+  position: relative;
+  @include clearfix;
+  float: left;
+  right: -76px;
+  z-index: 10;
+  margin: 30px 0 0;
+  @media (max-width: $screen-sm){    
+    float: none;
+    right: auto;
+    width: 100%;
+    margin: 0;
+  }
+  h1{
+    position: absolute;
+    left: -15px;
+    top: 30px;
+    display: inline-block;
+    background: #000f2b;
+    color: #fff;
+    font-size: 16px;
+    font-family: $font-serif;
+    text-align: center;
+    min-width: 160px;
+    padding: 10px;
+    z-index: 15;
+    @media (max-width: $screen-sm){
+      top: 20px;
+    }
+  }
+  ul{
+    height: 420px;
+    width: 520px;
+    position: relative;
+    @media (max-width: $screen-sm){
+      width: 100%;      
+    }   
+    li{
+      background: #fff;
+      width: 520px;
+      padding: 135px 60px 70px;
+      color:#01172d;
+      font-size: 26px;
+      line-height: 1.1;
+      @media (max-width: $screen-sm){
+        width: 100%;
+        // font-size: 20px;
+        padding: 100px 30px 70px
+      }
+    }
+  }
+  .fm-carousel-controls{
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    z-index: 5;
+    @media (max-width: $screen-sm){
+      left: 30px;
+    }    
+    span {
+      height: 8px;
+      width: 8px;
+      background: #007697;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+      position: relative;
+      cursor: pointer;
+      &.active{
+        height: 12px;
+        width: 12px;
+        background: transparent;
+        border: 2px solid #007697;
+        top: 2px;
+        cursor: default;
+      }
+    }
+  }
+}
+.fm-basic-carousel-images {
+  float: left;
+  z-index: 5;
+  img{
+    display: block;
+  }
+  @media (max-width: $screen-sm){
+    float: none;
+  }
+}
+
+.fm-basic-carousel-wrap.theme-2{
+  right: 0;
+  .fm-basic-carousel{
+    h1{
+      left: auto;
+      right: -15px;
+      background: #007697;
+    }
+    li{
+      color:#fff;
+      background: #000f2b;
+    }
+    .fm-carousel-controls{
+      span{
+        background: #fff;
+        &.active{
+          border-color:#fff;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+.fm-basic-carousel-wrap.theme-3{
+  right: -146px;
+  @media (max-width: $screen-sm){
+    right: auto;
+  }
+  .fm-basic-carousel{
+    right: auto;
+    left: -76px;
+    @media (max-width: $screen-sm){    
+      left: auto;
+    }
+    .fm-carousel-controls{
+
+    }
+  }
+  .fm-basic-carousel-images {
+
+  }
+}
