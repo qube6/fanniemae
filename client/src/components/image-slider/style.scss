@@ -76,7 +76,7 @@
       @media (max-width: $screen-sm){
         width: 100%;
         // font-size: 20px;
-        padding: 100px 30px 70px
+        padding: 100px 40px 70px
       }
     }
   }
@@ -132,7 +132,40 @@
     margin: 0 auto;
   }
 }
-
+.rn-carousel-control{
+  @extend .fade-in;
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.8rem;
+  @media (max-width: $screen-sm){
+    font-size:1.4rem;
+  }
+  &.rn-carousel-control-prev{
+    @media (max-width: $screen-sm){
+      left:.25em;
+    }
+    &:before{      
+      content: '\e900';
+    }
+  }
+  &.rn-carousel-control-next{
+    @media (max-width: $screen-sm){
+      right:.25em;
+    }
+    &:before{
+      content: '\e902';
+    }
+  }
+}
 .fm-basic-carousel-wrap.theme-2{
   right: 0;
   .fm-basic-carousel{
@@ -153,6 +186,9 @@
           background: transparent;
         }
       }
+    }
+    .rn-carousel-control{
+      color:#fff;
     }
   }
 }
