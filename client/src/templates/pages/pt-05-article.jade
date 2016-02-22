@@ -3,6 +3,14 @@ extends ../layouts/layout-two-column
 block title
   title PT05 Article
 
+block top-content
+  -var config={withImage : false, title: 'Economic & Housing Outlook', caption: false};
+  include ../../components/overview/_default.jade
+  include ../../components/top-navigation/_default.jade
+  .breadcrumb-social-wrap
+    include ../../components/breadcrumb/_default.jade
+    include ../../components/social-share/_default.jade
+
 block content
   .article-wrapper.white-bg
     include ../../components/article-header/_default.jade
