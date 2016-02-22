@@ -5,6 +5,12 @@
     color: $color-dark-blue;
     font-size: 16px;
     display: inline-block;
+    font-weight: bold;
+    width: 100%;
+    position: relative;
+    padding: 15px 0;
+    margin: 0;
+    border-bottom: 2px solid $color-teal;
   }
   button.accordian-toggle-all{
     display: inline;
@@ -12,26 +18,50 @@
     outline: none;
     background: transparent;
     cursor: pointer;
+    position: absolute;
+    right: 0;
+    line-height: 100%;
+    padding-right: 40px;
     span.icon{
-      padding-left: 10px;
+      font-size: 30px;
+      position: absolute;
+      right: 0;
+      top: -5px;
+    }
+  }
+  .rich-text-block{
+    p{
+      font-size: 14px;
+      line-height: 25px;
     }
   }
 }
 .accordian-list{
   width: 100%;
   display: block;
+  li{
+    border-bottom: 1px solid rgba(0,0,0,.3);
+  }
 }
 .accordian-toggle{
   position: relative;
   width: 100%;
-  
-  &:before{
+  font-size: 16px;
+  padding: 10px 0;
+  display: block;
+  .icon{
     position: absolute;
+    font-size: 30px;
+    top: 5px;
     right: 0;
-    font-size: 20px;
   }
-
-  h2{
-    font-size: 16px;
+}
+.accordian-content{
+  max-height: 0;
+  overflow: hidden;
+  @include transition(max-height 0.5s cubic-bezier(0, 1.05, 0, 1));
+  .open &{
+    max-height: 2000px;
+    
   }
 }

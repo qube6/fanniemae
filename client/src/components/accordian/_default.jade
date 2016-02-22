@@ -1,7 +1,7 @@
 section.accordian
   h1 Board Committees
-  button.accordian-toggle-all.pull-right(type="button" ng-click="toggleActive('accordian-all')") Expand All
-    span.icon(aria-hidden="true" ng-class=" isActive('accordian-all') ? 'fm-minus-circle' : 'fm-plus-circle' ")
+    button.accordian-toggle-all(type="button" ng-click="toggleActive('accordian-all')") Expand All
+      span.icon(aria-hidden="true" ng-class=" isActive('accordian-all') ? 'fm-minus-circle' : 'fm-plus-circle' ")
   ul.accordian-list
     li.accordian-list-item
       a.accordian-toggle(href="" fm-toggle-class fm-toggle-parent="open") Committee Composition
