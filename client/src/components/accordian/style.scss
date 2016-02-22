@@ -1,6 +1,6 @@
-.fm-accordian{
+.fm-accordion{
   width: 100%;
-  .fm-accordian-title{
+  .fm-accordion-title{
     font-family: $font-serif;
     color: $color-dark-blue;
     font-size: 16px;
@@ -12,7 +12,7 @@
     margin: 0;
     border-bottom: 2px solid $color-teal;
   }
-  button.fm-accordian-toggle-all{
+  button.fm-accordion-toggle-all{
     display: inline;
     border: none;
     outline: none;
@@ -36,14 +36,15 @@
     }
   }
 }
-fm-accordian{
+fm-accordion{
   width: 100%;
   display: block;
 }
 fm-accordion-item{
+  display: block;
   border-bottom: 1px solid rgba(0,0,0,.3);
 }
-.fm-accordian-toggle{
+.fm-accordion-toggle{
   position: relative;
   width: 100%;
   font-size: 16px;
@@ -56,7 +57,7 @@ fm-accordion-item{
     right: 0;
   }
 }
-.fm-accordian-content{
+.fm-accordion-content{
   max-height: 0;
   overflow: hidden;
   @include transition(max-height 0.5s cubic-bezier(0, 1.05, 0, 1));

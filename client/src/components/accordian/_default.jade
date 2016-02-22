@@ -1,182 +1,183 @@
-section.fm-accordian()
-  h1.fm-accordian-title Board Committees
-    button.fm-accordian-toggle-all(type="button" ng-click="toggleActive('accordian-all')") Expand All
-      span.icon(aria-hidden="true" ng-class=" isActive('accordian-all') ? 'fm-minus-circle' : 'fm-plus-circle' ")
-  fm-accordian.fm-accordian-list(close-others="true")
-    fm-accordion-item.fm-accordian-list-item(heading="Committee Composition")
-      a.fm-accordian-toggle(href="") Committee Composition
-        span.icon.fm-plus(type="button")
-      .fm-accordian-content
-        .rich-text-block
-          p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
-    fm-accordion-item.fm-accordian-list-item
-      a.fm-accordian-toggle(href="") The Executive Committee
-        span.icon.fm-plus(type="button")
-      .fm-accordian-content
-        .rich-text-block
-          p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
-          h2 Chair
-          -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
-          include ../bio-teaser/_default.jade
-          br
-          h2 Members
-          -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
-          include ../bio-teaser/_default.jade
-          -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
-          include ../bio-teaser/_default.jade
-          -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
-    fm-accordion-item.fm-accordian-list-item
-      a.fm-accordian-toggle(href="") CSS Test
-        span.icon.fm-plus(type="button")
-      .fm-accordian-content
-        .rich-text-block
-          h1 CSS Basic Elements
+fm-accordion.fm-accordion
+  h1.fm-accordion-title Board Committees
+    button.fm-accordion-toggle-all(type="button" ng-click="setAll()")
+      div(ng-show="allOpen") Close All
+      div(ng-show="!allOpen") Expand All
+      span.icon(ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' ")
+  fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
+    a.fm-accordion-toggle(href="") Committee Composition
+      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
+    .fm-accordion-content
+      .rich-text-block
+        p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
+  fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
+    a.fm-accordion-toggle(href="") The Executive Committee
+      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
+    .fm-accordion-content
+      .rich-text-block
+        p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
+        h2 Chair
+        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        include ../bio-teaser/_default.jade
+        br
+        h2 Members
+        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        include ../bio-teaser/_default.jade
+        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        include ../bio-teaser/_default.jade
+        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+  fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
+    a.fm-accordion-toggle(href="") CSS Test
+      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
+    .fm-accordion-content
+      .rich-text-block
+        h1 CSS Basic Elements
+        p
+          | The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.
+        hr
+        h1#headings Headings
+        h1 Heading 1
+        h2 Heading 2
+        h3 Heading 3
+        h4 Heading 4
+        h5 Heading 5
+        h6 Heading 6
+        small
+          a(href='#wrapper') [top]
+        hr
+        h1 Paragraph
+        p
+          | Lorem ipsum dolor sit amet, 
+          a(href='#', title='test link') test link
+          |  adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+        p
+          | Lorem ipsum dolor sit amet, 
+          em emphasis
+          |  consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+        small
+          a(href='#wrapper') [top]
+        hr
+        h1#list_types List Types
+        h3 Definition List
+        dl
+          dt Definition List Title
+          dd This is a definition list division.
+        h3 Ordered List
+        ol
+          li List Item 1
+          li List Item 2
+          li List Item 3
+        h3 Unordered List
+        ul
+          li List Item 1
+          li List Item 2
+          li List Item 3
+        small
+          a(href='#wrapper') [top]
+        hr
+        h1#form_elements Fieldsets, Legends, and Form Elements
+        fieldset
+          legend Legend
           p
-            | The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.
-          hr
-          h1#headings Headings
-          h1 Heading 1
-          h2 Heading 2
-          h3 Heading 3
-          h4 Heading 4
-          h5 Heading 5
-          h6 Heading 6
-          small
-            a(href='#wrapper') [top]
-          hr
-          h1 Paragraph
-          p
-            | Lorem ipsum dolor sit amet, 
-            a(href='#', title='test link') test link
-            |  adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-          p
-            | Lorem ipsum dolor sit amet, 
-            em emphasis
-            |  consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-          small
-            a(href='#wrapper') [top]
-          hr
-          h1#list_types List Types
-          h3 Definition List
-          dl
-            dt Definition List Title
-            dd This is a definition list division.
-          h3 Ordered List
-          ol
-            li List Item 1
-            li List Item 2
-            li List Item 3
-          h3 Unordered List
-          ul
-            li List Item 1
-            li List Item 2
-            li List Item 3
-          small
-            a(href='#wrapper') [top]
-          hr
-          h1#form_elements Fieldsets, Legends, and Form Elements
-          fieldset
-            legend Legend
+            | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.
+          form
+            h2 Form Element
             p
-              | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.
-            form
-              h2 Form Element
-              p
-                | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.
-              p
-                label(for='text_field') Text Field:
-                br
-                input#text_field(type='text')
-              p
-                label(for='text_area') Text Area:
-                br
-                textarea#text_area
-              p
-                label(for='select_element') Select Element:
-                br
-                select(name='select_element')
-                  optgroup(label='Option Group 1')
-                    option(value='1') Option 1
-                    option(value='2') Option 2
-                    option(value='3') Option 3
-                  optgroup(label='Option Group 2')
-                    option(value='1') Option 1
-                    option(value='2') Option 2
-                    option(value='3') Option 3
-              p
-                label(for='radio_buttons') Radio Buttons:
-                br
-                input.radio(type='radio', name='radio_button', value='radio_1')
-                |  Radio 1
-                br
-                input.radio(type='radio', name='radio_button', value='radio_2')
-                |  Radio 2
-                br
-                input.radio(type='radio', name='radio_button', value='radio_3')
-                |  Radio 3
-                br
-              p
-                label(for='checkboxes') Checkboxes:
-                br
-                input.checkbox(type='checkbox', name='checkboxes', value='check_1')
-                |  Radio 1
-                br
-                input.checkbox(type='checkbox', name='checkboxes', value='check_2')
-                |  Radio 2
-                br
-                input.checkbox(type='checkbox', name='checkboxes', value='check_3')
-                |  Radio 3
-                br
-              p
-                label(for='password') Password:
-                br
-                input.password(type='password', name='password')
-              p
-                label(for='file') File Input:
-                br
-                input.file(type='file', name='file')
-              p
-                input.button(type='reset', value='Clear')
-                input.button(type='submit', value='Submit')
-          small
-            a(href='#wrapper') [top]
-          hr
-          h1#tables Tables
-          table(cellspacing='0', cellpadding='0')
-            tr
-              th Table Header 1
-              th Table Header 2
-              th Table Header 3
-            tr
-              td Division 1
-              td Division 2
-              td Division 3
-            tr.even
-              td Division 1
-              td Division 2
-              td Division 3
-            tr
-              td Division 1
-              td Division 2
-              td Division 3
-          small
-            a(href='#wrapper') [top]
-          hr
-          h1#misc Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.
-          p
-            | Lorem 
-            sup superscript
-            |  dolor 
-            sub subscript
-            |  amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. 
-            cite cite
-            | . Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. 
-            acronym(title='National Basketball Association') NBA
-            |  Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  
-            abbr(title='Avenue') AVE
-          blockquote
-            | "This stylesheet is going to help so freaking much." 
-            br
-            | -Blockquote
-          small
-            a(href='#wrapper') [top]
+              | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.
+            p
+              label(for='text_field') Text Field:
+              br
+              input#text_field(type='text')
+            p
+              label(for='text_area') Text Area:
+              br
+              textarea#text_area
+            p
+              label(for='select_element') Select Element:
+              br
+              select(name='select_element')
+                optgroup(label='Option Group 1')
+                  option(value='1') Option 1
+                  option(value='2') Option 2
+                  option(value='3') Option 3
+                optgroup(label='Option Group 2')
+                  option(value='1') Option 1
+                  option(value='2') Option 2
+                  option(value='3') Option 3
+            p
+              label(for='radio_buttons') Radio Buttons:
+              br
+              input.radio(type='radio', name='radio_button', value='radio_1')
+              |  Radio 1
+              br
+              input.radio(type='radio', name='radio_button', value='radio_2')
+              |  Radio 2
+              br
+              input.radio(type='radio', name='radio_button', value='radio_3')
+              |  Radio 3
+              br
+            p
+              label(for='checkboxes') Checkboxes:
+              br
+              input.checkbox(type='checkbox', name='checkboxes', value='check_1')
+              |  Radio 1
+              br
+              input.checkbox(type='checkbox', name='checkboxes', value='check_2')
+              |  Radio 2
+              br
+              input.checkbox(type='checkbox', name='checkboxes', value='check_3')
+              |  Radio 3
+              br
+            p
+              label(for='password') Password:
+              br
+              input.password(type='password', name='password')
+            p
+              label(for='file') File Input:
+              br
+              input.file(type='file', name='file')
+            p
+              input.button(type='reset', value='Clear')
+              input.button(type='submit', value='Submit')
+        small
+          a(href='#wrapper') [top]
+        hr
+        h1#tables Tables
+        table(cellspacing='0', cellpadding='0')
+          tr
+            th Table Header 1
+            th Table Header 2
+            th Table Header 3
+          tr
+            td Division 1
+            td Division 2
+            td Division 3
+          tr.even
+            td Division 1
+            td Division 2
+            td Division 3
+          tr
+            td Division 1
+            td Division 2
+            td Division 3
+        small
+          a(href='#wrapper') [top]
+        hr
+        h1#misc Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.
+        p
+          | Lorem 
+          sup superscript
+          |  dolor 
+          sub subscript
+          |  amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. 
+          cite cite
+          | . Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. 
+          acronym(title='National Basketball Association') NBA
+          |  Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  
+          abbr(title='Avenue') AVE
+        blockquote
+          | "This stylesheet is going to help so freaking much." 
+          br
+          | -Blockquote
+        small
+          a(href='#wrapper') [top]
