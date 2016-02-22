@@ -78,6 +78,7 @@ angular.module('fannieMae.directives', [])
     };
     
     return {
+      scope: {},
       restrict: 'A',
       link: link
     };

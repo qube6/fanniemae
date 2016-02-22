@@ -1,5 +1,5 @@
-section.fm-basic-carousel-wrap
-  .fm-basic-carousel(fm-carousel)
+section.fm-basic-carousel-wrap(fm-carousel)
+  .fm-basic-carousel
     h1 History 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
@@ -15,8 +15,8 @@ section.fm-basic-carousel-wrap
   .fm-basic-carousel-images  
     img.fade-in(src="http://placehold.it/650x480/")
 
-section.fm-basic-carousel-wrap.theme-2
-  .fm-basic-carousel(fm-carousel)
+section.fm-basic-carousel-wrap.theme-2(fm-carousel)
+  .fm-basic-carousel
     h1 By The Numbers 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
@@ -32,11 +32,11 @@ section.fm-basic-carousel-wrap.theme-2
   .fm-basic-carousel-images  
     img.fade-in(src="http://placehold.it/650x480/")
 
-section.fm-basic-carousel-wrap.theme-3
+section.fm-basic-carousel-wrap.theme-3(fm-carousel)
   .fm-basic-carousel-images  
     img.fade-in(src="http://placehold.it/650x480/")    
   
-  .fm-basic-carousel(fm-carousel)
+  .fm-basic-carousel
     h1 Innovations 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")

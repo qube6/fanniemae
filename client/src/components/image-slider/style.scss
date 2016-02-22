@@ -3,8 +3,10 @@
   margin-bottom: 60px;
   @include clearfix;
   right: -50px;
-  @media (max-width: $screen-sm){
+  @media (max-width: 1400px){
     right: 0;
+  }
+  @media (max-width: $screen-sm){
     margin-bottom: 30px;
   }
 }
@@ -15,6 +17,13 @@
   right: -76px;
   z-index: 10;
   margin: 30px 0 0;
+  @media (max-width: 1400px){
+    right: -30px;
+  }
+  @media (max-width: 1199px){
+    right: 0;
+    margin: 0;
+  }
   @media (max-width: $screen-sm){    
     float: none;
     right: auto;
@@ -42,16 +51,28 @@
     height: 420px;
     width: 520px;
     position: relative;
+    @media (max-width: 1400px){
+      width: 470px;
+    }
+    @media (max-width: 1199px){
+      width: 440px;
+    }
+    @media (max-width: 970px){
+      width: 320px;
+    }
     @media (max-width: $screen-sm){
       width: 100%;      
     }   
     li{
       background: #fff;
-      width: 520px;
+      width: 100%;
       padding: 135px 60px 70px;
       color:#01172d;
       font-size: 26px;
       line-height: 1.1;
+      @media (max-width: 970px){
+        font-size: 20px;
+      }
       @media (max-width: $screen-sm){
         width: 100%;
         // font-size: 20px;
@@ -93,8 +114,18 @@
   img{
     display: block;
   }
+  @media (max-width: 1199px){
+    width: 500px;
+    margin: 30px 0;
+  }
+  @media (max-width: 850px){
+    width: 400px;
+  }
   @media (max-width: $screen-sm){
+    width: 650px;
+    max-width: 100%;
     float: none;
+    margin: 0 auto;
   }
 }
 
@@ -124,12 +155,24 @@
 
 .fm-basic-carousel-wrap.theme-3{
   right: -146px;
+  @media (max-width: 1400px){
+    right: -30px;
+  }
+  @media (max-width: 1199px){
+    right: 0;
+  }
   @media (max-width: $screen-sm){
     right: auto;
   }
   .fm-basic-carousel{
     right: auto;
     left: -76px;
+    @media (max-width: 1400px){
+      left: -30px;
+    }
+    @media (max-width: 1199px){
+      left: 0;
+    }
     @media (max-width: $screen-sm){    
       left: auto;
     }
