@@ -10,13 +10,16 @@
         img.fade-in.hero(src="http://placehold.it/600x300/aaa/fff" alt="") 
     .caption
       h1 #{config.title}
-      p #{config.caption}
-
+      - if(config.caption) {
+        p #{config.caption}
+      - }
 - } else {
   section.overview
     .container
       .col.md-12
         .caption
           h1 #{config.title}
-          p #{config.caption}
+          - if(config.caption) {
+            p #{config.caption}
+          - }
 - }
