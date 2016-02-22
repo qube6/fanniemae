@@ -1,7 +1,7 @@
 section.overview{
   background: #01172d;
   color: #fff;
-  margin: 0 -15px;
+  margin: 0 -15px 50px;
   position: relative;
   min-height: 220px;  
   .caption{
@@ -42,7 +42,7 @@ section.overview{
     }
   }  
   &.with-image{
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
     .image-wrap{
       min-height: 360px;
       transition: min-height .2s;
