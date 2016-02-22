@@ -3,7 +3,7 @@ section.fm-basic-carousel-wrap
     h1 History 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
-    ul(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex")
+    ul(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex" rn-carousel-controls)
       li.fm-carousel-item
         p Fannie Mae was born out of the Great Depression in 1938 to bolster the nation’s housing system. Since then, we’ve played a critical role in the nation’s housing finance system.
 
@@ -20,7 +20,7 @@ section.fm-basic-carousel-wrap.theme-2
     h1 By The Numbers 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
-    ul(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex")
+    ul(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex" rn-carousel-controls)
       li.fm-carousel-item
         p We Provide Stability, Liquidity and  Affordability
 
@@ -40,7 +40,7 @@ section.fm-basic-carousel-wrap.theme-3
     h1 Innovations 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
-    ul(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex")
+    ul(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex" rn-carousel-controls)
       li.fm-carousel-item
         p We are working to establish and implement industry standards, develop better tools to price and manage credit risk, and build new infrastructure.
 
