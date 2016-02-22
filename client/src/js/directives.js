@@ -78,7 +78,28 @@ angular.module('fannieMae.directives', [])
     };
     
     return {
-      scope: {},
+      scope: true,
+      restrict: 'A',
+      link: link
+    };
+}])
+.directive('fmCarouselImages', [
+  function () {
+    var link = function ($scope, element, attrs) {
+      $scope.slides = element.find('img');
+    };
+    $scope.$watch('carouselIndex', updateActiveSlide);
+
+    $scope.updateActiveSlide = function(){
+      $scope.slides.map(function(obj){ 
+         obj.isActive = false;
+         return rObj;
+      });
+      $scope.slides[$scope.carouselIndex].isActive = true;
+    };
+
+    return {
+      scope: true,
       restrict: 'A',
       link: link
     };
