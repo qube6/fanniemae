@@ -1,5 +1,10 @@
 .fm-accordion{
-  width: 100%;
+  margin: 0 -15px;
+  width: calc(100% + 30px);
+  @media(min-width: $screen-sm){
+    width: 100%;
+    margin: 0;
+  }
   .fm-accordion-title{
     font-family: $font-serif;
     color: $color-dark-blue;
@@ -23,7 +28,6 @@
     line-height: 100%;
     padding-right: 40px;
     span.icon{
-      font-size: 30px;
       position: absolute;
       right: 0;
       top: -5px;
@@ -33,6 +37,12 @@
     p{
       font-size: 14px;
       line-height: 25px;
+    }
+  }
+  span.icon{
+    font-size: 24px;
+    @media (min-width: $screen-sm) {
+      font-size: 30px;
     }
   }
 }
@@ -52,7 +62,6 @@ fm-accordion-item{
   display: block;
   .icon{
     position: absolute;
-    font-size: 30px;
     top: 5px;
     right: 0;
   }

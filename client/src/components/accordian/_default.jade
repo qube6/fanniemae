@@ -5,29 +5,29 @@ fm-accordion.fm-accordion
       div(ng-show="!allOpen") Expand All
       span.icon(ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' ")
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-accordion-toggle(href="") Committee Composition
+    a.fm-accordion-toggle(href="" ng-click="toggleItem()") Committee Composition
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-accordion-toggle(href="") The Executive Committee
+    a.fm-accordion-toggle(href="" ng-click="toggleItem()") The Executive Committee
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
         h2 Chair
-        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae Lorem ipsum dolor sit, Fannie Mae Lorem ipsum dolor sit."}
         include ../bio-teaser/_default.jade
         br
         h2 Members
-        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
         include ../bio-teaser/_default.jade
-        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
         include ../bio-teaser/_default.jade
-        -var config = { name: "David Benson", title: "Executive Vice President Chief<br>Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-accordion-toggle(href="") CSS Test
+    a.fm-accordion-toggle(href="" ng-click="toggleItem()") CSS Test
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
     .fm-accordion-content
       .rich-text-block

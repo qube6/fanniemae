@@ -33,7 +33,7 @@ angular.module('fannieMae.directives', [])
       $scope.open = false;
       $scope.ignoreBroadcast = false;
 
-      element.on('click', function(){
+      $scope.toggleItem = function(){
         $timeout(function(){
           $scope.open = !$scope.open;
           if($scope.open){
@@ -41,7 +41,7 @@ angular.module('fannieMae.directives', [])
             $scope.$parent.$broadcast('fmAccordionItemOpen');
           }
         }, 0);
-      });
+      };
 
       $scope.$on('fmAccordionItemOpen', function(){
         if(controller.closeOthers && !$scope.ignoreBroadcast){
