@@ -1,5 +1,5 @@
-section.fm-basic-carousel-wrap
-  .fm-basic-carousel(fm-carousel)
+section.fm-basic-carousel-wrap(fm-carousel)
+  .fm-basic-carousel
     h1 History 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
@@ -12,11 +12,13 @@ section.fm-basic-carousel-wrap
       li.fm-carousel-item
         p Aliquam tempus scelerisque felis, in dapibus quam commodo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie mi et mi eleifend. 
 
-  .fm-basic-carousel-images  
-    img.fade-in(src="http://placehold.it/650x480/")
+  .fm-basic-carousel-images(fm-carousel-images)  
+    img.fade-in(src="http://placehold.it/650x480/aaa" ng-class="{active: isActiveSlide(0)}")
+    img.fade-in(src="http://placehold.it/650x480/ccc" ng-class="{active: isActiveSlide(1)}")
+    img.fade-in(src="http://placehold.it/650x480/111" ng-class="{active: isActiveSlide(2)}")
 
-section.fm-basic-carousel-wrap.theme-2
-  .fm-basic-carousel(fm-carousel)
+section.fm-basic-carousel-wrap.theme-2(fm-carousel)
+  .fm-basic-carousel
     h1 By The Numbers 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
@@ -29,14 +31,18 @@ section.fm-basic-carousel-wrap.theme-2
       li.fm-carousel-item
         p Aliquam tempus scelerisque felis, in dapibus quam commodo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie mi et mi eleifend. 
 
-  .fm-basic-carousel-images  
-    img.fade-in(src="http://placehold.it/650x480/")
+  .fm-basic-carousel-images(fm-carousel-images)  
+    img.fade-in(src="http://placehold.it/650x480/aaa" ng-class="{active: isActiveSlide(0)}")
+    img.fade-in(src="http://placehold.it/650x480/f00" ng-class="{active: isActiveSlide(1)}")
+    img.fade-in(src="http://placehold.it/650x480/ccc" ng-class="{active: isActiveSlide(2)}")
 
-section.fm-basic-carousel-wrap.theme-3
-  .fm-basic-carousel-images  
-    img.fade-in(src="http://placehold.it/650x480/")    
+section.fm-basic-carousel-wrap.theme-3(fm-carousel)
+  .fm-basic-carousel-images(fm-carousel-images)  
+    img.fade-in(src="http://placehold.it/650x480/ff0" ng-class="{active: isActiveSlide(0)}")
+    img.fade-in(src="http://placehold.it/650x480/bbb" ng-class="{active: isActiveSlide(1)}")
+    img.fade-in(src="http://placehold.it/650x480/00f" ng-class="{active: isActiveSlide(2)}")
   
-  .fm-basic-carousel(fm-carousel)
+  .fm-basic-carousel
     h1 Innovations 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
       span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
