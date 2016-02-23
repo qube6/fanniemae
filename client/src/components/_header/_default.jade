@@ -17,18 +17,20 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
         span.icon(aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
       .sites-list
         h1.font-serif Doing Business with Fannie Mae
-        ul.menu.nav
-          li
-            h2 Lenders
-            button.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open")
+        ul.menu.nav(fm-accordion)
+          li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+            a(ng-click="toggleItem()")
+              h2 Lenders
+              button.icon.fm-plus(type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
             ul.submenu
               li
                 a(href='https://www.fanniemae.com/singlefamily/index', target='_blank') Single Family
               li
                 a(href='https://www.fanniemae.com/multifamily/index', target='_blank') Multi Family
-          li
-            h2 Servicers
-            button.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open")
+          li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+            a(ng-click="toggleItem()")
+              h2 Servicers
+              button.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
             ul.submenu
               li
                 a(href='https://www.fanniemae.com/singlefamily/servicing', target='_blank') Single Family
@@ -52,10 +54,10 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
       input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
       button.header-search-btn(type="button" ng-click="toggleActive('header-search')")
         span.icon.fm-search-circle(aria-hidden="true" )
-    ul.main-menu
-      li
+    ul.main-menu(fm-accordion)
+      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
         a(href='/about-us', title='') About Us
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
+        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
         ul.menu.nav
           li
             a(href='/about-us/what-we-do', title='') What We Do
@@ -69,9 +71,9 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='/about-us/investor-relations', title='') Investor Relations
           li
             a(href='/about-us/giving-back') Giving Back
-      li
+      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
         a(href='/research-and-insights', title='') Research & Insights
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
+        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
         ul.menu.nav
           li
             a(href='/research-and-insights/271', title='') Consumer Research & Analysis
@@ -85,9 +87,9 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='/research-and-insights/17', title='') Mortgage Lender Sentiment Survey
           li
             a(href='/research-and-insights/18', title='') National Housing Survey
-      li
+      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
         a(href='/news', title='Description of gucrisa.') Newsroom
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
+        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
         ul.menu.nav
           li
             a(href='/news/press-center', title='') Press Center
@@ -97,9 +99,9 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='/news/industry-news', title='') Industry News
           li
             a(href='/news/fact-sheet') Factsheet
-      li
+      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
         a(href='/careers', title='') Careers
-        button.no-desktop.icon.fm-plus(type="button" fm-toggle-class="fm-plus fm-minus" fm-toggle-parent="open" aria-hidden="true" )
+        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
         ul.menu.nav
           li
             a(href='/careers/job-search') Job Search

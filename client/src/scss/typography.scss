@@ -4,16 +4,6 @@ body{
   color: black;
 }
 
-p {
-  margin: 0 0 20px;
-  color:  black;
-  font-size: 14px;
-  line-height: 24px;
-  @media (min-width: $screen-md){
-    font-size: 18px;
-    line-height: 32px;
-  }
-}
 small {
   font-size: 85%;
 }
@@ -29,6 +19,7 @@ cite {
 a {
   color: $color-teal;
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   color: $color-dark-blue;

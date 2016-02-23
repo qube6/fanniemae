@@ -32,25 +32,6 @@ angular.module('fannieMae.directives', [])
     };
 }])
 
-.directive('fmToggleClass', [
-  '$document',
-  function ($document) {
-    var link = function ($scope, element, attrs) {
-      var cls = attrs.fmToggleClass || 'open';
-
-      element.on('click', function($event){
-        element.toggleClass(cls);
-        if (attrs.fmToggleParent){
-          element.parent().toggleClass(attrs.fmToggleParent)
-        }
-      });
-    };
-    
-    return {
-      restrict: 'A',
-      link: link
-    };
-}])
 
 .directive('fmCarousel', [
   function () {
