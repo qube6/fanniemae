@@ -1,6 +1,4 @@
-angular.module('fannieMae.directives', [])
-
-.directive('fmAccordion', [
+directiveModule.directive('fmAccordion', [
   '$timeout',
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {

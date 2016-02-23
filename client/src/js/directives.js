@@ -1,4 +1,4 @@
-angular.module('fannieMae.directives', [])
+var directiveModule = angular.module('fannieMae.directives', [])
 
 .directive('fmOpenOnLoad', [
   '$document',
