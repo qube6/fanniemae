@@ -88,6 +88,19 @@ body{
   }
 }
 
+.fm-subtitle{
+  font-family: $font-serif;
+  color: $color-dark-blue;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+  padding: 5px 0;
+  margin: 0;
+  border-bottom: 2px solid $color-teal;
+}
+
 .fm-video-player{
   video, video source{
     z-index: 0 !important;
@@ -169,7 +182,7 @@ body{
 }
 .white-bg{
   background: white;
-  @extend .color-dark;
+  color: $color-dark-blue;
 }
 
 .color-white{

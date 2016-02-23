@@ -319,7 +319,7 @@
   -webkit-backface-visibility: hidden;
 
   &.header-search-open, .no-js & {
-    width: 15%;
+    width: 18%;
   }
 }
 
@@ -377,7 +377,7 @@ input[type="submit"].header-search-submit{
   }
 }
 
-.navbar-offcanvas button.header-search-btn{
+button[type="button"].header-search-btn{
   z-index: 5;
   color: $color-teal;
   background: $color-dark-blue;
@@ -385,6 +385,7 @@ input[type="submit"].header-search-submit{
     color: white;
   }
   span.icon{
+    font-size: 30px;
     position: absolute;
     @include center-xy();
   }

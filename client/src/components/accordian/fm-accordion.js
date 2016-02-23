@@ -15,7 +15,7 @@ angular.module('fannieMae.directives', [])
     };
     
     return {
-      restrict: 'E',
+      restrict: 'EA',
       link: link,
       scope: true,
       bindToController: {
@@ -26,7 +26,9 @@ angular.module('fannieMae.directives', [])
         this.closeOthers = this.closeOthers || true;
       }
     };
-}]).directive('fmAccordionItem', [
+}])
+
+.directive('fmAccordionItem', [
   '$timeout',
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
@@ -61,8 +63,8 @@ angular.module('fannieMae.directives', [])
     
     return {
       require: '^fmAccordion',
-      restrict: 'E',
+      restrict: 'EA',
       link: link,
       scope: true
     };
-}])
+}]);
