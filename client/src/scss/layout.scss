@@ -17,6 +17,10 @@
   }
 }
 
+.rail-row{
+  margin: 20px 0;
+}
+
 @media (min-width: $screen-sm) {
   .equal-height-sm-row{
     display: table;
