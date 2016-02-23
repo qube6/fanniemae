@@ -87,10 +87,11 @@ angular.module('fannieMae.directives', [])
   function ($window) {
     var link = function ($scope, $element, attrs) {
       var $nav = $element,
-          $btn = $nav.find('button')
-          $links = $nav.find('li'),
-          $visibleLinks = [];
-          $hiddenLinks = [];
+          $btn = $nav.find('button'),
+          $links = $nav.find('li');
+      
+      $scope.visibleLinks = [];
+      $scope.hiddenLinks = [];
 
       $scope.updateNav = function(){
         var availableSpace = $btn.hasClass('hidden') ? $nav[0].clientWidth : $nav[0].clientWidth - $btn[0].clientWidth - 30;
