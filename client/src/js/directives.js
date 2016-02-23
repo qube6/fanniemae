@@ -83,28 +83,33 @@ angular.module('fannieMae.directives', [])
       link: link
     };
 }])
-.directive('fmCarouselImages', [
-  function () {
-    var link = function ($scope, element, attrs) {
-      $scope.slides = element.find('img');
-    };
-    $scope.$watch('carouselIndex', updateActiveSlide);
+.directive('greedyNav', ['$window',
+  function ($window) {
+    var link = function ($scope, $element, attrs) {
+      var $nav = $element,
+          $btn = $nav.find('button'),
+          $links = $nav.find('li');
+      
+      $scope.visibleLinks = [];
+      $scope.hiddenLinks = [];
 
-    $scope.updateActiveSlide = function(){
-      $scope.slides.map(function(obj){ 
-         obj.isActive = false;
-         return rObj;
+      $scope.updateNav = function(){
+        var availableSpace = $btn.hasClass('hidden') ? $nav[0].clientWidth : $nav[0].clientWidth - $btn[0].clientWidth - 30;
+        //console.log(availableSpace);
+      };
+
+      angular.element($window).bind('resize', function() {
+        $scope.updateNav();
       });
-      $scope.slides[$scope.carouselIndex].isActive = true;
+
+      $scope.updateNav();
     };
 
     return {
-      scope: true,
       restrict: 'A',
       link: link
     };
 }])
-
 .directive('fmStickyHeader', ['$window', 
   function($window) {
     var stickies = [],
