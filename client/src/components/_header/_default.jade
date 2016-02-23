@@ -7,6 +7,11 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
       span.icon-bar.two
       span.icon-bar.three
       span.hamburger-text MENU
+    //- form.header-search-form.no-desktop.pull-right(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
+    //-   input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
+    //-   input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
+    //-   button.header-search-btn(type="button" ng-click="toggleActive('header-search')")
+    //-     span.icon.fm-search-circle(aria-hidden="true" )
     a.site-logo.navbar-btn.pull-left(href="/" title="home")
       svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
         use(xlink:href="/media/FannieMae-Logo.svg#Logo")
