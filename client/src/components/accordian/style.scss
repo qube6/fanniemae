@@ -5,18 +5,6 @@
     width: 100%;
     margin: 0;
   }
-  .fm-accordion-title{
-    font-family: $font-serif;
-    color: $color-dark-blue;
-    font-size: 16px;
-    display: inline-block;
-    font-weight: bold;
-    width: 100%;
-    position: relative;
-    padding: 15px 0;
-    margin: 0;
-    border-bottom: 2px solid $color-teal;
-  }
   button.fm-accordion-toggle-all{
     display: inline;
     border: none;
@@ -44,6 +32,9 @@
       line-height: 25px;
     }
   }
+  .fm-subtitle{
+    padding: 15px 0;
+  }
 }
 fm-accordion{
   width: 100%;
@@ -53,7 +44,7 @@ fm-accordion-item{
   display: block;
   border-bottom: 1px solid rgba(0,0,0,.3);
 }
-.fm-accordion-toggle{
+.fm-accordion-link{
   position: relative;
   width: 100%;
   font-size: 16px;

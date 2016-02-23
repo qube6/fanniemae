@@ -1,17 +1,17 @@
 fm-accordion.fm-accordion
-  h1.fm-accordion-title Board Committees
+  h1.fm-subtitle Board Committees
     button.fm-accordion-toggle-all(type="button" ng-click="setAll()")
       div(ng-show="allOpen") Close All
       div(ng-show="!allOpen") Expand All
       span.icon(ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' ")
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-accordion-toggle(href="" ng-click="toggleItem()") Committee Composition
+    a.fm-accordion-link(href="" ng-click="toggleItem()") Committee Composition
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-accordion-toggle(href="" ng-click="toggleItem()") The Executive Committee
+    a.fm-accordion-link(href="" ng-click="toggleItem()") The Executive Committee
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
     .fm-accordion-content
       .rich-text-block
@@ -27,7 +27,7 @@ fm-accordion.fm-accordion
         include ../bio-teaser/_default.jade
         -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-accordion-toggle(href="" ng-click="toggleItem()") CSS Test
+    a.fm-accordion-link(href="" ng-click="toggleItem()") CSS Test
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
     .fm-accordion-content
       .rich-text-block
