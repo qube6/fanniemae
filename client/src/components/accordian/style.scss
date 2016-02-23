@@ -1,10 +1,10 @@
 .fm-accordion{
-  margin: 0 -15px;
-  width: calc(100% + 30px);
-  @media(min-width: $screen-sm){
+  // margin: 0 -15px;
+  // width: calc(100% + 30px);
+  // @media(min-width: $screen-sm){
     width: 100%;
     margin: 0;
-  }
+  //}
   button.fm-accordion-toggle-all{
     display: inline;
     border: none;
