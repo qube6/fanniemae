@@ -1,0 +1,23 @@
+.image-promo{
+  position: relative;
+  figcaption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - #{$cta-height});
+  }
+  &.white-bg .cta{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $color-dark-blue;
+    color: $color-teal;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+  h1{
+    font-size: 16px;
+  }
+}

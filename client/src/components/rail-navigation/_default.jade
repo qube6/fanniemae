@@ -3,7 +3,7 @@ nav.rail-navigation.white-bg.padding-30
   fm-accordion.rail-navigation-list
     fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
       a.fm-accordion-link(href="" ng-click="toggleItem()") Guidelines
-        span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
+        span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
       ul.submenu.fm-accordion-content
         li: a.fm-accordion-link(href="/") Child Link 1
           span.icon.fm-arrow-right
@@ -13,28 +13,28 @@ nav.rail-navigation.white-bg.padding-30
           span.icon.fm-arrow-right
     fm-accordion-item
       a.fm-accordion-link(href="/") Fannie Mae Charter
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.fm-accordion-link(href="/") Board of Directors
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.active.fm-accordion-link(href="/") Board Commitees
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.fm-accordion-link(href="/") Committee Charters
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.fm-accordion-link(href="/") Code of Conduct
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.fm-accordion-link(href="/") Bylaws
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.fm-accordion-link(href="/") Contact Board of Directors Housing
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
     fm-accordion-item
       a.fm-accordion-link(href="/") Reports
-        span.icon.fm-arrow-right
+        span.icon.fm-arrow-right(aria-hidden="true")
   form.rail-navigation-select(action="/" method="post")
     h1.fm-subtitle More In About Us
     select.fm-dropdown(name="foo")

@@ -17,6 +17,11 @@
   }
 }
 
+.fm-rail{
+  @media screen and (max-width: $screen-xs-max){
+    padding-top: 30px;
+  }
+}
 .rail-row{
   margin: 20px 0;
 }
