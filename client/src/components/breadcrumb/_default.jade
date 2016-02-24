@@ -2,5 +2,7 @@
 .breadcrumb
   ul
     li: a(href="") Home
-    li: a(href="")= config.parent
+    -if (config.parent) {
+      li: a(href="")= config.parent
+    - }
     li= config.child
