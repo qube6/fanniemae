@@ -1,0 +1,22 @@
+.rail-navigation{
+  .fm-title{
+    padding-bottom: 5px;
+  }
+  .submenu{
+    background: $color-body-bg-50;
+    li{
+      padding: 0 10px;
+      border-bottom: 1px solid rgba(0,0,0,.3);
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+}
+.rail-navigation-select{
+  margin-top: 20px;
+  .fm-dropdown{
+    width: 100%;
+    margin-top: 20px;
+  }
+}

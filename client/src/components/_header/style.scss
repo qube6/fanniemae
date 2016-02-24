@@ -24,6 +24,35 @@
 .navbar-toggle{
   position: relative;
   margin: 0;
+  width: 30px;
+  top: 13px;
+  margin-left: 10px;
+  .hamburger-outline{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 6px;
+    left: -8px;
+    border: 2px solid $color-teal;
+    border-radius: 50%;
+  }
+  .icon-bar{
+    width: 14px;
+  }
+}
+.icon-bar{
+  &.two{
+    @include transform(translateY(5px));
+  }
+  &.three{
+    @include transform(translateY(10px));
+  }
+  .openNav &.one{
+    @include transform(translateY(5px) rotate(45deg));
+  }
+  .openNav &.three{
+    @include transform(translateY(5px) rotate(-45deg));
+  }
 }
 
 /* Nav Container */
@@ -59,13 +88,6 @@
   /* Icon treatments */
   .icon{
     font-size: 30px;
-  }
-  [class*="fm-plus"], [class*="fm-minus"]{
-    @include transform(rotate(180deg));
-    @include transition(transform 0.2s ease-in);
-  }
-  [class*="fm-plus"]{
-    @include transform(rotate(0deg));
   }
   button[type="button"]{
     border: none;
@@ -189,7 +211,7 @@
   @media (min-width: $screen-lg){
     padding: 0 30px;
     min-height: $carousel-height-lg;
-    opacity: .85;
+    opacity: .95;
   }
   @media (min-width: $screen-xl){
     padding: 0 30px;
@@ -310,7 +332,7 @@
 
 
 /* Search Form */
-.header-search-form {
+.header-search-form.desktop-only {
   position: relative;
   margin: 0;
   width: 0%;
@@ -326,7 +348,7 @@
   -webkit-backface-visibility: hidden;
 
   &.header-search-open, .no-js & {
-    width: 15%;
+    width: 18%;
   }
 }
 
@@ -351,6 +373,9 @@ input[type="search"].header-search-input {
   @include input-placeholder{
     color: $color-teal;
     font-style: italic;
+  }
+  @media (max-width: $screen-md-max){
+    top: 0;
   }
 }
 
@@ -384,7 +409,7 @@ input[type="submit"].header-search-submit{
   }
 }
 
-.navbar-offcanvas button.header-search-btn{
+button[type="button"].header-search-btn{
   z-index: 5;
   color: $color-teal;
   background: $color-dark-blue;
@@ -392,7 +417,29 @@ input[type="submit"].header-search-submit{
     color: white;
   }
   span.icon{
+    font-size: 30px;
     position: absolute;
     @include center-xy();
+  }
+  @media (max-width: $screen-md-max){
+    position: relative;
+  }
+}
+
+.header-search-form.no-desktop{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: white;
+
+  @include transition(height 0.3s);
+
+  -webkit-backface-visibility: hidden;
+
+  &.header-search-open, .no-js & {
+    height: $header-element-height;
   }
 }

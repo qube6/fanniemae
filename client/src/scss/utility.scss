@@ -59,6 +59,12 @@ ol.inline  > li {
     display: none !important;
   }
 }
+
+.mobile-only{
+   @media (min-width:$screen-sm) {
+    display: none !important;
+  }
+}
 .no-desktop{
   @media (min-width: $screen-lg){
     display: none !important;

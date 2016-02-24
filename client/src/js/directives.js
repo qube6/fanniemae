@@ -1,4 +1,4 @@
-angular.module('fannieMae.directives', [])
+var directiveModule = angular.module('fannieMae.directives', [])
 
 .directive('fmOpenOnLoad', [
   '$document',
@@ -32,25 +32,6 @@ angular.module('fannieMae.directives', [])
     };
 }])
 
-.directive('fmToggleClass', [
-  '$document',
-  function ($document) {
-    var link = function ($scope, element, attrs) {
-      var cls = attrs.fmToggleClass || 'open';
-
-      element.on('click', function($event){
-        element.toggleClass(cls);
-        if (attrs.fmToggleParent){
-          element.parent().toggleClass(attrs.fmToggleParent)
-        }
-      });
-    };
-    
-    return {
-      restrict: 'A',
-      link: link
-    };
-}])
 
 .directive('fmCarousel', [
   function () {
@@ -167,18 +148,26 @@ angular.module('fannieMae.directives', [])
             }
           });
         },
-        compile = function compile(element, attrs, transclude) {
+        resize = function compile() {
+          angular.forEach(stickies, function($sticky, index) {
+            setPositionalData($sticky);
+          });
         },
-        link = function($scope, element, attrs) {
+        setPositionalData = function(element){
+          element.css('height', '');
           var pos = findPos(element[0]).top;
           var height = element[0].clientHeight;
           element.data('pos', pos);
           element.data('height', height);
           element.css('height', height + 'px');
+        }
+        link = function($scope, element, attrs) {
+          setPositionalData(element);
           stickies.push(element);
         };
 
     angular.element($window).off('scroll', scroll).on('scroll', scroll);
+    angular.element($window).off('resize', resize).on('resize', resize);
     
     return {
       restrict: 'A',

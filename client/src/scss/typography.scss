@@ -4,9 +4,6 @@ body{
   color: black;
 }
 
-p {
-  margin: 0 0 20px;
-}
 small {
   font-size: 85%;
 }
@@ -22,6 +19,7 @@ cite {
 a {
   color: $color-teal;
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   color: $color-dark-blue;

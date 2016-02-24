@@ -5,6 +5,10 @@ body{
   @include transform(none !important);
 }
 
+.article-wrapper{
+  background: white;
+}
+
 .site-logo{
     position: relative;
     left: 0;
@@ -33,7 +37,14 @@ body{
   z-index: 98;
 }
 
-
+/* Rotate when changing between +/- */
+.icon[class*="fm-plus"], .icon[class*="fm-minus"]{
+  @include transform(rotate(180deg));
+  @include transition(transform 0.2s ease-in);
+}
+.icon[class*="fm-plus"]{
+  @include transform(rotate(0deg));
+}
 
 .dropdown-toggle {
   cursor: pointer;
@@ -77,6 +88,19 @@ body{
   }
 }
 
+.fm-subtitle{
+  font-family: $font-serif;
+  color: $color-dark-blue;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: bold;
+  width: 100%;
+  position: relative;
+  padding: 5px 0;
+  margin: 0;
+  border-bottom: 2px solid $color-teal;
+}
+
 .fm-video-player{
   video, video source{
     z-index: 0 !important;
@@ -105,23 +129,25 @@ body{
   font-size: 75%;
   padding: 5px 10px;
   position: absolute;
-  
+}
+
+.icon-after:after{
   //copied from .icon
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: bold;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    /* avoid underlines */
-    display: inline-block;
-    text-decoration: none;
+  /* avoid underlines */
+  display: inline-block;
+  text-decoration: none;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .cta{
@@ -146,6 +172,9 @@ body{
 .font-serif{
   font-family: $font-serif;
 }
+.font-sans{
+  font-family: $font-sans-serif;
+}
 
 .dark-bg{
   background: $color-dark-blue;
@@ -153,7 +182,7 @@ body{
 }
 .white-bg{
   background: white;
-  @extend .color-dark;
+  color: $color-dark-blue;
 }
 
 .color-white{
