@@ -6,15 +6,16 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
       span.icon-bar.one
       span.icon-bar.two
       span.icon-bar.three
-      span.hamburger-outline
-    button.header-search-btn.no-desktop.pull-right(type="button" ng-click="toggleActive('header-search')")
+      span.outline
+    button.header-search-btn.no-desktop.pull-right(type="button" ng-click="toggleActive('header-search-mobile')")
       span.icon.fm-search-circle(aria-hidden="true" )
-    form.header-search-form.no-desktop(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
-      input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
-      input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
     a.site-logo.navbar-btn.pull-left(href="/" title="home")
       svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
         use(xlink:href="/media/FannieMae-Logo.svg#Logo")
+  form.header-search-form.no-desktop(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search-mobile') }" fm-close-on-click-away='header-search-mobile')
+    input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
+    input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
+    span.icon.fm-arrow-right-circle(aria-hidden="true")
   nav.navbar-offcanvas.pull-right(ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away='header-mobile-menu' hm-Swiperight="toggleActive('header-mobile-menu', false)")
     .menu-sites(class= sideMenuOpen ?  "open" : undefined fm-open-on-load= sideMenuOpen ? 'header-side-menu' : undefined ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu' hm-Swiperight="toggleActive('header-side-menu', false)")
       button.toggle-sites.desktop-only(type="button" ng-click="toggleActive('header-side-menu')")
