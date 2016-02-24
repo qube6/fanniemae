@@ -1,29 +1,37 @@
 nav.top-navigation{
   margin: 0 -15px;
+  padding-bottom: 1px; //-makes room for the bottom border which gets cut off 
   position: relative;
-  ul{
-    text-align: center;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  z-index: 89;
+  .wrap{
+    position: relative;
+  }
+  ul.visible-links{
+    white-space: nowrap;
+    display: inline-block;
     padding: 30px 0;
     transition: padding .2s;
-    border-bottom: 1px solid #ccc;
-  }
-  li{
-    display: inline-block;
-    padding: 0 15px;
-    border-right: 1px solid #ccc;
-    line-height: 20px;
-    margin: 0 0 10px;
-    &:last-child{
-      border-right: none;
-    }
-    @media (max-width: $screen-sm){  
+    li{
+      display: inline-block;
+      padding: 0 15px;
+      border-right: 1px solid #ccc;
+      line-height: 20px;
+      margin: 0 0 10px;
+      position: relative;
+      &:last-child{
+        border-right: none;
+      }
+      @media (max-width: $screen-sm){  
 
-    }
-  }
+      }
+    } 
+  }  
   .wrapper.fixed{
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     background: rgba(230,230,230,.9);
-    ul{
+    ul.visible-links{
       padding: 20px 0 10px;
     }
   }
@@ -49,15 +57,64 @@ nav.top-navigation{
       font-weight: bold;
     }
   }
-  .hidden-links {
-    position: absolute;
-    right: 0px;
-    top: 100%;    
-    li {
-      display: block;
+  a.more{
+    &.hover{
+      text-decoration: none;
     }
   }
-  .hidden {
+  i{
+    position: absolute;
+    top: -5px;
+    left: 15px;
+    font-size: 24px;
+    display: block;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #007697;
+  }
+  span.label{
     visibility: hidden;
+  }
+  span.count{
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    left: 40px;
+    border-radius: 50%;
+    display: block;
+    height: 14px;
+    width: 14px;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    background: #007697;
+    color:#fff;
+  }
+  
+  ul.hidden-links {
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    background: #fff;
+    text-align: right;
+    width: 300px;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    li {
+      display: block;
+      border-bottom: 1px solid #ccc;
+      a{
+        display: block;
+        padding: 20px;
+      }
+    }
+  }
+  .wrapper.fixed{
+    ul.hidden-links {
+
+    }
   }
 }

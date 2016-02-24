@@ -26,6 +26,8 @@ fm-accordion.fm-accordion
         -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
         include ../bio-teaser/_default.jade
         -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
+        include ../bio-teaser/_default.jade
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Audit Committee
       span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")

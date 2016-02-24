@@ -17,7 +17,8 @@ directiveModule.directive('fmAccordion', [
       link: link,
       scope: true,
       bindToController: {
-        closeOthers: '='
+        closeOthers: '=',
+        clickAway: '='
       },
       controllerAs: "$ctrl",
       controller: function () {
