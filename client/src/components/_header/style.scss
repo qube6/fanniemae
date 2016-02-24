@@ -212,7 +212,7 @@
   @media (min-width: $screen-lg){
     padding: 0 30px;
     min-height: $carousel-height-lg;
-    opacity: .85;
+    opacity: .95;
   }
   @media (min-width: $screen-xl){
     padding: 0 30px;
@@ -333,7 +333,7 @@
 
 
 /* Search Form */
-.header-search-form {
+.header-search-form.desktop-only {
   position: relative;
   margin: 0;
   width: 0%;
