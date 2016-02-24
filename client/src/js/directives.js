@@ -83,19 +83,44 @@ angular.module('fannieMae.directives', [])
       link: link
     };
 }])
-.directive('greedyNav', ['$window',
-  function ($window) {
+.directive('greedyNav', ['$window', '$compile',
+  function ($window, $compile) {
+
     var link = function ($scope, $element, attrs) {
       var $nav = $element,
-          $btn = $nav.find('button'),
-          $links = $nav.find('li');
-      
-      $scope.visibleLinks = [];
-      $scope.hiddenLinks = [];
+          items = [],
+          links = angular.element($nav[0].querySelector('.hide')).find('a'),
+          $visibleLinks = angular.element($nav[0].querySelector('.visible-links'));
+            
+
+      angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
+        items.push({title:link.innerText, url: link.attributes.href.value});
+      });
 
       $scope.updateNav = function(){
-        var availableSpace = $btn.hasClass('hidden') ? $nav[0].clientWidth : $nav[0].clientWidth - $btn[0].clientWidth - 30;
-        //console.log(availableSpace);
+        var availableSpace = $nav[0].querySelector('.wrap').offsetWidth,
+            stillRoom = true,
+            left;
+
+        $visibleLinks.html('');
+        $scope.hiddenLinks = [];
+
+        angular.forEach(items, function(item, i){
+          if(stillRoom){
+            //need to append these rather than create a scope variable because I have to measure with each item
+            $visibleLinks.append('<li><a href="'+item.url+'">'+item.title+'</a></li>');
+            if($visibleLinks[0].offsetWidth > availableSpace - 70){
+              left = items.length-i;
+              $visibleLinks[0].lastChild.innerHTML = '<a class="more" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
+              //we just killed that from the visible nav so lets tuck it in as the first item in hidden
+              $scope.hiddenLinks.push(item);
+              stillRoom = false;
+            }
+          } else {
+            $scope.hiddenLinks.push(item);
+          }
+        });
+
       };
 
       angular.element($window).bind('resize', function() {
