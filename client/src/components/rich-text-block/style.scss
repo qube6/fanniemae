@@ -9,4 +9,20 @@
       line-height: 32px;
     }
   }
+  h1{
+
+  }
+  h2{
+    font-size: 26px;
+    color: $color-teal;
+  }
+  ul{
+    margin-left: 20px;
+    padding-left: 20px;
+    li{
+      list-style: initial;
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
 }
