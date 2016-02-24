@@ -26,7 +26,7 @@ input,
 button,
 select,
 textarea {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 20px;
 }
@@ -34,7 +34,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $font-sans-serif;
 }
 label {
   display: block;
@@ -58,13 +58,13 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 30px;
+  height: 40px;
   padding: 7px 8px 8px;
-  margin-bottom: 10px;
-  font-size: 14px;
+  margin-bottom: 25px;
+  font-size: 16px;
   line-height: 20px;
-  color: #555555;
-  border-radius: 4px;
+  color: #01172d;
+  border-radius: 0;
   vertical-align: middle;
 }
 input,
@@ -91,9 +91,9 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  background-color: #e5f1f4;
+  border: 1px solid rgba(229,241,244,1);
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
   transition: border linear .2s, box-shadow linear .2s;
 }
 textarea:focus,
@@ -112,10 +112,10 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-  border-color: rgba(82, 168, 236, 0.8);
+  border-color: rgba(1, 23, 45, 0.2);
   outline: 0;
   outline: thin dotted \9;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -136,13 +136,17 @@ input[type="checkbox"] {
 }
 select,
 input[type="file"] {
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  // line-height: 40px;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 select {
   width: 220px;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
+  border: none;
+  background-color: #e5f1f4;
+  cursor: pointer;
 }
 select[multiple],
 select[size] {
@@ -155,6 +159,22 @@ input[type="checkbox"]:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+}
+.styled-select{
+  position: relative;
+  &:after{
+    content:'';
+    display: block;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+  }
+  select{
+    padding-right:35px;
+  }
 }
 .uneditable-input,
 .uneditable-textarea {
@@ -224,12 +244,13 @@ input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
-  border-color: #ee5f5b;
+  border-color: rgba(1, 23, 45, 0.8);
 }
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
-  border-color: #e9322d;
+  border-color: rgba(1, 23, 45, 0.8);
+  // border-color: #e9322d;
   box-shadow: 0 0 6px #f8b9b7;
 }
 

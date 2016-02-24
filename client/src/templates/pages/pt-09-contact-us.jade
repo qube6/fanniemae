@@ -7,12 +7,16 @@ block top-content
   -var config={withImage : true, title: 'Contact Us', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
+    -var config={ child : 'Contact Us'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
 
 block content
-  include ../../components/contact-form/_default.jade
+  form
+    include ../../components/topic-box/_default.jade
+    .article-wrapper.padding-30
+      include ../../components/contact-form/_default.jade
 
 block rail
   include ../../components/promo/_default.jade
