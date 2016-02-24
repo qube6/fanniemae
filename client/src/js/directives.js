@@ -94,7 +94,7 @@ angular.module('fannieMae.directives', [])
             
 
       angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
-        items.push({title:link.innerText, url: link.attributes.href.value});
+        items.push({title:link.innerHTML, url: link.attributes.href.value});
       });
 
       $scope.updateNav = function(){
