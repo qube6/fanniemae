@@ -4,7 +4,7 @@ nav.top-navigation{
   position: relative;
   border-bottom: 1px solid #ccc;
   text-align: center;
-  z-index: 100;
+  z-index: 89;
   .wrap{
     position: relative;
   }
@@ -101,6 +101,7 @@ nav.top-navigation{
     background: #fff;
     text-align: right;
     width: 300px;
+    max-width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     li {
       display: block;
