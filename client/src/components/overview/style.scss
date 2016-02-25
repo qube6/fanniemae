@@ -3,7 +3,10 @@ section.overview{
   color: #fff;
   margin: 0 -15px 50px;
   position: relative;
-  min-height: 220px;  
+  min-height: 220px;
+  @media (max-width: $screen-sm){
+    margin-bottom: 0;
+  }
   .caption{
     h1{
       font-size: 52px;

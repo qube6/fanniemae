@@ -203,4 +203,24 @@ var directiveModule = angular.module('fannieMae.directives', [])
       link: link,
       scope: {}
     };
+})
+.directive('tabs', 
+  function() {
+    var link = function ($scope, element, attrs) {
+      $scope.activeTab = "0";
+      $scope.opts = [];
+      //make a model for the select shown on mobile
+      angular.forEach(angular.element(element[0].querySelector('.nav-block')).find('a'), function(opt, i){
+        $scope.opts.push({title:opt.innerHTML, i: i.toString()});
+      });      
+      $scope.setTab = function(i) {
+        $scope.activeTab = i.toString();
+      };
+   
+    };
+    return {
+      restrict: 'A',
+      link: link,
+      scope: true
+    };
 });

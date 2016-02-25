@@ -4,14 +4,13 @@
   margin-top:20px;
   margin-bottom: 10px;
   @media (max-width: $screen-sm){
-    margin-bottom:30px;
+    margin-bottom: 30px;
   }
 }
 .breadcrumb{
   float: left;
   @media (max-width: $screen-sm){
-    float: none;
-    text-align: center;
+    display:none;
   }
   ul{
     padding: 5px 0; //-match up with the social sharing
