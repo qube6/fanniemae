@@ -1,6 +1,10 @@
-.navbar, .navbar .wrapper{
-  height: $header-height-lg;
+.navbar{
   background: $color-dark-blue;
+}
+.navbar .wrapper.fixed{
+  height: $header-height-lg;
+  background: $color-blue;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
 /* Logo and Mobile Menu */
@@ -213,6 +217,10 @@
     padding: 0 30px;
     min-height: $carousel-height-lg;
     opacity: .95;
+    background: $color-dark-blue;
+    .fixed &{
+      background: $color-blue;
+    } 
   }
   @media (min-width: $screen-xl){
     padding: 0 30px;
@@ -343,11 +351,10 @@ input[type="search"].header-search-input {
   top: $header-element-spacing;
   margin: 0;
   padding: 0 10px;
-  padding-right: 80px;
   border-radius: 0;
   top: 0;
   left: 10px;
-  width: calc(100% - 20px);
+  width: calc(100% - 90px);
 
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -388,7 +395,6 @@ input[type="submit"].header-search-submit{
 button[type="button"].header-search-btn{
   width: 60px;
   color: $color-teal;
-  background: $color-dark-blue;
   position: relative;
   &:hover{
     color: white;
@@ -410,6 +416,10 @@ button[type="button"].header-search-btn{
   background: $color-dark-blue;
   margin: 0;
   z-index: 1;
+  .fixed &{
+    background: $color-blue;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+  }
 
   @include transition(height 0.3s);
 
@@ -426,7 +436,6 @@ button[type="button"].header-search-btn{
     font-size: 30px;
     padding: 5px 10px;
     color: $color-teal;
-    background: $color-dark-blue;
     @media (min-width: $screen-lg){
       padding: 5px 20px;
     }
