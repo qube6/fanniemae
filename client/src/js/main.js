@@ -1,6 +1,6 @@
 angular.module('fannieMae.controllers', []).
 controller('MainController',
-  function($scope, $timeout) {
+  function($scope, $timeout, $window) {
 
     $scope.toggle = {};
     $scope.header = {
@@ -22,4 +22,9 @@ controller('MainController',
     $scope.setHeaderSubmit = function(prop){
       $scope.toggleActive(prop, $scope.header.search.length > 0);
     }
+
+    var scroll = function(){
+      $scope.toggleActive('header-side-menu', false);
+    }
+    angular.element($window).off('scroll', scroll).on('scroll', scroll);
 })
