@@ -23,7 +23,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
         span.icon(aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
       .sites-list
         h1.font-serif Doing Business with Fannie Mae
-        ul.menu.nav(fm-accordion)
+        ul.menu.nav(fm-accordion close-others="false")
           li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
             a(ng-click="toggleItem()")
               h2 Lenders
@@ -57,7 +57,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
               .subhead Find & Buy Homes
     button.header-search-btn.pull-right.desktop-only(type="button" ng-click="toggleActive('header-search')")
       span.icon.fm-search-circle(aria-hidden="true" )
-    ul.main-menu(fm-accordion)
+    ul.main-menu(fm-accordion close-others="false")
       li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
         a(href='/about-us', title='') About Us
         button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
