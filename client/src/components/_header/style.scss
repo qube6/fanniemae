@@ -1,5 +1,6 @@
 .navbar{
   background: $color-dark-blue;
+  height: $header-height-lg;
 }
 .navbar .wrapper.fixed{
   height: $header-height-lg;
@@ -104,6 +105,7 @@
 
 /* Drop-down Nav Menu */
 .main-menu{
+  flex-shrink: 0;
   > li{
     @media(max-width: $screen-md-max){
       display: block;
@@ -377,6 +379,7 @@ input[type="search"].header-search-input {
   -webkit-appearance: none;
   border: none;
   outline: none;
+  background: transparent;
 }
 
 input[type="submit"].header-search-submit{
