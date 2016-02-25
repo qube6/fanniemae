@@ -22,7 +22,7 @@ directiveModule.directive('fmAccordion', [
       },
       controllerAs: "$ctrl",
       controller: function () {
-        this.closeOthers = this.closeOthers || true;
+        this.closeOthers = this.closeOthers == undefined ? true : this.closeOthers;
       }
     };
 }])
