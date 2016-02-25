@@ -1,0 +1,52 @@
+.fm-select-wrapper{
+  position: relative;
+  .fm-styled-select{
+    height: 40px;
+    width: 100%;
+    background: rgba(255, 255, 255, .15);
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    position: relative;
+    line-height: 20px;
+    cursor: pointer;
+    &:after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: white transparent transparent transparent;
+      position: absolute;
+      top: 17px;
+      right: 15px;
+      @include transition(transform .3s)
+    }
+    &.open:after{
+      @include transform(rotate(180deg));
+    }
+  }
+  .fm-select-submenu{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    color: $color-dark-blue;
+    visibility: hidden;
+    z-index: 1;
+    @include box-shadow(0 0 7px rgba(0, 0, 0, .3));
+    li{
+      cursor: pointer;
+      font-size: 14px;
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, .3);
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .open ~.fm-select-submenu{
+    visibility: visible;
+  }
+}
