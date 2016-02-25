@@ -7,6 +7,7 @@ section.chart-viewer.display-table(tabs)
       li(ng-class="{active: activeTab == 2}" ): a(href="" ng-click="setTab(2)") 30 Year Mortgage
       li(ng-class="{active: activeTab == 3}" ): a(href="" ng-click="setTab(3)") SF Originations (Purchase Refi)
       li(ng-class="{active: activeTab == 4}" ): a(href="" ng-click="setTab(4)") Home Prices
+    
     .styled-select.mobile-only
       select(ng-model="activeTab" ng-options="opt.i as opt.title for opt in opts")
 

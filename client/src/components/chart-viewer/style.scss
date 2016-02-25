@@ -15,6 +15,7 @@ section.chart-viewer{
     @media (max-width: $screen-sm){
       display: block;
       width: auto;
+      padding-bottom: 0; 
     }
     li{
       border-bottom: 1px solid rgba(11,147,192,.25);
@@ -69,6 +70,7 @@ section.chart-viewer{
     vertical-align: top;
     @media (max-width: $screen-sm){
       display: block;
+      padding-top: 0;
     }
     li{
       display: none;
