@@ -61,7 +61,7 @@ ol.inline  > li {
 }
 
 .mobile-only{
-   @media (min-width:$screen-sm) {
+   @media (min-width:$screen-sm+1) {
     display: none !important;
   }
 }
