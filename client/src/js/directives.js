@@ -190,33 +190,53 @@ var directiveModule = angular.module('fannieMae.directives', [])
     };
 }])
 
-.directive('fmVideoPlayer', 
-  function() {
+.directive('fmVideoPlayer', ['$timeout',
+  function($timeout) {
     var link = function ($scope, element, attrs) {
       $scope.videoPaused = true;
+      $scope.video = element.find('video')[0];
 
-      $scope.controlVideo = function($event) {
-        var video = $event.currentTarget.nextElementSibling;
+      if(attrs.hasOwnProperty('autoplay')){
+        $scope.video.setAttribute('autoplay', attrs.autoplay);
+        $scope.video.setAttribute('controls', 'controls');
+        $scope.videoPaused = false;
+      }
+
+      $scope.controlVideo = function($) {
         if ($scope.videoPaused){
-          video.play();
+          $scope.video.play();
+          $scope.playVideo()
         } else{
-          video.pause()
+          $scope.video.pause();
+          $scope.pauseVideo()
         }
-        $scope.videoPaused = !$scope.videoPaused;
       }
 
-      $scope.pauseVideo = function($event, pauseOnly) {
-        var video = $event.currentTarget;
-        video.pause()
-        $scope.videoPaused = true;
+      $scope.pauseVideo = function() {
+        $timeout(function(){
+          $scope.videoPaused = true;
+          $scope.video.removeAttribute('controls');
+        });
       }
+      $scope.playVideo = function() {
+        $timeout(function(){
+          $scope.videoPaused = false;
+          $scope.video.setAttribute('controls', 'controls');
+        });
+      }
+
+      // handle video events from controls
+      $scope.video.addEventListener('pause', $scope.pauseVideo, true);
+      $scope.video.addEventListener('play', $scope.playVideo ,true);
     }
     return {
-      restrict: 'A',
+      restrict: 'E',
       link: link,
-      scope: {}
+      scope: true,
+      transclude: true,
+      template: '<div class="fm-video-wrapper"><span class="icon" ng-class=" videoPaused ? \'fm-play-circle\' : \'fm-pause-circle\' " ng-click="controlVideo()"></span><video ng-transclude></video></div>'
     };
-})
+}])
 .directive('tabs', 
   function() {
     var link = function ($scope, element, attrs) {

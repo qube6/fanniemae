@@ -68,8 +68,6 @@ fm-accordion.fm-accordion
         h4 Heading 4
         h5 Heading 5
         h6 Heading 6
-        small
-          a(href='#wrapper') [top]
         hr
         h1 Paragraph
         p
@@ -80,26 +78,26 @@ fm-accordion.fm-accordion
           | Lorem ipsum dolor sit amet, 
           em emphasis
           |  consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-        small
-          a(href='#wrapper') [top]
         hr
         h1#list_types List Types
         h3 Definition List
         dl
           dt Definition List Title
           dd This is a definition list division.
-        h3 Ordered List
-        ol
+        h3 Ordered Lists
+        ol(type="1")
           li List Item 1
           li List Item 2
           li List Item 3
+        ol(type="i")
+          li List Item i
+          li List Item ii
+          li List Item iii
         h3 Unordered List
         ul
           li List Item 1
           li List Item 2
           li List Item 3
-        small
-          a(href='#wrapper') [top]
         hr
         h1#form_elements Fieldsets, Legends, and Form Elements
         fieldset
@@ -165,29 +163,7 @@ fm-accordion.fm-accordion
             p
               input.button(type='reset', value='Clear')
               input.button(type='submit', value='Submit')
-        small
-          a(href='#wrapper') [top]
         hr
-        h1#tables Tables
-        table(cellspacing='0', cellpadding='0')
-          tr
-            th Table Header 1
-            th Table Header 2
-            th Table Header 3
-          tr
-            td Division 1
-            td Division 2
-            td Division 3
-          tr.even
-            td Division 1
-            td Division 2
-            td Division 3
-          tr
-            td Division 1
-            td Division 2
-            td Division 3
-        small
-          a(href='#wrapper') [top]
         hr
         h1#misc Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.
         p
@@ -201,9 +177,97 @@ fm-accordion.fm-accordion
           acronym(title='National Basketball Association') NBA
           |  Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  
           abbr(title='Avenue') AVE
-        blockquote
-          | "This stylesheet is going to help so freaking much." 
-          br
-          | -Blockquote
-        small
-          a(href='#wrapper') [top]
+        blockquote.with-citation
+          | This stylesheet is going to help so freaking much.
+          footer: cite Citation
+        h1#tables Tables
+        h2 Non-Responsive Table
+        table
+          tr
+            th Table Header 1
+            th Table Header 2
+            th Table Header 3
+          tr
+            td Division 1
+            td Division 2
+            td Division 3
+          tr
+            td Division 1
+            td Division 2
+            td Division 3
+          tr
+            td Division 1
+            td Division 2
+            td Division 3
+        h2 Responsive Table
+        table.responsive-table
+          thead
+            tr
+              th(scope="col") CUSIP
+              th(scope="col") Issue Date
+              th(scope="col") Maturity Date
+              th(scope="col") Coupon
+              th(scope="col") Amount Issued
+          tr
+            th(scope="row" data-title="CUSIP") 3135G0NV1
+            td(data-title="Issue Date") 08/17/2012
+            td(data-title="Maturity Date") 09/28/2015
+            td(data-title="Coupon") 0.500%
+            td(data-title="Amount Issued") 5,000,000,000
+          tr
+            th(scope="row" data-title="CUSIP") 31359MZC0
+            td(data-title="Issue Date") 09/12/2005
+            td(data-title="Maturity Date") 10/15/2015
+            td(data-title="Coupon") 4.375%
+            td(data-title="Amount Issued") 4,000,000,000
+          tr
+            th(scope="row" data-title="CUSIP") 31398A4M1
+            td(data-title="Issue Date") 09/27/2010
+            td(data-title="Maturity Date") 10/26/2015
+            td(data-title="Coupon") 1.625%
+            td(data-title="Amount Issued") 6,500,000,000
+          tr
+            th(scope="row" data-title="CUSIP") 31359MH89
+            td(data-title="Issue Date") 02/16/2006
+            td(data-title="Maturity Date") 12/21/2015
+            td(data-title="Coupon") 0.375%
+            td(data-title="Amount Issued") 4,000,000,000
+          tr
+            th(scope="row" data-title="CUSIP") 31359MH89
+            td(data-title="Issue Date") 02/16/2006
+            td(data-title="Maturity Date") 03/15/2016
+            td(data-title="Coupon") 5.000%
+            td(data-title="Amount Issued") 5,000,000,000
+          tr
+            th(scope="row" data-title="CUSIP") 3135G0VA8
+            td(data-title="Issue Date") 02/15/2013
+            td(data-title="Maturity Date") 03/30/2016
+            td(data-title="Coupon") 0.500%
+            td(data-title="Amount Issued") 6,000,000,000
+      br
+      br
+      figure
+        fm-video-player
+          source(src='http://clips.vorwaerts-gmbh.de/VfE_html5.mp4', type='video/mp4')
+          source(src='http://clips.vorwaerts-gmbh.de/VfE.webm', type='video/webm')
+          source(src='http://clips.vorwaerts-gmbh.de/VfE.ogv', type='video/ogg')
+          // fallback to Flash:
+          object(type='application/x-shockwave-flash', data='player.swf')
+            // Firefox uses the `data` attribute above, IE/Safari uses the param below
+            param(name='movie', value='player.swf')
+            param(name='flashvars', value='autostart=true&controlbar=over&image=poster.jpg&file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4')
+            // fallback image
+            img(src='http://placehold.it/600x400', alt='Big Buck Bunny', title='No video playback capabilities, please download the video below')
+        figcaption
+          h3 Adding new technology for mortgage servicers
+          p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
+      br
+      br
+      figure
+        img(src='../media/content-image-1.png', alt='Placeholder Image', title='Placeholder image')
+        figcaption
+          h3 Adding new technology for mortgage servicers
+          p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
+          i.small Photo credit info
+      br
+      br

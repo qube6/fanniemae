@@ -105,7 +105,12 @@ main{
   border-bottom: 2px solid $color-teal;
 }
 
-.fm-video-player{
+.fm-video-wrapper{
+  height: auto;
+  width: 100%;
+  position: relative;
+  display: block;
+
   video, video source{
     z-index: 0 !important;
   }
@@ -116,6 +121,9 @@ main{
     cursor: pointer;
     font-size: 60px;
     color: white;
+    background: $color-dark-blue;
+    padding: 5px;
+    border-radius: 50%;
   }
 
   .fm-pause-circle{
