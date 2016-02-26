@@ -1,8 +1,8 @@
-nav.top-navigation(fm-sticky-header greedy-nav)
+nav.top-navigation(fm-sticky-header)
   .container
     .row
       .col-xs-12
-        .wrap 
+        .wrap(greedy-nav)
           ul.hide
             li: a(href="as") What We Do
             li: a(href="dd") Leadership Team
@@ -20,6 +20,6 @@ nav.top-navigation(fm-sticky-header greedy-nav)
             //-   a(href="{{link.url}}") {{link.title}}
             
               
-          ul.hidden-links(ng-show="hiddenLinks.length")
+          ul.hidden-links(ng-show="hiddenLinks.length && isOpen()")
             li(ng-repeat="link in hiddenLinks"): a(href="{{link.url}}") {{link.title}}
 

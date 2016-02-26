@@ -64,22 +64,24 @@ var directiveModule = angular.module('fannieMae.directives', [])
       link: link
     };
 }])
-.directive('greedyNav', ['$window', '$compile',
-  function ($window, $compile) {
+
+.directive('greedyNav', ['$window', '$compile', '$timeout',
+  function ($window, $compile, $timeout) {
 
     var link = function ($scope, $element, attrs) {
       var $nav = $element,
           items = [],
           links = angular.element($nav[0].querySelector('.hide')).find('a'),
           $visibleLinks = angular.element($nav[0].querySelector('.visible-links'));
+          open = false;
             
 
       angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
         items.push({title:link.innerHTML, url: link.attributes.href.value});
       });
 
-      $scope.updateNav = function(){
-        var availableSpace = $nav[0].querySelector('.wrap').offsetWidth,
+      var updateNav = function(){
+        var availableSpace = $nav[0].offsetWidth,
             stillRoom = true,
             left;
 
@@ -92,7 +94,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
             $visibleLinks.append('<li><a href="'+item.url+'">'+item.title+'</a></li>');
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
-              $visibleLinks[0].lastChild.innerHTML = '<a class="more" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
+              $visibleLinks[0].lastChild.innerHTML = '<a class="more" ng-click="toggleOpen()"><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
               //we just killed that from the visible nav so lets tuck it in as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;
@@ -101,21 +103,31 @@ var directiveModule = angular.module('fannieMae.directives', [])
             $scope.hiddenLinks.push(item);
           }
         });
-
+        $compile($visibleLinks.contents())($scope);
       };
 
-      angular.element($window).bind('resize', function() {
-        $scope.updateNav();
-      });
+      $scope.isOpen = function(){
+        return open;
+      };
 
-      $scope.updateNav();
+      $scope.toggleOpen = function(){
+        $timeout(function(){
+          open = !open;
+        }, 0);
+      };
+
+      angular.element($window).off('resize', updateNav).on('resize', updateNav);
+
+      updateNav();
     };
 
     return {
       restrict: 'A',
-      link: link
+      link: link,
+      scope: true
     };
 }])
+
 .directive('fmStickyHeader', ['$window', 
   function($window) {
     var stickies = [],
