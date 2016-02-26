@@ -4,10 +4,6 @@
     color:  black;
     font-size: 14px;
     line-height: 24px;
-    @media (min-width: $screen-md){
-      font-size: 18px;
-      line-height: 32px;
-    }
   }
   h1{
 
@@ -15,6 +11,9 @@
   h2{
     font-size: 26px;
     color: $color-teal;
+  }
+  h3{
+    font-size: 18px;
   }
   ul{
     margin-left: 20px;
@@ -24,5 +23,209 @@
       font-size: 14px;
       line-height: 25px;
     }
+  }
+  blockquote{
+    font-size: 26px;
+    line-height: 34px;
+    margin-left: 50px; 
+    border: none;
+    &:before, &:after{
+      font-size: 16px;
+      line-height: 16px; 
+      vertical-align: 5px;
+      position: relative;
+      display: inline-block;
+      font: normal normal normal 16px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    &:before {
+      content: "\f10d";
+      padding-right: 5px;
+    }
+    &:after {
+      content: "\f10e";
+      padding-left: 5px;
+    }
+  }
+  figure{
+    figcaption{
+      padding: 10px 0;
+      h3{
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+
+// From http://codepen.io/universePaul/pen/LrtIy
+.responsive-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  
+  
+  @media (min-width: $screen-md) {
+    font-size: .9em; 
+  }
+  
+  @media (min-width: $screen-lg) {
+    font-size: 1em; 
+  }
+  
+  thead {
+    // Accessibly hide <thead> on narrow viewports
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden;
+    
+    @media (min-width: $screen-md) {
+      // Unhide <thead> on wide viewports
+      position: relative;
+      clip: auto;
+      height: auto;
+      width: auto;
+      overflow: auto;
+    }
+    
+    th {
+      background-color: $color-light-blue;
+      border: 1px solid $color-body-bg;
+      font-weight: bold;
+      text-align: left;
+      color: $color-dark;
+    }
+  }
+  
+  // Set these items to display: block for narrow viewports
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  
+  tr {   
+    @media (min-width: $screen-md) {
+      // Undo display: block 
+      display: table-row; 
+    }
+  }
+  
+  th,
+  td {
+    padding: .5em;
+    vertical-align: middle;
+    
+    @media (min-width: $screen-sm) {
+      padding: .75em .5em; 
+    }
+    
+    @media (min-width: $screen-md) {
+      // Undo display: block 
+      display: table-cell;
+      padding: .5em;
+      padding-left: 2em;
+    }
+    
+    @media (min-width: $screen-lg) {
+      padding: .75em .5em; 
+      padding-left: 2em;
+    }
+    
+    @media (min-width: $screen-xl) {
+      padding: .75em; 
+      padding-left: 2em;
+    }
+  }
+  
+  caption {
+    margin-bottom: 1em;
+    font-size: 1em;
+    //font-weight: bold;
+    text-align: center;
+    
+    @media (min-width: $screen-md) {
+      font-size: 1.5em;
+    }
+  }
+  
+  
+  tbody {
+    @media (min-width: $screen-md) {
+      // Undo display: block 
+      display: table-row-group; 
+    }
+    
+    tr {
+      margin-bottom: 1em;
+      border: 2px solid $color-body-bg;
+      color: $color-dark;
+      
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-row;
+        border-width: 1px;
+      }
+      
+      &:last-of-type {
+        margin-bottom: 0; 
+      }
+      
+      &:nth-of-type(even) {
+        @media (min-width: $screen-md) {
+          background-color: $color-light-blue;
+        }
+      }
+    }
+    
+    th[scope="row"] {
+      background-color: $color-light-blue;
+      @media (min-width: $screen-md) {
+        background-color: transparent;
+        text-align: left; 
+      }
+    }
+    
+    td {
+      text-align: right;
+      
+      @media (min-width: $screen-sm) {
+        border-bottom: 1px solid $color-body-bg;
+      }
+      
+      @media (min-width: $screen-md) {
+        text-align: left; 
+      }
+    }
+    
+    td[data-type=currency] {
+      text-align: right; 
+    }
+    
+    td[data-title]:before {
+      content: attr(data-title);
+      float: left;
+      font-size: .8em;
+      color: $color-dark;
+      
+      @media (min-width: $screen-sm) {
+        font-size: .9em; 
+      }
+      
+      @media (min-width: $screen-md) {
+        // Don’t show data-title labels 
+        content: none; 
+      }
+    } 
   }
 }

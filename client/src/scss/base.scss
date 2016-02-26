@@ -128,6 +128,11 @@ main{
   }
 }
 
+.video{
+  max-width: 100%;
+  height: auto;
+}
+
 .video-link:after{
   content: "\e90b";
   font-size: 75%;
