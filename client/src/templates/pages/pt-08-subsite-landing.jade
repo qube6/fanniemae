@@ -8,14 +8,25 @@ block top-content
   include ../../components/overview/_default.jade
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
+    -var config={ child : 'Capital Market Investors'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
 block content
   include ../../components/chart-viewer/_default.jade
-  include ../../components/locator-form/_default.jade
-  include ../../components/locator-form/_default.jade
+  .row
+    .col-md-6
+      include ../../components/locator-form/_default.jade
+    .col-md-6
+      include ../../components/locator-form/_default.jade
+  
+  -var config = {type: 'img-right'};  
   include ../../components/featured-subpages/_default.jade
+  
+  -var config = {type: 'img-left'};  
   include ../../components/featured-subpages/_default.jade
-  include ../../components/secondary-subpages/_default.jade
-  include ../../components/secondary-subpages/_default.jade
+  .row
+    .col-md-6
+      include ../../components/secondary-subpages/_default.jade
+    .col-md-6
+      include ../../components/secondary-subpages/_default.jade
