@@ -70,10 +70,9 @@ var directiveModule = angular.module('fannieMae.directives', [])
     var link = function ($scope, $element, attrs) {
       var $nav = $element,
           items = [],
-          links = angular.element($nav[0].querySelector('.hide')).find('a'),
           $visibleLinks = angular.element($nav[0].querySelector('.visible-links'));
             
-
+      //make a copy of the static hidden menu
       angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
         items.push({title:link.innerHTML, url: link.attributes.href.value});
       });
@@ -90,10 +89,12 @@ var directiveModule = angular.module('fannieMae.directives', [])
           if(stillRoom){
             //need to append these rather than create a scope variable because I have to measure with each item
             $visibleLinks.append('<li><a href="'+item.url+'">'+item.title+'</a></li>');
+            //no more room?
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
+              //replace the one we just added with a more button
               $visibleLinks[0].lastChild.innerHTML = '<a class="more-items" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
-              //we just killed that from the visible nav so lets tuck it in as the first item in hidden
+              //lets tuck the item we just replaced as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;
             }
@@ -207,6 +208,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
 .directive('tabs', 
   function() {
     var link = function ($scope, element, attrs) {
+      //angular is weird and requires this to be a string for select to stay updated to activeTab model
       $scope.activeTab = "0";
       //make a model for the select shown on mobile
       $scope.opts = [];      
