@@ -92,7 +92,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
             $visibleLinks.append('<li><a href="'+item.url+'">'+item.title+'</a></li>');
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
-              $visibleLinks[0].lastChild.innerHTML = '<a class="more" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
+              $visibleLinks[0].lastChild.innerHTML = '<a class="more-items" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
               //we just killed that from the visible nav so lets tuck it in as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;
