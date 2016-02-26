@@ -9,6 +9,9 @@
     position: absolute;
     bottom: 40px;
     right: 25px;
+    @media (max-width: $screen-sm){
+      bottom: 15px;
+    }
   }
   input[type=text]{
     margin: 0 0 10px;
