@@ -116,8 +116,12 @@ block content
       br
       include ../../components/accordian/_default.jade
 
-block rail
+block top-rail
   include ../../components/rail-navigation/_default.jade
+  
+block rail
+  .rail-row
+    include ../../components/more-in/_default.jade
   .rail-row
     include ../../components/promo/_default.jade
   .rail-row

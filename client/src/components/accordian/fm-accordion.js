@@ -31,7 +31,7 @@ directiveModule.directive('fmAccordion', [
   '$timeout',
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
-      $scope.open = false;
+      $scope.open = attrs.open != undefined;
       $scope.ignoreBroadcast = false;
 
       $scope.toggleItem = function(){

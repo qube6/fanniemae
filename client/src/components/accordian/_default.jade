@@ -3,16 +3,16 @@ fm-accordion.fm-accordion
     button.fm-accordion-toggle-all(type="button" ng-click="setAll()")
       div(ng-show="allOpen") Close All
       div(ng-show="!allOpen") Expand All
-      span.icon(ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' " aria-hidden="true")
-  fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
+      .fm-link-toggle.icon(ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' " aria-hidden="true")
+  fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }" open)
     a.fm-accordion-link(href="" ng-click="toggleItem()") Committee Composition
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Executive Committee
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
@@ -30,31 +30,31 @@ fm-accordion.fm-accordion
         -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Audit Committee
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Compensation Committee
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Nominating & Corporate Governance Committee
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Risk Policy & Capital Committee 
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-accordion-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-accordion-link(href="" ng-click="toggleItem()") The Strategic Initiatives Committee
-      span.icon.fm-plus(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-link-toggle.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         h1 CSS Basic Elements

@@ -29,11 +29,17 @@
   blockquote{
     font-size: 26px;
     line-height: 34px;
-    margin: 0 50px 20px; 
     border: none;
     position: relative;
+    margin: 0 2px 20px; 
     &.with-citation{
-      margin: 0 50px 50px; 
+      margin: 0 20px 50px; 
+    }
+    @media(min-width: $screen-sm){
+      margin: 0 50px 20px; 
+      &.with-citation{
+        margin: 0 50px 50px; 
+      }
     }
     &:before, &:after{
       font-size: 16px;
