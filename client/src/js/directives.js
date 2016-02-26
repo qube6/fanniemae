@@ -224,4 +224,64 @@ var directiveModule = angular.module('fannieMae.directives', [])
       link: link,
       scope: true
     };
+})
+.directive('listing', 
+  function(fannieAPIservice) {
+    var link = function ($scope, $element, attrs) {
+      $scope.apiUrl = $element.attr('data-api-url');
+      $scope.pageSize = $element.attr('data-page-size');
+      $scope.language = $element.attr('data-language');
+      $scope.term = undefined;
+      $scope.items = [];
+      $scope.start = 0;
+      $scope.end = 0;
+      $scope.total = 0;
+      $scope.loading = false;
+
+      console.log($scope);
+      $scope.loadQuery = function(){
+        $scope.loading = true;
+    
+        var payload = {
+          pageSize : $scope.pageSize,
+          start : $scope.end+1,
+          language : $scope.language
+        };
+        if($scope.term) {
+          payload.term = $scope.term
+        }
+        
+        fannieAPIservice.getData($scope.apiUrl, payload)
+          .success(function (data) {
+            // remove this. testing UI
+            // $timeout(function(){
+            $scope.items = $scope.items.concat(data.results);
+            $scope.start = data.start;
+            $scope.end = data.end;
+            $scope.total = data.total;
+            $scope.loading = false;
+            // }, 2000);
+          })
+          .error(function(data, status, headers, config){      
+            $scope.items = [];
+          });
+      }
+
+      $scope.$watch('term', function(newValue, oldValue) {
+        // reset everything
+        $scope.items = [];
+        $scope.start = 0;
+        $scope.end = 0;
+        $scope.total = 0;
+        // if we still have a search term go get it
+        if($scope.term){
+          $scope.loadQuery();
+        }
+      });
+    };
+    return {
+      restrict: 'A',
+      link: link,
+      scope: true
+    };
 });
