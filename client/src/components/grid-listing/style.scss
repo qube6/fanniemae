@@ -1,0 +1,19 @@
+section.grid-listing{
+  position: relative;
+  li.block{
+    margin-right: 2%;
+    width: 32%;
+    float: left;
+    height: 370px;
+    overflow: hidden;
+    &:nth-child(3n+3){
+      margin-right: 0;
+    }
+    @media (max-width: $screen-sm){
+      margin-right: 0;
+      float: none;
+      width: auto;
+      height: auto;
+    }
+  }
+}
