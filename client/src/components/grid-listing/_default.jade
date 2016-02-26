@@ -1,31 +1,22 @@
-section.listing.grid-listing
+section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" data-page-size="8" data-language="en")
   h1 Economic &amp; Housing Outlook
   ul
     li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
+      span.fm-type.font-serif Weekly Note
+      h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
+      a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
+      span.fm-type.font-serif Weekly Note
+      h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-    li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
-      span.fm-date May 21, 2015
-    li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
-      span.fm-date May 21, 2015
-    li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
-      span.fm-date May 21, 2015
-    li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
-      span.fm-date May 21, 2015
-    li.block.white-bg.padding-30
-      span.fm-type Weekly Note
-      h2.fm-title 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
-      span.fm-date May 21, 2015
+      a(href="").more: i.icon.fm-arrow-right
+    li.block.white-bg.padding-30.fade-in(ng-repeat="item in items")
+      span.fm-type.font-serif {{item.type}}
+      h2.fm-title: a(href="{{item.url}}") {{item.title}}
+      span.fm-date {{item.date}}
+      a(href="{{item.url}}").more: i.icon.fm-arrow-right
+  .white-bg.text-center(ng-if="end < total-1 || end == 0")
+    a(href="" ng-click="loadQuery()").more.load-more View More
+      i.icon.fm-plus
+
