@@ -363,10 +363,13 @@ input[type="submit"].btn::-moz-focus-inner {
   &.with-search{
     padding-right: 60px;
     position: relative;
+    @media (max-width: 720px){
+      padding-right: 15px;
+    }
   }
   .display-table{
     width: 100%;
-  }
+  }  
   label{
     color:#fff;
     width: 100px;
@@ -375,6 +378,9 @@ input[type="submit"].btn::-moz-focus-inner {
   }
   .table-cell+label.table-cell{
     padding-left:15px;
+    @media (max-width: 720px){
+      padding-left: 0;
+    }
   }
   select, input[type=text]{
     color:#fff;
@@ -389,17 +395,45 @@ input[type="submit"].btn::-moz-focus-inner {
   button{
     position: absolute;
     right: 0;
-    top: 0;
+    top: 50%;
     background: none;
     width: 60px;
     height: 70px;
+    margin-top: -35px;
     line-height: 70px;
     text-align: center;
+    &:hover{
+      color:#fff;
+    }
+    @media (max-width: 720px){
+      position: relative;
+      margin: 0 0 15px;
+      height: 30px;
+      line-height: 30px;
+      width: auto;
+    }
+    span{
+      display: none;
+      @media (max-width: 720px){
+        display: inline-block;
+      }
+    }
     i{
-      top: 19px;
-      right: 15px;
+      top: 50%;
+      right: 50%;
+      margin: -15px -15px 0 0;
       background: #000f2b;
-
+      @media (max-width: 720px){
+        right: 0;
+        top: 4px;
+        margin: 0;
+      }
+    }
+  }
+  .table-cell{
+    @media (max-width: 720px){
+      display: block !important;
+      width: auto;
     }
   }
 }
