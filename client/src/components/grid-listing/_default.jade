@@ -1,5 +1,28 @@
+-var config = config || {};
 section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" data-page-size="8" data-language="en")
-  h1 Economic &amp; Housing Outlook
+  -if(config.news){
+    form.blue-block.with-search(action="")
+      .display-table
+        .table-row
+          label.table-cell Year:
+          .table-cell.styled-select
+            select
+              option All
+          label.table-cell Month:
+          .table-cell.styled-select
+            select
+              option All
+          label.table-cell Keyword:
+          .table-cell
+            input(type="text" placeholder="Enter keyword" ng-click="loadQuery()")
+
+      button.more
+        i.icon.fm-search
+  -} else {
+    h1.fm-section-listing Economic &amp; Housing Outlook
+  -}
+
+  
   ul
     li.block.white-bg.padding-30
       span.fm-type.font-serif Weekly Note

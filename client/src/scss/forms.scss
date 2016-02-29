@@ -356,3 +356,50 @@ input[type="submit"].btn::-moz-focus-inner {
   border: 0;
 }
 
+.blue-block{
+  padding: 15px 15px 0;
+  background: #000f2b;
+  margin: 0 0 30px;
+  &.with-search{
+    padding-right: 60px;
+    position: relative;
+  }
+  .display-table{
+    width: 100%;
+  }
+  label{
+    color:#fff;
+    width: 100px;
+    line-height: 40px;
+    vertical-align: top;
+  }
+  .table-cell+label.table-cell{
+    padding-left:15px;
+  }
+  select, input[type=text]{
+    color:#fff;
+    background: #26334b;
+    width: 100%;
+    margin: 0 0 15px;
+    border: 1px solid #26334b;
+  }
+  .styled-select:after{
+    border-top-color:#fff;
+  }
+  button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    width: 60px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    i{
+      top: 19px;
+      right: 15px;
+      background: #000f2b;
+
+    }
+  }
+}

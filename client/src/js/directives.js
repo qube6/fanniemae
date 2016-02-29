@@ -238,7 +238,6 @@ var directiveModule = angular.module('fannieMae.directives', [])
       $scope.total = 0;
       $scope.loading = false;
 
-      console.log($scope);
       $scope.loadQuery = function(){
         $scope.loading = true;
     
