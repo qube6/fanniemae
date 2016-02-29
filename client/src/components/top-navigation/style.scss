@@ -4,7 +4,6 @@ nav.top-navigation{
   position: relative;
   border-bottom: 1px solid #ccc;
   text-align: center;
-  z-index: 89;
   .wrap{
     position: relative;
   }
@@ -95,8 +94,8 @@ nav.top-navigation{
   }
   
   ul.hidden-links {
-    display: none;
     position: absolute;
+    overflow: hidden;
     right: 0px;
     top: 100%;
     background: #fff;
@@ -104,6 +103,9 @@ nav.top-navigation{
     width: 300px;
     max-width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
+    z-index: 15;
+    max-height: 0;
+    @include transition(all .4s ease-in);
     li {
       display: block;
       border-bottom: 1px solid #ccc;
@@ -111,6 +113,9 @@ nav.top-navigation{
         display: block;
         padding: 20px;
       }
+    }
+    &.open{
+      max-height: 500px;
     }
   }
   .wrapper.fixed{
