@@ -117,7 +117,6 @@ main{
     font-size:12px;
   }
 }
-.fm-video-player{
 
 .fm-video-wrapper{
   height: auto;
@@ -342,4 +341,48 @@ ul.link-listing{
       }
     }
   }  
+}
+
+.fm-menu-toggle{
+  background: transparent;
+  outline: none;
+  border: none;
+  position: relative;
+  padding: 15px 0 12px 0;
+  .icon-bar{
+    width: 14px;
+    height: 2px;
+    background: $color-teal;
+    display: block;
+    height: 2px;
+    margin: 0 auto;
+    position: absolute;
+    @include transition(all 0.5s linear);
+  }
+  .outline{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid $color-teal;
+    top: 6px;
+    left: -8px;
+  }
+  .icon-bar{
+    &.one{
+
+    }
+    &.two{
+      @include transform(translateY(5px));
+    }
+    &.three{
+      @include transform(translateY(10px));
+    }
+  }
+  &.openNav .icon-bar.one{
+    @include transform(translateY(5px) rotate(45deg));
+  }
+  &.openNav .icon-bar.three{
+    @include transform(translateY(5px) rotate(-45deg));
+  }
 }

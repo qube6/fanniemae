@@ -35,6 +35,11 @@
   }
 }
 
+.fm-top-rail{
+  @media (max-width: $screen-xs-max){
+    margin-bottom: 20px;
+  }
+}
 .fm-rail{
 }
 .rail-row{
