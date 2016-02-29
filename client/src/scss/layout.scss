@@ -44,6 +44,11 @@
 }
 .rail-row{
   margin: 20px 0;
+  @media (min-width: $screen-xs){
+    // &:first-child{
+    //   margin: 0;
+    // }
+  }
 }
 
 @media (min-width: $screen-sm) {
