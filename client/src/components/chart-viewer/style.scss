@@ -7,6 +7,9 @@ section.chart-viewer{
   @media (max-width: $screen-sm){
     display: block;
   }
+  .fm-subtitle{
+    margin-bottom: 0;
+  }
   .nav-block{
     display: table-cell;
     vertical-align: top;
@@ -17,38 +20,6 @@ section.chart-viewer{
       display: block;
       width: auto;
       padding-bottom: 0; 
-    }
-    li{
-      border-bottom: 1px solid rgba(11,147,192,.25);
-      &:last-child{
-        border-bottom: none;
-      }
-      a{
-        display: block;
-        padding: 10px 10px 10px 0;
-        position: relative;
-        &:after{
-          display: block;
-          width: 10px;
-          height: 16px;
-          line-height: 16px;
-          content: "\e903";          
-          font-family: 'icomoon';
-          font-style: normal;
-          font-weight: bold;
-          font-variant: normal;
-          text-transform: none;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          margin-top: -8px;
-        }
-      }
-      &.active{
-        a{
-          color:#01172d;
-        }
-      }
     }
     &:after{
       z-index: 2;
@@ -64,7 +35,7 @@ section.chart-viewer{
       @media (max-width: $screen-sm){
         display: none;
       }
-    }
+    }    
   }
   .chart-block{
     display: table-cell;
@@ -80,6 +51,15 @@ section.chart-viewer{
         display: block;
       }
     }
+    p{
+      margin: 0;
+    }
   }
-
+  .link-listing{
+    li{
+      &:first-child{
+        border-top: none;
+      }
+    }
+  }
 }

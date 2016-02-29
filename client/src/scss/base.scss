@@ -101,9 +101,23 @@ main{
   width: 100%;
   position: relative;
   padding: 5px 0;
-  margin: 0;
+  margin: 0 0 10px;
   border-bottom: 2px solid $color-teal;
 }
+.fm-list-title{
+  position: relative;
+  h2{
+    font-size: 18px;
+    margin: 0 0 5px;
+  }
+  .view-all{
+    position: absolute;
+    right: 0;
+    top: 4px;
+    font-size:12px;
+  }
+}
+.fm-video-player{
 
 .fm-video-wrapper{
   height: auto;
@@ -298,3 +312,34 @@ main{
   margin-bottom: 30px;
 }
 
+ul.link-listing{
+  li{
+    border-top: 1px solid rgba(11,147,192,.25);
+    a{
+      display: block;
+      padding: 10px 10px 10px 0;
+      position: relative;
+      &:after{
+        display: block;
+        width: 10px;
+        height: 16px;
+        line-height: 16px;
+        content: "\e903";          
+        font-family: 'icomoon';
+        font-style: normal;
+        font-weight: bold;
+        font-variant: normal;
+        text-transform: none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -8px;
+      }
+    }
+    &.active{
+      a{
+        color:#01172d;
+      }
+    }
+  }  
+}
