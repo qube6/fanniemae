@@ -1,4 +1,4 @@
-nav.rail-navigation.white-bg.padding-30(fm-accordion)
+nav.rail-navigation.dark-bg.padding-30(fm-accordion)
   fm-accordion-item( ng-class="{ 'rail-nav-open' : isOpen() }" )
     .rail-nav-header(ng-click="toggleItem()")
       h1.fm-subtitle Governance
@@ -16,14 +16,14 @@ nav.rail-navigation.white-bg.padding-30(fm-accordion)
         a.fm-accordion-link(href="/") Fannie Mae Charter
           .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
       li.open
-        a.fm-accordion-link Board of Directors
+        a.fm-accordion-link.active Board of Directors
           .fm-link-toggle.icon.fm-minus(aria-hidden="true")
         ul.submenu.fm-accordion-content
           li: a.fm-accordion-link(href="/") Guideline 1
           li: a.fm-accordion-link(href="/") Guideline 2
           li: a.fm-accordion-link(href="/") Guideline 3
       li
-        a.fm-accordion-link.active(href="/") Board Committees
+        a.fm-accordion-link(href="/") Board Committees
           .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
       li
         a.fm-accordion-link(href="/") Committee Charters
