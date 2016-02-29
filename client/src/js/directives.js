@@ -227,37 +227,26 @@ var directiveModule = angular.module('fannieMae.directives', [])
 })
 .directive('listing', 
   function(fannieAPIservice) {
-    var link = function ($scope, $element, attrs) {
+    var link = function ($scope, $element, attrs, $timeout) {
       $scope.apiUrl = $element.attr('data-api-url');
-      $scope.pageSize = $element.attr('data-page-size');
-      $scope.language = $element.attr('data-language');
-      $scope.term = undefined;
       $scope.items = [];
-      $scope.start = 0;
-      $scope.end = 0;
-      $scope.total = 0;
-      $scope.loading = false;
+      $scope.payload = {};
+      $scope.dynamic = false;
 
-      console.log($scope);
-      $scope.loadQuery = function(){
+      $scope.loadQuery = function(fresh){
         $scope.loading = true;
-    
-        var payload = {
-          pageSize : $scope.pageSize,
-          start : $scope.end+1,
-          language : $scope.language
-        };
-        if($scope.term) {
-          payload.term = $scope.term
+        if(fresh){
+          $scope.dynamic = true;
+          $scope.items=[];
+          angular.element($element[0].querySelector('.static')).remove();
         }
-        
-        fannieAPIservice.getData($scope.apiUrl, payload)
+        fannieAPIservice.getData($scope.apiUrl, $scope.payload)
           .success(function (data) {
             // remove this. testing UI
             // $timeout(function(){
             $scope.items = $scope.items.concat(data.results);
-            $scope.start = data.start;
-            $scope.end = data.end;
+            $scope.payload.start = data.start;
+            $scope.payload.end = data.end;
             $scope.total = data.total;
             $scope.loading = false;
             // }, 2000);
@@ -267,17 +256,6 @@ var directiveModule = angular.module('fannieMae.directives', [])
           });
       }
 
-      $scope.$watch('term', function(newValue, oldValue) {
-        // reset everything
-        $scope.items = [];
-        $scope.start = 0;
-        $scope.end = 0;
-        $scope.total = 0;
-        // if we still have a search term go get it
-        if($scope.term){
-          $scope.loadQuery();
-        }
-      });
     };
     return {
       restrict: 'A',
