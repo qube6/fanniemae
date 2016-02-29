@@ -64,22 +64,23 @@ var directiveModule = angular.module('fannieMae.directives', [])
       link: link
     };
 }])
-.directive('greedyNav', ['$window', '$compile',
-  function ($window, $compile) {
+
+.directive('greedyNav', ['$window', '$compile', '$timeout',
+  function ($window, $compile, $timeout) {
 
     var link = function ($scope, $element, attrs) {
       var $nav = $element,
           items = [],
-          links = angular.element($nav[0].querySelector('.hide')).find('a'),
           $visibleLinks = angular.element($nav[0].querySelector('.visible-links'));
+          open = false;
             
-
+      //make a copy of the static hidden menu
       angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
         items.push({title:link.innerHTML, url: link.attributes.href.value});
       });
 
-      $scope.updateNav = function(){
-        var availableSpace = $nav[0].querySelector('.wrap').offsetWidth,
+      var updateNav = function(){
+        var availableSpace = $nav[0].offsetWidth,
             stillRoom = true,
             left;
 
@@ -90,10 +91,12 @@ var directiveModule = angular.module('fannieMae.directives', [])
           if(stillRoom){
             //need to append these rather than create a scope variable because I have to measure with each item
             $visibleLinks.append('<li><a href="'+item.url+'">'+item.title+'</a></li>');
+            //no more room?
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
-              $visibleLinks[0].lastChild.innerHTML = '<a class="more" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
-              //we just killed that from the visible nav so lets tuck it in as the first item in hidden
+              //replace the one we just added with a more button
+              $visibleLinks[0].lastChild.outerHTML = '<li class="nav-toggle" ng-class="{ \'open\' : isOpen() }"><button ng-click="toggleOpen()" ng-class="{ \'openNav\' : isOpen() }" type="button" class="fm-menu-toggle"><span class="sr-only">Toggle more items</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span><span class="count">'+left+'</span></button><li>';
+              //lets tuck the item we just replaced as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;
             }
@@ -101,21 +104,31 @@ var directiveModule = angular.module('fannieMae.directives', [])
             $scope.hiddenLinks.push(item);
           }
         });
-
+        $compile($visibleLinks.contents())($scope);
       };
 
-      angular.element($window).bind('resize', function() {
-        $scope.updateNav();
-      });
+      $scope.isOpen = function(){
+        return open;
+      };
 
-      $scope.updateNav();
+      $scope.toggleOpen = function(){
+        $timeout(function(){
+          open = !open;
+        }, 0);
+      };
+
+      angular.element($window).off('resize', updateNav).on('resize', updateNav);
+
+      updateNav();
     };
 
     return {
       restrict: 'A',
-      link: link
+      link: link,
+      scope: true
     };
 }])
+
 .directive('fmStickyHeader', ['$window', 
   function($window) {
     var stickies = [],
@@ -177,30 +190,130 @@ var directiveModule = angular.module('fannieMae.directives', [])
     };
 }])
 
-.directive('fmVideoPlayer', 
-  function() {
+.directive('fmVideoPlayer', ['$timeout',
+  function($timeout) {
     var link = function ($scope, element, attrs) {
       $scope.videoPaused = true;
+      $scope.video = element.find('video')[0];
 
-      $scope.controlVideo = function($event) {
-        var video = $event.currentTarget.nextElementSibling;
+      if(attrs.hasOwnProperty('autoplay')){
+        $scope.video.setAttribute('autoplay', attrs.autoplay);
+        $scope.video.setAttribute('controls', 'controls');
+        $scope.videoPaused = false;
+      }
+
+      $scope.controlVideo = function($) {
         if ($scope.videoPaused){
-          video.play();
+          $scope.video.play();
+          $scope.playVideo()
         } else{
-          video.pause()
+          $scope.video.pause();
+          $scope.pauseVideo()
         }
-        $scope.videoPaused = !$scope.videoPaused;
       }
 
-      $scope.pauseVideo = function($event, pauseOnly) {
-        var video = $event.currentTarget;
-        video.pause()
-        $scope.videoPaused = true;
+      $scope.pauseVideo = function() {
+        $timeout(function(){
+          $scope.videoPaused = true;
+          $scope.video.removeAttribute('controls');
+        });
       }
+      $scope.playVideo = function() {
+        $timeout(function(){
+          $scope.videoPaused = false;
+          $scope.video.setAttribute('controls', 'controls');
+        });
+      }
+
+      // handle video events from controls
+      $scope.video.addEventListener('pause', $scope.pauseVideo, true);
+      $scope.video.addEventListener('play', $scope.playVideo ,true);
     }
+    return {
+      restrict: 'E',
+      link: link,
+      scope: true,
+      transclude: true,
+      template: '<div class="fm-video-wrapper"><span class="icon" ng-class=" videoPaused ? \'fm-play-circle\' : \'fm-pause-circle\' " ng-click="controlVideo()"></span><video ng-transclude></video></div>'
+    };
+}])
+.directive('tabs', 
+  function() {
+    var link = function ($scope, element, attrs) {
+      //angular is weird and requires this to be a string for select to stay updated to activeTab model
+      $scope.activeTab = "0";
+      //make a model for the select shown on mobile
+      $scope.opts = [];      
+      angular.forEach(angular.element(element[0].querySelector('.nav-block')).find('a'), function(opt, i){
+        $scope.opts.push({title:opt.innerHTML, i: i.toString()});
+      });      
+      $scope.setTab = function(i) {
+        $scope.activeTab = i.toString();
+      };   
+    };
     return {
       restrict: 'A',
       link: link,
-      scope: {}
+      scope: true
+    };
+})
+.directive('listing', 
+  function(fannieAPIservice) {
+    var link = function ($scope, $element, attrs) {
+      $scope.apiUrl = $element.attr('data-api-url');
+      $scope.pageSize = $element.attr('data-page-size');
+      $scope.language = $element.attr('data-language');
+      $scope.term = undefined;
+      $scope.items = [];
+      $scope.start = 0;
+      $scope.end = 0;
+      $scope.total = 0;
+      $scope.loading = false;
+
+      console.log($scope);
+      $scope.loadQuery = function(){
+        $scope.loading = true;
+    
+        var payload = {
+          pageSize : $scope.pageSize,
+          start : $scope.end+1,
+          language : $scope.language
+        };
+        if($scope.term) {
+          payload.term = $scope.term
+        }
+        
+        fannieAPIservice.getData($scope.apiUrl, payload)
+          .success(function (data) {
+            // remove this. testing UI
+            // $timeout(function(){
+            $scope.items = $scope.items.concat(data.results);
+            $scope.start = data.start;
+            $scope.end = data.end;
+            $scope.total = data.total;
+            $scope.loading = false;
+            // }, 2000);
+          })
+          .error(function(data, status, headers, config){      
+            $scope.items = [];
+          });
+      }
+
+      $scope.$watch('term', function(newValue, oldValue) {
+        // reset everything
+        $scope.items = [];
+        $scope.start = 0;
+        $scope.end = 0;
+        $scope.total = 0;
+        // if we still have a search term go get it
+        if($scope.term){
+          $scope.loadQuery();
+        }
+      });
+    };
+    return {
+      restrict: 'A',
+      link: link,
+      scope: true
     };
 });

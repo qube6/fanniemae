@@ -1,0 +1,40 @@
+section.chart-viewer.display-table(tabs)
+  .block.nav-block.white-bg.padding-30
+    h1.fm-subtitle June 2015
+    ul.link-listing.no-mobile
+      li(ng-class="{active: activeTab == 0}" ): a(href="" ng-click="setTab(0)") GDP
+      li(ng-class="{active: activeTab == 1}" ): a(href="" ng-click="setTab(1)") UE
+      li(ng-class="{active: activeTab == 2}" ): a(href="" ng-click="setTab(2)") 30 Year Mortgage
+      li(ng-class="{active: activeTab == 3}" ): a(href="" ng-click="setTab(3)") SF Originations (Purchase Refi)
+      li(ng-class="{active: activeTab == 4}" ): a(href="" ng-click="setTab(4)") Home Prices
+    
+    .styled-select.mobile-only
+      select(ng-model="activeTab" ng-options="opt.i as opt.title for opt in opts")
+
+  .block.chart-block.padding-30.white-bg
+    ul
+      li.fade-in(ng-class="{active: activeTab == 0}" )
+        figure
+          img(src="http://placehold.it/800x340/?text=GDP")
+          figcaption 
+            p Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to
+      li.fade-in(ng-class="{active: activeTab == 1}" )
+        figure
+          img(src="http://placehold.it/800x340/111/?text=UE")
+          figcaption 
+            p UE Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to
+      li.fade-in(ng-class="{active: activeTab == 2}" )
+        figure
+          img(src="http://placehold.it/800x340/333/?text=30+Year")
+          figcaption 
+            p 30 Year. Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to
+      li.fade-in(ng-class="{active: activeTab == 3}" )
+        figure
+          img(src="http://placehold.it/800x340/666/?text=SF+Orig")
+          figcaption 
+            p SF Originations. Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to
+      li.fade-in(ng-class="{active: activeTab == 4}" )
+        figure
+          img(src="http://placehold.it/800x340/999/?text=Home+Prices")
+          figcaption 
+            p Home Prices. Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to

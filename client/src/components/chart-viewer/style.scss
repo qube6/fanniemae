@@ -1,0 +1,65 @@
+section.chart-viewer{
+  table-layout: fixed;
+  width: calc(100% + 60px);
+  margin: 0 -30px 30px;
+  border-spacing: 30px 0;
+  border-collapse: separate;
+  @media (max-width: $screen-sm){
+    display: block;
+  }
+  .fm-subtitle{
+    margin-bottom: 0;
+  }
+  .nav-block{
+    display: table-cell;
+    vertical-align: top;
+    width: 33%;
+    position: relative;
+    margin: 0;
+    @media (max-width: $screen-sm){
+      display: block;
+      width: auto;
+      padding-bottom: 0; 
+    }
+    &:after{
+      z-index: 2;
+      content: '';
+      display: block;
+      border-width: 20px 16px;
+      border-color: transparent transparent transparent white;
+      border-style: solid;
+      border-right-width: 24px;
+      position: absolute;
+      right: -40px;
+      top: 65px;
+      @media (max-width: $screen-sm){
+        display: none;
+      }
+    }    
+  }
+  .chart-block{
+    display: table-cell;
+    vertical-align: top;
+    @media (max-width: $screen-sm){
+      display: block;
+      padding-top: 0;
+      margin: 0;
+    }
+    li{
+      display: none;
+      &.active{
+        display: block;
+      }
+    }
+    p{
+      margin: 0;
+    }
+  }
+  .link-listing{
+    li{
+      &:first-child{
+        border-top: none;
+      }
+    }
+  }
+}

@@ -1,11 +1,20 @@
 .promo{
   p{
-    margin: 20px 0;
     font-size: 14px;
     line-height: 20px;
   }
   h2{
     font-size: 18px;
     margin: 0;
+  }
+  .email{
+    display: block;
+    margin: 0 0 20px;
+  }
+  .links{
+    margin: 0 0 20px;
+    li{
+      font-size: 18px;
+    }
   }
 }

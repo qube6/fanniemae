@@ -7,6 +7,7 @@ nav.top-navigation{
   z-index: 89;
   .wrap{
     position: relative;
+    display: inline-block;
   }
   ul.visible-links{
     white-space: nowrap;
@@ -16,15 +17,22 @@ nav.top-navigation{
     li{
       display: inline-block;
       padding: 0 15px;
-      border-right: 1px solid #ccc;
+      border-left: 1px solid #ccc;
       line-height: 20px;
       margin: 0 0 10px;
       position: relative;
-      &:last-child{
-        border-right: none;
+      &:first-child{
+        border-left: none;
       }
-      @media (max-width: $screen-sm){  
-
+      &.nav-toggle{
+        border-left: none;
+        // padding: 0;
+        // width: 65px;
+        height: 50px;
+        margin: 0;
+        &.open{
+          // background: white;
+        }
       }
     } 
   }  
@@ -36,53 +44,20 @@ nav.top-navigation{
     }
   }
   button{
-    position: absolute;
-    height: 40px;
     right: 0;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    &::after {
-      content: attr(count);
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      left: -16px;
-      top: 12px;
-      text-align: center;
-      font-size: 14px;
-      line-height: 28px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      font-weight: bold;
-    }
+    top: -10px;
   }
-  a.more{
-    &.hover{
-      text-decoration: none;
-    }
-  }
-  i{
-    position: absolute;
-    top: -5px;
-    left: 15px;
-    font-size: 24px;
-    display: block;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    line-height: 30px;
-    border: 1px solid #007697;
-  }
+  // .open button{
+  //   background: white;
+  //   width: 100%;
+  // }
   span.label{
     visibility: hidden;
   }
   span.count{
     position: absolute;
     top: 50%;
-    margin-top: -7px;
-    left: 40px;
+    right: calc(50% - 22px);
     border-radius: 50%;
     display: block;
     height: 14px;
@@ -95,9 +70,11 @@ nav.top-navigation{
   }
   
   ul.hidden-links {
+    display: none;
     position: absolute;
     right: 0px;
     top: 100%;
+    margin-top: -30px;
     background: #fff;
     text-align: right;
     width: 300px;
@@ -110,6 +87,9 @@ nav.top-navigation{
         display: block;
         padding: 20px;
       }
+    }
+    &.open{
+      display: block;
     }
   }
   .wrapper.fixed{

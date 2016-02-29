@@ -1,18 +1,18 @@
 -var sideMenuOpen = sideMenuOpen || false
 header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
   .navbar-header
-    button.navbar-toggle.pull-right(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
+    button.fm-menu-toggle.pull-right.no-desktop(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
       span.sr-only Toggle navigation
       span.icon-bar.one
       span.icon-bar.two
       span.icon-bar.three
       span.outline
-    button.header-search-btn.no-desktop.pull-right(type="button" ng-click="toggleActive('header-search-mobile')")
+    button.header-search-btn.no-desktop.pull-right(type="button" ng-click="toggleActive('header-search')")
       span.icon.fm-search-circle(aria-hidden="true" )
     a.site-logo.navbar-btn.pull-left(href="/" title="home")
       svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
         use(xlink:href="/media/FannieMae-Logo.svg#Logo")
-  form.header-search-form.no-desktop(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search-mobile') }" fm-close-on-click-away='header-search-mobile')
+  form.header-search-form(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away='header-search')
     input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
     input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
     span.icon.fm-arrow-right-circle(aria-hidden="true")
@@ -23,7 +23,7 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
         span.icon(aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
       .sites-list
         h1.font-serif Doing Business with Fannie Mae
-        ul.menu.nav(fm-accordion)
+        ul.menu.nav(fm-accordion close-others="false")
           li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
             a(ng-click="toggleItem()")
               h2 Lenders
@@ -55,12 +55,9 @@ header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
             a(href='http://homepath.com', target='_blank')
               h2 HomePath
               .subhead Find & Buy Homes
-    form.header-search-form.desktop-only(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }")
-      input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
-      input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
-      button.header-search-btn(type="button" ng-click="toggleActive('header-search')")
-        span.icon.fm-search-circle(aria-hidden="true" )
-    ul.main-menu(fm-accordion)
+    button.header-search-btn.pull-right.desktop-only(type="button" ng-click="toggleActive('header-search')")
+      span.icon.fm-search-circle(aria-hidden="true" )
+    ul.main-menu(fm-accordion close-others="false")
       li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
         a(href='/about-us', title='') About Us
         button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")

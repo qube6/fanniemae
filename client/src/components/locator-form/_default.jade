@@ -1,0 +1,28 @@
+form.locator-form.block.white-bg.padding-30(action="")
+  h1.fm-subtitle Mortgage-Backed Securities
+  p Search for disclosure and related documents for a single pool or trust.
+  h2 Search Type
+    sup *
+  ul.inline
+    li
+      label.checkbox
+        input(type="checkbox") 
+        span CUSIP Number
+
+    li
+      label.checkbox
+        input(type="checkbox") 
+        span Pool Number
+
+    li
+      label.checkbox
+        input(type="checkbox" checked) 
+        span Trust Number
+
+  input(type="text" placeholder="Number*" title="Enter CUSIP or Pool number" required)
+
+  input(type="text" placeholder="Trust Class/Tranche")
+
+  .text-right
+    button.more Search
+      i.icon.fm-search

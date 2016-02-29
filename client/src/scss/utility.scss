@@ -42,6 +42,9 @@ ol.inline  > li {
 
 .display-table{
   display: table !important;
+  &.fixed{
+    table-layout: fixed;
+  }
 }
 .table-row{
   display: table-row !important;
@@ -61,7 +64,7 @@ ol.inline  > li {
 }
 
 .mobile-only{
-   @media (min-width:$screen-sm) {
+   @media (min-width:$screen-sm+1) {
     display: none !important;
   }
 }

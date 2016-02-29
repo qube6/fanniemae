@@ -4,10 +4,6 @@
     color:  black;
     font-size: 14px;
     line-height: 24px;
-    @media (min-width: $screen-md){
-      font-size: 18px;
-      line-height: 32px;
-    }
   }
   h1{
 
@@ -15,14 +11,261 @@
   h2{
     font-size: 26px;
     color: $color-teal;
+    margin: 0 0 20px;
   }
-  ul{
+  h3{
+    font-size: 18px;
+    margin: 0 0 20px;
+  }
+  ul, ol{
     margin-left: 20px;
     padding-left: 20px;
     li{
-      list-style: initial;
+      list-style: inherit;
       font-size: 14px;
       line-height: 25px;
     }
+  }
+  blockquote{
+    font-size: 26px;
+    line-height: 34px;
+    border: none;
+    position: relative;
+    margin: 0 2px 20px; 
+    &.with-citation{
+      margin: 0 20px 50px; 
+    }
+    @media(min-width: $screen-sm){
+      margin: 0 50px 20px; 
+      &.with-citation{
+        margin: 0 50px 50px; 
+      }
+    }
+    &:before, &:after{
+      font-size: 16px;
+      line-height: 16px; 
+      vertical-align: 5px;
+      position: relative;
+      display: inline-block;
+      font: normal normal normal 16px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    &:before {
+      content: "\f10d";
+      padding-right: 5px;
+    }
+    &:after {
+      content: "\f10e";
+      padding-left: 5px;
+    }
+    footer{
+      position: absolute;
+      right: 0;
+      top: 100%;
+      color: $color-teal;
+      font-size: 60%;
+    }
+  }
+  figure{
+    width: 100%;
+    img, video{
+      width: 100%;
+    }
+    figcaption{
+      padding: 10px 0;
+      h3{
+        margin: 5px 0;
+      }
+    }
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 5px 3px;
+  }
+}
+
+
+// From http://codepen.io/universePaul/pen/LrtIy
+table{
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  margin: 0 0 20px;
+
+  th {
+    background-color: $color-light-blue;
+    font-weight: bold;
+    text-align: left;
+    color: $color-dark;
+  }
+  tbody,
+  tr,
+  th,
+  td {
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  tr{  
+    margin-bottom: 1em;
+    border: 1px solid $color-body-bg;
+    color: $color-dark;
+    &:last-of-type {
+      margin-bottom: 0; 
+    }
+    
+    &:nth-of-type(even) {
+      @media (min-width: $screen-md) {
+        background-color: $color-light-blue;
+      }
+    }
+  }
+  th, td{
+    padding: .5em 2em;
+    vertical-align: middle;
+    border: 1px solid $color-body-bg;
+  }
+}
+.responsive-table {
+  
+  @media (min-width: $screen-md) {
+    font-size: .9em; 
+  }
+  
+  @media (min-width: $screen-lg) {
+    font-size: 1em; 
+  }
+  
+  thead {
+    // Accessibly hide <thead> on narrow viewports
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden;
+    
+    @media (min-width: $screen-md) {
+      // Unhide <thead> on wide viewports
+      position: relative;
+      clip: auto;
+      height: auto;
+      width: auto;
+      overflow: auto;
+    }
+    
+  }
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  thead, tbody{
+    tr {   
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-row; 
+      }
+    }
+
+    th,
+    td {
+      display: block;
+
+      @media (min-width: $screen-sm) {
+        padding: .75em .5em; 
+      }
+      
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-cell;
+        padding: .5em;
+        padding-left: 2em;
+      }
+      
+      @media (min-width: $screen-lg) {
+        padding: .75em .5em; 
+        padding-left: 2em;
+      }
+      
+      @media (min-width: $screen-xl) {
+        padding: .75em; 
+        padding-left: 2em;
+      }
+    }
+  }
+  
+  caption {
+    margin-bottom: 1em;
+    font-size: 1em;
+    //font-weight: bold;
+    text-align: center;
+    
+    @media (min-width: $screen-md) {
+      font-size: 1.5em;
+    }
+  }
+  
+  
+  tbody {
+    @media (min-width: $screen-md) {
+      // Undo display: block 
+      display: table-row-group; 
+    }
+    
+    tr {
+      border-width: 2px;
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-row;
+        border-width: 1px;
+      }
+    }
+    
+    th[scope="row"] {
+      background-color: $color-light-blue;
+      @media (min-width: $screen-md) {
+        background-color: transparent;
+        text-align: left; 
+      }
+    }
+    
+    td {
+      text-align: right;
+      
+      @media (min-width: $screen-sm) {
+        border-bottom: 1px solid $color-body-bg;
+      }
+      
+      @media (min-width: $screen-md) {
+        text-align: left; 
+      }
+    }
+    
+    td[data-type=currency] {
+      text-align: right; 
+    }
+    
+    td[data-title]:before {
+      content: attr(data-title);
+      float: left;
+      font-size: .8em;
+      color: $color-dark;
+      
+      @media (min-width: $screen-sm) {
+        font-size: .9em; 
+      }
+      
+      @media (min-width: $screen-md) {
+        // Don’t show data-title labels 
+        content: none; 
+      }
+    } 
   }
 }

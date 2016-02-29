@@ -1,0 +1,28 @@
+-var config = config || {type: 'img-right'};
+section.featured-subpages(class="#{config.type}")
+  img(src="http://placehold.it/400x460" alt="something meaningful").fade-in
+  .block.padding-30.white-bg
+    h1.fm-subtitle Debt Securities
+    p Search for disclosure and related documents for a single pool or trust.    
+    .row
+      .col-sm-6
+        header.fm-list-title
+          h2 Products
+          a.view-all(href="") View All
+        ul.link-listing
+          li: a(href="") Connecticut Avenue Securities
+          li: a(href="") Credit Insurance Risk Sharing
+          li: a(href="") Mortgage Insurance Risk Sharing
+
+      .col-sm-6
+        header.fm-list-title
+          h2 Tools &amp; Applications
+          a.view-all(href="") View All
+        ul.link-listing
+          li: a(href="") Connecticut Avenue Securities
+          li: a(href="") Credit Insurance Risk Sharing
+          li: a(href="") Mortgage Insurance Risk Sharing  
+
+
+    a(href="").more View
+      i.icon.fm-arrow-right    

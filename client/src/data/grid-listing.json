@@ -1,0 +1,56 @@
+{
+  "start" : 0,
+  "end" : 7,
+  "total" : 27,
+  "results" : [
+    {
+      "title" : "Article title 1",
+      "date" : "June 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 2",
+      "date" : "July 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 3",
+      "date" : "August 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 4",
+      "date" : "September 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 5",
+      "date" : "June 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 6",
+      "date" : "June 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 7",
+      "date" : "June 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    },    
+    {
+      "title" : "Article title 8",
+      "date" : "June 21, 2015",
+      "url" : "http://google.com",
+      "type" : "Article Type"
+    }    
+
+  ]
+}
