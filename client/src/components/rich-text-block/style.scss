@@ -230,9 +230,13 @@ table{
     
     th[scope="row"] {
       background-color: $color-light-blue;
+      text-align: right;
       @media (min-width: $screen-md) {
         background-color: transparent;
         text-align: left; 
+      }
+      &:before{
+        font-weight: bold;
       }
     }
     
@@ -252,20 +256,22 @@ table{
       text-align: right; 
     }
     
-    td[data-title]:before {
-      content: attr(data-title);
-      float: left;
-      font-size: .8em;
-      color: $color-dark;
-      
-      @media (min-width: $screen-sm) {
-        font-size: .9em; 
-      }
-      
-      @media (min-width: $screen-md) {
-        // Don’t show data-title labels 
-        content: none; 
-      }
-    } 
+    td, th{
+      &[data-title]:before {
+        content: attr(data-title);
+        float: left;
+        font-size: .8em;
+        color: $color-dark;
+        
+        @media (min-width: $screen-sm) {
+          font-size: .9em; 
+        }
+        
+        @media (min-width: $screen-md) {
+          // Don’t show data-title labels 
+          content: none; 
+        }
+      } 
+    }
   }
 }
