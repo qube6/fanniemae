@@ -1,11 +1,13 @@
 .navbar{
-  background: $color-dark-blue;
   height: $header-height-lg;
 }
-.navbar .wrapper.fixed{
-  height: $header-height-lg;
-  background: $color-blue;
+.navbar .wrapper{
+  background: $color-dark-blue;
   border-bottom: 1px solid rgba(255, 255, 255, .5);
+  height: $header-height-lg;
+  &.fixed{
+    background: $color-blue;
+  }
 }
 
 /* Logo and Mobile Menu */
