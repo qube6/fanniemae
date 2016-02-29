@@ -1,12 +1,14 @@
 .image-promo{
-  position: relative;
-  figcaption{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100% - #{$cta-height});
+  figure{
+    position: relative;
+    figcaption{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: calc(100% - #{$cta-height});
+    }
   }
-  &.white-bg .cta{
+  .white-bg .cta{
     position: absolute;
     bottom: 0;
     left: 0;

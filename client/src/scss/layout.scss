@@ -4,6 +4,24 @@
   }
 }
 
+
+.fm-main-content{
+  @media(max-width: $screen-xs-max){
+    display:flex;
+    flex-flow: column;
+
+    .fm-content{
+      order: 2;
+    }
+    .fm-top-rail{
+      order: 1;
+    }
+    .fm-rail{
+      order: 3;
+    }
+  }
+}
+
 .content-row{
   float: left;
   margin: 0 -10px;
@@ -17,13 +35,20 @@
   }
 }
 
-.fm-rail{
-  @media screen and (max-width: $screen-xs-max){
-    padding-top: 30px;
+.fm-top-rail{
+  @media (max-width: $screen-xs-max){
+    margin-bottom: 20px;
   }
+}
+.fm-rail{
 }
 .rail-row{
   margin: 20px 0;
+  @media (min-width: $screen-xs){
+    // &:first-child{
+    //   margin: 0;
+    // }
+  }
 }
 
 @media (min-width: $screen-sm) {
