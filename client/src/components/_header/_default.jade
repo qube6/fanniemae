@@ -1,7 +1,7 @@
 -var sideMenuOpen = sideMenuOpen || false
 header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
   .navbar-header
-    button.fm-menu-toggle.pull-right(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
+    button.fm-menu-toggle.pull-right.no-desktop(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
       span.sr-only Toggle navigation
       span.icon-bar.one
       span.icon-bar.two

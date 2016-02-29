@@ -132,11 +132,14 @@ main{
     @include center-xy();
     z-index: 10;
     cursor: pointer;
-    font-size: 60px;
+    font-size: 45px;
     color: white;
     background: $color-dark-blue;
     padding: 5px;
     border-radius: 50%;
+    @media (min-width: $screen-sm){
+      font-size: 60px;
+    }
   }
 
   .fm-pause-circle{
@@ -349,7 +352,9 @@ ul.link-listing{
   border: none;
   position: relative;
   padding: 15px 0 12px 0;
+  width: 30px;
   .icon-bar{
+    left: calc(50% - 7px);
     width: 14px;
     height: 2px;
     background: $color-teal;
@@ -360,13 +365,13 @@ ul.link-listing{
     @include transition(all 0.5s linear);
   }
   .outline{
+    left: calc(50% - 15px);
     position: absolute;
     height: 30px;
     width: 30px;
     border-radius: 50%;
     border: 2px solid $color-teal;
-    top: 6px;
-    left: -8px;
+    top: calc(50% - 8px);
   }
   .icon-bar{
     &.one{

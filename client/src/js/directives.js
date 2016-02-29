@@ -95,7 +95,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
               //replace the one we just added with a more button
-              $visibleLinks[0].lastChild.innerHTML = '<a class="more-items" href=""><span class="label">More</span><i class="icon fm-arrow-right"></i><span class="count">'+left+'</span></a>';
+              $visibleLinks[0].lastChild.outerHTML = '<li class="nav-toggle" ng-class="{ \'open\' : isOpen() }"><button ng-click="toggleOpen()" ng-class="{ \'openNav\' : isOpen() }" type="button" class="fm-menu-toggle"><span class="sr-only">Toggle more items</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span><span class="count">'+left+'</span></button><li>';
               //lets tuck the item we just replaced as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;
