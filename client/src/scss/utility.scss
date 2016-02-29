@@ -42,6 +42,9 @@ ol.inline  > li {
 
 .display-table{
   display: table !important;
+  &.fixed{
+    table-layout: fixed;
+  }
 }
 .table-row{
   display: table-row !important;

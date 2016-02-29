@@ -1,6 +1,11 @@
-.navbar, .navbar .wrapper{
-  height: $header-height-lg;
+.navbar{
   background: $color-dark-blue;
+  height: $header-height-lg;
+}
+.navbar .wrapper.fixed{
+  height: $header-height-lg;
+  background: $color-blue;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
 /* Logo and Mobile Menu */
@@ -14,6 +19,13 @@
   @media only screen and (max-width:$screen-xs-max) {
     padding-left: 15px;
   }
+  .fm-menu-toggle{
+    position: relative;
+    margin: 0;
+    width: 27px;
+    top: 14px;
+    margin: 0 10px;
+  }
 }
 .site-logo{
   padding: 0;
@@ -21,39 +33,7 @@
     margin: 0;
   }
 }
-.navbar-toggle{
-  position: relative;
-  margin: 0;
-  width: 30px;
-  top: 14px;
-  margin-left: 10px;
-  .icon-bar{
-    width: 14px;
-  }
-  .outline{
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 2px solid $color-teal;
-    top: 6px;
-    left: -8px;
-  }
-}
-.icon-bar{
-  &.two{
-    @include transform(translateY(5px));
-  }
-  &.three{
-    @include transform(translateY(10px));
-  }
-  .openNav &.one{
-    @include transform(translateY(5px) rotate(45deg));
-  }
-  .openNav &.three{
-    @include transform(translateY(5px) rotate(-45deg));
-  }
-}
+
 
 /* Nav Container */
 .navbar-offcanvas{
@@ -100,6 +80,7 @@
 
 /* Drop-down Nav Menu */
 .main-menu{
+  flex-shrink: 0;
   > li{
     @media(max-width: $screen-md-max){
       display: block;
@@ -213,6 +194,10 @@
     padding: 0 30px;
     min-height: $carousel-height-lg;
     opacity: .95;
+    background: $color-dark-blue;
+    .fixed &{
+      background: $color-blue;
+    } 
   }
   @media (min-width: $screen-xl){
     padding: 0 30px;
@@ -333,40 +318,20 @@
 
 
 /* Search Form */
-.header-search-form.desktop-only {
-  position: relative;
-  margin: 0;
-  width: 0%;
-  min-width: 60px;
-  height: $header-height-lg;
-  float: right;
-  overflow: hidden;
-  background: transparent;
-  top: auto;
-
-  @include transition(width 0.3s);
-
-  -webkit-backface-visibility: hidden;
-
-  &.header-search-open, .no-js & {
-    width: 18%;
-  }
-}
 
 input[type="search"].header-search-input {
   position: absolute;
-  top: 0;
-  right: 0;
   border: none;
   outline: none;
   background: #fff;
-  width: 100%;
   height: $header-element-height;
   top: $header-element-spacing;
   margin: 0;
-  z-index: 5;
   padding: 0 10px;
   border-radius: 0;
+  top: 0;
+  left: 10px;
+  width: calc(100% - 90px);
 
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -379,12 +344,8 @@ input[type="search"].header-search-input {
 }
 
 .header-search-btn, input[type="submit"].header-search-submit{
-  width: 60px;
   height: $header-height-lg;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
+  // display: block;
   padding: 0;
   margin: 0;
   line-height: $header-height-lg;
@@ -392,26 +353,27 @@ input[type="search"].header-search-input {
   cursor: pointer;
   -webkit-appearance: none;
   border: none;
+  outline: none;
+  background: transparent;
 }
 
 input[type="submit"].header-search-submit{
+  position: absolute;
   background: #fff; /* IE needs this */
+  color: transparent;
+  top: 0;
+  right: 10px;
+  width: $header-element-height;
+  z-index: 1;
+  opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
   filter: alpha(opacity=0); /* IE 5-7 */
-  opacity: 0;
-  color: transparent;
-  border: none;
-  outline: none;
-  z-index: -1;
-  &.header-search-active{
-    z-index: 10;
-  }
 }
 
 button[type="button"].header-search-btn{
-  z-index: 5;
+  width: 60px;
   color: $color-teal;
-  background: $color-dark-blue;
+  position: relative;
   &:hover{
     color: white;
   }
@@ -420,14 +382,9 @@ button[type="button"].header-search-btn{
     position: absolute;
     @include center-xy();
   }
-  @media (max-width: $screen-md-max){
-    position: relative;
-  }
 }
 
-/* Mobile Search Form */
-
-.header-search-form.no-desktop{
+.header-search-form{
   position: absolute;
   top: 100%;
   left: 0;
@@ -436,39 +393,30 @@ button[type="button"].header-search-btn{
   overflow: hidden;
   background: $color-dark-blue;
   margin: 0;
-  z-index: 10;
+  z-index: 1;
+  .fixed &{
+    background: $color-blue;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+  }
 
   @include transition(height 0.3s);
 
   -webkit-backface-visibility: hidden;
 
   &.header-search-open, .no-js & {
-    height: $header-element-height + 20px;
+    height: $header-element-height + 10px;
   }
 
-  input[type="search"].header-search-input{
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-  }
-
-  input[type="submit"].header-search-submit{
-    z-index: 10;
-    width: $header-element-height;
-    opacity: 0;
-    height: $header-element-height;
-    top: 10px;
-    right: 10px;
-  }
   .icon{
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px;
     font-size: 30px;
     padding: 5px 10px;
-    z-index: 9;
     color: $color-teal;
-    background: $color-dark-blue;
+    @media (min-width: $screen-lg){
+      padding: 5px 20px;
+    }
     &:hover{
       color: white;
     }
