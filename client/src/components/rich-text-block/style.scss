@@ -72,9 +72,11 @@
     width: 100%;
     img, video{
       width: 100%;
+      vertical-align: middle;
     }
     figcaption{
-      padding: 10px 0;
+      background-color: $color-light-blue;
+      padding: 30px;
       h3{
         margin: 5px 0;
       }
