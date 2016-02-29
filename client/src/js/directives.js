@@ -227,7 +227,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
 })
 .directive('listing', 
   function(fannieAPIservice) {
-    var link = function ($scope, $element, attrs) {
+    var link = function ($scope, $element, attrs, $timeout) {
       $scope.apiUrl = $element.attr('data-api-url');
       $scope.items = [];
       $scope.payload = {};
@@ -238,7 +238,6 @@ var directiveModule = angular.module('fannieMae.directives', [])
         if(fresh){
           $scope.dynamic = true;
           $scope.items=[];
-          console.log(angular.element($element[0].querySelector('.static')));
           angular.element($element[0].querySelector('.static')).remove();
         }
         fannieAPIservice.getData($scope.apiUrl, $scope.payload)

@@ -1,5 +1,5 @@
 -var config = config || {};
-section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" data-page-size="8" data-language="en")
+section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" data-page-size="8" data-language="en" ng-class="loading ? 'loading' : 0")
   -if(config.news){
     form.blue-block.with-search()
       input(type="hidden" ng-model="payload.language" value="en")
@@ -88,7 +88,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" da
       h2.fm-title: a(href="{{item.url}}") {{item.title}}
       span.fm-date {{item.date}}
       a(href="{{item.url}}").more: i.icon.fm-arrow-right
-  .white-bg.text-center(ng-if="payload.end < total-1 || !payload.end")
+  .white-bg.text-center(ng-if="(payload.end < total-1 || !payload.end) && !loading")
     a(href="" ng-click="loadQuery()").more.load-more View More
       i.icon.fm-plus
 
