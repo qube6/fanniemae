@@ -28,6 +28,7 @@ figure.bio-teaser, .rich-text-block figure.bio-teaser{
     font-size: 20px;
     overflow: hidden;
     background: transparent;
+    padding: 0;
     @media(min-width: $screen-sm){
       height: 100%;
       float: left;
