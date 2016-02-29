@@ -13,7 +13,7 @@
   }
   .rail-navigation-list{
     li{
-      border-bottom: 1px solid rgba(0,0,0,.3);
+      border-bottom: 1px solid rgba(255,255,255,.3);
       &:last-child{
         border: none;
       }
@@ -25,6 +25,9 @@
       max-height: 0;
       overflow: hidden;
       @include transition(all .4s ease-in);
+      >li:first-child{
+        padding-top: 20px;
+      }
     }
   }
   .rail-nav-open .rail-navigation-list{
