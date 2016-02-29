@@ -19,6 +19,13 @@
   @media only screen and (max-width:$screen-xs-max) {
     padding-left: 15px;
   }
+  .fm-menu-toggle{
+    position: relative;
+    margin: 0;
+    width: 27px;
+    top: 14px;
+    margin: 0 10px;
+  }
 }
 .site-logo{
   padding: 0;
@@ -26,39 +33,7 @@
     margin: 0;
   }
 }
-.navbar-toggle{
-  position: relative;
-  margin: 0;
-  width: 27px;
-  top: 14px;
-  margin-left: 10px;
-  .icon-bar{
-    width: 14px;
-  }
-  .outline{
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 2px solid $color-teal;
-    top: 6px;
-    left: -8px;
-  }
-}
-.icon-bar{
-  &.two{
-    @include transform(translateY(5px));
-  }
-  &.three{
-    @include transform(translateY(10px));
-  }
-  .openNav &.one{
-    @include transform(translateY(5px) rotate(45deg));
-  }
-  .openNav &.three{
-    @include transform(translateY(5px) rotate(-45deg));
-  }
-}
+
 
 /* Nav Container */
 .navbar-offcanvas{

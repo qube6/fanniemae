@@ -14,12 +14,15 @@ block top-content
 block content
   article.article-wrapper.padding-30
     .rich-text-block
-      p Lorem ipsum dolor sit amet, an labores fastidii usu, postea convenire conclusionemque an quo. Errem ocurreret sea id, postea scripta prompta sea id, cu senserit philosophia vel.
-      p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te. No vel iudico dolores oporteat, facilisi molestiae consequat no vim, ex urbanitas liberavisse nam. o vel iudico dolores oporteat, facilisi molestiae consequat no vim, ex urbanitas liberavisse nam.
+      h3 Adding new technology for mortgage servicers often means weighing the need against the cost.
+      p “It is the age-old balancing act,” says Matt Lichtner, senior vice president of Decision Ready, a technology provider to the mortgage servicing industry. “There is definitely a need. They’ve got to have technology, and they know it.”
+      blockquote It is the age-old balancing act... There is definitely a need. They’ve got to have technology, and they know it.
+      p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage servicers to beef up their technology beginning in 2013, and it’s a process that continues today.
+      p The cost of compliance has led servicers—both large and small—to embrace technology enhancements as they seek operational efficiencies to manage costs, fulfill investor requirements, and maintain compliance.
       br
       br
       h2 Corporate Governance Guidelines
-      p The Corporate Governance Guidelines' content categories are:
+      h3 The Corporate Governance Guidelines' content categories are:
       ul
         li The Roles and Responsibilities of the Board and Management
         li The Corporate Governance Guidelines
@@ -40,10 +43,85 @@ block content
         li Implementation of the Guidelines
       br
       br
+      table.responsive-table
+        thead
+          tr
+            th(scope="col") CUSIP
+            th(scope="col") Issue Date
+            th(scope="col") Maturity Date
+            th(scope="col") Coupon
+            th(scope="col") Amount Issued
+        tr
+          th(scope="row" data-title="CUSIP") 3135G0NV1
+          td(data-title="Issue Date") 08/17/2012
+          td(data-title="Maturity Date") 09/28/2015
+          td(data-title="Coupon") 0.500%
+          td(data-title="Amount Issued") 5,000,000,000
+        tr
+          th(scope="row" data-title="CUSIP") 31359MZC0
+          td(data-title="Issue Date") 09/12/2005
+          td(data-title="Maturity Date") 10/15/2015
+          td(data-title="Coupon") 4.375%
+          td(data-title="Amount Issued") 4,000,000,000
+        tr
+          th(scope="row" data-title="CUSIP") 31398A4M1
+          td(data-title="Issue Date") 09/27/2010
+          td(data-title="Maturity Date") 10/26/2015
+          td(data-title="Coupon") 1.625%
+          td(data-title="Amount Issued") 6,500,000,000
+        tr
+          th(scope="row" data-title="CUSIP") 31359MH89
+          td(data-title="Issue Date") 02/16/2006
+          td(data-title="Maturity Date") 12/21/2015
+          td(data-title="Coupon") 0.375%
+          td(data-title="Amount Issued") 4,000,000,000
+        tr
+          th(scope="row" data-title="CUSIP") 31359MH89
+          td(data-title="Issue Date") 02/16/2006
+          td(data-title="Maturity Date") 03/15/2016
+          td(data-title="Coupon") 5.000%
+          td(data-title="Amount Issued") 5,000,000,000
+        tr
+          th(scope="row" data-title="CUSIP") 3135G0VA8
+          td(data-title="Issue Date") 02/15/2013
+          td(data-title="Maturity Date") 03/30/2016
+          td(data-title="Coupon") 0.500%
+          td(data-title="Amount Issued") 6,000,000,000
+      br
+      br
+      figure
+        fm-video-player
+          source(src='http://clips.vorwaerts-gmbh.de/VfE_html5.mp4', type='video/mp4')
+          source(src='http://clips.vorwaerts-gmbh.de/VfE.webm', type='video/webm')
+          source(src='http://clips.vorwaerts-gmbh.de/VfE.ogv', type='video/ogg')
+          // fallback to Flash:
+          object(type='application/x-shockwave-flash', data='player.swf')
+            // Firefox uses the `data` attribute above, IE/Safari uses the param below
+            param(name='movie', value='player.swf')
+            param(name='flashvars', value='autostart=true&controlbar=over&image=poster.jpg&file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4')
+            // fallback image
+            img(src='http://placehold.it/600x400', alt='Big Buck Bunny', title='No video playback capabilities, please download the video below')
+        figcaption
+          h3 Adding new technology for mortgage servicers
+          p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
+      br
+      br
+      figure
+        img(src='../media/content-image-1.png', alt='Placeholder Image', title='Placeholder image')
+        figcaption
+          h3 Adding new technology for mortgage servicers
+          p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
+          i.small Photo credit info
+      br
+      br
       include ../../components/accordian/_default.jade
 
-block rail
+block top-rail
   include ../../components/rail-navigation/_default.jade
+  
+block rail
+  .rail-row
+    include ../../components/more-in/_default.jade
   .rail-row
     include ../../components/promo/_default.jade
   .rail-row

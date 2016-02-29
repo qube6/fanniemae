@@ -117,7 +117,13 @@ main{
     font-size:12px;
   }
 }
-.fm-video-player{
+
+.fm-video-wrapper{
+  height: auto;
+  width: 100%;
+  position: relative;
+  display: block;
+
   video, video source{
     z-index: 0 !important;
   }
@@ -126,8 +132,14 @@ main{
     @include center-xy();
     z-index: 10;
     cursor: pointer;
-    font-size: 60px;
+    font-size: 45px;
     color: white;
+    background: $color-dark-blue;
+    padding: 5px;
+    border-radius: 50%;
+    @media (min-width: $screen-sm){
+      font-size: 60px;
+    }
   }
 
   .fm-pause-circle{
@@ -138,6 +150,11 @@ main{
       }
     }
   }
+}
+
+.video{
+  max-width: 100%;
+  height: auto;
 }
 
 .video-link:after{
@@ -242,6 +259,17 @@ main{
 .padding-20{
   padding: 20px;
 }
+.styled-select{
+  select{
+    color:#fff;
+    background: #26334b;
+    width: 100%;
+    margin: 0 0 15px;
+  }
+  &:after{
+    border-top-color:#fff;
+  }
+}
 
 .more{
   font-size: 16px;
@@ -316,4 +344,50 @@ ul.link-listing{
       }
     }
   }  
+}
+
+.fm-menu-toggle{
+  background: transparent;
+  outline: none;
+  border: none;
+  position: relative;
+  padding: 15px 0 12px 0;
+  width: 30px;
+  .icon-bar{
+    left: calc(50% - 7px);
+    width: 14px;
+    height: 2px;
+    background: $color-teal;
+    display: block;
+    height: 2px;
+    margin: 0 auto;
+    position: absolute;
+    @include transition(all 0.5s linear);
+  }
+  .outline{
+    left: calc(50% - 15px);
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid $color-teal;
+    top: calc(50% - 8px);
+  }
+  .icon-bar{
+    &.one{
+
+    }
+    &.two{
+      @include transform(translateY(5px));
+    }
+    &.three{
+      @include transform(translateY(10px));
+    }
+  }
+  &.openNav .icon-bar.one{
+    @include transform(translateY(5px) rotate(45deg));
+  }
+  &.openNav .icon-bar.three{
+    @include transform(translateY(5px) rotate(-45deg));
+  }
 }
