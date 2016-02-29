@@ -4,6 +4,7 @@
   }
   .fm-subtitle{
     padding-bottom: 5px;
+    color: white;
     @media (max-width: $screen-xs-max){
       border-bottom: none;
       margin: 0;
@@ -16,6 +17,9 @@
       &:last-child{
         border: none;
       }
+      a{
+        color: $color-teal;
+      }
     }
     @media(max-width: $screen-xs-max){
       max-height: 0;
@@ -26,11 +30,13 @@
   .rail-nav-open .rail-navigation-list{
     max-height: 1000px;
   }
-  .open .fm-accordion-link, .open .fm-link-toggle{
-    cursor: default;
-    color: $color-dark;
-    &:hover{
-      text-decoration: none;;
+  .active.fm-accordion-link{
+    &, & .fm-link-toggle{
+      cursor: default;
+      color: white;
+      &:hover{
+        text-decoration: none;;
+      }
     }
   }
   .submenu{
