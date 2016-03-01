@@ -376,9 +376,15 @@ input[type="submit"].btn::-moz-focus-inner {
     line-height: 40px;
     vertical-align: top;
   }
-  .table-cell+label.table-cell{
-    padding-left:15px;
+  label.table-cell{
+    padding: 0 10px 0 30px;
+    width: 1%;
+    white-space: nowrap;
+    &:first-of-type{
+      padding-left: 0;
+    }
     @media (max-width: 720px){
+      width: 100px;
       padding-left: 0;
     }
   }
@@ -407,10 +413,12 @@ input[type="submit"].btn::-moz-focus-inner {
     }
     @media (max-width: 720px){
       position: relative;
-      margin: 0 0 15px;
+      margin: 0 auto 15px;
       height: 30px;
       line-height: 30px;
-      width: auto;
+      width: 90px;
+      left: 50%;
+      margin-left: -45px; //center
     }
     span{
       display: none;

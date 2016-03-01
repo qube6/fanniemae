@@ -301,7 +301,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
     restrict: 'A',
     link: function(scope, element, attrs) {
       
-      //split out to handle parent objects
+      //split out to handle nested objects i.e. payload.foo
       var parts = attrs.initModel.split('.');
       
       var obj;
