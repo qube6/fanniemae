@@ -247,17 +247,20 @@ main{
     color: $color-dark-blue;
   }
 }
+.padding-10{
+  padding: 30px;
+}
+.padding-20{
+  padding: 20px;
+}
+.padding-30{
+  padding: 30px;
+}
 .padding-80{
   padding: 40px 80px;
   @media (max-width: $screen-sm){
     padding: 30px;
   }
-}
-.padding-30{
-  padding: 30px;
-}
-.padding-20{
-  padding: 20px;
 }
 .styled-select{
   select{
@@ -375,7 +378,6 @@ ul.link-listing{
   }
   .icon-bar{
     &.one{
-
     }
     &.two{
       @include transform(translateY(5px));
@@ -390,4 +392,24 @@ ul.link-listing{
   &.openNav .icon-bar.three{
     @include transform(translateY(5px) rotate(-45deg));
   }
+}
+
+.fm-list-item{
+  display: block;
+  border-bottom: 1px solid $color-hr;
+}
+.fm-list-link{
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 0;
+  display: block;
+}
+.fm-list-icon{
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  color: $color-teal;
+  cursor: pointer;
+  top: calc(50% - 9px);
 }

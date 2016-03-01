@@ -25,6 +25,10 @@ block content
 
 block rail
   include ../../components/report-detail/_default.jade
-  include ../../components/report-detail/_default.jade
-  include ../../components/people-promo/_default.jade
-  include ../../components/email-updates/_default.jade
+  -var isAlt = true
+  .rail-row
+    include ../../components/report-detail/_default.jade
+  .rail-row
+    include ../../components/people-promo/_default.jade
+  .rail-row
+    include ../../components/email-updates/_default.jade
