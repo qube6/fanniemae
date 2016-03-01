@@ -1,0 +1,18 @@
+extends ../layouts/layout-one-column
+
+block title
+  title PT04a News Listing
+
+block top-content
+  -var config={withImage : true, title: 'Corporate News', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  include ../../components/overview/_default.jade
+  include ../../components/top-navigation/_default.jade
+  .breadcrumb-social-wrap
+    -var config={ parent : 'News', child : 'Corporate News'}
+    include ../../components/breadcrumb/_default.jade
+    include ../../components/social-share/_default.jade
+
+block content
+      
+  -var config={news:true};
+  include ../../components/grid-listing/_default.jade
