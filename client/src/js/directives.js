@@ -259,10 +259,10 @@ var directiveModule = angular.module('fannieMae.directives', [])
 })
 .directive('listing', 
   function(fannieAPIservice) {
-    var link = function ($scope, $element, attrs, $timeout) {
+    var link = function ($scope, $element, attrs) {
       $scope.apiUrl = $element.attr('data-api-url');
       $scope.items = [];
-      $scope.payload = {};
+      $scope.payload = $scope.payload || {}; //may init this in another directive based on baked in values
       $scope.dynamic = false;
 
       $scope.loadQuery = function(fresh){
@@ -270,7 +270,6 @@ var directiveModule = angular.module('fannieMae.directives', [])
         if(fresh){
           $scope.dynamic = true;
           $scope.items=[];
-          angular.element($element[0].querySelector('.static')).remove();
         }
         fannieAPIservice.getData($scope.apiUrl, $scope.payload)
           .success(function (data) {
@@ -294,4 +293,29 @@ var directiveModule = angular.module('fannieMae.directives', [])
       link: link,
       scope: true
     };
+})
+// This will allow us to initialize a model based on whats in the markup. Angular would have you create a custom 
+// service to initialize your model. This "feature" is great for SPA, crap for CMS
+.directive('initModel', function($compile) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      
+      //split out to handle parent objects
+      var parts = attrs.initModel.split('.');
+      
+      var obj;
+      //iterate over and add nested objects as needed
+      for(var i = 0; i < parts.length-1; i++){      
+        obj = scope[parts[i]] = scope[parts[i]] || {};
+      }
+      
+      //init the object to elements value
+      obj[parts[parts.length-1]] = element[0].value;
+      
+      element.attr('ng-model', attrs.initModel);
+      element.removeAttr('init-model');
+      $compile(element)(scope);
+    }
+  };
 });
