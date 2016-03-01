@@ -80,6 +80,12 @@
       h3{
         margin: 5px 0;
       }
+      p{
+        margin: 0;
+      }
+      p + .small{
+        margin-top: 20px;
+      }
     }
   }
   input[type="radio"],
