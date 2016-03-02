@@ -1,10 +1,10 @@
 nav.top-navigation{
   margin: 0 -15px;
-  padding-bottom: 1px; //-makes room for the bottom border which gets cut off 
   position: relative;
-  border-bottom: 1px solid #ccc;
   text-align: center;
+  height: 80px;
   .wrapper{
+    border-bottom: 1px solid $color-hr;
     position: absolute;
     width: 100%;
     padding: 10px 0;

@@ -3,8 +3,8 @@
 
 -if (config.withImage) {
   section.overview.with-image
-    .image-wrap
-      picture    
+    .image-wrap.no-mobile
+      picture  
         source(srcset="http://placehold.it/2000x380/333/444" media="(min-width: 1080px)")   
         source(srcset="http://placehold.it/1280x360/d13120/fff" media="(min-width: 600px)")    
         img.fade-in.hero(src="http://placehold.it/600x300/aaa/fff" alt="") 
@@ -16,10 +16,9 @@
 - } else {
   section.overview
     .container
-      .col-md-8
-        .caption
-          h1 #{config.title}
-          - if(config.caption) {
-            p #{config.caption}
-          - }
+      .col-md-8.caption
+        h1 #{config.title}
+        - if(config.caption) {
+          p #{config.caption}
+        - }
 - }
