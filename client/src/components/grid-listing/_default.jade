@@ -3,7 +3,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
   -if(config.news){
     form.blue-block.with-search()
       input(type="hidden" init-model="payload.language" value="en")
-      input(type="hidden" init-model="payload.pageSize" value="8")
+      input(type="hidden" init-model="payload.pageSize" value="9")
       input(type="hidden" init-model="payload.start" value="0")
       .display-table
         .table-row
@@ -37,47 +37,83 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
 
   ul
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
     li.block.white-bg.padding-30(ng-if="!dynamic")
-      span.fm-type.font-serif Weekly Note
+      span.fm-type.font-serif
+        if config.news
+          | Corporate News
+        else
+          | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
       a(href="").more: i.icon.fm-arrow-right
