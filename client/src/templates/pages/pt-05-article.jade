@@ -12,17 +12,23 @@ block top-content
     include ../../components/social-share/_default.jade
 
 block content
-  .article-wrapper.white-bg
+  article.article-wrapper.padding-30
     include ../../components/article-header/_default.jade
-    include ../../components/rich-text-block/_default.jade
-    include ../../components/content-image/_default.jade
-    include ../../components/content-video/_default.jade
-    include ../../components/content-table/_default.jade
-    include ../../components/article-share/_default.jade
-    include ../../components/disclaimer/_default.jade
+    .rich-text-block
+      p Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to Fannie Mae’s (FNMA/OTC) Economic & Strategic Research (ESR) Group. The strong U.S. dollar and challenges in the oil and gas industry will likely produce some ongoing headwinds in the near term.
+      figure
+        img(src='../media/content-image-2.png', alt='Placeholder Image', title='Placeholder image')
+        figcaption
+          p Concise text that tells people what the data means. This will help people who struggle to interpret graphs.
+      include ../../components/article-share/_default.jade
+      include ../../components/disclaimer/_default.jade
 
 block rail
   include ../../components/report-detail/_default.jade
-  include ../../components/report-detail/_default.jade
-  include ../../components/people-promo/_default.jade
-  include ../../components/email-updates/_default.jade
+  -var isAlt = true
+  .rail-row
+    include ../../components/report-detail/_default.jade
+  .rail-row
+    include ../../components/people-promo/_default.jade
+  .rail-row
+    include ../../components/email-updates/_default.jade

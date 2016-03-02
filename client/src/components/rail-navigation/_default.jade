@@ -2,7 +2,7 @@ nav.rail-navigation.dark-bg.padding-30(fm-accordion)
   fm-accordion-item( ng-class="{ 'rail-nav-open' : isOpen() }" )
     .rail-nav-header(ng-click="toggleItem()")
       h1.fm-subtitle Governance
-      .fm-link-toggle.icon.fm-menu-toggle.mobile-only( ng-class="{ 'openNav' : isOpen() }" aria-hidden="true")
+      span.fm-list-icon.icon.fm-menu-toggle.mobile-only( ng-class="{ 'openNav' : isOpen() }" aria-hidden="true")
         span.sr-only Toggle navigation
         span.icon-bar.one
         span.icon-bar.two
@@ -10,34 +10,34 @@ nav.rail-navigation.dark-bg.padding-30(fm-accordion)
         span.outline
     ul.rail-navigation-list
       li
-        a.fm-accordion-link(href="/") Guidelines
-          .fm-link-toggle.icon.fm-plus(aria-hidden="true")
+        a.fm-list-link(href="/") Guidelines
+          span.fm-list-icon.icon.fm-plus(aria-hidden="true")
       li
-        a.fm-accordion-link(href="/") Fannie Mae Charter
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Fannie Mae Charter
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
       li.open
-        a.fm-accordion-link.active Board of Directors
-          .fm-link-toggle.icon.fm-minus(aria-hidden="true")
+        a.fm-list-link.active Board of Directors
+          span.fm-list-icon.icon.fm-minus(aria-hidden="true")
         ul.submenu.fm-accordion-content
-          li: a.fm-accordion-link(href="/") Guideline 1
-          li: a.fm-accordion-link(href="/") Guideline 2
-          li: a.fm-accordion-link(href="/") Guideline 3
+          li: a.fm-list-link(href="/") Guideline 1
+          li: a.fm-list-link(href="/") Guideline 2
+          li: a.fm-list-link(href="/") Guideline 3
       li
-        a.fm-accordion-link(href="/") Board Committees
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Board Committees
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
       li
-        a.fm-accordion-link(href="/") Committee Charters
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Committee Charters
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
       li
-        a.fm-accordion-link(href="/") Code of Conduct
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Code of Conduct
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
       li
-        a.fm-accordion-link(href="/") Bylaws
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Bylaws
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
       li
-        a.fm-accordion-link(href="/") Contact Board of Directors Housing
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Contact Board of Directors Housing
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
       li
-        a.fm-accordion-link(href="/") Reports
-          .fm-link-toggle.icon.fm-arrow-right(aria-hidden="true")
+        a.fm-list-link(href="/") Reports
+          span.fm-list-icon.icon.fm-arrow-right(aria-hidden="true")
 
