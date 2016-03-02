@@ -33,12 +33,12 @@
   .rail-nav-open .rail-navigation-list{
     max-height: 1000px;
   }
-  .active.fm-accordion-link{
-    &, & .fm-link-toggle{
+  .active.fm-list-link{
+    &, & .fm-list-icon{
       cursor: default;
       color: white;
       &:hover{
-        text-decoration: none;;
+        text-decoration: none;
       }
     }
   }

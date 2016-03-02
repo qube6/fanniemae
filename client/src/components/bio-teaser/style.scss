@@ -1,23 +1,16 @@
-figure.bio-teaser, .rich-text-block figure.bio-teaser{
+figure.bio-teaser{
   display: block;
   background: #f2f2f2;
   position: relative;
   width: 100%;
   margin: 20px 0;
-  height: 150px;
-  @media(min-width: $screen-md){
-    height: 200px;
-  }
+  height: 115px;
   img{
-    width: auto !important;
-    height: 100%;
     float: left;
-    @media(min-width: $screen-sm){
-      max-width: 30%;
-    }
-    @media(min-width: $screen-md){
-      max-width: 50%;
-    }
+    width: auto !important;
+  }
+  a{
+    display: block;
   }
   figcaption{
     height: calc(100% - 20px);
@@ -25,47 +18,95 @@ figure.bio-teaser, .rich-text-block figure.bio-teaser{
     display: inline-block;
     position: absolute;
     margin: 10px;
-    font-size: 20px;
+    font-size: 14px;
     overflow: hidden;
-    background: transparent;
-    padding: 0;
-    @media(min-width: $screen-sm){
-      height: 100%;
-      float: left;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding: 30px;
-      margin: 0;
-      position: relative;
-      max-width: 70%;
-    }
-    @media(min-width: $screen-lg){
-      max-width: 50%;
-      font-size: 26px;
-    }
+    background-color: transparent !important;
+    padding: 0 !important;
   }
   .bio-name{
-    margin: 10px 0;
+    margin: 0 0 5px;
+    font-size: 22px;
+    @media (max-width: $screen-xs-max){
+      font-size: 18px;
+    }
   }
   p.bio-title{
-    font-size: 16px;
-    @media(min-width: $screen-md){
-      font-size: 20px;
-    }
+    font-size: 14px;
+    line-height: 1.1;
+    margin-bottom: 5px;
   }
   .icon-link{
     position: absolute;
-    right: 0;
-    bottom: 0;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: right;
     font-size: 20px;
     padding: 10px;
     background: $color-dark-blue;
     &:hover{
       color: white;
     }
+  }
+
+  //Only apply media queries for article content (not rail)
+  .rich-text-block &{
+    margin-bottom: 65px;
+    @media(min-width: $screen-sm){
+      margin-bottom: 20px;
+    }
     @media(min-width: $screen-md){
-      font-size: 30px;
+      height: 200px;
+    }
+    img{
+      @media(min-width: $screen-sm){
+        max-width: 30%;
+      }
+      @media(min-width: $screen-md){
+        max-width: 50%;
+        height: 100%;
+      }
+    }
+    figcaption{
+      @media(min-width: $screen-sm){
+        height: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px !important;
+        margin: 0;
+        position: relative;
+        max-width: 70%;
+        font-size: 20px;
+      }
+      @media(min-width: $screen-lg){
+        max-width: 50%;
+        font-size: 26px;
+      }
+    }
+    .bio-name{
+      @media(min-width: $screen-md){
+        font-size: 26px;
+        margin: 0 0 10px;
+      }
+    }
+    p.bio-title{
+      @media(min-width: $screen-md){
+        font-size: 20px;
+      }
+    }
+    .icon-link{
+      @media(min-width: $screen-sm){
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;        
+        width: auto;
+      }
+      @media(min-width: $screen-md){
+        font-size: 30px;
+      }
     }
   }
 }

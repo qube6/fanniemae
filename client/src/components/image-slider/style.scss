@@ -143,6 +143,7 @@
   line-height: 1;
   display: inline-block;
   text-decoration: none;
+  color:#007697;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.8rem;
@@ -173,6 +174,9 @@
       left: auto;
       right: -15px;
       background: #007697;
+    }
+    a:hover{
+      color: white;
     }
     li{
       color:#fff;

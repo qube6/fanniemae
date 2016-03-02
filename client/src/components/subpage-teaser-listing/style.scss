@@ -1,0 +1,30 @@
+section.subpage-teaser-listing{
+  .block{
+    margin-bottom: 60px;
+  }
+  p{
+    margin-bottom: 30px;
+  }
+  h2.fm-title{
+    margin-top:0;
+  }
+  a{
+    display: block;
+    position: relative;
+  }
+  img{
+    display: block;
+    position: relative;
+    margin: 0 0 -60px;
+    -webkit-filter: saturate(100%);
+    filter: saturate(100%);
+    transition: all .2s;
+    &:hover{
+      -webkit-filter: saturate(200%);
+      filter: saturate(200%);
+    }
+  }
+  .fm-play-circle{
+
+  }
+}

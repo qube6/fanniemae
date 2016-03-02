@@ -1,10 +1,6 @@
 .fm-accordion{
-  // margin: 0 -15px;
-  // width: calc(100% + 30px);
-  // @media(min-width: $screen-sm){
-    width: 100%;
-    margin: 0;
-  //}
+  width: 100%;
+  margin: 0;
   button.fm-accordion-toggle-all{
     display: inline;
     border: none;
@@ -35,30 +31,14 @@
   .fm-subtitle{
     padding: 15px 0;
   }
+
+}
+.fm-subtitle{
+  margin: 0;
 }
 fm-accordion{
   width: 100%;
   display: block;
-}
-fm-accordion-item{
-  display: block;
-  border-bottom: 1px solid rgba(0,0,0,.3);
-  position: relative;
-}
-.fm-accordion-link{
-  position: relative;
-  width: 100%;
-  font-size: 16px;
-  padding: 10px 0;
-  display: block;
-}
-.fm-link-toggle{
-  font-size: 18px;
-  position: absolute;
-  top: 10px;
-  right: 0;
-  color: $color-teal;
-  cursor: pointer;
 }
 .fm-accordion-content{
   max-height: 0;

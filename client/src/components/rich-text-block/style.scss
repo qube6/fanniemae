@@ -26,48 +26,7 @@
       line-height: 25px;
     }
   }
-  blockquote{
-    font-size: 26px;
-    line-height: 34px;
-    border: none;
-    position: relative;
-    margin: 0 2px 20px; 
-    &.with-citation{
-      margin: 0 20px 50px; 
-    }
-    @media(min-width: $screen-sm){
-      margin: 0 50px 20px; 
-      &.with-citation{
-        margin: 0 50px 50px; 
-      }
-    }
-    &:before, &:after{
-      font-size: 16px;
-      line-height: 16px; 
-      vertical-align: 5px;
-      position: relative;
-      display: inline-block;
-      font: normal normal normal 16px/1 FontAwesome;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    &:before {
-      content: "\f10d";
-      padding-right: 5px;
-    }
-    &:after {
-      content: "\f10e";
-      padding-left: 5px;
-    }
-    footer{
-      position: absolute;
-      right: 0;
-      top: 100%;
-      color: $color-teal;
-      font-size: 60%;
-    }
-  }
+  
   figure{
     width: 100%;
     img, video{
@@ -79,6 +38,12 @@
       padding: 30px;
       h3{
         margin: 5px 0;
+      }
+      p{
+        margin: 0;
+      }
+      p + .small{
+        margin-top: 20px;
       }
     }
   }

@@ -1,3 +1,19 @@
+main{
+  min-height: 100%;
+  position: relative;
+  #page-wrapper{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: $footer-height-xs + 90px;
+    @media (min-width: $screen-sm){
+      padding-bottom: $footer-height-sm + 90px;
+    }
+    @media (min-width: $screen-md){
+      padding-bottom: $footer-height-md + 90px;
+    }
+  }
+}
+
 @media (min-width: $screen-lg) and (max-width: 1400px){
   .container{
       width: 1150px;
@@ -23,7 +39,7 @@
 }
 
 .content-row{
-  float: left;
+  //float: left; //dont seem to need this and it's causing elements below it to behave bad because the float isnt cleared
   margin: 0 -10px;
   width: calc(100% + 20px);
   @media (min-width: $screen-sm){

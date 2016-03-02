@@ -9,26 +9,27 @@ html(ng-app="fannieMae")
   body(ng-controller="MainController")
 
     main
-      block header
-        include ../../components/_header/_default.jade
-      .container-fluid
-        .row
-          .col-xs-12
-            block top-content
-              //- include ../../components/overview/_default.jade
-              //- include ../../components/breadcrumb/_default.jade
-              //- include ../../components/social-share/_default.jade
+      #page-wrapper
+        block header
+          include ../../components/_header/_default.jade
+        .container-fluid
+          .row
+            .col-xs-12
+              block top-content
+                //- include ../../components/overview/_default.jade
+                //- include ../../components/breadcrumb/_default.jade
+                //- include ../../components/social-share/_default.jade
 
-      .container
-        .row
-          .fm-main-content
-            block main-content
+        .container
+          .row
+            .fm-main-content
+              block main-content
 
-      .container-fluid
-        .row
-          .col-xs-12
-            block bottom-content
-  
-    include ../../components/_footer/_default.jade
+        .container-fluid
+          .row
+            .col-xs-12
+              block bottom-content
+    
+      include ../../components/_footer/_default.jade
         
     include ../blocks/scripts.jade
