@@ -265,15 +265,18 @@ main{
 .padding-20{
   padding: 20px;
 }
+
 .styled-select{
   select{
     color:#fff;
     background: #26334b;
     width: 100%;
     margin: 0 0 15px;
+    -moz-appearance:none;
   }
   &:after{
     border-top-color:#fff;
+    pointer-events: none;
   }
 }
 

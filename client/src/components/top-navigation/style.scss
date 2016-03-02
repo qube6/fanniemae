@@ -8,6 +8,7 @@ nav.top-navigation{
     position: absolute;
     width: 100%;
     padding: 10px 0;
+    z-index: 5;
     &.fixed{
       box-shadow: 0 0 10px rgba(0,0,0,.1);
       padding: 0;
@@ -52,6 +53,7 @@ nav.top-navigation{
   button{
     right: 0;
     top: -10px;
+    padding: 0;
   }
   span.label{
     visibility: hidden;
