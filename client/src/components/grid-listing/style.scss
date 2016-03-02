@@ -8,11 +8,14 @@ section.grid-listing{
     margin-right: 2%;
     width: 32%;
     float: left;
-    height: 370px;
+    height: 340px;
     overflow: hidden;
     position: relative;
     &:nth-child(3n+3){
       margin-right: 0;
+    }
+    .fm-title{
+      font-size: 24px;
     }
     @media (max-width: 900px){
       width: 48%;
@@ -22,6 +25,9 @@ section.grid-listing{
       }
       &:nth-child(even){
         margin-right: 0;
+      }
+      .fm-title{
+        font-size: 22px;
       }
     }
     @media (max-width: 600px){
@@ -61,5 +67,4 @@ section.grid-listing{
   .load-more{
     margin: 10px;
   }
-  
 }
