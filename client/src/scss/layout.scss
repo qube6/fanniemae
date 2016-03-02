@@ -4,7 +4,13 @@ main{
   #page-wrapper{
     width: 100%;
     overflow: hidden;
-    padding-bottom: $footer-height-lg + 90px;
+    padding-bottom: $footer-height-xs + 90px;
+    @media (min-width: $screen-sm){
+      padding-bottom: $footer-height-sm + 90px;
+    }
+    @media (min-width: $screen-md){
+      padding-bottom: $footer-height-md + 90px;
+    }
   }
 }
 

@@ -21,9 +21,11 @@ $header-element-height: 40px;
 $header-element-spacing: ($header-height-lg - $header-element-height) / 2;
 $header-site-list-width: 385px;
 
-$footer-height-lg: 70px;
+$footer-height-md: 70px;
+$footer-height-sm: 140px;
+$footer-height-xs: 160px;
 $footer-element-height: 40px;
-$footer-element-spacing: ($footer-height-lg - $footer-element-height) / 2;
+$footer-element-spacing: ($footer-height-md - $footer-element-height) / 2;
 $footer-lead-width-lg: 450px;
 $footer-lead-width-sm: 325px;
 

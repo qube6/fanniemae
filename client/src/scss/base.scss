@@ -4,10 +4,6 @@ body{
   background: $color-body-bg;
   @include transform(none !important);
 }
-main{
-  width: 100%;
-  overflow: hidden;
-}
 
 .article-wrapper{
   background: white;
