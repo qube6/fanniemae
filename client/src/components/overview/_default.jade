@@ -16,10 +16,9 @@
 - } else {
   section.overview
     .container
-      .col-md-8
-        .caption
-          h1 #{config.title}
-          - if(config.caption) {
-            p #{config.caption}
-          - }
+      .col-md-8.caption
+        h1 #{config.title}
+        - if(config.caption) {
+          p #{config.caption}
+        - }
 - }

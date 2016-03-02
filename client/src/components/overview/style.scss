@@ -8,6 +8,8 @@ section.overview{
     margin-bottom: 0;
   }
   .caption{
+    position: absolute;
+    @include center-y();
     h1{
       font-size: 52px;
       font-family: $font-serif;
@@ -63,7 +65,9 @@ section.overview{
       margin: 0 auto;
       bottom: -25px;
       left: 50%;
-      margin-left: -380px;      
+      margin-left: -380px;    
+      top: auto;
+      transform: none;  
       p{
         padding: 50px;
         margin: 0;
