@@ -49,6 +49,7 @@
     top: $header-height-lg;
     @include transition(all 0.4s ease-in);
     @include box-shadow(0 0 14px rgba(0, 0, 0, .2));
+    z-index: 999;
     &.open-nav{
       right: 0;
     }
