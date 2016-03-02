@@ -1,0 +1,35 @@
+.search-call-out{
+  width: 100%;
+  span{
+    float: left;
+    margin-bottom: 10px;
+    @media (min-width: $screen-sm){
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
+      margin-bottom: none;
+    }
+  }
+  .table-cell{
+    height: 20px;
+    vertical-align: middle;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+    &:last-child{
+      border: none;
+    }
+    @media (max-width: $screen-xs-max){
+      float: left;
+    }
+  }
+  a{
+    padding: 0 10px;
+    text-align: center;
+    color: $color-teal;
+    &:hover{
+      color: white;
+    }
+    @media (min-width: $screen-lg){
+      padding: 0 20px;
+    }
+  }
+}
