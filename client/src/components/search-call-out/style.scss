@@ -3,11 +3,13 @@
   span{
     float: left;
     margin-bottom: 10px;
+    width: 100%;
     @media (min-width: $screen-sm){
       float: none;
       display: table-cell;
       vertical-align: middle;
       margin-bottom: none;
+      width: auto;
     }
   }
   .table-cell{
@@ -17,8 +19,13 @@
     &:last-child{
       border: none;
     }
-    @media (max-width: $screen-xs-max){
-      float: left;
+  }
+  .search-links{
+    display: table;
+    width: 100%;
+    @media (min-width: $screen-sm){
+      display: table-cell;
+      width: auto;
     }
   }
   a{
