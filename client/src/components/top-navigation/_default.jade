@@ -20,6 +20,6 @@ nav.top-navigation(fm-sticky-header)
             //-   a(href="{{link.url}}") {{link.title}}
             
               
-          ul.hidden-links(ng-show="hiddenLinks.length" ng-class="{ 'open' : isOpen() }")
+          ul.hidden-links(ng-show="hiddenLinks.length" ng-class="{ 'open' : isOpen() }" fm-close-on-click-away="toggleOpen()")
             li(ng-repeat="link in hiddenLinks"): a(href="{{link.url}}") {{link.title}}
 

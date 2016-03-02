@@ -32,10 +32,11 @@ main{
 
 [fm-sticky-header] .wrapper {
   display: block;
-  z-index: 99;
   background: $color-body-bg;
+  z-index: 1;
 }
 [fm-sticky-header] .wrapper.fixed {
+  z-index: 99;
   position: fixed;
   top: 0;
   width: 100%;
