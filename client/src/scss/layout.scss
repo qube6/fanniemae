@@ -23,7 +23,7 @@
 }
 
 .content-row{
-  float: left;
+  //float: left; //dont seem to need this and it's causing elements below it to behave bad because the float isnt cleared
   margin: 0 -10px;
   width: calc(100% + 20px);
   @media (min-width: $screen-sm){

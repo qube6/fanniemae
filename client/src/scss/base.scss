@@ -131,28 +131,29 @@ main{
 
   video, video source{
     z-index: 0 !important;
-  }
-  .fm-play-circle, .fm-pause-circle{
-    position: absolute;
-    @include center-xy();
-    z-index: 10;
-    cursor: pointer;
-    font-size: 45px;
-    color: white;
-    background: $color-dark-blue;
-    padding: 5px;
-    border-radius: 50%;
-    @media (min-width: $screen-sm){
-      font-size: 60px;
-    }
-  }
+  }  
+}
 
-  .fm-pause-circle{
-    @include animation(fadeOut 2s forwards);
-    &:hover{
-      @media (min-width:$screen-lg){
-        @include animation(fade-in .5s forwards);
-      }
+.fm-play-circle, .fm-pause-circle{
+  position: absolute;
+  @include center-xy();
+  z-index: 10;
+  cursor: pointer;
+  font-size: 45px;
+  color: white;
+  background: $color-dark-blue;
+  padding: 5px;
+  border-radius: 50%;
+  @media (min-width: $screen-sm){
+    font-size: 60px;
+  }
+}
+
+.fm-pause-circle{
+  @include animation(fadeOut 2s forwards);
+  &:hover{
+    @media (min-width:$screen-lg){
+      @include animation(fade-in .5s forwards);
     }
   }
 }
