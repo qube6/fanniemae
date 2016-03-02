@@ -58,6 +58,10 @@ h1 {
   @media (max-width: $screen-xs-max){
     font-size:25px;
   }
+  &.fm-section-title{    
+    font: 24px $font-serif;
+    margin: 30px 0 10px;  
+  }
 }
 h2 {
   font-size: 30px;
