@@ -1,3 +1,19 @@
+main{
+  min-height: 100%;
+  position: relative;
+  #page-wrapper{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: $footer-height-xs + 90px;
+    @media (min-width: $screen-sm){
+      padding-bottom: $footer-height-sm + 90px;
+    }
+    @media (min-width: $screen-md){
+      padding-bottom: $footer-height-md + 90px;
+    }
+  }
+}
+
 @media (min-width: $screen-lg) and (max-width: 1400px){
   .container{
       width: 1150px;
