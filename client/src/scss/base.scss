@@ -267,6 +267,11 @@ main{
     padding: 30px;
   }
 }
+
+.bottom-border{
+  border-bottom: 1px solid $color-hr;
+}
+
 .styled-select{
   select{
     color:#fff;

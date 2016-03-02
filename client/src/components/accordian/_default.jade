@@ -17,26 +17,19 @@ fm-accordion.fm-accordion
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
         h2 Chair
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae Lorem ipsum dolor sit, Fannie Mae Lorem ipsum dolor sit."}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae Lorem ipsum", link: true}
         include ../bio-teaser/_default.jade
         br
         h2 Members
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", link: true}
         include ../bio-teaser/_default.jade
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", link: true}
         include ../bio-teaser/_default.jade
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", link: true}
         include ../bio-teaser/_default.jade
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
-  fm-accordion-item.fm-list-item( ng-class="{ 'open' : isOpen() }")
-    a.fm-list-link(href="" ng-click="toggleItem()") The Audit Committee
-      span.fm-list-icon.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
-    .fm-accordion-content
-      .rich-text-block
-        p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
   fm-accordion-item.fm-list-item( ng-class="{ 'open' : isOpen() }")
     a.fm-list-link(href="" ng-click="toggleItem()") The Compensation Committee
-      span.fm-list-icon.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+      .fm-list-icon.icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
     .fm-accordion-content
       .rich-text-block
         p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.

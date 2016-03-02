@@ -1,7 +1,11 @@
 -var config = config || { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae"}
-figure.bio-teaser
+figure.bio-teaser(class=config.cls)
   img(src="../media/bio-teaser-1.png")
   figcaption
     a.bio-name(href="")= config.name
     p.bio-title!= config.title
-  a.icon-link(href=""): span.icon.fm-arrow-right-circle
+    if config.contact
+      a(href="tel:321-121-3423") t: 321 121 3423
+      a(href="mailto:dbenson@fanniemae.com") e: dbenson@fanniemae.com
+  if config.link
+    a.icon-link(href=""): span.icon.fm-arrow-right-circle
