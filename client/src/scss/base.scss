@@ -23,15 +23,20 @@ main{
     height: 37px;
     padding: 0;
     @include svg-color(white);
+    @media only screen and (max-width:400px) {
+      width: 150px;
+      height: auto;
+    }
   }
 }
 
 [fm-sticky-header] .wrapper {
   display: block;
-  z-index: 99;
   background: $color-body-bg;
+  z-index: 1;
 }
 [fm-sticky-header] .wrapper.fixed {
+  z-index: 99;
   position: fixed;
   top: 0;
   width: 100%;
@@ -268,9 +273,11 @@ main{
     background: #26334b;
     width: 100%;
     margin: 0 0 15px;
+    -moz-appearance:none;
   }
   &:after{
     border-top-color:#fff;
+    pointer-events: none;
   }
 }
 

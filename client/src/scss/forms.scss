@@ -376,9 +376,15 @@ input[type="submit"].btn::-moz-focus-inner {
     line-height: 40px;
     vertical-align: top;
   }
-  .table-cell+label.table-cell{
-    padding-left:15px;
+  label.table-cell{
+    padding: 0 10px 0 30px;
+    width: 1%;
+    white-space: nowrap;
+    &:first-of-type{
+      padding-left: 0;
+    }
     @media (max-width: 720px){
+      width: 100px;
       padding-left: 0;
     }
   }
