@@ -1,4 +1,4 @@
-extends ../layouts/layout-one-column
+extends ../layouts/layout-two-column
 
 block title
   title PT07 Search Results
@@ -6,13 +6,13 @@ block title
 block top-content
   -var config={withImage : true, title: 'Search Results', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
   include ../../components/overview/_default.jade
-  include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
     -var config = { child : 'Search Results'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
 block content
+  include ../../components/search-call-out/_default.jade
   article.article-wrapper.padding-30
     include ../../components/search/_default.jade
 
