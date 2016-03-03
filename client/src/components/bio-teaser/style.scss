@@ -37,9 +37,9 @@ figure.bio-teaser{
   }
   .icon-link{
     position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    width: auto;
     text-align: right;
     font-size: 20px;
     padding: 10px;
@@ -48,12 +48,33 @@ figure.bio-teaser{
       color: white;
     }
   }
+  
+  //Styling for rail only
+  .rail-list &{
+    @media (max-width: $screen-md-max){
+      height: auto;
+    }
+    img{
+      @media (max-width: $screen-md-max){
+        display: none;
+      }
+    }
+    figcaption{
+      @media (max-width: $screen-md-max){
+        position: relative;
+        height: auto;
+      }
+    }
+  }
 
   //Only apply media queries for article content (not rail)
   .rich-text-block &{
-    margin-bottom: 65px;
+    height: 160px;
+    margin-bottom: 20px;
+    padding-bottom: 45px;
     @media(min-width: $screen-sm){
       margin-bottom: 20px;
+      padding-bottom: 0;
     }
     @media(min-width: $screen-md){
       height: 200px;
@@ -97,13 +118,6 @@ figure.bio-teaser{
       }
     }
     .icon-link{
-      @media(min-width: $screen-sm){
-        top: auto;
-        left: auto;
-        right: 0;
-        bottom: 0;        
-        width: auto;
-      }
       @media(min-width: $screen-md){
         font-size: 30px;
       }
