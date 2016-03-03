@@ -1,0 +1,42 @@
+.search-call-out{
+  width: 100%;
+  span{
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
+    @media (min-width: $screen-sm){
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
+      margin-bottom: none;
+      width: auto;
+    }
+  }
+  .table-cell{
+    height: 20px;
+    vertical-align: middle;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+    &:last-child{
+      border: none;
+    }
+  }
+  .search-links{
+    display: table;
+    width: 100%;
+    @media (min-width: $screen-sm){
+      display: table-cell;
+      width: auto;
+    }
+  }
+  a{
+    padding: 0 10px;
+    text-align: center;
+    color: $color-teal;
+    &:hover{
+      color: white;
+    }
+    @media (min-width: $screen-lg){
+      padding: 0 20px;
+    }
+  }
+}
