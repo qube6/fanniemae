@@ -59,13 +59,13 @@ main{
   }
 }
 .fm-rail{
+  @media (min-width: $screen-sm) and (max-width: $screen-md-max){
+    padding-left: 0;
+  }
 }
 .rail-row{
   margin: 20px 0;
   @media (min-width: $screen-xs){
-    // &:first-child{
-    //   margin: 0;
-    // }
   }
 }
 
