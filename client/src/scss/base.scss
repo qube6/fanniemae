@@ -104,6 +104,7 @@ body{
   padding: 5px 0;
   margin: 0 0 10px;
   border-bottom: 2px solid $color-teal;
+  margin: 0;
 }
 .fm-list-title{
   position: relative;
@@ -293,35 +294,48 @@ body{
 }
 
 ul.link-listing{
-  li{
-    border-top: 1px solid rgba(11,147,192,.25);
-    a{
+  > li{
+    border-top: 1px solid $color-hr;
+    list-style-type: none !important;
+    > a{
       display: block;
       padding: 10px 10px 10px 0;
       position: relative;
-      &:after{
-        display: block;
-        width: 10px;
-        height: 16px;
-        line-height: 16px;
-        content: "\e903";          
-        font-family: 'icomoon';
-        font-style: normal;
-        font-weight: bold;
-        font-variant: normal;
-        text-transform: none;
+      > .list-icon{
+        font-size: 18px;
         position: absolute;
-        right: 0;
-        top: 50%;
-        margin-top: -8px;
+        right: 2px;
+        color: $color-teal;
+        cursor: pointer;
+        top: calc(50% - 9px);
       }
     }
     &.active{
-      a{
-        color:#01172d;
+      > a{
+        color: $color-dark-blue;
       }
     }
-  }  
+    &:first-child{
+      border: none;
+    }
+  }
+  &:not(.custom-icons) > li > a:after{
+    display: block;
+    width: 10px;
+    height: 16px;
+    font-size: 18px;
+    line-height: 16px;
+    content: "\e903";          
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+  }
 }
 
 .fm-menu-toggle{
@@ -367,27 +381,6 @@ ul.link-listing{
   &.openNav .icon-bar.three{
     @include transform(translateY(5px) rotate(-45deg));
   }
-}
-
-.fm-list-item{
-  display: block;
-  border-bottom: 1px solid $color-hr;
-}
-.fm-list-link{
-  position: relative;
-  width: 100%;
-  font-size: 16px;
-  padding: 10px 0;
-  display: block;
-  padding-right: 20px;
-}
-.fm-list-icon{
-  font-size: 18px;
-  position: absolute;
-  right: 0;
-  color: $color-teal;
-  cursor: pointer;
-  top: calc(50% - 9px);
 }
 
 .overflow-wrapper{
