@@ -1,0 +1,188 @@
+// From http://codepen.io/universePaul/pen/LrtIy
+table{
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  margin: 0 0 20px;
+
+  th {
+    background-color: $color-light-blue;
+    font-weight: bold;
+    text-align: left;
+    color: $color-dark;
+  }
+  tbody,
+  tr,
+  th,
+  td {
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  tr{  
+    margin-bottom: 1em;
+    border: 1px solid $color-body-bg;
+    color: $color-dark;
+    &:last-of-type {
+      margin-bottom: 0; 
+    }
+    
+    &:nth-of-type(even) {
+      @media (min-width: $screen-md) {
+        background-color: $color-light-blue;
+      }
+    }
+  }
+  th, td{
+    padding: .5em 1em;
+    vertical-align: middle;
+    border: 1px solid $color-body-bg;
+  }
+}
+.responsive-table {
+  
+  @media (min-width: $screen-md) {
+    font-size: .9em; 
+  }
+  
+  @media (min-width: $screen-lg) {
+    font-size: 1em; 
+  }
+  
+  thead {
+    // Accessibly hide <thead> on narrow viewports
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden;
+    
+    @media (min-width: $screen-md) {
+      // Unhide <thead> on wide viewports
+      position: relative;
+      clip: auto;
+      height: auto;
+      width: auto;
+      overflow: auto;
+    }
+    
+  }
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  thead, tbody{
+    tr {   
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-row; 
+      }
+    }
+
+    th,
+    td {
+      display: block;
+
+      @media (min-width: $screen-sm) {
+        padding: .75em .5em; 
+      }
+      
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-cell;
+        padding: .5em;
+        padding-left: 2em;
+      }
+      
+      @media (min-width: $screen-lg) {
+        padding: .75em .5em; 
+        padding-left: 2em;
+      }
+      
+      @media (min-width: $screen-xl) {
+        padding: .75em; 
+        padding-left: 2em;
+      }
+    }
+  }
+  
+  caption {
+    margin-bottom: 1em;
+    font-size: 1em;
+    //font-weight: bold;
+    text-align: center;
+    
+    @media (min-width: $screen-md) {
+      font-size: 1.5em;
+    }
+  }
+  
+  
+  tbody {
+    @media (min-width: $screen-md) {
+      // Undo display: block 
+      display: table-row-group; 
+    }
+    
+    tr {
+      border-width: 2px;
+      @media (min-width: $screen-md) {
+        // Undo display: block 
+        display: table-row;
+        border-width: 1px;
+      }
+    }
+    
+    th[scope="row"] {
+      background-color: $color-light-blue;
+      text-align: right;
+      @media (min-width: $screen-md) {
+        background-color: transparent;
+        text-align: left; 
+      }
+      &:before{
+        font-weight: bold;
+      }
+    }
+    
+    td {
+      text-align: right;
+      
+      @media (min-width: $screen-sm) {
+        border-bottom: 1px solid $color-body-bg;
+      }
+      
+      @media (min-width: $screen-md) {
+        text-align: left; 
+      }
+    }
+    
+    td[data-type=currency] {
+      text-align: right; 
+    }
+    
+    td, th{
+      &[data-title]:before {
+        content: attr(data-title);
+        float: left;
+        font-size: .8em;
+        color: $color-dark;
+        
+        @media (min-width: $screen-sm) {
+          font-size: .9em; 
+        }
+        
+        @media (min-width: $screen-md) {
+          // Don’t show data-title labels 
+          content: none; 
+        }
+      } 
+    }
+  }
+}
