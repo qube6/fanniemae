@@ -30,16 +30,19 @@
       }
     }
   }
-  .rail-nav-open .rail-navigation-list{
-    max-height: 1000px;
+  li.open{
+    >.fm-list-link:not(.active){
+      text-decoration: underline;
+      color: white;
+      .fm-list-icon{
+        color: rgba(255,255,255,.5);
+      }
+    }
   }
   .active.fm-list-link{
     &, & .fm-list-icon{
       cursor: default;
       color: white;
-      &:hover{
-        text-decoration: none;
-      }
     }
   }
   .submenu{

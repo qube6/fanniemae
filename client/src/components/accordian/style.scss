@@ -1,6 +1,7 @@
 .fm-accordion{
   width: 100%;
   margin: 0;
+  display: block;
   button.fm-accordion-toggle-all{
     display: inline;
     border: none;
@@ -29,16 +30,20 @@
     }
   }
   .fm-subtitle{
-    padding: 15px 0;
+    padding: 15px 125px 10px 0;
+    @media (min-width: $screen-sm){
+      padding: 15px 0;
+    }
   }
-
+  .fm-list-link{
+    padding-right: 30px;
+  }
+  .fm-list-icon{
+    right: 5px;
+  }
 }
 .fm-subtitle{
   margin: 0;
-}
-fm-accordion{
-  width: 100%;
-  display: block;
 }
 .fm-accordion-content{
   max-height: 0;
