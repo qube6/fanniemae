@@ -72,7 +72,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
       var $nav = $element,
           items = [],
           $visibleLinks = angular.element($nav[0].querySelector('.visible-links'));
-          open = false;
+          openFlag = false;
             
       //make a copy of the static hidden menu
       angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
@@ -108,19 +108,19 @@ var directiveModule = angular.module('fannieMae.directives', [])
       };
 
       $scope.isOpen = function(){
-        return open;
+        return openFlag;
       };
 
       $scope.toggleOpen = function(){
         $timeout(function(){
-          open = !open;
+          openFlag = !openFlag;
         }, 0);
       };
 
       var handleOffElement = function($event){
         if(!$element[0].contains($event.target)){
           $timeout(function(){
-            open = false;
+            openFlag = false;
           }, 0);
         }
       }
