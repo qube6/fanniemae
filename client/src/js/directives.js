@@ -117,12 +117,17 @@ var directiveModule = angular.module('fannieMae.directives', [])
         }, 0);
       };
 
-      angular.element($window).off('resize', updateNav).on('resize', updateNav);
-      $document.on('click', function($event){
+      var handleOffElement = function($event){
         if(!$element[0].contains($event.target)){
-          open = false;
+          $timeout(function(){
+            open = false;
+          }, 0);
         }
-      });
+      }
+
+      angular.element($window).off('resize', updateNav).on('resize', updateNav);
+      $document.off('click', handleOffElement).on('click', handleOffElement);
+      $document.off('scroll', handleOffElement).on('scroll', handleOffElement);
 
       updateNav();
     };
