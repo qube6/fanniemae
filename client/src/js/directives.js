@@ -149,8 +149,12 @@ var directiveModule = angular.module('fannieMae.directives', [])
             wrapper.toggleClass("fixed", isFixed);
 
             if (isFixed){
+              //initial load scenario
+              if (currentFixed != null && currentFixed != $sticky){ currentFixed.find('fm-sticky').removeClass('fixed'); }
               currentFixed = $sticky;
-            } else if (currentFixed != null) {
+            } else if(currentFixed == $sticky){
+              currentFixed = null;
+            }else if (currentFixed != null) {
               var currentWrapper = currentFixed.find('fm-sticky'),
                   bottom = pos - currentFixed.data('height');
               if (curPos >= bottom){
