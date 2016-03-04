@@ -53,8 +53,8 @@
     max-height: 0;
     overflow: hidden;
     @include transition(max-height 0.5s cubic-bezier(0, 1.05, 0, 1));
-    .open &{
-      max-height: 9000px;
-    }
+  }
+  li.open .fm-accordion-content{
+    max-height: 9000px;
   }
 }
