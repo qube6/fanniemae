@@ -157,7 +157,7 @@ body{
   height: $cta-height;
   line-height: $cta-height;
   font-size: 16px;
-  color: $color-teal;
+  color: $color-link-light;
   display: block;
   text-align: right;
   &:hover{
@@ -182,9 +182,12 @@ body{
   background: $color-dark-blue;
   color: white;
   a{
-    color: $color-teal;
+    color: $color-link-dark;
     &:hover{
-      color: white;
+      color: $color-link-dark-h;
+    }
+    &:visited{
+      color: $color-link-dark-v;
     }
   }
 }
@@ -199,7 +202,10 @@ body{
 .color-white a, a.color-white{
   color: white;
   &:hover{
-    color: $color-teal;
+    color: $color-link-light;
+  }
+  &:hover{
+    color: $color-link-light-v;
   }
 }
 
@@ -209,7 +215,10 @@ body{
 .color-dark a, a.color-dark{
   color: $color-dark-blue;
   &:hover{
-    color: $color-teal;
+    color: $color-link-light;
+  }
+  &:hover{
+    color: $color-link-light-v;
   }
 }
 
@@ -217,9 +226,12 @@ body{
   color: $color-teal;
 }
 .color-brand a, a.color-brand{
-  color: $color-teal;
+  color: $color-link-light;
   &:hover{
-    color: $color-dark-blue;
+    color: $color-link-light-h;
+  }
+  &:hover{
+    color: $color-link-light-v;
   }
 }
 

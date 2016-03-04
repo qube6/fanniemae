@@ -1,4 +1,5 @@
 $color-dark-blue: rgba(0, 15, 43, 1);
+$color-dark-blue-80: rgba(0, 15, 43, .8);
 $color-blue: rgba(13, 35, 56, 1);
 $color-teal: rgba(0, 118, 151, 1);
 $color-green: rgba(34, 179, 113, 1);
@@ -14,8 +15,14 @@ $color-light: rgba(228, 228, 228, 1);
 $color-body-bg: rgba(230, 230, 230, 1);
 $color-body-bg-50: rgba(230, 230, 230, .5);
 $color-hr: rgba(0, 0, 0, .3);
+
 $color-link-light: $color-teal;
+$color-link-light-v: rgba(0, 118, 151, .8);
+$color-link-light-h: $color-dark;
+
 $color-link-dark: $color-teal;
+$color-link-dark-v: rgba(0, 118, 151, .8);
+$color-link-dark-h: white;
 
 $font-sans-serif: 'Urbano-Regular', 'Arial', sans-serif;
 $font-serif: 'Glyddon-Regular', 'Georgia', 'Century', serif;
