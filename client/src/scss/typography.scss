@@ -17,17 +17,16 @@ cite {
   font-style: normal;
 }
 a {
-  color: $color-teal;
+  color: $color-link-light;
   text-decoration: none;
   cursor: pointer;
 }
 a:hover {
-  color: $color-dark-blue;
+  color: $color-link-light-h;
   text-decoration: underline;
 }
 a:visited {
-  // color: $color-dark-blue;
-  text-decoration: underline;
+  color: $color-link-light-v;
 }
 a:focus {
   outline: none;

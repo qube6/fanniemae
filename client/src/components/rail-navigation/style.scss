@@ -38,6 +38,9 @@
       }
     }
   }
+  .rail-nav-open .link-listing{
+    max-height: 500px;
+  }
   .submenu{
     li{
       padding: 0 20px;
@@ -57,5 +60,6 @@
   .fm-menu-toggle{
     top: -10px;
     right: 0;
+    position: absolute;
   }
 }
