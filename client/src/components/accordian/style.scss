@@ -35,21 +35,26 @@
       padding: 15px 0;
     }
   }
-  .fm-list-link{
-    padding-right: 30px;
+  ul.link-listing{
+    margin: 0;
+    padding: 0;
+    > li{
+      line-height: 20px; 
+      > a{
+        padding-right: 30px;
+        font-size: 16px;
+        > .icon{
+          right: 5px;
+        }  
+      }
+    }
   }
-  .fm-list-icon{
-    right: 5px;
-  }
-}
-.fm-subtitle{
-  margin: 0;
-}
-.fm-accordion-content{
-  max-height: 0;
-  overflow: hidden;
-  @include transition(max-height 0.5s cubic-bezier(0, 1.05, 0, 1));
-  .open &{
-    max-height: 9000px;
+  .fm-accordion-content{
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height 0.5s cubic-bezier(0, 1.05, 0, 1));
+    .open &{
+      max-height: 9000px;
+    }
   }
 }

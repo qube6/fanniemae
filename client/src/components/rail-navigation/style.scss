@@ -1,24 +1,32 @@
 .rail-navigation{
-  fm-accordion-item{
-    border-bottom: none;
-  }
   .fm-subtitle{
     padding-bottom: 5px;
     color: white;
+    margin: 0;
     @media (max-width: $screen-xs-max){
       border-bottom: none;
-      margin: 0;
       padding: 0;
     }
   }
-  .rail-navigation-list{
+  ul.link-listing{
     li{
-      border-bottom: 1px solid rgba(255,255,255,.3);
-      &:last-child{
-        border: none;
-      }
+      border-color: rgba(255,255,255,.3);
       a{
-        color: $color-teal;
+        color: $color-link-dark;
+        font-size: 16px;
+        &.active{
+          cursor: default;
+          color: white;
+        }
+      }
+    }
+    li.open{
+      > a:not(.active){
+        text-decoration: underline;
+        color: white;
+        &:after{
+          color: rgba(255,255,255,.5);
+        }
       }
     }
     @media(max-width: $screen-xs-max){
@@ -28,21 +36,6 @@
       >li:first-child{
         padding-top: 20px;
       }
-    }
-  }
-  li.open{
-    >.fm-list-link:not(.active){
-      text-decoration: underline;
-      color: white;
-      .fm-list-icon{
-        color: rgba(255,255,255,.5);
-      }
-    }
-  }
-  .active.fm-list-link{
-    &, & .fm-list-icon{
-      cursor: default;
-      color: white;
     }
   }
   .submenu{
