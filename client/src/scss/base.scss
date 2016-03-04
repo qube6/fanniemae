@@ -180,7 +180,13 @@ body{
 
 .dark-bg{
   background: $color-dark-blue;
-  @extend .color-white;
+  color: white;
+  a{
+    color: $color-teal;
+    &:hover{
+      color: white;
+    }
+  }
 }
 .white-bg{
   background: white;
@@ -216,6 +222,7 @@ body{
     color: $color-dark-blue;
   }
 }
+
 .padding-10{
   padding: 30px;
 }
