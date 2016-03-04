@@ -25,6 +25,13 @@ a:hover {
   color: $color-dark-blue;
   text-decoration: underline;
 }
+a:visited {
+  // color: $color-dark-blue;
+  text-decoration: underline;
+}
+a:focus {
+  outline: none;
+}
 span.icon{
   &:hover{
     text-decoration: none !important;

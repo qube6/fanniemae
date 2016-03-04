@@ -201,6 +201,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
       $scope.videoPaused = true;
       $scope.video = element.find('video')[0];
 
+      $scope.video.setAttribute('poster', attrs.poster);
       if(attrs.hasOwnProperty('autoplay')){
         $scope.video.setAttribute('autoplay', attrs.autoplay);
         $scope.video.setAttribute('controls', 'controls');
