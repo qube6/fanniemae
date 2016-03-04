@@ -72,7 +72,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
       var $nav = $element,
           items = [],
           $visibleLinks = angular.element($nav[0].querySelector('.visible-links'));
-          open = false;
+          openFlag = false;
             
       //make a copy of the static hidden menu
       angular.forEach(angular.element($nav[0].querySelector('.hide')).find('a'), function(link){
@@ -108,21 +108,26 @@ var directiveModule = angular.module('fannieMae.directives', [])
       };
 
       $scope.isOpen = function(){
-        return open;
+        return openFlag;
       };
 
       $scope.toggleOpen = function(){
         $timeout(function(){
-          open = !open;
+          openFlag = !openFlag;
         }, 0);
       };
 
-      angular.element($window).off('resize', updateNav).on('resize', updateNav);
-      $document.on('click', function($event){
+      var handleOffElement = function($event){
         if(!$element[0].contains($event.target)){
-          open = false;
+          $timeout(function(){
+            openFlag = false;
+          }, 0);
         }
-      });
+      }
+
+      angular.element($window).off('resize', updateNav).on('resize', updateNav);
+      $document.off('click', handleOffElement).on('click', handleOffElement);
+      $document.off('scroll', handleOffElement).on('scroll', handleOffElement);
 
       updateNav();
     };
@@ -149,8 +154,12 @@ var directiveModule = angular.module('fannieMae.directives', [])
             wrapper.toggleClass("fixed", isFixed);
 
             if (isFixed){
+              //initial load scenario
+              if (currentFixed != null && currentFixed != $sticky){ currentFixed.find('fm-sticky').removeClass('fixed'); }
               currentFixed = $sticky;
-            } else if (currentFixed != null) {
+            } else if(currentFixed == $sticky){
+              currentFixed = null;
+            }else if (currentFixed != null) {
               var currentWrapper = currentFixed.find('fm-sticky'),
                   bottom = pos - currentFixed.data('height');
               if (curPos >= bottom){
