@@ -1,7 +1,7 @@
 section.chart-viewer{
   table-layout: fixed;
   width: calc(100% + 60px);
-  margin: 0 -30px 30px;
+  margin: 0 -30px;
   border-spacing: 30px 0;
   border-collapse: separate;
   @media (max-width: $screen-sm){
