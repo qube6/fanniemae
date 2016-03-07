@@ -1,16 +1,16 @@
 -var config = config || {title: 'Statements', cls: 'dark-bg'};
 
 section.news-teaser
+  h1.font-serif= config.title
   .equal-height-sm-row(class=config.cls)
-    h1.font-serif= config.title
-    .block.col-sm-4.col-sm-height 
+    .block.col-sm-height 
       h2 Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018
       .fm-date June 4, 2015
-    .block.col-sm-4.col-sm-height 
+    .block.col-sm-height 
       h2 Fannie Mae Announces Offering of New Issue 3-Year Benchmark Notes® due July 20, 2018
       .fm-date June 3, 2015
-    .block.col-sm-4.col-sm-height 
+    .block.col-sm-height 
       h2 Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018
       .fm-date June 4, 2015
-    a.more(href="/") All Our News
-      i.icon.fm-arrow-right(aria-hidden="true")
+  a.more(href="/") All Our News
+    i.icon.fm-arrow-right(aria-hidden="true")
