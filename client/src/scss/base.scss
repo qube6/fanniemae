@@ -104,6 +104,7 @@ body{
   padding: 5px 0;
   margin: 0 0 10px;
   border-bottom: 2px solid $color-teal;
+  margin: 0;
 }
 .fm-list-title{
   position: relative;
@@ -119,40 +120,6 @@ body{
   }
 }
 
-.fm-video-wrapper{
-  height: auto;
-  width: 100%;
-  position: relative;
-  display: block;
-
-  video, video source{
-    z-index: 0 !important;
-  }  
-}
-
-.fm-play-circle, .fm-pause-circle{
-  position: absolute;
-  @include center-xy();
-  z-index: 10;
-  cursor: pointer;
-  font-size: 45px;
-  color: white;
-  background: $color-dark-blue;
-  padding: 5px;
-  border-radius: 50%;
-  @media (min-width: $screen-sm){
-    font-size: 60px;
-  }
-}
-
-.fm-pause-circle{
-  @include animation(fadeOut 2s forwards);
-  &:hover{
-    @media (min-width:$screen-lg){
-      @include animation(fade-in .5s forwards);
-    }
-  }
-}
 
 .video{
   max-width: 100%;
@@ -190,7 +157,7 @@ body{
   height: $cta-height;
   line-height: $cta-height;
   font-size: 16px;
-  color: $color-teal;
+  color: $color-link-light;
   display: block;
   text-align: right;
   &:hover{
@@ -213,7 +180,16 @@ body{
 
 .dark-bg{
   background: $color-dark-blue;
-  @extend .color-white;
+  color: white;
+  a{
+    color: $color-link-dark;
+    &:hover{
+      color: $color-link-dark-h;
+    }
+    &:visited{
+      color: $color-link-dark-v;
+    }
+  }
 }
 .white-bg{
   background: white;
@@ -226,7 +202,10 @@ body{
 .color-white a, a.color-white{
   color: white;
   &:hover{
-    color: $color-teal;
+    color: $color-link-light;
+  }
+  &:hover{
+    color: $color-link-light-v;
   }
 }
 
@@ -236,7 +215,10 @@ body{
 .color-dark a, a.color-dark{
   color: $color-dark-blue;
   &:hover{
-    color: $color-teal;
+    color: $color-link-light;
+  }
+  &:hover{
+    color: $color-link-light-v;
   }
 }
 
@@ -244,11 +226,15 @@ body{
   color: $color-teal;
 }
 .color-brand a, a.color-brand{
-  color: $color-teal;
+  color: $color-link-light;
   &:hover{
-    color: $color-dark-blue;
+    color: $color-link-light-h;
+  }
+  &:hover{
+    color: $color-link-light-v;
   }
 }
+
 .padding-10{
   padding: 30px;
 }
@@ -327,35 +313,48 @@ body{
 }
 
 ul.link-listing{
-  li{
-    border-top: 1px solid rgba(11,147,192,.25);
-    a{
+  > li{
+    border-top: 1px solid $color-hr;
+    list-style-type: none !important;
+    > a{
       display: block;
       padding: 10px 10px 10px 0;
       position: relative;
-      &:after{
-        display: block;
-        width: 10px;
-        height: 16px;
-        line-height: 16px;
-        content: "\e903";          
-        font-family: 'icomoon';
-        font-style: normal;
-        font-weight: bold;
-        font-variant: normal;
-        text-transform: none;
+      > .list-icon{
+        font-size: 18px;
         position: absolute;
-        right: 0;
-        top: 50%;
-        margin-top: -8px;
+        right: 2px;
+        color: $color-teal;
+        cursor: pointer;
+        top: calc(50% - 9px);
       }
     }
     &.active{
-      a{
-        color:#01172d;
+      > a{
+        color: $color-dark-blue;
       }
     }
-  }  
+    &:first-child{
+      border: none;
+    }
+  }
+  &:not(.custom-icons) > li > a:after{
+    display: block;
+    width: 10px;
+    height: 16px;
+    font-size: 18px;
+    line-height: 16px;
+    content: "\e903";          
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+  }
 }
 
 .fm-menu-toggle{
@@ -403,23 +402,8 @@ ul.link-listing{
   }
 }
 
-.fm-list-item{
-  display: block;
-  border-bottom: 1px solid $color-hr;
-}
-.fm-list-link{
-  position: relative;
-  width: 100%;
-  font-size: 16px;
-  padding: 10px 0;
-  display: block;
-  padding-right: 20px;
-}
-.fm-list-icon{
-  font-size: 18px;
-  position: absolute;
-  right: 0;
-  color: $color-teal;
-  cursor: pointer;
-  top: calc(50% - 9px);
+.overflow-wrapper{
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
 }

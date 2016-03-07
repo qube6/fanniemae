@@ -203,10 +203,10 @@
       background: $color-blue;
     } 
   }
-  @media (min-width: $screen-xl){
-    padding: 0 30px;
-    min-height: $carousel-height-xl;
-  }
+  // @media (min-width: $screen-xl){
+  //   padding: 0 30px;
+  //   min-height: $carousel-height-xl;
+  // }
   a:hover{
     h2{
       color: $color-light;
