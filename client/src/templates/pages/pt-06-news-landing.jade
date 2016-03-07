@@ -15,6 +15,13 @@ block content
   .content-row
     include ../../components/featured-hero/_default.jade
   .content-row
+    -config = {title: 'Corporate News', cls: 'white-bg'}
+    include ../../components/news-teaser/_default.jade
+  .content-row
+    -config = {title: 'Financial News', cls: 'white-bg'}
+    include ../../components/news-teaser/_default.jade
+  .content-row
+    -config = {title: 'Statements', cls: 'dark-bg'}
     include ../../components/news-teaser/_default.jade
   //- .content-row
   //-   include ../../components/subpage-teaser-listing/_default.jade
