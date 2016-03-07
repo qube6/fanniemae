@@ -1,12 +1,41 @@
 .featured-hero{
   figcaption{
     overflow: auto;
+    position: relative;
+    padding-bottom: 60px;
+    @media (min-width: $screen-md){
+      padding-bottom: 100px;
+    }
     h1{
-      font-size: 26px;
+      font-size: 18px;
+      @media (min-width: $screen-md){
+        font-size: 22px;
+      }
+      @media (min-width: $screen-lg){
+        font-size: 26px;
+      }
     }
     .article-share{
-      position: relative;
+      position: absolute;
       bottom: 0;
+      width: calc(100% - 60px);
+      @media (max-width: $screen-sm-max){
+        padding: 15px;
+      }
+    }
+  }
+  img, figcaption{
+    height: auto;
+    width: 100%;
+    @media (min-width: $screen-sm){
+      width: auto;
+      height: $feature-height-sm;
+    }
+    @media (min-width: $screen-md){
+      height: $feature-height-md;
+    }
+    @media (min-width: $screen-lg){
+      height: $feature-height-lg;
     }
   }
 }
