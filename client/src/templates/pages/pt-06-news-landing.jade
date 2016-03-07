@@ -12,9 +12,15 @@ block top-content
     include ../../components/social-share/_default.jade
 
 block content
-  include ../../components/featured-hero/_default.jade
-  include ../../components/news-teaser/_default.jade
-  include ../../components/subpage-teaser-listing/_default.jade
-  include ../../components/secondary-feature/_default.jade
-  include ../../components/secondary-feature/_default.jade
-  include ../../components/secondary-feature/_default.jade
+  .content-row
+    include ../../components/featured-hero/_default.jade
+  .content-row
+    include ../../components/news-teaser/_default.jade
+  //- .content-row
+  //-   include ../../components/subpage-teaser-listing/_default.jade
+  .content-row
+    .equal-height-sm-row
+      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Twitter", "title" : "Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a>", "date" : "May 22, 2015", "ctaText" : "Follow Us on Twitter"}
+      include ../../components/secondary-feature/_default.jade
+      include ../../components/secondary-feature/_default.jade
+      include ../../components/secondary-feature/_default.jade

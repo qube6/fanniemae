@@ -1,0 +1,11 @@
+fm-video-player(poster="../media/video-poster.png")
+  source(src='http://clips.vorwaerts-gmbh.de/VfE_html5.mp4', type='video/mp4')
+  source(src='http://clips.vorwaerts-gmbh.de/VfE.webm', type='video/webm')
+  source(src='http://clips.vorwaerts-gmbh.de/VfE.ogv', type='video/ogg')
+  // fallback to Flash:
+  object(type='application/x-shockwave-flash', data='player.swf')
+    // Firefox uses the `data` attribute above, IE/Safari uses the param below
+    param(name='movie', value='player.swf')
+    param(name='flashvars', value='autostart=true&controlbar=over&image=../media/video-poster.png&file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4')
+    // fallback image
+    img(src='../media/video-poster.png', alt='Big Buck Bunny', title='No video playback capabilities, please download the video below')
