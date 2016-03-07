@@ -4,7 +4,7 @@
     float: left;
     margin-bottom: 10px;
     width: 100%;
-    @media (min-width: $screen-sm){
+    @media (min-width: $screen-lg){
       float: none;
       display: table-cell;
       vertical-align: middle;
@@ -12,31 +12,91 @@
       width: auto;
     }
   }
-  .table-cell{
-    height: 20px;
+  .search-links > li{
     vertical-align: middle;
-    border-right: 1px solid rgba(255, 255, 255, .3);
+    position: relative;
+    display: block;
     &:last-child{
       border: none;
+    }
+    @media (min-width: $screen-lg){
+      height: 20px;
+      border-right: 1px solid rgba(255, 255, 255, .3);
+      display: table-cell;
     }
   }
   .search-links{
     display: table;
     width: 100%;
-    @media (min-width: $screen-sm){
+    @media (min-width: $screen-lg){
       display: table-cell;
       width: auto;
     }
   }
   a{
-    padding: 0 10px;
+    padding: 0 30px 0 0;
     text-align: center;
-    color: $color-teal;
+    color: $color-link-dark;
+    position: relative;
     &:hover{
-      color: white;
+      color: $color-link-dark-h;
+    }
+    &:visited{
+      color: $color-link-dark-v;
     }
     @media (min-width: $screen-lg){
-      padding: 0 20px;
+      padding: 0 30px;
     }
+    &.dropdown:after{
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: $color-link-dark transparent transparent transparent;
+      right: 15px;
+      top: calc(50% - 3px);
+      position: absolute;
+      @include transition(transform .4s ease-in);
+    }
+  }
+  .open a.dropdown:after{
+    @include transform(rotate(180deg));
+  }
+  .submenu{
+    @include transition(all .4s ease-in);
+    @include box-shadow(0 0 5px rgba(0, 0, 0, .1));
+    max-height: 0;
+    overflow: hidden;
+
+    @media (min-width: $screen-lg){
+      position: absolute;
+      top: 150%;
+      left: 20px;
+      width: 200px;
+      background: white;
+    }
+    li{
+      padding: 5px 10px;
+      border-bottom: 1px solid $color-hr;
+      @media (min-width: $screen-lg){
+        padding: 10px;
+      }
+    }
+    a{
+      padding: 0;
+      @media (min-width: $screen-lg){
+        color: $color-link-light;
+        &:hover{
+          color: $color-link-light-h;
+        }
+        &:visted{
+          color: $color-link-light-v;
+        }
+      }
+    }
+  }
+  .open .submenu{
+    max-height: 100px;
   }
 }
