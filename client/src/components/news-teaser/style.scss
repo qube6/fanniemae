@@ -1,5 +1,7 @@
 .news-teaser{
   position: relative;
+  padding: 0;
+  margin: 0 10px;
   .equal-height-sm-row{
     border-spacing: 0;
     padding: 60px 30px;
@@ -10,15 +12,13 @@
       padding: 90px 30px;
       margin: 0;
     }
-    &.dark-bg{
-      h1{
-        background: white;
-        color: $color-dark-blue;
-      }
-      .block{
-        border-color: rgba(255, 255, 255, .5);
-      }
-    }
+  }
+  &.dark-bg h1{
+    background: white;
+    color: $color-dark-blue;
+  }
+  .block{
+    border-color: rgba(255, 255, 255, .5);
   }
   a.more{
     position: absolute;
