@@ -1,28 +1,50 @@
-form.locator-form.block.white-bg.padding-30(action="")
-  h1.fm-subtitle Mortgage-Backed Securities
-  p Search for disclosure and related documents for a single pool or trust.
-  h2 Search Type
-    sup *
-  ul.inline
-    li
-      label.checkbox
-        input(type="checkbox") 
-        span CUSIP Number
+.col-sm-6
+  form.locator-form.block.white-bg.padding-30(action="")
+    h1.fm-subtitle Mortgage-Backed Securities
+    p Search for disclosure and related documents for a single pool or trust.
+    fieldset
+      h2: legend Search Type
+        sup *
+      ul.inline
+        li
+          input.styled-radio(type="radio" name="foo" value="foo1" id="foo1") 
+          label(for="foo1") CUSIP Number
+        li
+          input.styled-radio(type="radio" name="foo" value="foo2" id="foo2") 
+          label(for="foo2") Pool Number
+        li
+          input.styled-radio(type="radio" name="foo" value="foo3" id="foo3") 
+          label(for="foo3") Trust Number
 
-    li
-      label.checkbox
-        input(type="checkbox") 
-        span Pool Number
+    input(type="text" placeholder="Number*" title="Enter CUSIP or Pool number" required)
 
-    li
-      label.checkbox
-        input(type="checkbox" checked) 
-        span Trust Number
+    input(type="text" placeholder="Trust Class/Tranche")
 
-  input(type="text" placeholder="Number*" title="Enter CUSIP or Pool number" required)
+    .text-right
+      button.more Search
+        i.icon.fm-search-circle(aria-hidden="true")
 
-  input(type="text" placeholder="Trust Class/Tranche")
+.col-sm-6
+  form.locator-form.block.white-bg.padding-30(action="")
+    h1.fm-subtitle Debt Securities Pricing Supplement and Reset Information Finder
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+    fieldset
+      h2: legend Document Type
+        sup *
+      ul.inline
+        li
+          input.styled-radio(type="radio" name="bar" value="bar1" id="bar1") 
+          label(for="bar1") All Documents
+        li
+          input.styled-radio(type="radio" name="bar" value="bar2" id="bar2") 
+          label(for="bar2") Pricing Supplement
+        li
+          input.styled-radio(type="radio" name="bar" value="bar3" id="bar3") 
+          label(for="bar3") Reset Information
 
-  .text-right
-    button.more Search
-      i.icon.fm-search-circle(aria-hidden="true")
+    input(type="text" placeholder="CUSIP Number*" title="CUSIP Number" required)
+
+
+    .text-right
+      button.more Search
+        i.icon.fm-search-circle(aria-hidden="true")

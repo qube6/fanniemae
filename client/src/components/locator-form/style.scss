@@ -1,7 +1,7 @@
 .locator-form{
-  min-height: 400px;
-  padding-bottom: 40px;
-  h2{
+  min-height: 410px;
+  padding-bottom: 45px;
+  h2 legend{
     font-size: 16px;
     margin: 0 0 10px;
   }
@@ -9,7 +9,7 @@
     position: absolute;
     bottom: 40px;
     right: 25px;
-    @media (max-width: $screen-sm){
+    @media (max-width: $screen-xs-max){
       bottom: 15px;
     }
   }
@@ -18,5 +18,8 @@
   }
   ul.inline{
     margin-bottom: 10px;
+    li{
+      padding: 0 10px;
+    }
   }
 }

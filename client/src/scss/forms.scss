@@ -119,7 +119,7 @@ input[type="color"]:focus,
 }
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 3px 0 0;
+  margin: 1px 0 0;
   margin-top: 1px \9;
   /* IE8-9 */
 
@@ -355,6 +355,54 @@ input[type="submit"].btn::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
+.styled-radio {
+  display: none;
+}
+
+.styled-radio + label {
+  position: relative;
+  font-size: 14px;
+}
+.styled-radio + label:before {
+  content: '';
+  position: relative;
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  padding: 7px;
+  border-radius: 50px;
+  display: inline-block;
+  top: 3px;
+  margin-right: 5px;
+}
+
+.styled-radio:checked + label:after {
+  content: ' ';
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  position: absolute;
+  top: 7px;
+  background: $color-teal;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+  text-shadow: 0px;
+  left: 4px;
+  font-size: 32px;
+}
+
+.styled-radio:checked + label:before {
+  background-color: #e9ecee;
+  color: $color-teal;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.styled-radio + label:active:before, .styled-radio:checked + label:active:before {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
 
 .blue-block{
   padding: 15px 15px 0;
