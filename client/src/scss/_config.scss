@@ -43,13 +43,20 @@ $footer-lead-width-sm: 325px;
 $homepage-carousel-left-align-xs: 11%;
 $homepage-carousel-left-align: 15%;
 
-$carousel-aspect-ratio: (570 / 1200);
+$carousel-aspect-ratio: (350 / 760);
 $carousel-height-xs: 480px;
 $carousel-height-sm: $carousel-aspect-ratio * $screen-sm;
 $carousel-height-md: $carousel-aspect-ratio * $screen-md;
 $carousel-height-lg: $carousel-aspect-ratio * $screen-lg;
 $carousel-height-xl: $carousel-aspect-ratio * $screen-xl;
 $carousel-text-shadow: 14px;
+
+
+$feature-aspect-ratio: (570 / 1200);
+$feature-height-xs: 480px;
+$feature-height-sm: $feature-aspect-ratio * ($screen-sm * .66);
+$feature-height-md: $feature-aspect-ratio * ($screen-md * .66);
+$feature-height-lg: $feature-aspect-ratio * ($screen-lg * .66);
 
 $nav-width: 275px;
 
