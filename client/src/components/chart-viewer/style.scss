@@ -6,6 +6,7 @@ section.chart-viewer{
   border-collapse: separate;
   @media (max-width: $screen-sm){
     display: block;
+    margin-bottom: 30px;
   }
   .fm-subtitle{
     margin-bottom: 0;

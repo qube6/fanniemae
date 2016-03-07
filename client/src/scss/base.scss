@@ -275,37 +275,31 @@ body{
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  color: #007697;
+  color: $color-link-light;
   text-shadow: none;
   background:none;
   border: none;  
   padding: 5px 40px 5px 8px;
   position: relative;
-  background: #fff;
-  transition: background .2s;
   display: inline-block;
+  @include transition(color 0.25s linear);
   i{
     position: absolute;
     top: 4px;
     right: 5px;
-    font-size: 24px;
+    font-size: 28px;
     display: block;
     border-radius: 50%;
     height: 30px;
     width: 30px;
     text-align: center;
-    line-height: 28px; //offset for the border width
-    border: 2px solid #007697;
-    background: #fff;
-    transition: background .2s;
+    line-height: 30px; //offset for the border width
   }
   &:hover{
-    color:#01172d;
-    text-decoration: none;
-    i{
-      color:#fff;
-      background: #007697;
-    }
+    color:$color-link-light-h;
+  }  
+  &:visted{
+    color: $color-link-light-v;
   }
 }
 .block{
@@ -318,7 +312,7 @@ ul.link-listing{
     list-style-type: none !important;
     > a{
       display: block;
-      padding: 10px 10px 10px 0;
+      padding: 10px 25px 10px 0;
       position: relative;
       > .list-icon{
         font-size: 18px;
