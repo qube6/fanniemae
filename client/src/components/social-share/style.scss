@@ -16,12 +16,6 @@
       margin-right:0;
     }
   }
-  span[class*="st_"] *{
-    background-image: none !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
   span{
     color:#000;
     border-radius: 3px;
@@ -30,6 +24,7 @@
     display: inline-block;
     margin: 0;
     position: relative;
+    cursor: pointer;
     &:hover{
       text-decoration: none;
       color:#007697;
