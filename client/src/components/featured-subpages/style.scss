@@ -7,24 +7,6 @@ section.featured-subpages{
   .block{
     min-height: 420px;
     position: relative;
-    border-bottom: 50px solid #01172d;
-  }
-  .more{
-    position: absolute;
-    bottom: -45px;
-    right: 10px;
-    background: none;
-    &:hover{
-      color:#fff;
-      i{
-        color:#01172d;
-        border-color:#fff;
-        background: #fff;
-      }
-    }
-    i{
-      background: #01172d;
-    }
   }
   img{
     position: absolute;
