@@ -4,8 +4,9 @@ block title
   title PT06 News Landing
 
 block top-content
-  -var config={withImage : true, title: 'News', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'News', caption: 'Stay informed on Fannie Mae’s efforts to create a stable housing market with our extensive library of articles, speeches and much more.'};
   include ../../components/overview/_default.jade
+  -var linkList = linkList || ['Corporate News', 'Financial News', 'Speeches', 'Statements', 'Media Contact', 'Fact Sheet']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
     -var config={ links : ['Home'], page : 'News'}

@@ -4,8 +4,9 @@ block title
   title PT10 Careers
 
 block top-content
-  -var config={withImage : true, title: 'Careers', caption: 'Overview text that concisely describes Fannie Mae’s Social Media. Lorem ipsum dolor sit amet, consectetur adipiscing.'};
+  -var config={withImage : true, title: 'Careers', caption: 'Fannie Mae is seeking talented individuals to fulfill our mission of building a sustainable housing finance system. Join our team and start making a difference today.'};
   include ../../components/overview/_default.jade
+  -var linkList = linkList || ['Why Fannie Mae', 'What We Offer', 'Locations', 'Who We Seek', 'Hiring Process', 'University Recruiting']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
     -var config={ links : ['Home'], page : 'Careers'}

@@ -1,27 +1,25 @@
--var config = config || {type: 'img-right'};
+-var config = config || {type: 'img-right', title:'Debt Securities', caption:'', productList: ['Short-term Debt Securities', 'Long-term Debt Securities', 'Foreign Currency Denominated Notes'], toolsList: ['Benchmark Automated Syndication System (BASS)', 'Debt Transaction Application (DTA)', 'Fannie Mae Auction System Technology (FAST)']};
 section.featured-subpages(class="#{config.type}")
   img(src="http://placehold.it/400x460" alt="something meaningful").fade-in.no-mobile
   .block.padding-30.white-bg
-    h1.fm-subtitle Debt Securities
-    p Search for disclosure and related documents for a single pool or trust.    
+    h1.fm-subtitle= config.title
+    p= config.caption  
     .row
       .col-sm-6
         header.fm-list-title
           h2 Products
           a.view-all(href="") View All
         ul.link-listing
-          li: a(href="") Connecticut Avenue Securities
-          li: a(href="") Credit Insurance Risk Sharing
-          li: a(href="") Mortgage Insurance Risk Sharing
+          each val in config.productList
+            li: a(href="")= val
 
       .col-sm-6
         header.fm-list-title
           h2 Tools &amp; Applications
           a.view-all(href="") View All
         ul.link-listing
-          li: a(href="") Connecticut Avenue Securities
-          li: a(href="") Credit Insurance Risk Sharing
-          li: a(href="") Mortgage Insurance Risk Sharing  
+          each val in config.toolsList
+            li: a(href="")= val
 
 
     a(href="").cta View
