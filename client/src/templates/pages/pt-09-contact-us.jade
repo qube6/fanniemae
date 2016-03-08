@@ -4,10 +4,10 @@ block title
   title PT09 Contact
 
 block top-content
-  -var config={withImage : true, title: 'Contact Us', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'Contact Us', caption: 'Our dedicated staff is here to answer all your mortgage and housing questions. Let us know how we can help.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config={ child : 'Contact Us'}
+    -var config={ links : ['Home'], page : 'Contact Us'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
