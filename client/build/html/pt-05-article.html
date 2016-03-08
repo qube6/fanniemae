@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html ng-app="fannieMae">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="155 characters. Call to action. Should be unique and not match content on the page">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" href="../media/favicon.ico?v=123"><!-- bower:css -->
+    <link rel="stylesheet" href="/js/lib/bower_components/angular-carousel/dist/angular-carousel.css">
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/styles/fannie-mae-styles.css">
+    <link rel="stylesheet" href="/styles/fm-icon-font.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- endinject -->
+    <!-- Picture element HTML5 shiv-->
+    <script>document.createElement( "picture" );</script>
+    <script src="/js/lib/picturefill.min.js" async></script>
+    
+    
+    <title>PT05 Article</title>
+  </head>
+  <body ng-controller="MainController">
+    <main>
+      <div id="page-wrapper">
+        <header id="navbar" role="banner" fm-sticky-header class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
+            <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
+              <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
+                <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
+              </svg></a>
+          </div>
+          <form action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away="header-search" class="header-search-form">
+            <input placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')" class="header-search-input">
+            <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
+          </form>
+          <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
+            <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
+              <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
+              <div class="sites-list">
+                <h1 class="font-serif">Doing Business with Fannie Mae</h1>
+                <ul fm-accordion close-others="false" class="menu nav">
+                  <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                      <h2>Lenders</h2>
+                      <button type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                    <ul class="submenu">
+                      <li><a href="https://www.fanniemae.com/singlefamily/index" target="_blank">Single-Family</a></li>
+                      <li><a href="https://www.fanniemae.com/multifamily/index" target="_blank">Multifamily</a></li>
+                    </ul>
+                  </li>
+                  <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                      <h2>Servicers</h2>
+                      <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                    <ul class="submenu">
+                      <li><a href="https://www.fanniemae.com/singlefamily/servicing" target="_blank">Single-Family</a></li>
+                      <li><a href="https://www.fanniemae.com/multifamily/servicing" target="_blank">MultiFamily</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/capital-market-investors"> 
+                      <h2>Capital Market Investors</h2></a></li>
+                </ul>
+                <h1 class="font-serif">Homeownership & Renting</h1>
+                <ul class="menu nav">
+                  <li><a href="http://knowyouroptions.com" target="_blank">
+                      <h2>Know your Options</h2>
+                      <div class="subhead">For Owners, Renters & Buyers</div></a></li>
+                  <li><a href="http://homepath.com" target="_blank">
+                      <h2>HomePath</h2>
+                      <div class="subhead">Find & Buy Homes</div></a></li>
+                </ul>
+              </div>
+            </div>
+            <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn pull-right desktop-only"><span aria-hidden="true" class="icon fm-search-circle"></span></button>
+            <ul fm-accordion close-others="false" class="main-menu">
+              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/about-us" title="">About Us</a>
+                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                <ul class="menu nav">
+                  <li><a href="/about-us/what-we-do" title="">What We Do</a></li>
+                  <li><a href="/about-us/leadership-team" title="">Leadership Team</a></li>
+                  <li><a href="/about-us/awards-achievements">Awards & Achievements</a></li>
+                  <li><a href="/about-us/governance">Governance</a></li>
+                  <li><a href="/about-us/investor-relations" title="">Investor Relations</a></li>
+                  <li><a href="/about-us/giving-back">Giving Back</a></li>
+                </ul>
+              </li>
+              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/research-and-insights" title="">Research & Insights</a>
+                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                <ul class="menu nav">
+                  <li><a href="/research-and-insights/271" title="">Consumer Research & Analysis</a></li>
+                  <li><a href="/research-and-insights/15" title="">Economic & Housing Outlook</a></li>
+                  <li><a href="/research-and-insights/272" title="">Home Purchase Sentiment Index</a></li>
+                  <li><a href="/research-and-insights/16" title="">Insights</a></li>
+                  <li><a href="/research-and-insights/17" title="">Mortgage Lender Sentiment Survey</a></li>
+                  <li><a href="/research-and-insights/18" title="">National Housing Survey</a></li>
+                </ul>
+              </li>
+              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/news" title="Description of gucrisa.">Newsroom</a>
+                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                <ul class="menu nav">
+                  <li><a href="/news/press-center" title="">Press Center</a></li>
+                  <li><a href="/news/in-the-news" title="">In the News</a></li>
+                  <li><a href="/news/industry-news" title="">Industry News</a></li>
+                  <li><a href="/news/fact-sheet">Factsheet</a></li>
+                </ul>
+              </li>
+              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/careers" title="">Careers</a>
+                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                <ul class="menu nav">
+                  <li><a href="/careers/job-search">Job Search</a></li>
+                  <li><a href="/careers/why-fannie-mae">Why Fannie Mae</a></li>
+                  <li><a href="/careers/what-we-offer">What We Offer</a></li>
+                  <li><a href="/careers/hiring-process">Hiring Process</a></li>
+                  <li><a href="/careers/who-we-seek">Who We Seek</a></li>
+                  <li><a href="/careers/university-recruiting">University Recruiting</a></li>
+                  <li><a href="/careers/locations" title="">Locations</a></li>
+                </ul>
+              </li>
+              <li><a href="/contact-us" title="Description of tho.">Contact Us</a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+              <section class="overview">
+                <div class="container">
+                  <div class="col-md-8 caption">
+                    <h1>Economic &amp; Housing Outlook</h1>
+                  </div>
+                </div>
+              </section>
+              <nav fm-sticky-header class="top-navigation">
+                <div class="container">
+                  <div class="row">
+                    <div fm-greedy-nav class="col-xs-12">
+                      <div class="wrap">
+                        <ul class="hide">
+                          <li><a href="as">What We Do</a></li>
+                          <li><a href="as">Leadership Team</a></li>
+                          <li><a href="as">Awards &amp;amp; Achievements</a></li>
+                          <li><a href="as">Innovations</a></li>
+                          <li><a href="as">Governance</a></li>
+                          <li><a href="as">Investor Relations</a></li>
+                          <li><a href="as">History</a></li>
+                          <li><a href="as">Giving Back</a></li>
+                        </ul>
+                        <ul ng-cloak class="visible-links">
+                          
+                        </ul>
+                        <ul ng-show="hiddenLinks.length" ng-class="{ 'open' : isOpen() }" fm-close-on-click-away="toggleOpen()" class="hidden-links">
+                          <li ng-repeat="link in hiddenLinks"><a href="{{link.url}}">{{link.title}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <div class="breadcrumb-social-wrap">
+                <div class="breadcrumb">
+                  <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Research &amp; Insights</a></li>
+                    <li><a href="">Economic &amp; Housing Overlook</a></li>
+                    <li>Economic Rebound on the Horizon with Q1 Slump in Rearview Mirror</li>
+                  </ul>
+                </div>
+                <div class="social-share">
+                  <ul>
+                    <li>Share This:</li>
+                    <li><span displaytext="Facebook" class="fa fa-facebook st_facebook_custom"></span></li>
+                    <li><span displaytext="Tweet" class="fa fa-twitter st_twitter_custom"></span></li>
+                    <li><span displaytext="Google +" class="fa fa-google-plus st_googleplus_custom"></span></li>
+                    <li><span displaytext="LinkedIn" class="fa fa-linkedin st_linkedin_custom"></span></li>
+                    <li><span displaytext="Email" class="fa fa-envelope st_email_custom"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="fm-main-content">
+              <div class="fm-content col-xs-12 col-sm-8">
+                <article class="article-wrapper padding-30">
+                  <div class="article-header">
+                    <div class="article-category">Economic & Housing Outlook, Report</div>
+                    <h1>Economic Rebound on the Horizon with Q1 Slump in Rearview Mirror</h1>
+                    <h2>Subheading is displayed here</h2>
+                    <div class="article-date">June 23, 2015</div>
+                  </div>
+                  <div class="rich-text-block">
+                    <p>Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to Fannie Mae’s (FNMA/OTC) Economic & Strategic Research (ESR) Group. The strong U.S. dollar and challenges in the oil and gas industry will likely produce some ongoing headwinds in the near term. However, the continued strengthening in employment and household income, as well as the return to more normalized weather patterns, are expected to help economic growth climb to 2.4 percent annualized in the second quarter before accelerating in the second half of the year to an average of 3.0 percent.</p>
+                    <figure><img src="../media/content-image-2.png" alt="Placeholder Image" title="Placeholder image">
+                      <figcaption>
+                        <p>Concise text that tells people what the data means. This will help people who struggle to interpret graphs.</p>
+                      </figcaption>
+                    </figure>
+                    <p>“The first-quarter slump wreaked more havoc than expected, particularly as real consumer spending grew only 1.8 percent annualized despite significant savings at the gas pump,” said Fannie Mae Chief Economist Doug Duncan. “We adjusted our full-year growth projection down to 1.9 percent from 2.3 percent in the prior forecast, in light of the downward revision to first-quarter GDP. However, our forecast for the current quarter and the rest of the year is little changed as recent developments support our expectations for a second-quarter pick-up. Labor market conditions are providing more near-term support for consumers, indicating that the acceleration in income growth this year should be sustainable. Additionally, the decline in gas prices could lead to a delayed boost in consumer spending as we saw in May with auto sales posting the strongest pace in nearly a decade, further signaling that consumer spending is gearing up for a rebound.”</p>
+                    <p>“Our forecast for housing and mortgage activity remains unchanged amid continued improvement seen at the start of the second quarter,” said Duncan. “We expect total housing starts and total home sales in 2015 to rise about 10 and 5 percent, respectively, with mortgage originations increasing approximately 23 percent to $1.46 trillion. Given the uneven economic growth in the U.S. and slow growth around the globe, interest rates are unlikely to surge. This should enable the housing market to better withstand some headwinds from higher rates this year than in the past.”</p>
+                    <div class="article-share padding-30"><a st_url="http://linktothearticle.com" st_title="FannieMae Article Title" displayText="Share this article" class="st_sharethis_custom">Share This<span class="fa fa-share-alt"></span></a></div><i class="small disclaimer">Opinions, analyses, estimates, forecasts, and other views of Fannie Mae's Economic & Strategic Research (ESR) Group included in these materials should not be construed as indicating Fannie Mae's business prospects.</i>
+                  </div>
+                </article>
+              </div>
+              <div class="fm-top-rail col-xs-12 col-sm-4">
+              </div>
+              <div class="fm-rail col-xs-12 col-sm-4">
+                <aside class="rail-list white-bg padding-30">
+                  <h1 class="fm-subtitle">Report Details</h1>
+                  <ul class="link-listing custom-icons">
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-pdf-o color-dark"></span> June Report<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
+                    <li><a href="/">
+                         
+                         June Economic Forecast<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                    <li><a href="/">
+                         
+                         June Housing Forecast <span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                    <li><a href="/">
+                         
+                         June Multifamily Market Commentary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-audio-o color-dark"></span> Podcast<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-video-o color-dark"></span> Video Summary<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
+                    <li><a href="/">
+                         
+                         June News Release<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                  </ul>
+                </aside>
+                <div class="rail-row">
+                  <aside fm-accordion class="rail-list white-bg padding-30">
+                    <div fm-accordion-item>
+                      <h1 class="fm-subtitle">Weekly Updates</h1>
+                      <ul class="link-listing bottom-border">
+                        <li><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                        <li><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                        <li ng-show="isOpen()"><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                        <li ng-show="isOpen()"><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                      </ul>
+                      <div class="text-center"><a href ng-click="toggleItem()" class="more"> <span ng-show="!isOpen()">View All<i aria-hidden="true" class="icon fm-plus-circle"></i></span><span ng-show="isOpen()">View Less<i aria-hidden="true" class="icon fm-minus-circle"></i></span></a></div>
+                    </div>
+                  </aside>
+                </div>
+                <div class="rail-row">
+                  <aside fm-accordion class="rail-list white-bg padding-30">
+                    <div fm-accordion-item>
+                      <h1 class="fm-subtitle">Authors</h1>
+                      <ul ng-cloak class="bottom-border">
+                        <li>
+                          <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                            <figcaption><a href="" class="bio-name">Katie Penote</a>
+                              <p class="bio-title">Senior Communications & Marketing Manager, Fannie Mae</p><a href="tel:321-121-3423">t: 321 121 3423</a><a href="mailto:dbenson@fanniemae.com">e: dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                        <li>
+                          <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                            <figcaption><a href="" class="bio-name">David Benson</a>
+                              <p class="bio-title">Executive Vice President Chief Financial Officer, Fannie Mae</p><a href="tel:321-121-3423">t: 321 121 3423</a><a href="mailto:dbenson@fanniemae.com">e: dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                        <li ng-show="isOpen()">
+                          <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                            <figcaption><a href="" class="bio-name">David Benson</a>
+                              <p class="bio-title">Executive Vice President Chief Financial Officer, Fannie Mae</p><a href="tel:321-121-3423">t: 321 121 3423</a><a href="mailto:dbenson@fanniemae.com">e: dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                        <li ng-show="isOpen()">
+                          <figure class="bio-teaser">
+                            <figcaption><a href="" class="bio-name">David Benson</a>
+                              <p class="bio-title">Executive Vice President Chief Financial Officer, Fannie Mae</p><a href="tel:321-121-3423">t: 321 121 3423</a><a href="mailto:dbenson@fanniemae.com">e: dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                      </ul>
+                      <div class="text-center"><a href ng-click="toggleItem()" class="more"> <span ng-show="!isOpen()">View All<i aria-hidden="true" class="icon fm-plus-circle"></i></span><span ng-show="isOpen()">View Less<i aria-hidden="true" class="icon fm-minus-circle"></i></span></a></div>
+                    </div>
+                  </aside>
+                </div>
+                <div class="rail-row">
+                  <aside class="padding-20 white-bg text-center"><a href="mailto:foo@foo.com">Get Email Updates: <i class="fa fa-envelope"></i></a></aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <section class="footer-lead pull-left"><a href="/" title="home" class="site-logo navbar-btn pull-left">
+            <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none">
+              <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
+            </svg></a>
+          <div class="copyright">© 2016 Fannie Mae</div>
+        </section>
+        <section class="footer-menus pull-left">
+          <ul class="footer-menu links list-inline display-table">
+            <li class="table-cell align-middle"><a href="/" title="" class="active">Suppliers</a></li>
+            <li class="table-cell align-middle"><a href="/careers" title="">Careers</a></li>
+            <li class="table-cell align-middle"><a href="/contact-us" title="">Contact Us</a></li>
+            <li class="table-cell align-middle"><a href="/legal" title="">Legal</a></li>
+            <li class="table-cell align-middle"><a href="/privacy" title="">Privacy</a></li>
+            <li class="table-cell align-middle"><a href="/stay-connected">Stay Connected</a></li>
+          </ul>
+        </section>
+      </footer>
+    </main>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script>
+      window.angular || document.write('<script src="/js/lib/angular.min.js"><\/script>');
+      
+    </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+      stLight.options({publisher: "33ebdc2e-6083-4e55-b1e2-20aed9634269", doNotHash: false, doNotCopy: false, hashAddressBar: false, servicePopup:true});
+      
+      
+    </script><!-- bower:js -->
+    <script src="/js/lib/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/js/lib/bower_components/hammerjs/hammer.js"></script>
+    <script src="/js/lib/bower_components/svgxuse/svgxuse.js"></script>
+    <script src="/js/lib/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/js/lib/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <script src="/js/lib/bower_components/angular-hammer/angular-hammer.js"></script>
+    <!-- endinject -->
+    <!-- Any other scripts not being injected -->
+    <!-- inject:js -->
+    <script src="/js/main.js"></script>
+    <!-- endinject -->
+  </body>
+</html>
