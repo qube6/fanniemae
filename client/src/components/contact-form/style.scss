@@ -3,10 +3,34 @@ section.contact-us{
     margin-bottom: 20px;
   }
   textarea{
-    margin-bottom: 50px;
     resize: vertical;
   }
   h3{
     font-size: 20px;
+  }
+  .submit{
+    margin-top: 80px;
+    hr{
+      margin: 10px 0;
+    }
+  }
+  label{
+    @extend .sr-only;
+  }
+  .show-errors{
+    .ng-invalid{
+      box-shadow: 0 0 5px #d45252;
+      border-color: #b03535;
+      & + label{
+        position: relative;
+        width: auto;
+        height: auto;
+        color: #b03535;
+        clip: auto;
+        font-size: 12px;
+        display: block;
+        top: -20px;
+      }
+    }
   }
 }
