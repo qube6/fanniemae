@@ -1,14 +1,11 @@
 {
-  "name": "skeleton2",
+  "name": "fanniemae-fe",
   "version": "1.0.0",
-  "description": "Base front end project framework",
-  "main": "index.js",
-  "scripts": {
-    "test": "node index.js"
-  },
+  "description": "Front End Templates for FannieMae",
+  "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vespoli/skeleton2.git"
+    "url": "https://github.com/navigationarts/fanniemae-fe"
   },
   "keywords": [
     "node",
@@ -16,7 +13,7 @@
     "sass",
     "angular"
   ],
-  "author": "David Vespoli",
+  "author": "Yvonne Takane/David Vespoli",
   "devDependencies": {
     "event-stream": "^3.3.2",
     "gulp": "^3.8.10",

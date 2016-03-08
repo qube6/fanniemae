@@ -1,0 +1,18 @@
+{
+  "options" : [
+    {
+      "id" : "select1",
+      "name" : "Select Option 1"
+    },
+    {
+      "id" : "select2",
+      "name" : "Select Option 2"
+    },
+    {
+      "id" : "select3",
+      "name" : "Select Option 3"
+    }
+  ],
+  "email": "contactemail@fanniemae.com",
+  "text": "<p>Contact us with inquiries regarding Fannie Mae's underwriting and servicing policies and mortgage products or to report an issue with a listing agent or escalate a concern with a HomePath property.</p><h3>Call Us: <a href=\"tel:123-456-7890\">202.752.8054</a></h2>"
+}
