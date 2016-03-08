@@ -2,17 +2,17 @@
 FE templates for FannieMae refresh
 
 ## Build Files
-Final static templates can be found in the `/build` directory.  These files are up to date with what is checked into the `master` branch and what is visible on the [Demos Site](http://demos.navigationarts.com/fanniemae/).
+Final static templates can be found in the `/client/build` directory.  These files are up to date with what is checked into the `master` branch and what is visible on the [Demos Site](http://demos.navigationarts.com/fanniemae/html/).
 
 
 ## Installation
-To install dependancies, run from the `/src` directory:
+To install dependancies, run from the `/client/src` directory:
 ```
 npm install
 ```
 
 ## Usage
-To build and run server, run from `/src` directory:
+To build and run server, run from `/client/src` directory:
 ```
 gulp
 ```
