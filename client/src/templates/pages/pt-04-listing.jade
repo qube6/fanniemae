@@ -4,11 +4,12 @@ block title
   title PT04 Listing
 
 block top-content
-  -var config={withImage : true, title: 'Economic & Housing Outlook', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'Economic & Housing Outlook', caption: 'We help to ensure that qualified homebuyers across the nation have access to mortgage credit in good times and bad, and that quality, affordable rental housing is available.'};
   include ../../components/overview/_default.jade
+  -var linkList = linkList || ['Economic & Housing Outlook', 'Mortgage Lender Sentiment Survey', 'National Housing Survey', 'Insights']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ parent : 'Research & Insights', child : 'Economic & Housing Outlook'}
+    -var config={ links : ['Home', 'Research & Insights'], page : 'Economic & Housing Outlook'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 

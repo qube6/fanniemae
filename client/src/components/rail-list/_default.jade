@@ -1,0 +1,63 @@
+-var isAlt = isAlt || false;
+if !isAlt
+  aside.rail-list.white-bg.padding-30
+    h1.fm-subtitle Report Details
+    ul.link-listing.custom-icons
+      li
+        a(href="/") 
+          span.fa.fa-file-pdf-o.color-dark(aria-hidden="true")
+          |  June Report
+          span.list-icon.fa.fa-download(aria-hidden="true")
+      li
+        a(href="/") 
+          |  June Economic Forecast
+          span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+      li
+        a(href="/") 
+          |  June Housing Forecast 
+          span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+      li
+        a(href="/") 
+          |  June Multifamily Market Commentary
+          span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+      li
+        a(href="/") 
+          span.fa.fa-file-audio-o.color-dark(aria-hidden="true")
+          |  Podcast
+          span.list-icon.fa.fa-download(aria-hidden="true")
+      li
+        a(href="/") 
+          span.fa.fa-file-video-o.color-dark(aria-hidden="true")
+          |  Video Summary
+          span.list-icon.fa.fa-download(aria-hidden="true")
+      li
+        a(href="/") 
+          |  June News Release
+          span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+else
+  aside.rail-list.white-bg.padding-30(fm-accordion)
+    div(fm-accordion-item)
+      h1.fm-subtitle Weekly Updates
+      ul.link-listing.bottom-border
+        li
+          a(href="/") 
+            |  Finally, the Boost Materializes as Consumers Spend Big in May 
+          .fm-date June 25, 2015
+        li
+          a(href="/") 
+            |  Finally, the Boost Materializes as Consumers Spend Big in May 
+          .fm-date June 25, 2015
+        li(ng-show="isOpen()")
+          a(href="/") 
+            |  Finally, the Boost Materializes as Consumers Spend Big in May 
+          .fm-date June 25, 2015
+        li(ng-show="isOpen()")
+          a(href="/") 
+            |  Finally, the Boost Materializes as Consumers Spend Big in May 
+          .fm-date June 25, 2015
+      .text-center
+        a.more(href ng-click="toggleItem()") 
+          span(ng-show="!isOpen()") View All
+            i.icon.fm-plus-circle(aria-hidden="true")
+          span(ng-show="isOpen()") View Less
+            i.icon.fm-minus-circle(aria-hidden="true")

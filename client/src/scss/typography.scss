@@ -31,6 +31,15 @@ a:visited {
 a:focus {
   outline: none;
 }
+a[href*='tel']{
+  @media(min-width: $screen-sm){
+    cursor: default;
+    color: $color-dark;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
 span.icon{
   &:hover{
     text-decoration: none !important;

@@ -4,10 +4,10 @@ block title
   title PT07 Search Results
 
 block top-content
-  -var config={withImage : true, title: 'Search Results', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'Search Results', caption: 'Fannie Mae is a leading source of residential and commercial mortgage credit in the U.S. secondary market and is your committed housing partner. Search our site to learn more.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config = { child : 'Search Results'}
+    -var config = { links : ['Home'], page : 'Search Results'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
@@ -17,5 +17,6 @@ block content
     include ../../components/search/_default.jade
 
 
-    
+block rail
+   include ../../components/image-promo/_default.jade
 

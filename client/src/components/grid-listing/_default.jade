@@ -28,7 +28,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
 
       button.more(ng-click="loadQuery(true)")
         span Search 
-        i.icon.fm-search
+        i.icon.fm-search-circle
   -} else {
     h1.fm-section-title Economic &amp; Housing Outlook
   -}
@@ -44,7 +44,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -53,7 +53,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -62,7 +62,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -71,7 +71,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -80,7 +80,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -89,7 +89,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -98,7 +98,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -107,7 +107,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
     li.block.white-bg.padding-30(ng-if="!dynamic")
       span.fm-type.font-serif
         if config.news
@@ -116,7 +116,7 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
           | Weekly Note
       h2.fm-title: a(href="") 2015 Economic Growth Forecast Downgraded, but Housing on a Better Path
       span.fm-date May 21, 2015
-      a(href="").more: i.icon.fm-arrow-right
+      a(href="").cta: i.icon.fm-arrow-right-circle(aria-hidden="true")
 
     
 
@@ -124,8 +124,8 @@ section.listing.grid-listing(listing data-api-url="../data/grid-listing.json" ng
       span.fm-type.font-serif {{item.type}}
       h2.fm-title: a(href="{{item.url}}") {{item.title}}
       span.fm-date {{item.date}}
-      a(href="{{item.url}}").more: i.icon.fm-arrow-right
+      a(href="{{item.url}}").more: i.icon.fm-arrow-right-circle(aria-hidden="true")
   .white-bg.text-center(ng-if="(payload.end < total-1 || !payload.end) && !loading")
     a(href="" ng-click="loadQuery()").more.load-more View More
-      i.icon.fm-plus
+      i.icon.fm-plus-circle(aria-hidden="true")
 

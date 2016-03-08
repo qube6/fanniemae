@@ -3,7 +3,7 @@ aside.rail-list.white-bg.padding-30(fm-accordion)
     h1.fm-subtitle Authors
     ul.bottom-border(ng-cloak)
       li
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", contact: true, link: false}
+        -var config = { name: "Katie Penote", title: "Senior Communications & Marketing Manager, Fannie Mae", contact: true, link: false}
           include ../bio-teaser/_default.jade
       li
         -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", contact: true, link: false}
@@ -12,11 +12,11 @@ aside.rail-list.white-bg.padding-30(fm-accordion)
         -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", contact: true, link: false}
           include ../bio-teaser/_default.jade
       li(ng-show="isOpen()")
-        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", contact: true, link: false}
+        -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", contact: true, link: false, noPhoto: true}
           include ../bio-teaser/_default.jade
     .text-center
       a.more(href ng-click="toggleItem()") 
-        span(ng-show="!isOpen()") View More
-          i.icon.fm-plus(aria-hidden="true")
-        span(ng-show="isOpen()") View Fewer
-          i.icon.fm-minus(aria-hidden="true")
+        span(ng-show="!isOpen()") View All
+          i.icon.fm-plus-circle(aria-hidden="true")
+        span(ng-show="isOpen()") View Less
+          i.icon.fm-minus-circle(aria-hidden="true")

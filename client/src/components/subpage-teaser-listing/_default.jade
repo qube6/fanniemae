@@ -1,37 +1,58 @@
+-var isCareers = isCareers || false
 section.subpage-teaser-listing
-  h1.fm-section-title About our careers
-  .row
-    .col-md-6
-      .block.padding-30.white-bg
-        h2.fm-title: a(href="") Why Fannie Mae
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
-        a(href="")
-          img.fade-in(src="http://placehold.it/580x250/9fb8ad/ced0ce/&text=video" alt="some meaningful alt text")
-          i.icon.fm-play-circle
-    .col-md-6
-      .block.padding-30.white-bg
-        h2.fm-title: a(href="") What We Offer
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
-        a(href=""): img.fade-in(src="http://placehold.it/580x250/b7a09d" alt="some meaningful alt text")                
-  .row
-    .col-md-6
-      .block.padding-30.white-bg
-        h2.fm-title: a(href="") Locations
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
-        a(href=""): img.fade-in(src="http://placehold.it/580x250/9da3b7" alt="some meaningful alt text")        
-    .col-md-6
-      .block.padding-30.white-bg
-        h2.fm-title: a(href="") Who We Seek
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
-        a(href=""): img.fade-in(src="http://placehold.it/580x250/b4b79d" alt="some meaningful alt text")                        
-  .row
-    .col-md-6
-      .block.padding-30.white-bg
-        h2.fm-title: a(href="") Hiring Process
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
-        a(href=""): img.fade-in(src="http://placehold.it/580x250/aa9db7" alt="some meaningful alt text")        
-    .col-md-6
-      .block.padding-30.white-bg
-        h2.fm-title: a(href="") University Recruiting
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
-        a(href=""): img.fade-in(src="http://placehold.it/580x250/b79d9d" alt="some meaningful alt text")                        
+  if isCareers
+    h1.fm-section-title About our careers
+    .display-table.equal-height-sm-row
+      .table-row
+        .block.col-sm-height.white-bg 
+          .content.padding-30
+            h2.fm-title: a(href="") Why Fannie Mae
+            p At Fannie Mae, our vision is to be America's most valued housing partner. Our culture and business priorities are aligned with this vision and we are working every day to achieve it.
+          a.subpage-teaser-image(href="")
+            img.fade-in(src="http://placehold.it/580x250/9fb8ad/ced0ce/&text=video" alt="some meaningful alt text")
+            i.icon.fm-play-circle
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-title: a(href="") What We Offer
+            p We offer a comprehensive range of benefits including retirement and financial planning, healthcare, and a healthy work/life balance.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/b7a09d" alt="some meaningful alt text")                
+      .table-row
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-title: a(href="") Locations
+            p Headquartered in Washington, D.C. and with offices across the country, Fannie Mae offers flexible living options.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/9da3b7" alt="some meaningful alt text")        
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-title: a(href="") Who We Seek
+            p We are looking to improve our workforce with a diverse and talented group of people who welcome the opportunity to be on the front line of change.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/b4b79d" alt="some meaningful alt text")                        
+      .table-row
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-title: a(href="") Hiring Process
+            p Knowing about our recruitment process will help facilitate your job search. Take a few moments to review our hiring information so you know what to expect as you pursue a career with us.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/aa9db7" alt="some meaningful alt text")
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-title: a(href="") University Recruiting
+            p Join our team and put your unique talents to use as we work to improve our nation's housing finance system. Our Internship or Associate Programs give employees the ability to gain hands-on experience in various disciplines.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/aa9db7" alt="some meaningful alt text")     
+  else
+    .display-table.equal-height-sm-row
+      .table-row
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-subtitle: a(href="") Speeches
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/9da3b7" alt="some meaningful alt text")        
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-subtitle: a(href="") Media Contacts
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/b4b79d" alt="some meaningful alt text")                        
+        .block.col-sm-height.white-bg
+          .content.padding-30
+            h2.fm-subtitle: a(href="") Fact Sheet
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Incididunt ut labore et dolore magna aliqua.
+          a.subpage-teaser-image(href=""): img.fade-in(src="http://placehold.it/580x250/aa9db7" alt="some meaningful alt text")     

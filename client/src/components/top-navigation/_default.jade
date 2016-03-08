@@ -1,17 +1,12 @@
+-var linkList = linkList || ['What We Do', 'Leadership Team', 'Awards &amp; Achievements', 'Innovations', 'Governance', 'Investor Relations', 'History', 'Giving Back']
 nav.top-navigation(fm-sticky-header)
   .container
     .row
       .col-xs-12(greedy-nav)
         .wrap
           ul.hide
-            li: a(href="as") What We Do
-            li: a(href="dd") Leadership Team
-            li: a(href="22") Awards &amp; Achievements
-            li: a(href="xacc") Innovations
-            li: a(href="cs") Governance
-            li: a(href="qw") Investor Relations
-            li: a(href="cx") History
-            li: a(href="asd") Giving Back
+            each val in linkList
+              li: a(href="as")= val
 
 
           

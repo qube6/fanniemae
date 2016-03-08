@@ -4,10 +4,10 @@ block title
   title PT09 Contact
 
 block top-content
-  -var config={withImage : true, title: 'Contact Us', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'Contact Us', caption: 'Our dedicated staff is here to answer all your mortgage and housing questions. Let us know how we can help.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config={ child : 'Contact Us'}
+    -var config={ links : ['Home'], page : 'Contact Us'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
@@ -19,4 +19,13 @@ block content
       include ../../components/contact-form/_default.jade
 
 block rail
+  -var config = { title: 'Our Locations', text: '<h2>Headquarters</h2><p>3900 Wisconsin Ave, NW Washington, DC 20016-2892</p>', hasAddress: false, hasEmail: false, hasLinks: true, hasCTA: true, }
   include ../../components/promo/_default.jade
+  +promo('Our Locations', true, true)
+    h2 Headquarters
+    p 3900 Wisconsin Ave, NW Washington, DC 20016-2892
+    img(src="../media/promo-1.png")
+    br
+    br
+    h2 Regional Offices
+    p Fannie Mae ‘s regional offices serve as day-to-day contacts for our business customers (mortgage lenders).

@@ -1,15 +1,14 @@
+-var config = config || { title: 'Credit Risk Sharing', caption: '', list: ['Connecticut Avenue Securities', 'Credit Insurance Risk Sharing', 'Mortgage Insurance Risk Sharing']}
 section.secondary-subpages.block.white-bg.padding-30
-  h1.fm-subtitle Credit Risk Sharing
-  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Dolor sit amet, consectetur adipiscing elit, sed do.
-
+  h1.fm-subtitle= config.title
+  p=config.caption
 
   header.fm-list-title
     h2 Products
     a.view-all(href="") View All
   ul.link-listing
-    li: a(href="") Connecticut Avenue Securities
-    li: a(href="") Credit Insurance Risk Sharing
-    li: a(href="") Mortgage Insurance Risk Sharing  
+    each val in config.list
+      li: a(href="")= val
 
-  a(href="").more View
-    i.icon.fm-arrow-right    
+  a(href="").cta View
+    i.icon.fm-arrow-right-circle(aria-hidden="true")

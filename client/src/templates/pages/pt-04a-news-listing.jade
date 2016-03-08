@@ -4,11 +4,12 @@ block title
   title PT04a News Listing
 
 block top-content
-  -var config={withImage : true, title: 'Corporate News', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'Corporate News', caption: 'We help to ensure that qualified homebuyers across the nation have access to mortgage credit in good times and bad, and that quality, affordable rental housing is available.'};
   include ../../components/overview/_default.jade
+  -var linkList = linkList || ['Corporate News', 'Financial News', 'Speeches', 'Statements', 'Media Contact', 'Fact Sheet']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ parent : 'News', child : 'Corporate News'}
+    -var config={ links : ['Home', 'News'], page : 'Corporate News'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 

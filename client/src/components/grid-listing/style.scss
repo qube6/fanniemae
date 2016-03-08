@@ -42,25 +42,20 @@ section.grid-listing{
         margin-right: 0;
       }
     }
-    .more{
+    .cta{
       position: absolute;
       bottom: 0;
       right: 0;
-      background: #01172d;
+      left: auto;
       height: 54px;
       width: 60px;
       text-align: center;
       line-height: 54px;
       i{
-        background: #01172d;
-        top: 12px;
-        right: 15px;
+        padding: 0;
       }
       &:hover{
-        i{
-          background: #fff;
-          color:#007697;
-        }
+        color: $color-link-light-h;
       }
     }
   }
