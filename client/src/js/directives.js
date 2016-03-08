@@ -330,6 +330,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
       
       element.attr('ng-model', attrs.initModel);
       element.removeAttr('init-model');
+
       $compile(element)(scope);
     }
   };

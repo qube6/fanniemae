@@ -3,14 +3,12 @@ section.topic-box.blue-block
     .table-row
       label.table-cell Topic:
       .table-cell.styled-select
-        select
+        select(ng-model="contact.selectParent" ng-change="submitParent()")
+          option(default selected value="default" ng-selected="true") Select
           option Single-family and Multifamily Business
           option 2 Single-family and Multifamily Business
           option 3 Single-family and Multifamily Business
     .table-row
       label.table-cell Sub-topic:
       .table-cell.styled-select
-        select
-          option Loss Mitigation
-          option 2 Loss Mitigation
-          option 3 Loss Mitigation
+        select(ng-model="contact.selectChild" ng-options="item.id as item.name for item in contact.selectOptions track by item.id")
