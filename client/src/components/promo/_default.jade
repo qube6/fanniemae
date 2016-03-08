@@ -1,21 +1,30 @@
+-var config = config || { title: 'Contact the Board', text: 'Need to connect with our board? Please direct all questions, comments, or concerns to the information below.', hasAddress: true, hasEmail: true, hasLinks: false, hasCTA: false}
 aside.promo.white-bg.padding-30
-  h1.fm-subtitle Promo Title
-  p Need to connect with our board? Please direct all questions, comments, or concerns to the information below.  
-  p: img(src="http://placehold.it/350x150" alt="something meaningful")
-  p
-    h2 Board of Directors
-    | c/o Office of the Secretary Mailstop: 1H 2S 05
-    br
-    | 3900 Wisconsin Avenue, NW Washington, DC 
-    br
-    | 20016-2892
-  
-  .email: a(mailto="board@fanniemae.com") board@fanniemae.com
+  h1.fm-subtitle= config.title
+  p= config.text
 
-  ul.links
-    li: a(href="") Map
-    li: a(href="") Email Us
-    li: a(href="tel:4043986000" rel="tel") 404-398-6000
-  ul.link-listing
-    li: a(href="") View all locations
+  if config.hasImage
+    p: img(src="http://placehold.it/350x150" alt="something meaningful")
+  
+  if config.hasAddress
+    p
+      h2 Board of Directors
+      | c/o Office of the Secretary Mailstop: 1H 2S 05
+      br
+      | 3900 Wisconsin Avenue, NW Washington, DC 
+      br
+      | 20016-2892
+    
+  if config.hasEmail
+    .email: a(mailto="board@fanniemae.com") board@fanniemae.com
+
+  if config.hasLinks
+    ul.links
+      li: a(href="") Map
+      li: a(href="") Email Us
+      li: a(href="tel:4043986000" rel="tel") 404-398-6000
+
+  if config.hasCTA
+    ul.link-listing
+      li: a(href="") View all locations
 
