@@ -4,8 +4,9 @@ section.contact-us{
   }
   textarea{
     margin-bottom: 50px;
+    resize: vertical;
   }
-}
-p.call{
-  font-size: 20px;
+  h3{
+    font-size: 20px;
+  }
 }

@@ -1,11 +1,7 @@
 section.contact-us
-  p Contact us with inquiries regarding Fannie Mae's underwriting and servicing policies and mortgage products or to report an issue with a listing agent or escalate a concern with a HomePath property.
-
-  p.call Call Us: 
-    a(href="tel:2027528054" rel="tel") 202.752.8054
-
+  .rich-text-block(ng-bind-html="contact.text")
   hr
-  h2 Email Us
+  h3 Email Us
   .row
     .col-sm-6
       input(type="text" placeholder="Name*" required title="Enter your name")
@@ -17,7 +13,7 @@ section.contact-us
     .col-sm-6
       input(type="tel" placeholder="Phone Number" title="Enter your telephone number")
   textarea(rows="6" placeholder="Questions/Comments*" required title="Enter your message")
-
+  input(type="hidden" name="submit-email" value="{{contact.email}}")
   hr
   p.text-center
     button.more Submit
