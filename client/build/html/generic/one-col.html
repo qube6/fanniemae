@@ -560,22 +560,23 @@
                     </figcaption>
                   </figure>
                 </div>
-                <section class="news-teaser">
+                <section fm-carousel class="news-teaser">
                   <h1 class="font-serif"></h1>
-                  <div class="equal-height-sm-row">
-                    <div class="block col-sm-height"> 
+                  <ul rn-carousel rn-carousel-index="carouselIndex" class="equal-height-sm-row">
+                    <li class="block col-sm-height"> 
                       <h2><a href="/">Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018</a></h2>
                       <div class="fm-date">June 4, 2015</div>
-                    </div>
-                    <div class="block col-sm-height"> 
+                    </li>
+                    <li class="block col-sm-height"> 
                       <h2><a href="/">Fannie Mae Announces Offering of New Issue 3-Year Benchmark Notes® due July 20, 2018</a></h2>
                       <div class="fm-date">June 3, 2015</div>
-                    </div>
-                    <div class="block col-sm-height"> 
+                    </li>
+                    <li class="block col-sm-height"> 
                       <h2><a href="/">Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018</a></h2>
                       <div class="fm-date">June 4, 2015</div>
-                    </div>
-                  </div><a href="/" class="more">All Our News<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                    </li>
+                  </ul>
+                  <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div><a href="/" class="more">All Our News<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                 </section>
                 <div class="fm-secondary-feature padding-30 undefined undefined">
                   <div class="fm-type font-serif"></div>
