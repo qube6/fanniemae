@@ -151,7 +151,7 @@ gulp.task('watch', function() {
   gulp.watch([  './js/*.js',
                 './components/**/*.js',
                 './templates/pages/**/*.js'
-              ], ['scripts']);
+              ], ['markup-scripts']);
 
 });
 
