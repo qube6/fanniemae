@@ -34,6 +34,18 @@ ol.inline  > li {
 .block{
   display: block;
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 // Windows 8 snap fix;
 // To get IE10 in snap mode does not respect the values set in the META tags;
 @-ms-viewport {

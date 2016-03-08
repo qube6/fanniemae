@@ -267,19 +267,6 @@ input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
-input:focus:invalid,
-textarea:focus:invalid,
-select:focus:invalid {
-  color: #b94a48;
-  border-color: rgba(1, 23, 45, 0.8);
-}
-input:focus:invalid:focus,
-textarea:focus:invalid:focus,
-select:focus:invalid:focus {
-  border-color: rgba(1, 23, 45, 0.8);
-  // border-color: #e9322d;
-  box-shadow: 0 0 6px #f8b9b7;
-}
 
 .btn {
   display: inline-block;

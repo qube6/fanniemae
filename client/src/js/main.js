@@ -27,4 +27,4 @@ controller('MainController',
       $scope.toggleActive('header-side-menu', false);
     }
     angular.element($window).off('scroll', scroll).on('scroll', scroll);
-})
+});
