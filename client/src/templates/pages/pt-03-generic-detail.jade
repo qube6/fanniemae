@@ -38,7 +38,15 @@ block rail
   .rail-row
     include ../../components/more-in/_default.jade
   .rail-row
-    -var config = { title: 'Contact the Board', text: 'Need to connect with our board? Please direct all questions, comments, or concerns to the information below.', hasAddress: true, hasEmail: true, hasLinks: false, hasCTA: false, hasImage: false}
     include ../../components/promo/_default.jade
+    +promo('Contact the Board', false, false)
+      p Need to connect with our board? Please direct all questions, comments, or concerns to the information below.
+      h2 Board of Directors
+      p c/o Office of the Secretary Mailstop: 1H 2S 05
+        br
+        | 3900 Wisconsin Avenue, NW Washington, DC
+        br
+        | 20016-2892
+      p: a.email(href="mailto:board@fanniemae.com") board@fanniemae.com
   .rail-row
     include ../../components/image-promo/_default.jade
