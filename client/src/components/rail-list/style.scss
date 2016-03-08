@@ -5,10 +5,10 @@
   h1.fm-subtitle{
     margin: 0;
   }
-  .fa-download{
-    font-size: 14px;
-  }
   .fm-date{
     margin: -10px 0 10px;
+  }
+  ul.link-listing > li > a > .list-icon.fa-download{
+    font-size: 14px;
   }
 }

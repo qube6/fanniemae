@@ -7,6 +7,7 @@ block top-content
   include ../../../components/homepage-carousel/_default.jade
   include ../../../components/overview/_default.jade
   include ../../../components/overview/_default.jade
+  -var config={ links : ['Home'], page : 'Generic'}
   include ../../../components/breadcrumb/_default.jade
   include ../../../components/social-share/_default.jade
   include ../../../components/top-navigation/_default.jade
@@ -32,8 +33,10 @@ block content
   include ../../../components/secondary-feature/_default.jade
   include ../../../components/locator-form/_default.jade
   include ../../../components/locator-form/_default.jade
+  -var config = {type: 'img-right', title:'Debt Securities', caption:'', productList: ['Short-term Debt Securities', 'Long-term Debt Securities', 'Foreign Currency Denominated Notes'], toolsList: ['Benchmark Automated Syndication System (BASS)', 'Debt Transaction Application (DTA)', 'Fannie Mae Auction System Technology (FAST)']};
   include ../../../components/featured-subpages/_default.jade
   include ../../../components/featured-subpages/_default.jade
+  -var config = { title: 'Credit Risk Sharing', caption: '', list: ['Connecticut Avenue Securities', 'Credit Insurance Risk Sharing', 'Mortgage Insurance Risk Sharing']}
   include ../../../components/secondary-subpages/_default.jade
   include ../../../components/secondary-subpages/_default.jade
   include ../../../components/job-search/_default.jade

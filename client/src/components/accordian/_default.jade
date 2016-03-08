@@ -11,22 +11,28 @@ fm-accordion.fm-accordion
       .fm-accordion-content
         .rich-text-block
           p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
-    li(fm-accordion-item)( ng-class="{ 'open' : isOpen() }")
+    li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
       a(href="" ng-click="toggleItem()") The Executive Committee
         span.icon.list-icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
       .fm-accordion-content
         .rich-text-block
-          p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
+          p The Executive Committee has all the authority of the Board during the interim periods between Board meetings, except for certain specified powers that are stated in the Fannie Mae Bylaws.
           h2 Chair
-          -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae Lorem ipsum", link: true}
+          -var config = { name: "Egbert L.J. Perry", title: "Chairman and Chief Executive Officer, The Integral Group LLC", link: true}
           include ../bio-teaser/_default.jade
           br
           h2 Members
-          -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", link: true}
+          -var config = { name: "Jonathan Plutzik", title: "Chairman, Betsy Ross Investors, LLC", link: true}
           include ../bio-teaser/_default.jade
-          -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", link: true}
+          -var config = { name: "William Thomas Forrester ", title: "Retired Chief Financial Officer, The Progressive Corporation", link: true}
           include ../bio-teaser/_default.jade
-          -var config = { name: "David Benson", title: "Executive Vice President Chief Financial Officer, Fannie Mae", link: true}
+          -var config = { name: "Brenda J. Gaines", title: "Retired President and Chief Executive Officer, Diners Club North America", link: true}
+          include ../bio-teaser/_default.jade
+          -var config = { name: "Frederick B. \"Bart\" Harvey III ", title: "Retired chairman of the Board of Trustees, Enterprise Community Partners and Enterprise Community Investment", link: true}
+          include ../bio-teaser/_default.jade
+          -var config = { name: "David H. Sidwell ", title: "Retired Executive Vice President and Chief Financial Officer, Morgan Stanley", link: true}
+          include ../bio-teaser/_default.jade
+          -var config = { name: "Timothy J. Mayopoulos", title: "President and Chief Executive Officer, Fannie Mae", link: true}
           include ../bio-teaser/_default.jade
     li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
       a(href="" ng-click="toggleItem()") The Compensation Committee
@@ -140,13 +146,9 @@ fm-accordion.fm-accordion
           figcaption
             h3 Adding new technology for mortgage servicers
             p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
-        br
-        br
         figure
           img(src='../media/content-image-1.png', alt='Placeholder Image', title='Placeholder image')
           figcaption
             h3 Adding new technology for mortgage servicers
             p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
             i.small Photo credit info
-        br
-        br

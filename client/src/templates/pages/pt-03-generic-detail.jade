@@ -4,63 +4,31 @@ block title
   title PT03 Generic Detail
 
 block top-content
-  -var config={withImage : false, title: 'Board Committees', caption: 'Overview text that concisely describes the section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : false, title: 'Board Committees', caption: 'Led by the Board of Directors, Fannie Mae strives daily to fulfill its public mission of providing mortgages to low-, moderate-, and middle-income Americans.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config={ parent : 'About Us', child : 'Board Committees'}
+    -var config={ links : ['Home', 'About Us', 'Governance'], page : 'Board Comittees'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
 block content
   article.article-wrapper.padding-30
     .rich-text-block
-      h3 Adding new technology for mortgage servicers often means weighing the need against the cost.
-      p “It is the age-old balancing act,” says Matt Lichtner, senior vice president of Decision Ready, a technology provider to the mortgage servicing industry. “There is definitely a need. They’ve got to have technology, and they know it.”
-      blockquote It is the age-old balancing act... There is definitely a need. They’ve got to have technology, and they know it.
-      p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage servicers to beef up their technology beginning in 2013, and it’s a process that continues today.
-      p The cost of compliance has led servicers—both large and small—to embrace technology enhancements as they seek operational efficiencies to manage costs, fulfill investor requirements, and maintain compliance.
-      br
-      br
-      h2 Corporate Governance Guidelines
-      h3 The Corporate Governance Guidelines' content categories are:
+      p On Sept. 6, 2008, the Federal Housing Finance Agency (FHFA) was appointed Conservator of Fannie Mae. Under the conservatorship, FHFA has succeeded all Fannie Mae rights, titles, powers, and privileges.
+
+      p Additionally, on Nov. 24, 2008, FHFA reconstituted the function and authority of Fannie Mae’s the Board of Directors. Today, the directors serve on behalf of the Conservator and exercise their authority as directed by the Conservator on all Fannie Mae affairs.
+
+      p FHFA has directed that the board will have a minimum of nine and not more than 13 directors.
+
+      p Pursuant to the Company's Bylaws, the Board of Directors has the following standing committees: 
       ul
-        li The Roles and Responsibilities of the Board and Management
-        li The Corporate Governance Guidelines
-        li Board Composition, Size, and Membership Criteria
-        li Director Independence
-        li Board Leadership
-        li Board Meetings
-        li Minutes
-        li Board Materials
-        li Committees
-        li Director Access to Management and Outside Advisors
-        li Communications with the Board
-        li Director Compensation
-        li Director Orientation and Continuing Education
-        li Board Performance Evaluation
-        li Management Evaluation and Succession
-        li Compliance; Codes of Conduct
-        li Implementation of the Guidelines
-      br
-      br
-      include ../../components/content-table/_default.jade
-      br
-      br
-      figure
-        include ../../components/content-video/_default.jade
-        figcaption
-          h3 Adding new technology for mortgage servicers
-          p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
-      br
-      br
-      figure
-        img(src='../media/content-image-1.png', alt='Placeholder Image', title='Placeholder image')
-        figcaption
-          h3 Adding new technology for mortgage servicers
-          p The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...
-          i.small Photo credit info
-      br
-      br
+        li Audit, 
+        li Compensation, 
+        li Executive, 
+        li Nominating & Corporate Governance (N&CG), 
+        li Risk Policy & Capital (RP&C), 
+        li Strategic Initiatives.
+
       include ../../components/accordian/_default.jade
 
 block top-rail
@@ -71,5 +39,14 @@ block rail
     include ../../components/more-in/_default.jade
   .rail-row
     include ../../components/promo/_default.jade
+    +promo('Contact the Board', false, false)
+      p Need to connect with our board? Please direct all questions, comments, or concerns to the information below.
+      h2 Board of Directors
+      p c/o Office of the Secretary Mailstop: 1H 2S 05
+        br
+        | 3900 Wisconsin Avenue, NW Washington, DC
+        br
+        | 20016-2892
+      p: a.email(href="mailto:board@fanniemae.com") board@fanniemae.com
   .rail-row
     include ../../components/image-promo/_default.jade

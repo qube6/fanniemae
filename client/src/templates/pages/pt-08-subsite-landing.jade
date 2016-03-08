@@ -4,11 +4,12 @@ block title
   title PT08 Subsite Landing
 
 block top-content
-  -var config={withImage : true, title: 'Capital Market Investors', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
+  -var config={withImage : true, title: 'Capital Market Investors', caption: 'Overview: Fannie Mae offers guaranteed securities and ensures a liquid and efficient market for investors.'};
   include ../../components/overview/_default.jade
+   -var linkList = linkList || ['Debt Securities', 'Mortgage Backed Securities', 'Credit Risk Sharing', 'Loan Performance Data', 'Non-Performing Loan Sales']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ child : 'Capital Market Investors'}
+    -var config={ links : ['Home'], page : 'Capital Market Investors'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
@@ -20,13 +21,15 @@ block content
   .content-row
     h1.font-serif Products, Tools & Applications
   .content-row
-    -var config = {type: 'img-right'};  
+    -var config = {type: 'img-right', title:'Debt Securities', caption:'Fannie Mae is the largest seller of debt securities in the U.S., helping support the mortgage market. We offer a wide range of tools to help you navigate the market.', productList: ['Short-term Debt Securities', 'Long-term Debt Securities', 'Foreign Currency Denominated Notes'], toolsList: ['Benchmark Automated Syndication System (BASS)', 'Debt Transaction Application (DTA)', 'Fannie Mae Auction System Technology (FAST)']};
     include ../../components/featured-subpages/_default.jade
   .content-row
-    -var config = {type: 'img-left'};  
+    -var config = {type: 'img-left', title:'Mortgage-Backed Securities', caption:'Mortgage-Backed Securities Fannie Mae provides a wide range of tools and resources to help investors research and select our mortgage-backed securities.', productList: ['Single-Family', 'Multifamily', 'Structured Transactions and Megas'], toolsList: ['ARM MBS Subtypes', 'General Word Search', 'MBSenger', 'Multifamily Securities Locator']};
     include ../../components/featured-subpages/_default.jade
   .content-row
     .col-md-6
+      -var config = { title: 'Credit Risk Sharing', caption: 'Fannie Mae’s Credit Risk Sharing initiatives aim to reduce our mortgage default (credit) risk. Learn more about how this initiative makes your investments more secure.', list: ['Connecticut Avenue Securities', 'Credit Insurance Risk Sharing', 'Mortgage Insurance Risk Sharing']}
       include ../../components/secondary-subpages/_default.jade
     .col-md-6
+      -var config = { title: 'Non-Performing Loan Sales', caption: 'Intended for investors, nonprofits, and public sector organizations, learn more how these loans encourage broad buyer participation and provide safeguards for borrowers.', list: ['Link 1', 'Link 2']}
       include ../../components/secondary-subpages/_default.jade

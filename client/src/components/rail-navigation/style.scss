@@ -17,6 +17,9 @@
         &.active{
           cursor: default;
           color: white;
+          &:after{
+            opacity: .5;
+          }
         }
       }
     }
