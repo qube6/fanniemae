@@ -7,7 +7,7 @@ block top-content
   -var config={withImage : false, title: 'Board Committees', caption: 'Overview text that concisely describes the section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config={ parent : 'About Us', child : 'Board Committees'}
+    -var config={ links : ['Home', 'About Us', 'Governance'], page : 'Board Comittees'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 

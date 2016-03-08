@@ -1,8 +1,6 @@
--var config = config || { parent : 'About Us', child : 'Investor Relations'}
+-var config = config || { links : ['About Us'], page : 'Investor Relations'}
 .breadcrumb
   ul
-    li: a(href="") Home
-    -if (config.parent) {
-      li: a(href="")= config.parent
-    - }
-    li= config.child
+    each val in config.links
+      li: a(href="")= val
+    li= config.page

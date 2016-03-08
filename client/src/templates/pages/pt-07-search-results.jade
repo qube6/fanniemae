@@ -7,7 +7,7 @@ block top-content
   -var config={withImage : true, title: 'Search Results', caption: 'Overview text that concisely describes the publication. Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing elit.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config = { child : 'Search Results'}
+    -var config = { links : ['Home'], page : 'Search Results'}
     include ../../components/breadcrumb/_default.jade
     include ../../components/social-share/_default.jade
 
