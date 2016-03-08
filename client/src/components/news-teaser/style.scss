@@ -17,9 +17,6 @@
     background: white;
     color: $color-dark-blue;
   }
-  .block{
-    border-color: rgba(255, 255, 255, .5);
-  }
   a.more{
     position: absolute;
     bottom: 30px;
@@ -55,5 +52,8 @@
     &:last-of-type{
       border: none;
     }
+  }
+  &.dark-bg .block{
+    border-color: rgba(255, 255, 255, .5);
   }
 }

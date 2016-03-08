@@ -19,4 +19,5 @@ block content
       include ../../components/contact-form/_default.jade
 
 block rail
-  include ../../components/promo/_default.jade
+  -var config = { title: 'Our Locations', text: '<h2>Headquarters</h2><p>3900 Wisconsin Ave, NW Washington, DC 20016-2892</p>', hasAddress: false, hasEmail: false, hasLinks: true, hasCTA: true, }
+    include ../../components/promo/_default.jade

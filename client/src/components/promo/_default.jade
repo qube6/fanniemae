@@ -1,11 +1,8 @@
 -var config = config || { title: 'Contact the Board', text: 'Need to connect with our board? Please direct all questions, comments, or concerns to the information below.', hasAddress: true, hasEmail: true, hasLinks: false, hasCTA: false}
 aside.promo.white-bg.padding-30
   h1.fm-subtitle= config.title
-  p= config.text
+  #{config.text}
 
-  if config.hasImage
-    p: img(src="http://placehold.it/350x150" alt="something meaningful")
-  
   if config.hasAddress
     p
       h2 Board of Directors
