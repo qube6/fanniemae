@@ -1,24 +1,26 @@
 section.contact-us
-  p Contact us with inquiries regarding Fannie Mae's underwriting and servicing policies and mortgage products or to report an issue with a listing agent or escalate a concern with a HomePath property.
-
-  p.call Call Us: 
-    a(href="tel:2027528054" rel="tel") 202.752.8054
-
+  .rich-text-block(ng-bind-html="contact.text")
   hr
-  h2 Email Us
-  .row
-    .col-sm-6
-      input(type="text" placeholder="Name*" required title="Enter your name")
-    .col-sm-6
-      input(type="text" placeholder="Company" title="Enter your company name")
-  .row
-    .col-sm-6
-      input(type="email" placeholder="Email*" required title="Enter your email address")
-    .col-sm-6
-      input(type="tel" placeholder="Phone Number" title="Enter your telephone number")
-  textarea(rows="6" placeholder="Questions/Comments*" required title="Enter your message")
-
-  hr
-  p.text-center
-    button.more Submit
-      i.icon.fm-arrow-right-circle(aria-hidden="true")
+  h3 Email Us
+  form(action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : contact.showErrors }")
+    .row
+      .col-sm-6
+        input(id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name")
+        label(for="contact-name") Enter your name
+      .col-sm-6
+        input(id="contact-company" name="Company" type="text" placeholder="Company" ng-model="contact.form.company")
+        label(for="contact-company") Enter your company name
+    .row
+      .col-sm-6
+        input(id="contact-email" name="Email" type="email" placeholder="Email*" required ng-model="contact.form.email")
+        label(for="contact-email") Enter your email address
+      .col-sm-6
+        input(id="contact-phone" name="Phone" type="tel" placeholder="Phone Number" ng-model="contact.form.phone")
+        label(for="contact-phone") Enter your telephone number
+    textarea(id="contact-comments" name="Comments" rows="6" placeholder="Questions/Comments*" required ng-model="contact.form.comments")
+    label(for="contact-comments") Enter your message
+    input(type="hidden" name="submit-email" value="{{contact.email}}")
+    .submit.text-center
+      hr
+      a.more(ng-click="validate(contactForm)") Submit
+        i.icon.fm-arrow-right-circle(aria-hidden="true")

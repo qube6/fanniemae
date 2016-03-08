@@ -13,9 +13,9 @@ block top-content
 
 
 block content
-  form
+  fm-contact-form(data-api-url="../data/contact-form.json")
     include ../../components/topic-box/_default.jade
-    .article-wrapper.padding-30
+    .article-wrapper.padding-30(ng-show="contact.showForm" ng-cloak)
       include ../../components/contact-form/_default.jade
 
 block rail
