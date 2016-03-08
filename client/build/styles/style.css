@@ -2460,9 +2460,6 @@ button[type="button"].header-search-btn span.icon {
   margin: 0;
   font-size: 26px;
 }
-.article-teaser h2 a {
-  color: inherit;
-}
 .article-teaser h3 {
   font-size: 18px;
   margin: 0 0 10px;
