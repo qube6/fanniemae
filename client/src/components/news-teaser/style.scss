@@ -15,6 +15,12 @@
       min-height: none;
     }
   }
+  &.twitter-theme h2 a:not(.color-brand){
+    color: $color-dark-blue;
+    &:hover{
+      color: $color-link-light;
+    }
+  }
   &.dark-bg {
     h1.offset{
       background: white;
@@ -34,6 +40,7 @@
     position: absolute;
     right: 10px;
     bottom: 5px;
+    color: white;
     @media (min-width: $screen-sm){
       right: 30px;
       bottom: 30px;
