@@ -3695,6 +3695,12 @@ section.job-search {
     min-height: none;
   }
 }
+.news-teaser.twitter-theme h2 a:not(.color-brand) {
+  color: #000f2b;
+}
+.news-teaser.twitter-theme h2 a:not(.color-brand):hover {
+  color: #007697;
+}
 .news-teaser.dark-bg h1.offset {
   background: white;
   color: #000f2b;
@@ -3712,6 +3718,7 @@ section.job-search {
   position: absolute;
   right: 10px;
   bottom: 5px;
+  color: white;
 }
 @media (min-width: 768px) {
   .news-teaser a.more {
