@@ -31,9 +31,17 @@ section.testimonials{
     }
     .rn-carousel-control{
       top: 191px; //(410px/2) - (29px/2) centers it vertically
+      color: white;
     }
     .fm-carousel-controls{
       @include center-x;
+      span{
+        border-color: white;
+        background-color: white;
+        &.active{
+          background: transparent;
+        }
+      }
     }
   }
   blockquote{
