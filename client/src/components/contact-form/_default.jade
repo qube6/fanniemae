@@ -2,7 +2,7 @@ section.contact-us
   .rich-text-block(ng-bind-html="contact.text")
   hr
   h3 Email Us
-  form(action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : contact.showErrors }")
+  form(action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : showErrors }")
     .row
       .col-sm-6
         input(id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name")
@@ -22,5 +22,5 @@ section.contact-us
     input(type="hidden" name="submit-email" value="{{contact.email}}")
     .submit.text-center
       hr
-      a.more(ng-click="validate(contactForm)") Submit
+      a.more(ng-click="validateForm(contactForm)") Submit
         i.icon.fm-arrow-right-circle(aria-hidden="true")

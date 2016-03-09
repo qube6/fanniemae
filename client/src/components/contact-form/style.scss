@@ -19,13 +19,12 @@ section.contact-us{
   }
   .show-errors{
     .ng-invalid{
-      box-shadow: 0 0 5px #d45252;
-      border-color: #b03535;
+      border: 2px solid $color-error;
       & + label{
         position: relative;
         width: auto;
         height: auto;
-        color: #b03535;
+        color: $color-error;
         clip: auto;
         font-size: 12px;
         display: block;

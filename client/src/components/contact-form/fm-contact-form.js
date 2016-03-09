@@ -10,12 +10,13 @@ directiveModule.directive('fmContactForm', [
       $scope.contact.contactText = '';
       $scope.contact.contactEmail = null;
       $scope.contact.showForm = false;
-      $scope.contact.showErrors = false;
+      $scope.contact.isDisabled = true;
 
       $scope.submitParent = function(){
         fannieAPIservice.getData($scope.contact.apiUrl, $scope.contact.topicBox)
         .success(function (result) {
             $scope.contact.selectOptions = result.options;
+            $scope.contact.isDisabled = false;
         });
       }
 
@@ -26,15 +27,6 @@ directiveModule.directive('fmContactForm', [
             $scope.contact.email = result.email;
             $scope.contact.text = $sce.trustAsHtml(result.text);
         });
-      }
-
-      $scope.validate = function(form){
-        if (form.$valid) {
-           var e = document.getElementsByName(form.$name);
-           e[0].submit();
-        } else{
-          $scope.contact.showErrors = true;
-        }
       }
     }
 

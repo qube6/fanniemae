@@ -23,6 +23,15 @@ controller('MainController',
       $scope.toggleActive(prop, $scope.header.search.length > 0);
     }
 
+    $scope.validateForm = function(form){
+      if (form.$valid) {
+         var e = document.getElementsByName(form.$name);
+         e[0].submit();
+      } else{
+        $scope.showErrors = true;
+      }
+    }
+
     var scroll = function(){
       $scope.toggleActive('header-side-menu', false);
     }
