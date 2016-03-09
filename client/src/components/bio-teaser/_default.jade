@@ -2,11 +2,13 @@
 figure.bio-teaser(class=config.cls)
   if !config.noPhoto
     img(src="../media/bio-teaser-1.png")
+  if config.noPhoto
+    img(src="../media/bio-generic.png")
   figcaption
     a.bio-name(href="")= config.name
     p.bio-title!= config.title
     if config.contact
-      a(href="tel:321-121-3423") t: 321 121 3423
-      a(href="mailto:dbenson@fanniemae.com") e: dbenson@fanniemae.com
+      a(href="tel:321-121-3423") 321 121 3423
+      a(href="mailto:dbenson@fanniemae.com") dbenson@fanniemae.com
   if config.link
     a.icon-link(href=""): span.icon.fm-arrow-right-circle
