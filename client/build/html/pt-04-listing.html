@@ -285,7 +285,7 @@
                         <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-repeat="item in items" class="block white-bg padding-30 fade-in"><span class="fm-type font-serif">{{item.type}}</span>
-                        <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="more"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                     </ul>
                     <div ng-if="(payload.end &lt; total-1 || !payload.end) &amp;&amp; !loading" class="white-bg text-center"><a href="" ng-click="loadQuery()" class="more load-more">View More<i aria-hidden="true" class="icon fm-plus-circle"></i></a></div>
