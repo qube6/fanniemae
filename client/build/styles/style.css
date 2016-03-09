@@ -435,6 +435,7 @@ h1 {
 h1.fm-section-title {
   font: 24px "Glyddon-Regular", "Georgia", "Century", serif;
   margin: 0 0 10px;
+  font-weight: bold;
 }
 
 h2 {
@@ -2695,22 +2696,6 @@ figure.bio-teaser .icon-link:hover {
   text-decoration: none;
 }
 
-section.contact-us p {
-  margin-bottom: 20px;
-}
-section.contact-us textarea {
-  resize: vertical;
-}
-section.contact-us h3 {
-  font-size: 20px;
-}
-section.contact-us .submit {
-  margin-top: 80px;
-}
-section.contact-us .submit hr {
-  margin: 10px 0;
-}
-
 section.chart-viewer {
   table-layout: fixed;
   width: calc(100% + 60px);
@@ -2783,6 +2768,22 @@ section.chart-viewer .link-listing li.active:after {
   section.chart-viewer .link-listing li.active:after {
     display: none;
   }
+}
+
+section.contact-us p {
+  margin-bottom: 20px;
+}
+section.contact-us textarea {
+  resize: vertical;
+}
+section.contact-us h3 {
+  font-size: 20px;
+}
+section.contact-us .submit {
+  margin-top: 80px;
+}
+section.contact-us .submit hr {
+  margin: 10px 0;
 }
 
 table {
@@ -3663,14 +3664,6 @@ section.grid-listing .load-more {
   padding: 0 10px;
 }
 
-.more-in {
-  margin: 0;
-}
-.more-in h1 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
 .news-teaser {
   position: relative;
   padding: 0;
@@ -3790,6 +3783,14 @@ section.grid-listing .load-more {
 .news-teaser .cta + .fm-carousel-controls span.active {
   border-color: white;
   background-color: transparent;
+}
+
+.more-in {
+  margin: 0;
+}
+.more-in h1 {
+  margin-top: 0;
+  font-size: 16px;
 }
 
 section.overview {
@@ -4394,6 +4395,7 @@ section.testimonials .fm-basic-carousel {
 section.testimonials .fm-basic-carousel h1 {
   background: #fff;
   color: #000f2b;
+  font-weight: bold;
 }
 section.testimonials .fm-basic-carousel ul {
   width: 100%;
@@ -4463,7 +4465,8 @@ section.testimonials blockquote {
 section.testimonials blockquote cite {
   font-size: 14px;
   display: block;
-  position: relative;
+  position: absolute;
+  top: 100%;
 }
 
 nav.top-navigation {
