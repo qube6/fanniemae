@@ -16,7 +16,7 @@
     }
   }
   &.dark-bg {
-    h1{
+    h1.offset{
       background: white;
       color: $color-dark-blue;
     }
@@ -33,7 +33,7 @@
   a.more{
     position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 5px;
     @media (min-width: $screen-sm){
       right: 30px;
       bottom: 30px;
@@ -41,12 +41,21 @@
   }
   h1{
     position: absolute;
-    top: 20px;
-    left: -10px;
+    top: 30px;
+    left: 15px;
     font-size: 16px;
-    padding: 5px 20px;
-    background: $color-dark-blue;
-    color: white;
+    font-weight: bold;
+    @media (min-width: $screen-sm){
+      top: 60px;
+      left: 60px;
+    }
+    &.offset{
+      top: 20px;
+      left: -10px;
+      padding: 5px 20px;
+      background: $color-dark-blue;
+      color: white;
+    }
   }
   h2{
     font-size: 18px;
@@ -75,7 +84,7 @@
     }
   }
   .fm-carousel-controls{
-    bottom: 23px;
+    bottom: 18px;
     left: 0;
     span{
       background-color: $color-teal;
@@ -83,6 +92,13 @@
         border-color: $color-teal;
         background-color: transparent;
       }
+    }
+  }
+  .cta + .fm-carousel-controls span {
+    background-color: white;
+    &.active{
+      border-color: white;
+      background-color: transparent;
     }
   }
 }

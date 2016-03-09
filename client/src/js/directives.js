@@ -70,8 +70,9 @@ var directiveModule = angular.module('fannieMae.directives', [])
   function($window) {
     var stickies = [],
         currentFixed = null,
-        scroll = function scroll() {
-          angular.forEach(stickies, function($sticky, index) {
+        currentFixedIndex = null,
+        scroll = throttle(function scroll() {
+          angular.forEach(stickies, function($sticky, $index) {
             var wrapper = $sticky.find('fm-sticky'),
                 pos = $sticky.data('pos'),
                 height = $sticky.data('height'),
@@ -81,12 +82,21 @@ var directiveModule = angular.module('fannieMae.directives', [])
             wrapper.toggleClass("fixed", isFixed);
 
             if (isFixed){
-              //initial load scenario
-              if (currentFixed != null && currentFixed != $sticky){ currentFixed.find('fm-sticky').removeClass('fixed'); }
+              //initial load scenario - remove "fixed" class from any stickies higher up the page
+              if (currentFixed != null && currentFixedIndex < $index){
+                currentFixed.find('fm-sticky').removeClass('fixed'); 
+              }
               currentFixed = $sticky;
-            } else if(currentFixed == $sticky){
+              currentFixedIndex = $index;
+            }
+            // if no longer fixed, remove as currentFixed
+            else if(currentFixed == $sticky){
               currentFixed = null;
-            }else if (currentFixed != null) {
+              currentFixedIndex = null;
+            }
+            // Test to see if this header is hitting bottom of currentFixed
+            // If so, change currentFixed to absolute position on page so it scrolls away
+            else if (currentFixed != null) {
               var currentWrapper = currentFixed.find('fm-sticky'),
                   bottom = pos - currentFixed.data('height');
               if (curPos >= bottom){
@@ -94,19 +104,20 @@ var directiveModule = angular.module('fannieMae.directives', [])
               } else {
                 currentWrapper.removeClass("absolute").css("top", '');
               }
-              //special case for header
+              //Special case for first header - if we hit top of page, remove absolute positioning
               if (curPos == 0 && bottom < 0){
                 currentWrapper.removeClass("absolute").css("top", '');
                 currentFixed = null;
+                currentFixedIndex = null;
               }
             }
           });
-        },
-        resize = function compile() {
+        }, 10),
+        resize = throttle(function compile() {
           angular.forEach(stickies, function($sticky, index) {
             setPositionalData($sticky);
           });
-        },
+        }, 10),
         setPositionalData = function(element){
           element.css('height', '');
           var pos = findPos(element[0]).top;

@@ -12,7 +12,7 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
         items.push({title:link.innerHTML, url: link.attributes.href.value});
       });
 
-      var updateNav = function(){
+      var updateNav = throttle(function(){
         var availableSpace = $nav[0].offsetWidth,
             stillRoom = true,
             left;
@@ -38,7 +38,7 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
           }
         });
         $compile($visibleLinks.contents())($scope);
-      };
+      }, 10);
 
       $scope.isOpen = function(){
         return openFlag;
@@ -50,13 +50,13 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
         }, 0);
       };
 
-      var handleOffElement = function($event){
+      var handleOffElement = throttle(function($event){
         if(!$element[0].contains($event.target)){
           $timeout(function(){
             openFlag = false;
           }, 0);
         }
-      }
+      }, 10);
 
       angular.element($window).off('resize', updateNav).on('resize', updateNav);
       $document.off('click', handleOffElement).on('click', handleOffElement);
