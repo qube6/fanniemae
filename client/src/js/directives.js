@@ -71,7 +71,7 @@ var directiveModule = angular.module('fannieMae.directives', [])
     var stickies = [],
         currentFixed = null,
         currentFixedIndex = null,
-        scroll = function scroll() {
+        scroll = throttle(function scroll() {
           angular.forEach(stickies, function($sticky, $index) {
             var wrapper = $sticky.find('fm-sticky'),
                 pos = $sticky.data('pos'),
@@ -112,12 +112,12 @@ var directiveModule = angular.module('fannieMae.directives', [])
               }
             }
           });
-        },
-        resize = function compile() {
+        }, 10),
+        resize = throttle(function compile() {
           angular.forEach(stickies, function($sticky, index) {
             setPositionalData($sticky);
           });
-        },
+        }, 10),
         setPositionalData = function(element){
           element.css('height', '');
           var pos = findPos(element[0]).top;
