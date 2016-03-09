@@ -15,6 +15,7 @@ section.testimonials{
     h1{
       background: #fff;
       color: $color-dark-blue;
+      font-weight: bold;
     }
     ul{
       width: 100%;
@@ -66,7 +67,8 @@ section.testimonials{
     cite{
       font-size: 14px;
       display: block;
-      position: relative;
+      position: absolute;
+      top: 100%;
     }
   }
 }
