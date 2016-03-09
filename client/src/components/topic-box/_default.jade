@@ -12,5 +12,5 @@ section.topic-box.blue-block
     .table-row
       label.table-cell Sub-topic:
       .table-cell.styled-select
-        select(ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect")
+        select(ng-disabled="contact.isDisabled" ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect")
           option(value="" selected="selected" disabled="disabled") Select

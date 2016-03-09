@@ -83,8 +83,9 @@ var directiveModule = angular.module('fannieMae.directives', [])
   function($window) {
     var stickies = [],
         currentFixed = null,
-        scroll = function scroll() {
-          angular.forEach(stickies, function($sticky, index) {
+        currentFixedIndex = null,
+        scroll = throttle(function scroll() {
+          angular.forEach(stickies, function($sticky, $index) {
             var wrapper = $sticky.find('fm-sticky'),
                 pos = $sticky.data('pos'),
                 height = $sticky.data('height'),
@@ -94,12 +95,21 @@ var directiveModule = angular.module('fannieMae.directives', [])
             wrapper.toggleClass("fixed", isFixed);
 
             if (isFixed){
-              //initial load scenario
-              if (currentFixed != null && currentFixed != $sticky){ currentFixed.find('fm-sticky').removeClass('fixed'); }
+              //initial load scenario - remove "fixed" class from any stickies higher up the page
+              if (currentFixed != null && currentFixedIndex < $index){
+                currentFixed.find('fm-sticky').removeClass('fixed'); 
+              }
               currentFixed = $sticky;
-            } else if(currentFixed == $sticky){
+              currentFixedIndex = $index;
+            }
+            // if no longer fixed, remove as currentFixed
+            else if(currentFixed == $sticky){
               currentFixed = null;
-            }else if (currentFixed != null) {
+              currentFixedIndex = null;
+            }
+            // Test to see if this header is hitting bottom of currentFixed
+            // If so, change currentFixed to absolute position on page so it scrolls away
+            else if (currentFixed != null) {
               var currentWrapper = currentFixed.find('fm-sticky'),
                   bottom = pos - currentFixed.data('height');
               if (curPos >= bottom){
@@ -107,19 +117,20 @@ var directiveModule = angular.module('fannieMae.directives', [])
               } else {
                 currentWrapper.removeClass("absolute").css("top", '');
               }
-              //special case for header
+              //Special case for first header - if we hit top of page, remove absolute positioning
               if (curPos == 0 && bottom < 0){
                 currentWrapper.removeClass("absolute").css("top", '');
                 currentFixed = null;
+                currentFixedIndex = null;
               }
             }
           });
-        },
-        resize = function compile() {
+        }, 10),
+        resize = throttle(function compile() {
           angular.forEach(stickies, function($sticky, index) {
             setPositionalData($sticky);
           });
-        },
+        }, 10),
         setPositionalData = function(element){
           element.css('height', '');
           var pos = findPos(element[0]).top;
@@ -158,6 +169,26 @@ var directiveModule = angular.module('fannieMae.directives', [])
       $scope.setTab = function(i) {
         $scope.activeTab = i.toString();
       };   
+    };
+    return {
+      restrict: 'A',
+      link: link,
+      scope: true
+    };
+})
+
+.directive('fmValidator', 
+  function() {
+    var link = function ($scope, element, attrs) {
+      var name = attrs.name;
+      
+      $scope.validateForm = function(){
+        if ($scope[name].$valid) {
+           element[0].submit();
+        } else{
+          element.addClass('show-errors');
+        }
+      }
     };
     return {
       restrict: 'A',
@@ -221,6 +252,7 @@ controller('MainController',
     var scroll = function(){
       $scope.toggleActive('header-side-menu', false);
     }
+    
     angular.element($window).off('scroll', scroll).on('scroll', scroll);
 });
 
@@ -232,6 +264,39 @@ function findPos(obj) {
   } while (obj = obj.offsetParent);
   return { left: curleft, top: curtop};
 }
+
+//From underscore.js
+function throttle(func, wait, options) {
+  var context, args, result;
+  var timeout = null;
+  var previous = 0;
+  if (!options) options = {};
+  var later = function() {
+    previous = options.leading === false ? 0 : new Date().getTime();
+    timeout = null;
+    result = func.apply(context, args);
+    if (!timeout) context = args = null;
+  };
+  return function() {
+    var now = new Date().getTime();
+    if (!previous && options.leading === false) previous = now;
+    var remaining = wait - (now - previous);
+    context = this;
+    args = arguments;
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      previous = now;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    } else if (!timeout && options.trailing !== false) {
+      timeout = setTimeout(later, remaining);
+    }
+    return result;
+  };
+};
 
 angular.module('fannieMae').factory('fannieAPIservice', function($http) {
 
@@ -329,12 +394,13 @@ directiveModule.directive('fmContactForm', [
       $scope.contact.contactText = '';
       $scope.contact.contactEmail = null;
       $scope.contact.showForm = false;
-      $scope.contact.showErrors = false;
+      $scope.contact.isDisabled = true;
 
       $scope.submitParent = function(){
         fannieAPIservice.getData($scope.contact.apiUrl, $scope.contact.topicBox)
         .success(function (result) {
             $scope.contact.selectOptions = result.options;
+            $scope.contact.isDisabled = false;
         });
       }
 
@@ -345,15 +411,6 @@ directiveModule.directive('fmContactForm', [
             $scope.contact.email = result.email;
             $scope.contact.text = $sce.trustAsHtml(result.text);
         });
-      }
-
-      $scope.validate = function(form){
-        if (form.$valid) {
-           var e = document.getElementsByName(form.$name);
-           e[0].submit();
-        } else{
-          $scope.contact.showErrors = true;
-        }
       }
     }
 
@@ -510,7 +567,7 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
         items.push({title:link.innerHTML, url: link.attributes.href.value});
       });
 
-      var updateNav = function(){
+      var updateNav = throttle(function(){
         var availableSpace = $nav[0].offsetWidth,
             stillRoom = true,
             left;
@@ -536,7 +593,7 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
           }
         });
         $compile($visibleLinks.contents())($scope);
-      };
+      }, 10);
 
       $scope.isOpen = function(){
         return openFlag;
@@ -548,13 +605,13 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
         }, 0);
       };
 
-      var handleOffElement = function($event){
+      var handleOffElement = throttle(function($event){
         if(!$element[0].contains($event.target)){
           $timeout(function(){
             openFlag = false;
           }, 0);
         }
-      }
+      }, 10);
 
       angular.element($window).off('resize', updateNav).on('resize', updateNav);
       $document.off('click', handleOffElement).on('click', handleOffElement);

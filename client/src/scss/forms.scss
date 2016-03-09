@@ -176,6 +176,9 @@ input[type="checkbox"]:focus {
     padding-right:35px;
     width: 100%;
   }
+  select[disabled]{
+    color: #909396;
+  }
 }
 .uneditable-input,
 .uneditable-textarea {
@@ -345,6 +348,13 @@ input[type="submit"].btn::-moz-focus-inner {
 
 .styled-radio {
   display: none;
+  form.show-errors &.ng-invalid{
+    & + label{
+      color: $color-error;
+      top: 0;
+      font-size: 14px;
+    }
+  }
 }
 
 .styled-radio + label {
@@ -477,6 +487,22 @@ input[type="submit"].btn::-moz-focus-inner {
     @media (max-width: 720px){
       display: block !important;
       width: auto;
+    }
+  }
+}
+
+form.show-errors{
+  .ng-invalid{
+    border: 2px solid $color-error;
+    & + label{
+      position: relative;
+      width: auto;
+      height: auto;
+      color: $color-error;
+      clip: auto;
+      font-size: 12px;
+      display: block;
+      top: -20px;
     }
   }
 }

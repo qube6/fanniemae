@@ -8,28 +8,54 @@
     margin: 0;
     width: 100%;
     margin: 15px 0;
+    min-height: 275px;
     @media (min-width: $screen-sm){
       padding: 90px 30px;
       margin: 0;
+      min-height: none;
     }
   }
-  &.dark-bg h1{
-    background: white;
-    color: $color-dark-blue;
+  &.dark-bg {
+    h1.offset{
+      background: white;
+      color: $color-dark-blue;
+    }
+    a:not(.more){
+      color: white;
+      &:hover{
+        color: $color-link-light;
+      }
+    }
+    .block{
+      border-color: rgba(255, 255, 255, .5);
+    }
   }
   a.more{
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    right: 10px;
+    bottom: 5px;
+    @media (min-width: $screen-sm){
+      right: 30px;
+      bottom: 30px;
+    }
   }
   h1{
     position: absolute;
-    top: 20px;
-    left: -10px;
+    top: 30px;
+    left: 15px;
     font-size: 16px;
-    padding: 5px 20px;
-    background: $color-dark-blue;
-    color: white;
+    font-weight: bold;
+    @media (min-width: $screen-sm){
+      top: 60px;
+      left: 60px;
+    }
+    &.offset{
+      top: 20px;
+      left: -10px;
+      padding: 5px 20px;
+      background: $color-dark-blue;
+      color: white;
+    }
   }
   h2{
     font-size: 18px;
@@ -45,6 +71,10 @@
     border-width: 0 0 1px 0;
     @media (min-width: $screen-sm){
       border-width: 0 1px 0 0;
+      //override carousel styling
+      position: relative !important;
+      transform: none !important;
+      display: table-cell !important;
     }
     @media (min-width: $screen-md){
       padding: 30px;
@@ -53,7 +83,22 @@
       border: none;
     }
   }
-  &.dark-bg .block{
-    border-color: rgba(255, 255, 255, .5);
+  .fm-carousel-controls{
+    bottom: 18px;
+    left: 0;
+    span{
+      background-color: $color-teal;
+      &.active{
+        border-color: $color-teal;
+        background-color: transparent;
+      }
+    }
+  }
+  .cta + .fm-carousel-controls span {
+    background-color: white;
+    &.active{
+      border-color: white;
+      background-color: transparent;
+    }
   }
 }

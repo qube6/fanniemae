@@ -244,7 +244,7 @@
                 </div>
                 <div class="content-row">
                   <section class="white-bg padding-80 article-teaser">
-                    <h2>Article teaser and stuff</h2>
+                    <h2><a href>Article teaser and stuff</a></h2>
                     <h3>Subheading is displayed here</h3><span class="fm-date">June 23, 2015</span>
                     <div class="rich-text-block">
                       <p>Recent indicators suggest that the U.S. is experiencing a moderate rebound in economic growth in the current quarter following a temporary drop in activity in the first quarter, according to Fannie Mae’s (FNMA/OTC) Economic & Strategic Research (ESR) Group. The strong U.S. dollar and challenges in the oil and gas industry will likely produce some ongoing headwinds in the near term. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in risus eu est pharetra sagittis sed quis justo. Mauris molestie sed augue a fringilla. Pellentesque egestas, massa et consectetur pulvinar, enim mauris consectetur arcu, id bibendum quam risus sed diam. Suspendisse potenti. Morbi cursus et felis vitae facilisis. Nunc id eros erat. Quisque mattis dolor dui, ut maximus enim mollis sed. </p>
@@ -285,7 +285,7 @@
                         <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-repeat="item in items" class="block white-bg padding-30 fade-in"><span class="fm-type font-serif">{{item.type}}</span>
-                        <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="more"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                     </ul>
                     <div ng-if="(payload.end &lt; total-1 || !payload.end) &amp;&amp; !loading" class="white-bg text-center"><a href="" ng-click="loadQuery()" class="more load-more">View More<i aria-hidden="true" class="icon fm-plus-circle"></i></a></div>
@@ -321,7 +321,7 @@
         </section>
       </footer>
     </main>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
     <script>
       window.angular || document.write('<script src="/js/lib/angular.min.js"><\/script>');
       

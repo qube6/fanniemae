@@ -21,9 +21,9 @@
     <script src="/js/lib/picturefill.min.js" async></script>
     
     
-    <title>Index page</title>
+    <title>PT01 Home</title>
   </head>
-  <body ng-controller="MainController">
+  <body ng-controller="MainController" class="fonts-alternate">
     <main>
       <div id="page-wrapper">
         <header id="navbar" role="banner" fm-sticky-header class="navbar navbar-default">
@@ -39,7 +39,7 @@
             <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
           </form>
           <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
-            <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
+            <div fm-open-on-load="header-side-menu" ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites open">
               <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
               <div class="sites-list">
                 <h1 class="font-serif">Doing Business with Fannie Mae</h1>
@@ -126,41 +126,101 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12">
+              <div fm-carousel class="fm-homepage-carousel">
+                <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                <ul rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex" class="pane-homepage-slider-slider-home">
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image1_width_750.png">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image1_width_1280.png"><img src="../media/home-carousel/image1_width_3840.png" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">We returned $144B to taxpayers, over $26B more than we received from the U.S. Treasury.</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image2_width_750.jpg">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image2_width_1280.jpg"><img src="../media/home-carousel/image2_width_3840.jpg" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">New Report: Moderate Economic Growth Amid Financial Market Turmoil.</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image3_width_750.jpg">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image3_width_1280.jpg"><img src="../media/home-carousel/image3_width_3840.jpg" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">In Q3 2015, we enabled 297,000 home purchases and 118,000 multifamily housing units.</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image4_width_750.jpg">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image4_width_1280.jpg"><img src="../media/home-carousel/image4_width_3840.jpg" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">Our new app educates homeowners on buying and owning a home. ​​</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         <div class="container">
           <div class="row">
             <div class="fm-main-content">
-              <div class="fm-content col-xs-12 col-sm-8">
-                <h1>Page Templates</h1>
-                <ul>
-                  <li><a href="../html/pt-01-home.html">PT-01: Home</a></li>
-                  <li><a href="../html/pt-02-generic-landing.html">PT-02: Generic Landing</a></li>
-                  <li><a href="../html/pt-03-generic-detail.html">PT-03: Generic Detail</a></li>
-                  <li><a href="../html/pt-04-listing.html">PT-04: Listing</a></li>
-                  <li><a href="../html/pt-04a-news-listing.html">PT-04a: News Listing</a></li>
-                  <li><a href="../html/pt-05-article.html">PT-05: Article</a></li>
-                  <li><a href="../html/pt-06-news-landing.html">PT-06: News Landing</a></li>
-                  <li><a href="../html/pt-07-search-results.html">PT-07: Search Results</a></li>
-                  <li><a href="../html/pt-08-subsite-landing.html">PT-08: Subsite Landing</a></li>
-                  <li><a href="../html/pt-09-contact-us.html">PT-09: Contact Us</a></li>
-                  <li><a href="../html/pt-10-careers.html">PT-10: Careers</a></li>
-                </ul>
-              </div>
-              <div class="fm-top-rail col-xs-12 col-sm-4">
-              </div>
-              <div class="fm-rail col-xs-12 col-sm-4">
-                <h1>Generic Layouts</h1>
-                <ul>
-                  <li><a href="/html/generic/one-col.html">Generic 1 Column</a></li>
-                  <li><a href="/html/generic/two-col.html">Generic 2 Column</a></li>
-                </ul>
-                <h1>Links</h1>
-                <ul>
-                  <li><a href="https://projects.invisionapp.com/share/MP5TXU28S#/screens">Design (Egnyte)</a></li>
-                  <li><a href="http://fanniemae.cloudapp.net/about-us">Drupal Site (Internal)</a></li>
-                </ul>
+              <div class="col-xs-12">
+                <div class="content-row">
+                  <figure class="fm-primary-feature col-sm-6"><img src="../media/primary-feature-1.png" class="fm-primary-feature-img">
+                    <figcaption class="fm-primary-feature-caption fm-overhang-left">
+                      <div class="fm-secondary-feature padding-30 undefined dark-bg">
+                        <div class="fm-type font-serif">Newsroom</div>
+                        <div class="fm-title color-white"><a href="#">Green Financing Leader Fannie Mae Announces Green Rewards for Multifamily</a></div>
+                        <div class="fm-date">May 14, 2015</div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                  <figure class="fm-primary-feature col-sm-6"><img src="../media/primary-feature-2.png" class="fm-primary-feature-img">
+                    <figcaption class="fm-primary-feature-caption fm-overhang-right">
+                      <div class="fm-secondary-feature padding-30 undefined dark-bg">
+                        <div class="fm-type font-serif">Research &amp; Insights</div>
+                        <div class="fm-title color-white"><a href="#">More Consumers Positive On Housing, But Not Quite Ready to Leave the Sidelines</a></div>
+                        <div class="fm-date">May 7, 2015</div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="content-row">
+                  <div class="equal-height-sm-row">
+                    <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
+                      <div class="fm-type font-serif">Economic Housing  and Outlook</div>
+                      <div class="fm-title color-white"><a href="#">Lenders Expect Benefits from the GSE 97% LTV Products and the FHA Mortgage Insurance Premium Reduction</a></div>
+                      <div class="fm-date">April 23, 2015</div><a href="#" class="cta">View All Surveys<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                    </div>
+                    <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
+                      <div class="fm-type font-serif">Twitter</div>
+                      <div class="fm-title color-white"><a href="#">Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a></a></div>
+                      <div class="fm-date">May 22, 2015</div><a href="#" class="cta">Follow Us on Twitter<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                    </div>
+                    <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
+                      <div class="fm-type font-serif">Mortgage Lender Sentiment Survey</div>
+                      <div class="fm-title color-white"><a href="#">Further Easing of Mortgage Credit Standards on the Horizon.</a></div>
+                      <div class="fm-date">May 8, 2015</div><a href="#" class="cta">View All<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
