@@ -177,6 +177,26 @@ var directiveModule = angular.module('fannieMae.directives', [])
     };
 })
 
+.directive('fmValidator', 
+  function() {
+    var link = function ($scope, element, attrs) {
+      var name = attrs.name;
+      
+      $scope.validateForm = function(){
+        if ($scope[name].$valid) {
+           element[0].submit();
+        } else{
+          element.addClass('show-errors');
+        }
+      }
+    };
+    return {
+      restrict: 'A',
+      link: link,
+      scope: true
+    };
+})
+
 // This will allow us to initialize a model based on whats in the markup. Angular would have you create a custom 
 // service to initialize your model. This "feature" is great for SPA, crap for CMS
 .directive('initModel', function($compile) {
@@ -229,18 +249,10 @@ controller('MainController',
       $scope.toggleActive(prop, $scope.header.search.length > 0);
     }
 
-    $scope.validateForm = function(form){
-      if (form.$valid) {
-         var e = document.getElementsByName(form.$name);
-         e[0].submit();
-      } else{
-        $scope.showErrors = true;
-      }
-    }
-
     var scroll = function(){
       $scope.toggleActive('header-side-menu', false);
     }
+    
     angular.element($window).off('scroll', scroll).on('scroll', scroll);
 });
 

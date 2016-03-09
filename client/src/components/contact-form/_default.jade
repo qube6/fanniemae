@@ -2,25 +2,25 @@ section.contact-us
   .rich-text-block(ng-bind-html="contact.text")
   hr
   h3 Email Us
-  form(action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : showErrors }")
+  form(action="" method="post" name="contactForm" novalidate fm-validator )
     .row
       .col-sm-6
         input(id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name")
-        label(for="contact-name") Enter your name
+        label.sr-only(for="contact-name") Enter your name
       .col-sm-6
         input(id="contact-company" name="Company" type="text" placeholder="Company" ng-model="contact.form.company")
-        label(for="contact-company") Enter your company name
+        label.sr-only(for="contact-company") Enter your company name
     .row
       .col-sm-6
         input(id="contact-email" name="Email" type="email" placeholder="Email*" required ng-model="contact.form.email")
-        label(for="contact-email") Enter your email address
+        label.sr-only(for="contact-email") Enter your email address
       .col-sm-6
         input(id="contact-phone" name="Phone" type="tel" placeholder="Phone Number" ng-model="contact.form.phone")
-        label(for="contact-phone") Enter your telephone number
+        label.sr-only(for="contact-phone") Enter your telephone number
     textarea(id="contact-comments" name="Comments" rows="6" placeholder="Questions/Comments*" required ng-model="contact.form.comments")
-    label(for="contact-comments") Enter your message
+    label.sr-only(for="contact-comments") Enter your message
     input(type="hidden" name="submit-email" value="{{contact.email}}")
     .submit.text-center
       hr
-      a.more(ng-click="validateForm(contactForm)") Submit
+      a.more(ng-click="validateForm()") Submit
         i.icon.fm-arrow-right-circle(aria-hidden="true")
