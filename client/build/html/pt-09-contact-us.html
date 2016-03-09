@@ -19,6 +19,7 @@
     <!-- Picture element HTML5 shiv-->
     <script>document.createElement( "picture" );</script>
     <script src="/js/lib/picturefill.min.js" async></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     
     
     <title>PT09 Contact</title>
@@ -217,6 +218,7 @@
                         <textarea id="contact-comments" name="Comments" rows="6" placeholder="Questions/Comments*" required ng-model="contact.form.comments"></textarea>
                         <label for="contact-comments" class="sr-only">Enter your message</label>
                         <input type="hidden" name="submit-email" value="{{contact.email}}">
+                        <div data-sitekey="6Le1aBoTAAAAAEtEMteoKRlLs8JjuDKdtsgvyUAF" class="g-recaptcha"></div>
                         <div class="submit text-center">
                           <hr><a ng-click="validateForm()" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                         </div>
