@@ -14,22 +14,4 @@ section.contact-us{
       margin: 10px 0;
     }
   }
-  label{
-    @extend .sr-only;
-  }
-  .show-errors{
-    .ng-invalid{
-      border: 2px solid $color-error;
-      & + label{
-        position: relative;
-        width: auto;
-        height: auto;
-        color: $color-error;
-        clip: auto;
-        font-size: 12px;
-        display: block;
-        top: -20px;
-      }
-    }
-  }
 }
