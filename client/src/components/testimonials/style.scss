@@ -58,17 +58,17 @@ section.testimonials{
   blockquote{
     position: relative;
     @include center-y();
-    @media (max-width: 1000px){
-      font-size: 20px;
-    }
-    @media (max-width: 800px){
-      font-size: 16px;
+    font-size: 20px;
+    @media (max-width: $screen-xs-max){
+      font-size: 18px;
+      margin-top: -50px;
     }
     cite{
       font-size: 14px;
       display: block;
       position: absolute;
       top: 100%;
+      line-height: 18px;
     }
   }
 }
