@@ -21,9 +21,9 @@
     <script src="/js/lib/picturefill.min.js" async></script>
     
     
-    <title>PT10 Careers</title>
+    <title>PT01 Home</title>
   </head>
-  <body ng-controller="MainController">
+  <body ng-controller="MainController" class="fonts-alternate">
     <main>
       <div id="page-wrapper">
         <header id="navbar" role="banner" fm-sticky-header class="navbar navbar-default">
@@ -39,7 +39,7 @@
             <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
           </form>
           <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
-            <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
+            <div fm-open-on-load="header-side-menu" ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites open">
               <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
               <div class="sites-list">
                 <h1 class="font-serif">Doing Business with Fannie Mae</h1>
@@ -126,59 +126,54 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12">
-              <section class="overview with-image">
-                <div class="image-wrap no-mobile">
-                  <picture> 
-                    <source srcset="http://placehold.it/2000x380/333/444" media="(min-width: 1080px)">
-                    <source srcset="http://placehold.it/1280x360/d13120/fff" media="(min-width: 600px)"><img src="http://placehold.it/600x300/aaa/fff" alt="" class="fade-in hero">
-                  </picture>
-                </div>
-                <div class="caption">
-                  <h1>Careers</h1>
-                  <p>Fannie Mae is seeking talented individuals to fulfill our mission of building a sustainable housing finance system. Join our team and start making a difference today.</p>
-                </div>
-              </section>
-              <nav fm-sticky-header class="top-navigation">
-                <div class="container">
-                  <div class="row">
-                    <div fm-greedy-nav class="col-xs-12">
-                      <div class="wrap">
-                        <ul class="hide">
-                          <li><a href="as">Why Fannie Mae</a></li>
-                          <li><a href="as">What We Offer</a></li>
-                          <li><a href="as">Locations</a></li>
-                          <li><a href="as">Who We Seek</a></li>
-                          <li><a href="as">Hiring Process</a></li>
-                          <li><a href="as">University Recruiting</a></li>
-                        </ul>
-                        <ul ng-cloak class="visible-links">
-                          
-                        </ul>
-                        <ul ng-show="hiddenLinks.length" ng-class="{ 'open' : isOpen() }" fm-close-on-click-away="toggleOpen()" class="hidden-links">
-                          <li ng-repeat="link in hiddenLinks"><a href="{{link.url}}">{{link.title}}</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-              <div class="breadcrumb-social-wrap">
-                <div class="breadcrumb">
-                  <ul>
-                    <li><a href="">Home</a></li>
-                    <li>Careers</li>
-                  </ul>
-                </div>
-                <div class="social-share">
-                  <ul>
-                    <li>Share This:</li>
-                    <li><span displaytext="Facebook" class="fa fa-facebook st_facebook_custom"></span></li>
-                    <li><span displaytext="Tweet" class="fa fa-twitter st_twitter_custom"></span></li>
-                    <li><span displaytext="Google +" class="fa fa-google-plus st_googleplus_custom"></span></li>
-                    <li><span displaytext="LinkedIn" class="fa fa-linkedin st_linkedin_custom"></span></li>
-                    <li><span displaytext="Email" class="fa fa-envelope st_email_custom"></span></li>
-                  </ul>
-                </div>
+              <div fm-carousel class="fm-homepage-carousel">
+                <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                <ul rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex" class="pane-homepage-slider-slider-home">
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image1_width_750.png">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image1_width_1280.png"><img src="../media/home-carousel/image1_width_3840.png" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">We returned $144B to taxpayers, over $26B more than we received from the U.S. Treasury.</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image2_width_750.jpg">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image2_width_1280.jpg"><img src="../media/home-carousel/image2_width_3840.jpg" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">New Report: Moderate Economic Growth Amid Financial Market Turmoil.</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image3_width_750.jpg">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image3_width_1280.jpg"><img src="../media/home-carousel/image3_width_3840.jpg" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">In Q3 2015, we enabled 297,000 home purchases and 118,000 multifamily housing units.</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                  <li class="fm-carousel-item">
+                    <figure class="fm-carousel-figure">
+                      <picture class="fm-image">
+                        <source media="(max-width: 768px)" srcset="../media/home-carousel/image4_width_750.jpg">
+                        <source media="(max-width: 1280px)" srcset="../media/home-carousel/image4_width_1280.jpg"><img src="../media/home-carousel/image4_width_3840.jpg" alt="responsive image">
+                      </picture>
+                      <figcaption class="fm-carousel-caption">
+                        <p><a href="">Our new app educates homeowners on buying and owning a home. ​​</a></p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -188,117 +183,43 @@
             <div class="fm-main-content">
               <div class="col-xs-12">
                 <div class="content-row">
-                  <section class="job-search">
-                    <h1 class="fm-section-title">Job Search</h1>
-                    <form action="" class="blue-block with-search">
-                      <div class="display-table">
-                        <div class="table-row">
-                          <label class="table-cell">Search Term:</label>
-                          <div class="table-cell">
-                            <input type="text" placeholder="Please enter a search term">
-                          </div>
-                          <label class="table-cell">Location:</label>
-                          <div class="table-cell">
-                            <input type="text" placeholder="Please enter a location">
-                          </div>
-                        </div>
+                  <figure class="fm-primary-feature col-sm-6"><img src="../media/primary-feature-1.png" class="fm-primary-feature-img">
+                    <figcaption class="fm-primary-feature-caption fm-overhang-left">
+                      <div class="fm-secondary-feature padding-30 undefined dark-bg">
+                        <div class="fm-type font-serif">Newsroom</div>
+                        <div class="fm-title color-white"><a href="#">Green Financing Leader Fannie Mae Announces Green Rewards for Multifamily</a></div>
+                        <div class="fm-date">May 14, 2015</div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
                       </div>
-                      <button class="more"><i aria-hidden="true" class="icon fm-search-circle"></i></button>
-                    </form>
-                  </section>
-                </div>
-                <div class="content-row">
-                  <section class="subpage-teaser-listing">
-                    <h1 class="fm-section-title">About our careers</h1>
-                    <div class="display-table equal-height-sm-row">
-                      <div class="table-row">
-                        <div class="block col-sm-height white-bg"> 
-                          <div class="content padding-30">
-                            <h2 class="fm-title"><a href="">Why Fannie Mae</a></h2>
-                            <p>At Fannie Mae, our vision is to be America's most valued housing partner. Our culture and business priorities are aligned with this vision and we are working every day to achieve it.</p>
-                          </div><a href="" class="subpage-teaser-image"><img src="http://placehold.it/580x250/9fb8ad/ced0ce/&amp;text=video" alt="some meaningful alt text" class="fade-in"><i class="icon fm-play-circle"></i></a>
-                        </div>
-                        <div class="block col-sm-height white-bg">
-                          <div class="content padding-30">
-                            <h2 class="fm-title"><a href="">What We Offer</a></h2>
-                            <p>We offer a comprehensive range of benefits including retirement and financial planning, healthcare, and a healthy work/life balance.</p>
-                          </div><a href="" class="subpage-teaser-image"><img src="http://placehold.it/580x250/b7a09d" alt="some meaningful alt text" class="fade-in"></a>
-                        </div>
+                    </figcaption>
+                  </figure>
+                  <figure class="fm-primary-feature col-sm-6"><img src="../media/primary-feature-2.png" class="fm-primary-feature-img">
+                    <figcaption class="fm-primary-feature-caption fm-overhang-right">
+                      <div class="fm-secondary-feature padding-30 undefined dark-bg">
+                        <div class="fm-type font-serif">Research &amp; Insights</div>
+                        <div class="fm-title color-white"><a href="#">More Consumers Positive On Housing, But Not Quite Ready to Leave the Sidelines</a></div>
+                        <div class="fm-date">May 7, 2015</div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
                       </div>
-                      <div class="table-row">
-                        <div class="block col-sm-height white-bg">
-                          <div class="content padding-30">
-                            <h2 class="fm-title"><a href="">Locations</a></h2>
-                            <p>Headquartered in Washington, D.C. and with offices across the country, Fannie Mae offers flexible living options.</p>
-                          </div><a href="" class="subpage-teaser-image"><img src="http://placehold.it/580x250/9da3b7" alt="some meaningful alt text" class="fade-in"></a>
-                        </div>
-                        <div class="block col-sm-height white-bg">
-                          <div class="content padding-30">
-                            <h2 class="fm-title"><a href="">Who We Seek</a></h2>
-                            <p>We are looking to improve our workforce with a diverse and talented group of people who welcome the opportunity to be on the front line of change.</p>
-                          </div><a href="" class="subpage-teaser-image"><img src="http://placehold.it/580x250/b4b79d" alt="some meaningful alt text" class="fade-in"></a>
-                        </div>
-                      </div>
-                      <div class="table-row">
-                        <div class="block col-sm-height white-bg">
-                          <div class="content padding-30">
-                            <h2 class="fm-title"><a href="">Hiring Process</a></h2>
-                            <p>Knowing about our recruitment process will help facilitate your job search. Take a few moments to review our hiring information so you know what to expect as you pursue a career with us.</p>
-                          </div><a href="" class="subpage-teaser-image"><img src="http://placehold.it/580x250/aa9db7" alt="some meaningful alt text" class="fade-in"></a>
-                        </div>
-                        <div class="block col-sm-height white-bg">
-                          <div class="content padding-30">
-                            <h2 class="fm-title"><a href="">University Recruiting</a></h2>
-                            <p>Join our team and put your unique talents to use as we work to improve our nation's housing finance system. Our Internship or Associate Programs give employees the ability to gain hands-on experience in various disciplines.</p>
-                          </div><a href="" class="subpage-teaser-image"><img src="http://placehold.it/580x250/aa9db7" alt="some meaningful alt text" class="fade-in"></a>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+                    </figcaption>
+                  </figure>
                 </div>
                 <div class="content-row">
                   <div class="equal-height-sm-row">
                     <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
+                      <div class="fm-type font-serif">Economic Housing  and Outlook</div>
+                      <div class="fm-title color-white"><a href="#">Lenders Expect Benefits from the GSE 97% LTV Products and the FHA Mortgage Insurance Premium Reduction</a></div>
+                      <div class="fm-date">April 23, 2015</div><a href="#" class="cta">View All Surveys<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                    </div>
+                    <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
                       <div class="fm-type font-serif">Twitter</div>
-                      <div class="fm-title color-white"><a href="#">Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: http://bit.ly/1FHNQTY </a></div>
-                      <div class="fm-date">April 23, 2015</div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                      <div class="fm-title color-white"><a href="#">Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a></a></div>
+                      <div class="fm-date">May 22, 2015</div><a href="#" class="cta">Follow Us on Twitter<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
                     </div>
                     <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
-                      <div class="fm-type font-serif">Linkedin</div>
-                      <div class="fm-title color-white"><a href="#">Short description about Fannie Mae on LinkedIn, onec sed eros sit amet libero gravida pellentesque. In fermentum ex feugiat.</a></div>
-                      <div class="fm-date"></div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
-                    </div>
-                    <div class="fm-secondary-feature padding-30 col-sm-4 col-sm-height white-bg color-dark">
-                      <div class="fm-type font-serif">Glassdoor</div>
-                      <div class="fm-title color-white"><a href="#">Short description about Fannie Mae on Glassdoor, onec sed eros sit amet libero gravida pellentesque. In fermentum ex feugiat.</a></div>
-                      <div class="fm-date"></div><a href="#" class="cta">Read More<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
+                      <div class="fm-type font-serif">Mortgage Lender Sentiment Survey</div>
+                      <div class="fm-title color-white"><a href="#">Further Easing of Mortgage Credit Standards on the Horizon.</a></div>
+                      <div class="fm-date">May 8, 2015</div><a href="#" class="cta">View All<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
                     </div>
                   </div>
-                </div>
-                <div class="content-row">
-                  <section fm-carousel class="testimonials">
-                    <div class="fm-basic-carousel">
-                      <h1>From Our Employees </h1>
-                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
-                      <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls>
-                        <li class="fm-carousel-item">
-                          <blockquote>Fannie Mae truly leverages its employees' knowledge to do the best job possible. It is refreshing to work for a company that wants its employees to succeed.
-                            <cite>Cathy – QA Manager, Dallas/Forth Worth Area </cite>
-                          </blockquote>
-                        </li>
-                        <li class="fm-carousel-item">
-                          <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie mi et mi eleifend, at pretium massa interdum. Aliquam tempus scelerisque felis.            
-                            <cite>Cathy – QA Manager, Dallas/Forth Worth Area</cite>
-                          </blockquote>
-                        </li>
-                        <li class="fm-carousel-item">
-                          <blockquote>Aliquam tempus scelerisque felis, in dapibus quam commodo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie mi et mi eleifend. 
-                            <cite>Cathy – QA Manager, Dallas/Forth Worth Area</cite>
-                          </blockquote>
-                        </li>
-                      </ul>
-                    </div>
-                  </section>
                 </div>
               </div>
             </div>

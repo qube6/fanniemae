@@ -434,7 +434,7 @@ h1 {
 }
 h1.fm-section-title {
   font: 24px "Glyddon-Regular", "Georgia", "Century", serif;
-  margin: 30px 0 10px;
+  margin: 0 0 10px;
 }
 
 h2 {
@@ -2695,6 +2695,22 @@ figure.bio-teaser .icon-link:hover {
   text-decoration: none;
 }
 
+section.contact-us p {
+  margin-bottom: 20px;
+}
+section.contact-us textarea {
+  resize: vertical;
+}
+section.contact-us h3 {
+  font-size: 20px;
+}
+section.contact-us .submit {
+  margin-top: 80px;
+}
+section.contact-us .submit hr {
+  margin: 10px 0;
+}
+
 section.chart-viewer {
   table-layout: fixed;
   width: calc(100% + 60px);
@@ -2767,22 +2783,6 @@ section.chart-viewer .link-listing li.active:after {
   section.chart-viewer .link-listing li.active:after {
     display: none;
   }
-}
-
-section.contact-us p {
-  margin-bottom: 20px;
-}
-section.contact-us textarea {
-  resize: vertical;
-}
-section.contact-us h3 {
-  font-size: 20px;
-}
-section.contact-us .submit {
-  margin-top: 80px;
-}
-section.contact-us .submit hr {
-  margin: 10px 0;
 }
 
 table {
@@ -3635,10 +3635,6 @@ section.grid-listing .load-more {
   float: left;
 }
 
-section.job-search {
-  margin-bottom: 60px;
-}
-
 .locator-form {
   min-height: 410px;
   padding-bottom: 45px;
@@ -4373,7 +4369,13 @@ section.subpage-teaser-listing img:hover {
 section.testimonials {
   margin: 50px 0 30px;
   position: relative;
-  height: 410px;
+  min-height: 500px;
+}
+@media (min-width: 768px) {
+  section.testimonials {
+    margin: 50px 10px 30px;
+    min-height: 410px;
+  }
 }
 section.testimonials .fm-basic-carousel {
   float: none;
@@ -4384,18 +4386,27 @@ section.testimonials .fm-basic-carousel {
 }
 section.testimonials .fm-basic-carousel h1 {
   background: #fff;
-  color: #01172d;
+  color: #000f2b;
 }
 section.testimonials .fm-basic-carousel ul {
   width: 100%;
   background: #000f2b;
+  min-height: 500px;
+}
+@media (min-width: 768px) {
+  section.testimonials .fm-basic-carousel ul {
+    min-height: 410px;
+  }
 }
 section.testimonials .fm-basic-carousel ul li {
   background: transparent;
   color: #fff;
+  padding: 0 50px;
+  margin: 30px 0;
 }
 @media (min-width: 1000px) {
   section.testimonials .fm-basic-carousel ul li {
+    margin: 0;
     padding-left: 80px;
     padding-right: 80px;
   }
@@ -4407,7 +4418,7 @@ section.testimonials .fm-basic-carousel ul li {
   }
 }
 section.testimonials .fm-basic-carousel .rn-carousel-control {
-  top: 191px;
+  top: 50%;
   color: white;
 }
 section.testimonials .fm-basic-carousel .fm-carousel-controls {
@@ -4425,8 +4436,12 @@ section.testimonials .fm-basic-carousel .fm-carousel-controls span.active {
   background: transparent;
 }
 section.testimonials blockquote {
-  margin: 0 0 20px;
-  top: -130px;
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 @media (max-width: 1000px) {
   section.testimonials blockquote {
@@ -4438,10 +4453,9 @@ section.testimonials blockquote {
     font-size: 16px;
   }
 }
-section.testimonials cite {
+section.testimonials blockquote cite {
   font-size: 14px;
   display: block;
-  top: -130px;
   position: relative;
 }
 
