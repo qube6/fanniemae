@@ -176,6 +176,9 @@ input[type="checkbox"]:focus {
     padding-right:35px;
     width: 100%;
   }
+  select[disabled]{
+    color: #909396;
+  }
 }
 .uneditable-input,
 .uneditable-textarea {

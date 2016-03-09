@@ -181,7 +181,7 @@
                       <div class="table-row">
                         <label class="table-cell">Sub-topic:</label>
                         <div class="table-cell styled-select">
-                          <select ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect">
+                          <select ng-disabled="contact.isDisabled" ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect">
                             <option value="" selected="selected" disabled="disabled">Select</option>
                           </select>
                         </div>
@@ -193,7 +193,7 @@
                       <div ng-bind-html="contact.text" class="rich-text-block"></div>
                       <hr>
                       <h3>Email Us</h3>
-                      <form action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : contact.showErrors }">
+                      <form action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : showErrors }">
                         <div class="row">
                           <div class="col-sm-6">
                             <input id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name">
@@ -218,7 +218,7 @@
                         <label for="contact-comments">Enter your message</label>
                         <input type="hidden" name="submit-email" value="{{contact.email}}">
                         <div class="submit text-center">
-                          <hr><a ng-click="validate(contactForm)" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                          <hr><a ng-click="validateForm(contactForm)" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                         </div>
                       </form>
                     </section>

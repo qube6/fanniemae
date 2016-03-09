@@ -473,7 +473,7 @@
                   <div ng-bind-html="contact.text" class="rich-text-block"></div>
                   <hr>
                   <h3>Email Us</h3>
-                  <form action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : contact.showErrors }">
+                  <form action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : showErrors }">
                     <div class="row">
                       <div class="col-sm-6">
                         <input id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name">
@@ -498,7 +498,7 @@
                     <label for="contact-comments">Enter your message</label>
                     <input type="hidden" name="submit-email" value="{{contact.email}}">
                     <div class="submit text-center">
-                      <hr><a ng-click="validate(contactForm)" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                      <hr><a ng-click="validateForm(contactForm)" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                     </div>
                   </form>
                 </section>
