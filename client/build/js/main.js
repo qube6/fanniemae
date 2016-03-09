@@ -606,6 +606,7 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
       };
 
       var handleOffElement = throttle(function($event){
+        if ($event.type == 'scroll' && !angular.element($element[0].offsetParent).hasClass('fixed')) return;
         if(!$element[0].contains($event.target)){
           $timeout(function(){
             openFlag = false;
