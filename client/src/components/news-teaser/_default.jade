@@ -1,16 +1,18 @@
 -var config = config || {title: 'Statements', cls: 'dark-bg'};
 
-section.news-teaser(class=config.cls)
+section.news-teaser(class=config.cls fm-carousel)
   h1.font-serif= config.title
-  .equal-height-sm-row
-    .block.col-sm-height 
+  ul.equal-height-sm-row(rn-carousel rn-carousel-index="carouselIndex")
+    li.block.col-sm-height 
       h2: a(href="/") Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018
       .fm-date June 4, 2015
-    .block.col-sm-height 
+    li.block.col-sm-height 
       h2: a(href="/") Fannie Mae Announces Offering of New Issue 3-Year Benchmark Notes® due July 20, 2018
       .fm-date June 3, 2015
-    .block.col-sm-height 
+    li.block.col-sm-height 
       h2: a(href="/") Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018
       .fm-date June 4, 2015
+  div.mobile-only.fm-carousel-controls(rn-carousel-indicator custom-indicator)
+    span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
   a.more(href="/") All Our News
     i.icon.fm-arrow-right-circle(aria-hidden="true")
