@@ -181,7 +181,7 @@
                       <div class="table-row">
                         <label class="table-cell">Sub-topic:</label>
                         <div class="table-cell styled-select">
-                          <select ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect">
+                          <select ng-disabled="contact.isDisabled" ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect">
                             <option value="" selected="selected" disabled="disabled">Select</option>
                           </select>
                         </div>
@@ -193,32 +193,32 @@
                       <div ng-bind-html="contact.text" class="rich-text-block"></div>
                       <hr>
                       <h3>Email Us</h3>
-                      <form action="" method="post" name="contactForm" novalidate ng-class="{ 'show-errors' : contact.showErrors }">
+                      <form action="" method="post" name="contactForm" novalidate fm-validator>
                         <div class="row">
                           <div class="col-sm-6">
                             <input id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name">
-                            <label for="contact-name">Enter your name</label>
+                            <label for="contact-name" class="sr-only">Enter your name</label>
                           </div>
                           <div class="col-sm-6">
                             <input id="contact-company" name="Company" type="text" placeholder="Company" ng-model="contact.form.company">
-                            <label for="contact-company">Enter your company name</label>
+                            <label for="contact-company" class="sr-only">Enter your company name</label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-sm-6">
                             <input id="contact-email" name="Email" type="email" placeholder="Email*" required ng-model="contact.form.email">
-                            <label for="contact-email">Enter your email address</label>
+                            <label for="contact-email" class="sr-only">Enter your email address</label>
                           </div>
                           <div class="col-sm-6">
                             <input id="contact-phone" name="Phone" type="tel" placeholder="Phone Number" ng-model="contact.form.phone">
-                            <label for="contact-phone">Enter your telephone number</label>
+                            <label for="contact-phone" class="sr-only">Enter your telephone number</label>
                           </div>
                         </div>
                         <textarea id="contact-comments" name="Comments" rows="6" placeholder="Questions/Comments*" required ng-model="contact.form.comments"></textarea>
-                        <label for="contact-comments">Enter your message</label>
+                        <label for="contact-comments" class="sr-only">Enter your message</label>
                         <input type="hidden" name="submit-email" value="{{contact.email}}">
                         <div class="submit text-center">
-                          <hr><a ng-click="validate(contactForm)" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                          <hr><a ng-click="validateForm()" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                         </div>
                       </form>
                     </section>

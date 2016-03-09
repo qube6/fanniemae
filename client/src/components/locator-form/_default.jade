@@ -1,5 +1,5 @@
 .col-sm-6
-  form.locator-form.block.white-bg.padding-30(action="")
+  form.locator-form.block.white-bg.padding-30(action="" name="locator1" novalidate fm-validator)
     h1.fm-subtitle Mortgage-Backed Securities
     p Search for disclosure and related documents for a single pool or trust.
     fieldset
@@ -7,25 +7,27 @@
         sup *
       ul.inline
         li
-          input.styled-radio(type="radio" name="foo" value="foo1" id="foo1") 
+          input.styled-radio(type="radio" name="foo" value="foo1" id="foo1" ng-model="locator.searchtype" required) 
           label(for="foo1") CUSIP Number
         li
-          input.styled-radio(type="radio" name="foo" value="foo2" id="foo2") 
+          input.styled-radio(type="radio" name="foo" value="foo2" id="foo2" ng-model="locator.searchtype" required) 
           label(for="foo2") Pool Number
         li
-          input.styled-radio(type="radio" name="foo" value="foo3" id="foo3") 
+          input.styled-radio(type="radio" name="foo" value="foo3" id="foo3" ng-model="locator.searchtype" required) 
           label(for="foo3") Trust Number
 
-    input(type="text" placeholder="Number*" title="Enter CUSIP or Pool number" required)
+    input(id="locatorNumber" type="text" placeholder="Number*" required ng-model="locator.number")
+    label.sr-only(for="locatorNumber") Enter CUSIP or Pool number
 
-    input(type="text" placeholder="Trust Class/Tranche")
+    input(id="locatorClass" type="text" placeholder="Trust Class/Tranche" ng-model="locator.class")
+    label.sr-only(for="locatorClass") Trust Class/Tranche
 
     .text-right
-      button.more Search
+      .more(ng-click="validateForm()") Search
         i.icon.fm-search-circle(aria-hidden="true")
 
 .col-sm-6
-  form.locator-form.block.white-bg.padding-30(action="")
+  form.locator-form.block.white-bg.padding-30(action="" name="locator2" novalidate fm-validator)
     h1.fm-subtitle Debt Securities Pricing Supplement and Reset Information Finder
     p Locate specific Pricing Supplement or Reset Information by CUSIP number.
     fieldset
@@ -33,18 +35,18 @@
         sup *
       ul.inline
         li
-          input.styled-radio(type="radio" name="bar" value="bar1" id="bar1") 
+          input.styled-radio(type="radio" name="bar" value="bar1" id="bar1" ng-model="locator.documenttype" required) 
           label(for="bar1") All Documents
         li
-          input.styled-radio(type="radio" name="bar" value="bar2" id="bar2") 
+          input.styled-radio(type="radio" name="bar" value="bar2" id="bar2" ng-model="locator.documenttype" required) 
           label(for="bar2") Pricing Supplement
         li
-          input.styled-radio(type="radio" name="bar" value="bar3" id="bar3") 
+          input.styled-radio(type="radio" name="bar" value="bar3" id="bar3" ng-model="locator.documenttype" required) 
           label(for="bar3") Reset Information
 
-    input(type="text" placeholder="CUSIP Number*" title="CUSIP Number" required)
-
+    input(id="locatorCUSIP" type="text" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip")
+    label.sr-only(for="locatorCUSIP") Enter CUSIP Number
 
     .text-right
-      button.more Search
+      a.more(ng-click="validateForm()") Search
         i.icon.fm-search-circle(aria-hidden="true")

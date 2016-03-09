@@ -547,7 +547,7 @@
                       <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                     </li>
                     <li ng-repeat="item in items" class="block white-bg padding-30 fade-in"><span class="fm-type font-serif">{{item.type}}</span>
-                      <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="more"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                      <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                     </li>
                   </ul>
                   <div ng-if="(payload.end &lt; total-1 || !payload.end) &amp;&amp; !loading" class="white-bg text-center"><a href="" ng-click="loadQuery()" class="more load-more">View More<i aria-hidden="true" class="icon fm-plus-circle"></i></a></div>
@@ -594,7 +594,7 @@
                   <div class="fm-date"></div><a href="#" class="cta"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span></a>
                 </div>
                 <div class="col-sm-6">
-                  <form action="" class="locator-form block white-bg padding-30">
+                  <form action="" name="locator1" novalidate fm-validator class="locator-form block white-bg padding-30">
                     <h1 class="fm-subtitle">Mortgage-Backed Securities</h1>
                     <p>Search for disclosure and related documents for a single pool or trust.</p>
                     <fieldset>
@@ -603,28 +603,30 @@
                       </h2>
                       <ul class="inline">
                         <li>
-                          <input type="radio" name="foo" value="foo1" id="foo1" class="styled-radio">
+                          <input type="radio" name="foo" value="foo1" id="foo1" ng-model="locator.searchtype" required class="styled-radio">
                           <label for="foo1">CUSIP Number</label>
                         </li>
                         <li>
-                          <input type="radio" name="foo" value="foo2" id="foo2" class="styled-radio">
+                          <input type="radio" name="foo" value="foo2" id="foo2" ng-model="locator.searchtype" required class="styled-radio">
                           <label for="foo2">Pool Number</label>
                         </li>
                         <li>
-                          <input type="radio" name="foo" value="foo3" id="foo3" class="styled-radio">
+                          <input type="radio" name="foo" value="foo3" id="foo3" ng-model="locator.searchtype" required class="styled-radio">
                           <label for="foo3">Trust Number</label>
                         </li>
                       </ul>
                     </fieldset>
-                    <input type="text" placeholder="Number*" title="Enter CUSIP or Pool number" required>
-                    <input type="text" placeholder="Trust Class/Tranche">
+                    <input id="locatorNumber" type="text" placeholder="Number*" required ng-model="locator.number">
+                    <label for="locatorNumber" class="sr-only">Enter CUSIP or Pool number</label>
+                    <input id="locatorClass" type="text" placeholder="Trust Class/Tranche" ng-model="locator.class">
+                    <label for="locatorClass" class="sr-only">Trust Class/Tranche</label>
                     <div class="text-right">
-                      <button class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></button>
+                      <div ng-click="validateForm()" class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></div>
                     </div>
                   </form>
                 </div>
                 <div class="col-sm-6">
-                  <form action="" class="locator-form block white-bg padding-30">
+                  <form action="" name="locator2" novalidate fm-validator class="locator-form block white-bg padding-30">
                     <h1 class="fm-subtitle">Debt Securities Pricing Supplement and Reset Information Finder</h1>
                     <p>Locate specific Pricing Supplement or Reset Information by CUSIP number.</p>
                     <fieldset>
@@ -633,27 +635,26 @@
                       </h2>
                       <ul class="inline">
                         <li>
-                          <input type="radio" name="bar" value="bar1" id="bar1" class="styled-radio">
+                          <input type="radio" name="bar" value="bar1" id="bar1" ng-model="locator.documenttype" required class="styled-radio">
                           <label for="bar1">All Documents</label>
                         </li>
                         <li>
-                          <input type="radio" name="bar" value="bar2" id="bar2" class="styled-radio">
+                          <input type="radio" name="bar" value="bar2" id="bar2" ng-model="locator.documenttype" required class="styled-radio">
                           <label for="bar2">Pricing Supplement</label>
                         </li>
                         <li>
-                          <input type="radio" name="bar" value="bar3" id="bar3" class="styled-radio">
+                          <input type="radio" name="bar" value="bar3" id="bar3" ng-model="locator.documenttype" required class="styled-radio">
                           <label for="bar3">Reset Information</label>
                         </li>
                       </ul>
                     </fieldset>
-                    <input type="text" placeholder="CUSIP Number*" title="CUSIP Number" required>
-                    <div class="text-right">
-                      <button class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></button>
-                    </div>
+                    <input id="locatorCUSIP" type="text" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip">
+                    <label for="locatorCUSIP" class="sr-only">Enter CUSIP Number</label>
+                    <div class="text-right"><a ng-click="validateForm()" class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></a></div>
                   </form>
                 </div>
                 <div class="col-sm-6">
-                  <form action="" class="locator-form block white-bg padding-30">
+                  <form action="" name="locator1" novalidate fm-validator class="locator-form block white-bg padding-30">
                     <h1 class="fm-subtitle">Mortgage-Backed Securities</h1>
                     <p>Search for disclosure and related documents for a single pool or trust.</p>
                     <fieldset>
@@ -662,28 +663,30 @@
                       </h2>
                       <ul class="inline">
                         <li>
-                          <input type="radio" name="foo" value="foo1" id="foo1" class="styled-radio">
+                          <input type="radio" name="foo" value="foo1" id="foo1" ng-model="locator.searchtype" required class="styled-radio">
                           <label for="foo1">CUSIP Number</label>
                         </li>
                         <li>
-                          <input type="radio" name="foo" value="foo2" id="foo2" class="styled-radio">
+                          <input type="radio" name="foo" value="foo2" id="foo2" ng-model="locator.searchtype" required class="styled-radio">
                           <label for="foo2">Pool Number</label>
                         </li>
                         <li>
-                          <input type="radio" name="foo" value="foo3" id="foo3" class="styled-radio">
+                          <input type="radio" name="foo" value="foo3" id="foo3" ng-model="locator.searchtype" required class="styled-radio">
                           <label for="foo3">Trust Number</label>
                         </li>
                       </ul>
                     </fieldset>
-                    <input type="text" placeholder="Number*" title="Enter CUSIP or Pool number" required>
-                    <input type="text" placeholder="Trust Class/Tranche">
+                    <input id="locatorNumber" type="text" placeholder="Number*" required ng-model="locator.number">
+                    <label for="locatorNumber" class="sr-only">Enter CUSIP or Pool number</label>
+                    <input id="locatorClass" type="text" placeholder="Trust Class/Tranche" ng-model="locator.class">
+                    <label for="locatorClass" class="sr-only">Trust Class/Tranche</label>
                     <div class="text-right">
-                      <button class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></button>
+                      <div ng-click="validateForm()" class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></div>
                     </div>
                   </form>
                 </div>
                 <div class="col-sm-6">
-                  <form action="" class="locator-form block white-bg padding-30">
+                  <form action="" name="locator2" novalidate fm-validator class="locator-form block white-bg padding-30">
                     <h1 class="fm-subtitle">Debt Securities Pricing Supplement and Reset Information Finder</h1>
                     <p>Locate specific Pricing Supplement or Reset Information by CUSIP number.</p>
                     <fieldset>
@@ -692,23 +695,22 @@
                       </h2>
                       <ul class="inline">
                         <li>
-                          <input type="radio" name="bar" value="bar1" id="bar1" class="styled-radio">
+                          <input type="radio" name="bar" value="bar1" id="bar1" ng-model="locator.documenttype" required class="styled-radio">
                           <label for="bar1">All Documents</label>
                         </li>
                         <li>
-                          <input type="radio" name="bar" value="bar2" id="bar2" class="styled-radio">
+                          <input type="radio" name="bar" value="bar2" id="bar2" ng-model="locator.documenttype" required class="styled-radio">
                           <label for="bar2">Pricing Supplement</label>
                         </li>
                         <li>
-                          <input type="radio" name="bar" value="bar3" id="bar3" class="styled-radio">
+                          <input type="radio" name="bar" value="bar3" id="bar3" ng-model="locator.documenttype" required class="styled-radio">
                           <label for="bar3">Reset Information</label>
                         </li>
                       </ul>
                     </fieldset>
-                    <input type="text" placeholder="CUSIP Number*" title="CUSIP Number" required>
-                    <div class="text-right">
-                      <button class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></button>
-                    </div>
+                    <input id="locatorCUSIP" type="text" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip">
+                    <label for="locatorCUSIP" class="sr-only">Enter CUSIP Number</label>
+                    <div class="text-right"><a ng-click="validateForm()" class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></a></div>
                   </form>
                 </div>
                 <section class="featured-subpages img-right"><img src="http://placehold.it/400x460" alt="something meaningful" class="fade-in no-mobile">
