@@ -4,33 +4,26 @@
     float: left;
     margin-bottom: 10px;
     width: 100%;
-    @media (min-width: $screen-lg){
-      float: none;
-      display: table-cell;
-      vertical-align: middle;
-      margin-bottom: none;
-      width: auto;
-    }
-  }
-  .search-links > li{
-    vertical-align: middle;
-    position: relative;
     display: block;
-    &:last-child{
-      border: none;
-    }
-    @media (min-width: $screen-lg){
-      height: 20px;
-      border-right: 1px solid rgba(255, 255, 255, .3);
-      display: table-cell;
-    }
   }
   .search-links{
     display: table;
+    table-layout: fixed;
     width: 100%;
-    @media (min-width: $screen-lg){
-      display: table-cell;
-      width: auto;
+    > li{
+      vertical-align: middle;
+      position: relative;
+      display: block;
+      &:last-child{
+        border: none;
+        padding-right: 0;
+      }
+      @media (min-width: $screen-sm){
+        height: 20px;
+        border-right: 1px solid rgba(255, 255, 255, .3);
+        display: table-cell;
+        text-align: center;
+      }
     }
   }
   a{
@@ -44,8 +37,8 @@
     &:visited{
       color: $color-link-dark-v;
     }
-    @media (min-width: $screen-lg){
-      padding: 0 30px;
+    @media (min-width: $screen-sm){
+      padding: 0;
     }
     &.dropdown:after{
       content: '';
@@ -54,10 +47,13 @@
       border-style: solid;
       border-width: 5px 5px 0 5px;
       border-color: $color-link-dark transparent transparent transparent;
-      right: 15px;
+      right: 0;
       top: calc(50% - 3px);
       position: absolute;
       @include transition(transform .4s ease-in);
+      @media (min-width: $screen-sm){
+        right: -15px;
+      }
     }
   }
   .open a.dropdown:after{
@@ -69,23 +65,24 @@
     max-height: 0;
     overflow: hidden;
 
-    @media (min-width: $screen-lg){
+    @media (min-width: $screen-sm){
       position: absolute;
       top: 150%;
-      left: 20px;
-      width: 200px;
+      left: 0;
+      width: 100%;
       background: white;
     }
     li{
       padding: 5px 10px;
       border-bottom: 1px solid $color-hr;
-      @media (min-width: $screen-lg){
+      text-align: left;
+      @media (min-width: $screen-sm){
         padding: 10px;
       }
     }
     a{
       padding: 0;
-      @media (min-width: $screen-lg){
+      @media (min-width: $screen-sm){
         color: $color-link-light;
         &:hover{
           color: $color-link-light-h;
