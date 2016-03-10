@@ -35,6 +35,9 @@ main{
     .fm-top-rail{
       order: 1;
     }
+    .fm-bottom-rail{
+      order: 4;
+    }
     .fm-rail{
       order: 3;
     }
@@ -56,9 +59,14 @@ main{
   }
 }
 
-.fm-top-rail{
+.fm-top-rail, .fm-bottom-rail{
   @media (max-width: $screen-xs-max){
     margin-bottom: 20px;
+  }
+}
+.fm-bottom-rail{
+  @media (min-width: $screen-sm){
+    margin-top: 20px;
   }
 }
 .fm-rail{
@@ -68,8 +76,6 @@ main{
 }
 .rail-row{
   margin: 20px 0;
-  @media (min-width: $screen-xs){
-  }
 }
 
 @media (min-width: $screen-sm) {

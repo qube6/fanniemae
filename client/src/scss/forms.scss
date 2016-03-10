@@ -468,8 +468,7 @@ input[type="submit"].btn::-moz-focus-inner {
       height: 30px;
       line-height: 30px;
       width: 90px;
-      left: 50%;
-      margin-left: -45px; //center
+      @include center-x();
     }
     span{
       display: none;

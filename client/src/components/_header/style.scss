@@ -183,9 +183,12 @@
 }
 
 /* All FannieMae Sites Menu */
-@media (min-width: $full-width-max){
+@media (min-width: $screen-lg){
   .sites-list{
-    @include transform(translateX(800px));
+    @include transform(none);
+  }
+  .open .sites-list{
+    opacity: .95 !important;
   }
 }
 .sites-list, .open .sites-list{
@@ -193,15 +196,12 @@
   margin-top: $header-element-spacing;
   line-height: 1.75;
   opacity: 1;
-  width: 100%;
   @include transition(all 0.4s ease-in);
   @media (min-width: $screen-lg){
     width: $header-site-list-width;
-  }
-  @media (min-width: $screen-lg){
+    opacity: 0;
     padding: 0 30px;
     min-height: $carousel-height-lg;
-    opacity: .95;
     background: $color-dark-blue;
     .fixed &{
       background: $color-blue;
