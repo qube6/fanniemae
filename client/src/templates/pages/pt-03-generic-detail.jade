@@ -34,10 +34,11 @@ block content
 
 block top-rail
   include ../../components/rail-navigation/_default.jade
+
+block bottom-rail
+  include ../../components/more-in/_default.jade
   
 block rail
-  .rail-row
-    include ../../components/more-in/_default.jade
   .rail-row
     include ../../components/promo/_default.jade
     +promo('Contact the Board', false, false)

@@ -1212,6 +1212,9 @@ main #page-wrapper {
   .fm-main-content .fm-top-rail {
     order: 1;
   }
+  .fm-main-content .fm-bottom-rail {
+    order: 4;
+  }
   .fm-main-content .fm-rail {
     order: 3;
   }
@@ -1233,8 +1236,14 @@ main #page-wrapper {
 }
 
 @media (max-width: 767px) {
-  .fm-top-rail {
+  .fm-top-rail, .fm-bottom-rail {
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fm-bottom-rail {
+    margin-top: 20px;
   }
 }
 
@@ -3168,6 +3177,62 @@ table th, table td {
   }
 }
 
+section.featured-subpages {
+  position: relative;
+  margin-bottom: 60px;
+  padding: 0;
+  margin: 0 10px;
+}
+@media (max-width: 768px) {
+  section.featured-subpages {
+    margin: 0 10px 30px;
+  }
+}
+section.featured-subpages .block {
+  min-height: 420px;
+  position: relative;
+}
+section.featured-subpages img {
+  position: absolute;
+  top: -20px;
+  max-height: none;
+}
+@media (max-width: 768px) {
+  section.featured-subpages img {
+    position: static;
+    width: 400px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+}
+section.featured-subpages.img-right {
+  padding-right: 400px;
+}
+section.featured-subpages.img-right img {
+  right: 0;
+}
+@media (max-width: 768px) {
+  section.featured-subpages.img-right {
+    padding-right: 0;
+  }
+}
+section.featured-subpages.img-left {
+  padding-left: 400px;
+}
+section.featured-subpages.img-left img {
+  left: 0;
+}
+@media (max-width: 768px) {
+  section.featured-subpages.img-left {
+    padding-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  section.featured-subpages .link-listing {
+    margin: 0 0 30px;
+  }
+}
+
 section.grid-listing {
   position: relative;
 }
@@ -3247,62 +3312,6 @@ section.grid-listing li.block .cta:hover {
 }
 section.grid-listing .load-more {
   margin: 10px;
-}
-
-section.featured-subpages {
-  position: relative;
-  margin-bottom: 60px;
-  padding: 0;
-  margin: 0 10px;
-}
-@media (max-width: 768px) {
-  section.featured-subpages {
-    margin: 0 10px 30px;
-  }
-}
-section.featured-subpages .block {
-  min-height: 420px;
-  position: relative;
-}
-section.featured-subpages img {
-  position: absolute;
-  top: -20px;
-  max-height: none;
-}
-@media (max-width: 768px) {
-  section.featured-subpages img {
-    position: static;
-    width: 400px;
-    margin: 0 auto 10px;
-    display: block;
-  }
-}
-section.featured-subpages.img-right {
-  padding-right: 400px;
-}
-section.featured-subpages.img-right img {
-  right: 0;
-}
-@media (max-width: 768px) {
-  section.featured-subpages.img-right {
-    padding-right: 0;
-  }
-}
-section.featured-subpages.img-left {
-  padding-left: 400px;
-}
-section.featured-subpages.img-left img {
-  left: 0;
-}
-@media (max-width: 768px) {
-  section.featured-subpages.img-left {
-    padding-left: 0;
-  }
-}
-@media (max-width: 768px) {
-  section.featured-subpages .link-listing {
-    margin: 0 0 30px;
-  }
 }
 
 .fm-homepage-carousel {
@@ -3420,6 +3429,44 @@ section.featured-subpages.img-left img {
   border: 2px solid white;
   top: 2px;
   cursor: default;
+}
+
+.image-promo figure {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .image-promo figure {
+    margin-top: 30px;
+  }
+}
+.image-promo figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 50px);
+}
+.image-promo .white-bg .cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000f2b;
+  color: #007697;
+}
+.image-promo img {
+  width: 100%;
+  height: auto;
+}
+.image-promo h1 {
+  font-size: 16px;
+}
+
+@media (max-width: 720px) {
+  .job-search .blue-block button {
+    width: 100%;
+    right: 0;
+    margin-left: 0;
+    left: auto;
+  }
 }
 
 .fm-basic-carousel-wrap {
@@ -3636,44 +3683,6 @@ section.featured-subpages.img-left img {
   position: relative;
   z-index: 0;
   float: left;
-}
-
-.image-promo figure {
-  position: relative;
-}
-@media (max-width: 767px) {
-  .image-promo figure {
-    margin-top: 30px;
-  }
-}
-.image-promo figure figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% - 50px);
-}
-.image-promo .white-bg .cta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #000f2b;
-  color: #007697;
-}
-.image-promo img {
-  width: 100%;
-  height: auto;
-}
-.image-promo h1 {
-  font-size: 16px;
-}
-
-@media (max-width: 720px) {
-  .job-search .blue-block button {
-    width: 100%;
-    right: 0;
-    margin-left: 0;
-    left: auto;
-  }
 }
 
 .locator-form {
