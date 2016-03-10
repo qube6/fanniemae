@@ -3,7 +3,7 @@ fm-accordion.fm-accordion
     button.fm-accordion-toggle-all(type="button" ng-click="setAll()")
       div(ng-show="allOpen") Close All
       div(ng-show="!allOpen") Expand All
-      span.icon.list-icon(ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' " aria-hidden="true")
+      span.icon.list-icon(ng-class=" allOpen ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
   ul.link-listing.custom-icons.bottom-border
     li(fm-accordion-item ng-class="{ 'open' : isOpen() }" open)
       a(href="" ng-click="toggleItem()") The Executive Committee

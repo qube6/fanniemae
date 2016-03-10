@@ -2453,6 +2453,8 @@ button[type="button"].header-search-btn span.icon {
   position: absolute;
   right: 0;
   top: -3px;
+  border: 2px solid #000f2b;
+  border-radius: 50%;
 }
 @media (min-width: 768px) {
   .fm-accordion button.fm-accordion-toggle-all .icon {
@@ -4012,6 +4014,19 @@ section.overview.with-image .caption p {
   border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+.rail-list .more {
+  margin-top: 10px;
+}
+.rail-list h1.fm-subtitle {
+  margin: 0;
+}
+.rail-list .fm-date {
+  margin: -10px 0 10px;
+}
+.rail-list ul.link-listing > li > a > .list-icon.fa-download {
+  font-size: 14px;
+}
+
 .rail-navigation .fm-subtitle {
   padding-bottom: 5px;
   color: white;
@@ -4078,19 +4093,6 @@ section.overview.with-image .caption p {
   top: -10px;
   right: 0;
   position: absolute;
-}
-
-.rail-list .more {
-  margin-top: 10px;
-}
-.rail-list h1.fm-subtitle {
-  margin: 0;
-}
-.rail-list .fm-date {
-  margin: -10px 0 10px;
-}
-.rail-list ul.link-listing > li > a > .list-icon.fa-download {
-  font-size: 14px;
 }
 
 .rich-text-block p {
