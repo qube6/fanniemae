@@ -16,10 +16,10 @@
           input.styled-radio(type="radio" name="foo" value="foo3" id="foo3" ng-model="locator.searchtype" required) 
           label(for="foo3") Trust Number
 
-    input(id="locatorNumber" type="text" placeholder="Number*" required ng-model="locator.number")
+    input(id="locatorNumber" type="search" placeholder="Number*" required ng-model="locator.number")
     label.sr-only(for="locatorNumber") Enter CUSIP or Pool number
 
-    input(id="locatorClass" type="text" placeholder="Trust Class/Tranche" ng-model="locator.class")
+    input(id="locatorClass" type="search" placeholder="Trust Class/Tranche" ng-model="locator.class")
     label.sr-only(for="locatorClass") Trust Class/Tranche
 
     .text-right
@@ -44,7 +44,7 @@
           input.styled-radio(type="radio" name="bar" value="bar3" id="bar3" ng-model="locator.documenttype" required) 
           label(for="bar3") Reset Information
 
-    input(id="locatorCUSIP" type="text" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip")
+    input(id="locatorCUSIP" type="search" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip")
     label.sr-only(for="locatorCUSIP") Enter CUSIP Number
 
     .text-right

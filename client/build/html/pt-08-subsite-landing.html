@@ -274,9 +274,9 @@
                           </li>
                         </ul>
                       </fieldset>
-                      <input id="locatorNumber" type="text" placeholder="Number*" required ng-model="locator.number">
+                      <input id="locatorNumber" type="search" placeholder="Number*" required ng-model="locator.number">
                       <label for="locatorNumber" class="sr-only">Enter CUSIP or Pool number</label>
-                      <input id="locatorClass" type="text" placeholder="Trust Class/Tranche" ng-model="locator.class">
+                      <input id="locatorClass" type="search" placeholder="Trust Class/Tranche" ng-model="locator.class">
                       <label for="locatorClass" class="sr-only">Trust Class/Tranche</label>
                       <div class="text-right">
                         <div ng-click="validateForm()" class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></div>
@@ -306,7 +306,7 @@
                           </li>
                         </ul>
                       </fieldset>
-                      <input id="locatorCUSIP" type="text" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip">
+                      <input id="locatorCUSIP" type="search" placeholder="CUSIP Number*" title="CUSIP Number" required ng-model="locator.cusip">
                       <label for="locatorCUSIP" class="sr-only">Enter CUSIP Number</label>
                       <div class="text-right"><a ng-click="validateForm()" class="more">Search<i aria-hidden="true" class="icon fm-search-circle"></i></a></div>
                     </form>
