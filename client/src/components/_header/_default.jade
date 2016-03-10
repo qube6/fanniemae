@@ -1,124 +1,125 @@
 -var sideMenuOpen = sideMenuOpen || false
 header#navbar.navbar.navbar-default(role="banner" fm-sticky-header)
-  .navbar-header
-    button.fm-menu-toggle.pull-right.no-desktop(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
-      span.sr-only Toggle navigation
-      span.icon-bar.one
-      span.icon-bar.two
-      span.icon-bar.three
-      span.outline
-    button.header-search-btn.no-desktop.pull-right(type="button" ng-click="toggleActive('header-search')")
-      span.icon.fm-search-circle(aria-hidden="true" )
-    a.site-logo.navbar-btn.pull-left(href="../html/" title="home")
-      svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
-        use(xlink:href="../media/FannieMae-Logo.svg#Logo")
-  form.header-search-form(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away='header-search')
-    input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
-    input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
-    span.icon.fm-arrow-right-circle(aria-hidden="true")
-  nav.navbar-offcanvas.pull-right(ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away='header-mobile-menu' hm-Swiperight="toggleActive('header-mobile-menu', false)")
-    .menu-sites(class= sideMenuOpen ?  "open" : undefined fm-open-on-load= sideMenuOpen ? 'header-side-menu' : undefined ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu' hm-Swiperight="toggleActive('header-side-menu', false)")
-      button.toggle-sites.desktop-only(type="button" ng-click="toggleActive('header-side-menu')")
-        | All Fannie Mae Sites
-        span.icon(aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
-      .sites-list
-        h1.font-serif Doing Business with Fannie Mae
-        ul.menu.nav(fm-accordion close-others="false")
-          li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-            a(ng-click="toggleItem()")
-              h2 Lenders
-              button.icon.fm-plus(type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
-            ul.submenu
-              li
-                a(href='https://www.fanniemae.com/singlefamily/index', target='_blank') Single-Family
-              li
-                a(href='https://www.fanniemae.com/multifamily/index', target='_blank') Multifamily
-          li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-            a(ng-click="toggleItem()")
-              h2 Servicers
-              button.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
-            ul.submenu
-              li
-                a(href='https://www.fanniemae.com/singlefamily/servicing', target='_blank') Single-Family
-              li
-                a(href='https://www.fanniemae.com/multifamily/servicing', target='_blank') MultiFamily
-          li
-            a(href='/capital-market-investors') 
-              h2 Capital Market Investors
-        h1.font-serif Homeownership & Renting
-        ul.menu.nav
-          li
-            a(href='http://knowyouroptions.com' target='_blank')
-              h2 Know Your Options
-              .subhead For Owners, Renters & Buyers
-          li
-            a(href='http://homepath.com', target='_blank')
-              h2 HomePath
-              .subhead Find & Buy Homes
-    button.header-search-btn.pull-right.desktop-only(type="button" ng-click="toggleActive('header-search')")
-      span.icon.fm-search-circle(aria-hidden="true" )
-    ul.main-menu(fm-accordion close-others="false")
-      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-        a(href='/about-us', title='') About Us
-        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
-        ul.menu.nav
-          li
-            a(href='/about-us/what-we-do', title='') What We Do
-          li
-            a(href='/about-us/leadership-team', title='') Leadership Team
-          li
-            a(href='/about-us/awards-achievements') Awards & Achievements
-          li
-            a(href='/about-us/governance') Governance
-          li
-            a(href='/about-us/investor-relations', title='') Investor Relations
-          li
-            a(href='/about-us/giving-back') Giving Back
-      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-        a(href='/research-and-insights', title='') Research & Insights
-        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
-        ul.menu.nav
-          li
-            a(href='/research-and-insights/271', title='') Consumer Research & Analysis
-          li
-            a(href='/research-and-insights/15', title='') Economic & Housing Outlook
-          li
-            a(href='/research-and-insights/272', title='') Home Purchase Sentiment Index
-          li
-            a(href='/research-and-insights/16', title='') Insights
-          li
-            a(href='/research-and-insights/17', title='') Mortgage Lender Sentiment Survey
-          li
-            a(href='/research-and-insights/18', title='') National Housing Survey
-      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-        a(href='/news', title='Description of gucrisa.') Newsroom
-        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
-        ul.menu.nav
-          li
-            a(href='/news/press-center', title='') Press Center
-          li
-            a(href='/news/in-the-news', title='') In The News
-          li
-            a(href='/news/industry-news', title='') Industry News
-          li
-            a(href='/news/fact-sheet') Fact Sheet
-      li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-        a(href='/careers', title='') Careers
-        button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
-        ul.menu.nav
-          li
-            a(href='/careers/job-search') Job Search
-          li
-            a(href='/careers/why-fannie-mae') Why Fannie Mae
-          li
-            a(href='/careers/what-we-offer') What We Offer
-          li
-            a(href='/careers/hiring-process') Hiring Process
-          li
-            a(href='/careers/who-we-seek') Who We Seek
-          li
-            a(href='/careers/university-recruiting') University Recruiting
-          li
-            a(href='/careers/locations', title='') Locations
-      li
-        a(href='/contact-us', title='Description of tho.') Contact Us
+  .full-width-max
+    .navbar-header
+      button.fm-menu-toggle.pull-right.no-desktop(type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" )
+        span.sr-only Toggle navigation
+        span.icon-bar.one
+        span.icon-bar.two
+        span.icon-bar.three
+        span.outline
+      button.header-search-btn.no-desktop.pull-right(type="button" ng-click="toggleActive('header-search')")
+        span.icon.fm-search-circle(aria-hidden="true" )
+      a.site-logo.navbar-btn.pull-left(href="../html/" title="home")
+        svg.logo(role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" )
+          use(xlink:href="../media/FannieMae-Logo.svg#Logo")
+    form.header-search-form(action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away='header-search')
+      input.header-search-input(placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')")
+      input.header-search-submit(type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }")
+      span.icon.fm-arrow-right-circle(aria-hidden="true")
+    nav.navbar-offcanvas.pull-right(ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away='header-mobile-menu' hm-Swiperight="toggleActive('header-mobile-menu', false)")
+      .menu-sites(class= sideMenuOpen ?  "open" : undefined fm-open-on-load= sideMenuOpen ? 'header-side-menu' : undefined ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away='header-side-menu' hm-Swiperight="toggleActive('header-side-menu', false)")
+        button.toggle-sites.desktop-only(type="button" ng-click="toggleActive('header-side-menu')")
+          | All Fannie Mae Sites
+          span.icon(aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' ")
+        .sites-list
+          h1.font-serif Doing Business with Fannie Mae
+          ul.menu.nav(fm-accordion close-others="false")
+            li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+              a(ng-click="toggleItem()")
+                h2 Lenders
+                button.icon.fm-plus(type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
+              ul.submenu
+                li
+                  a(href='https://www.fanniemae.com/singlefamily/index', target='_blank') Single-Family
+                li
+                  a(href='https://www.fanniemae.com/multifamily/index', target='_blank') Multifamily
+            li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+              a(ng-click="toggleItem()")
+                h2 Servicers
+                button.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' ")
+              ul.submenu
+                li
+                  a(href='https://www.fanniemae.com/singlefamily/servicing', target='_blank') Single-Family
+                li
+                  a(href='https://www.fanniemae.com/multifamily/servicing', target='_blank') MultiFamily
+            li
+              a(href='/capital-market-investors') 
+                h2 Capital Market Investors
+          h1.font-serif Homeownership & Renting
+          ul.menu.nav
+            li
+              a(href='http://knowyouroptions.com' target='_blank')
+                h2 Know Your Options
+                .subhead For Owners, Renters & Buyers
+            li
+              a(href='http://homepath.com', target='_blank')
+                h2 HomePath
+                .subhead Find & Buy Homes
+      button.header-search-btn.pull-right.desktop-only(type="button" ng-click="toggleActive('header-search')")
+        span.icon.fm-search-circle(aria-hidden="true" )
+      ul.main-menu(fm-accordion close-others="false")
+        li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+          a(href='/about-us', title='') About Us
+          button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
+          ul.menu.nav
+            li
+              a(href='/about-us/what-we-do', title='') What We Do
+            li
+              a(href='/about-us/leadership-team', title='') Leadership Team
+            li
+              a(href='/about-us/awards-achievements') Awards & Achievements
+            li
+              a(href='/about-us/governance') Governance
+            li
+              a(href='/about-us/investor-relations', title='') Investor Relations
+            li
+              a(href='/about-us/giving-back') Giving Back
+        li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+          a(href='/research-and-insights', title='') Research & Insights
+          button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
+          ul.menu.nav
+            li
+              a(href='/research-and-insights/271', title='') Consumer Research & Analysis
+            li
+              a(href='/research-and-insights/15', title='') Economic & Housing Outlook
+            li
+              a(href='/research-and-insights/272', title='') Home Purchase Sentiment Index
+            li
+              a(href='/research-and-insights/16', title='') Insights
+            li
+              a(href='/research-and-insights/17', title='') Mortgage Lender Sentiment Survey
+            li
+              a(href='/research-and-insights/18', title='') National Housing Survey
+        li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+          a(href='/news', title='Description of gucrisa.') Newsroom
+          button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
+          ul.menu.nav
+            li
+              a(href='/news/press-center', title='') Press Center
+            li
+              a(href='/news/in-the-news', title='') In The News
+            li
+              a(href='/news/industry-news', title='') Industry News
+            li
+              a(href='/news/fact-sheet') Fact Sheet
+        li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
+          a(href='/careers', title='') Careers
+          button.no-desktop.icon.fm-plus(aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()")
+          ul.menu.nav
+            li
+              a(href='/careers/job-search') Job Search
+            li
+              a(href='/careers/why-fannie-mae') Why Fannie Mae
+            li
+              a(href='/careers/what-we-offer') What We Offer
+            li
+              a(href='/careers/hiring-process') Hiring Process
+            li
+              a(href='/careers/who-we-seek') Who We Seek
+            li
+              a(href='/careers/university-recruiting') University Recruiting
+            li
+              a(href='/careers/locations', title='') Locations
+        li
+          a(href='/contact-us', title='Description of tho.') Contact Us

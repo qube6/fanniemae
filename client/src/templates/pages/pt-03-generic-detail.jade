@@ -7,9 +7,10 @@ block top-content
   -var config={withImage : false, title: 'Board Committees', caption: 'Led by the Board of Directors, Fannie Mae strives daily to fulfill its public mission of providing mortgages to low-, moderate-, and middle-income Americans.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config={ links : ['Home', 'About Us', 'Governance'], page : 'Board Comittees'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config={ links : ['Home', 'About Us', 'Governance'], page : 'Board Comittees'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 block content
   article.article-wrapper.padding-30

@@ -28,10 +28,14 @@ $color-link-dark-h: white;
 $font-sans-serif: 'Urbano-Regular', 'Arial', sans-serif;
 $font-serif: 'Glyddon-Regular', 'Georgia', 'Century', serif;
 
+$full-width-max: 1800px;
+
 $header-height-lg: 70px;
 $header-element-height: 40px;
 $header-element-spacing: ($header-height-lg - $header-element-height) / 2;
 $header-site-list-width: 385px;
+$header-site-list-height: calc(100vh - #{$header-height-lg});
+
 
 $footer-height-md: 70px;
 $footer-height-sm: 140px;
