@@ -314,7 +314,7 @@ angular.module('fannieMae').factory('fannieAPIservice', function($http) {
   return fannieAPI;
 });
 directiveModule.directive('fmAccordion', [
-  '$timeout',
+  '$timeout', 
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
       $scope.allOpen = false;
@@ -358,6 +358,12 @@ directiveModule.directive('fmAccordion', [
           }
         }, 0);
       };
+
+      $scope.gotoAnchor = function (x) {
+        var hash = 'anchor'+x;
+        document.getElementById(hash).scrollTop;
+        console.log(document.documentElement.scrollTop);
+      }
 
       $scope.$on('fmAccordionItemOpen', function(){
         if(controller.closeOthers && !$scope.ignoreBroadcast){
