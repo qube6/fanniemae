@@ -36,6 +36,93 @@
 // component css aggregated and pulled here via gulp
 @import 'components-temp';
 
+body.fonts-alternate{
+  font: 24px/1.2 $font-sans-serif; 
+  .site-logo svg {
+    width: 190px;
+    height: 40px;
+  }
+  .footer {
+    font-size: 24px;
+  }
+  .footer .footer-lead {
+    width: 600px;
+  }
+  .footer .footer-menus {
+    @media (min-width: $screen-sm){
+      width: calc(100% - 600px);
+    }
+  }
+  @media (max-width: 767px){
+    .footer .site-logo {
+      padding-top: 5px;
+      position: absolute;
+      top: 25px;
+    }
+  }
+  .main-menu > li a {
+    font-size: 24px;
+  }
+  .sites-list h1, .open .sites-list h1, .menu-sites .toggle-sites {
+    font-size: 24px;
+  }
+  .sites-list h2, .open .sites-list h2 {
+    font-size: 27px;
+  }
+  .sites-list .submenu li a, .open .sites-list .submenu li a{
+    font-size: 24px;
+  }
+  .sites-list .subhead, .open .sites-list .subhead{
+    font-size: 20px;
+  }
+  @media (min-width: 1200px){
+    .sites-list, .open .sites-list {
+        width: 425px;
+    }
+  }
+  input[type="search"].header-search-input{
+    font-size: 24px;
+    line-height: 40px;
+  }
+  .pane-homepage-slider-slider-home .fm-carousel-caption {
+    font-size: 60px;
+    line-height: 65px;
+    @media (max-width: $screen-xs-max){
+      left: 10px;
+      width: calc(100% - 20px);
+    }
+    @media (min-width: 1200px){
+      font-size: 89px;
+      line-height: 90px;
+    }
+  }
+  @media (min-width: 1200px){
+    .menu-sites {
+        width: 310px;
+    }
+  }
+  .fm-type {
+    font-size: 27px;
+  }
+  .fm-title {
+    font-size: 30px;
+    @media (min-width: 992px){
+        font-size: 40px;
+    }
+  }
+  .fm-date {
+    font-size: 20px;
+  }
+  .cta {
+    font-size: 27px;
+  }
+  @media (min-width: 992px){
+    .fm-primary-feature .fm-primary-feature-caption {
+        padding-bottom: 75%;
+    }
+  }
+}
+
 
 
 
