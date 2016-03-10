@@ -470,6 +470,43 @@ directiveModule.directive('fmVideoPlayer', ['$timeout',
       template: '<div class="fm-video-wrapper"><span class="icon" ng-class=" videoPaused ? \'fm-play-circle\' : \'fm-pause-circle\' " ng-click="controlVideo()"></span><video ng-transclude></video></div>'
     };
 }])
+directiveModule.directive('fmListing', 
+  function(fannieAPIservice) {
+    var link = function ($scope, $element, attrs) {
+      $scope.apiUrl = $element.attr('data-api-url');
+      $scope.items = [];
+      $scope.payload = $scope.payload || {}; //may init this in another directive based on baked in values
+      $scope.dynamic = false;
+
+      $scope.loadQuery = function(fresh){
+        $scope.loading = true;
+        if(fresh){
+          $scope.dynamic = true;
+          $scope.items=[];
+        }
+        fannieAPIservice.getData($scope.apiUrl, $scope.payload)
+          .success(function (data) {
+            // remove this. testing UI
+            // $timeout(function(){
+            $scope.items = $scope.items.concat(data.results);
+            $scope.payload.start = data.start;
+            $scope.payload.end = data.end;
+            $scope.total = data.total;
+            $scope.loading = false;
+            // }, 2000);
+          })
+          .error(function(data, status, headers, config){      
+            $scope.items = [];
+          });
+      }
+
+    };
+    return {
+      restrict: 'A',
+      link: link,
+      scope: true
+    };
+})
 directiveModule.directive('fmDropdown', [
   function () {
     var link = function ($scope, element, attrs, controller) {
@@ -516,43 +553,6 @@ directiveModule.directive('fmDropdown', [
       template: "<div aria-hidden='true' class='fm-select-wrapper' fm-accordion><div class='fm-styled-select' fm-accordion-item ng-class='{ \"open\" : isOpen() }' ng-click='toggleItem()'>{{selectedOption.text}}</span></div><ul fm-accordion-item class='fm-select-submenu' ng-click='toggleItem()'><li ng-repeat='option in selectlist' ng-click='setSelected(option.value)'>{{option.text}}</li></ul></div><div ng-transclude class='sr-only'></div>"
     };
 }])
-directiveModule.directive('fmListing', 
-  function(fannieAPIservice) {
-    var link = function ($scope, $element, attrs) {
-      $scope.apiUrl = $element.attr('data-api-url');
-      $scope.items = [];
-      $scope.payload = $scope.payload || {}; //may init this in another directive based on baked in values
-      $scope.dynamic = false;
-
-      $scope.loadQuery = function(fresh){
-        $scope.loading = true;
-        if(fresh){
-          $scope.dynamic = true;
-          $scope.items=[];
-        }
-        fannieAPIservice.getData($scope.apiUrl, $scope.payload)
-          .success(function (data) {
-            // remove this. testing UI
-            // $timeout(function(){
-            $scope.items = $scope.items.concat(data.results);
-            $scope.payload.start = data.start;
-            $scope.payload.end = data.end;
-            $scope.total = data.total;
-            $scope.loading = false;
-            // }, 2000);
-          })
-          .error(function(data, status, headers, config){      
-            $scope.items = [];
-          });
-      }
-
-    };
-    return {
-      restrict: 'A',
-      link: link,
-      scope: true
-    };
-})
 directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$document',
   function ($window, $compile, $timeout, $document) {
 
