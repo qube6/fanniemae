@@ -3420,6 +3420,11 @@ section.grid-listing .load-more {
 .image-promo figure {
   position: relative;
 }
+@media (max-width: 767px) {
+  .image-promo figure {
+    margin-top: 30px;
+  }
+}
 .image-promo figure figcaption {
   position: absolute;
   top: 0;
