@@ -3417,6 +3417,33 @@ section.grid-listing .load-more {
   cursor: default;
 }
 
+<<<<<<< HEAD
+.image-promo figure {
+  position: relative;
+}
+.image-promo figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 50px);
+}
+.image-promo .white-bg .cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000f2b;
+  color: #007697;
+}
+.image-promo img {
+  width: 100%;
+  height: auto;
+}
+.image-promo h1 {
+  font-size: 16px;
+}
+
+=======
+>>>>>>> 30f924eef86e74a9ebf0ea0b2e87625c61e755ba
 .fm-basic-carousel-wrap {
   zoom: 1;
   position: relative;
@@ -3633,6 +3660,8 @@ section.grid-listing .load-more {
   float: left;
 }
 
+<<<<<<< HEAD
+=======
 .image-promo figure {
   position: relative;
 }
@@ -3662,6 +3691,7 @@ section.grid-listing .load-more {
   font-size: 16px;
 }
 
+>>>>>>> 30f924eef86e74a9ebf0ea0b2e87625c61e755ba
 @media (max-width: 720px) {
   .job-search .blue-block button {
     width: 100%;
@@ -3998,72 +4028,6 @@ section.overview.with-image .caption p {
   border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.rail-list .more {
-  margin-top: 10px;
-}
-.rail-list h1.fm-subtitle {
-  margin: 0;
-}
-.rail-list .fm-date {
-  margin: -10px 0 10px;
-}
-.rail-list ul.link-listing > li > a > .list-icon.fa-download {
-  font-size: 14px;
-}
-
-.rich-text-block p {
-  margin: 0 0 20px;
-  color: black;
-  font-size: 14px;
-  line-height: 24px;
-}
-.rich-text-block h2 {
-  font-size: 26px;
-  margin: 0 0 20px;
-}
-.rich-text-block h3 {
-  font-size: 18px;
-  margin: 0 0 20px;
-}
-.rich-text-block ul, .rich-text-block ol {
-  padding-left: 20px;
-}
-@media (min-width: 768px) {
-  .rich-text-block ul, .rich-text-block ol {
-    margin-left: 20px;
-  }
-}
-.rich-text-block ul li, .rich-text-block ol li {
-  list-style: inherit;
-  font-size: 14px;
-  line-height: 25px;
-}
-.rich-text-block figure {
-  width: 100%;
-  margin-bottom: 30px;
-}
-.rich-text-block figure img, .rich-text-block figure video {
-  width: 100%;
-  vertical-align: middle;
-}
-.rich-text-block figure figcaption {
-  background-color: #e5f1f4;
-  padding: 30px;
-}
-.rich-text-block figure figcaption h3 {
-  margin: 5px 0;
-}
-.rich-text-block figure figcaption p {
-  margin: 0;
-}
-.rich-text-block figure figcaption p + .small {
-  margin-top: 20px;
-}
-.rich-text-block input[type="radio"],
-.rich-text-block input[type="checkbox"] {
-  margin: 0 5px 3px;
-}
-
 .rail-navigation .fm-subtitle {
   padding-bottom: 5px;
   color: white;
@@ -4132,6 +4096,72 @@ section.overview.with-image .caption p {
   position: absolute;
 }
 
+<<<<<<< HEAD
+.rail-list .more {
+  margin-top: 10px;
+}
+.rail-list h1.fm-subtitle {
+  margin: 0;
+}
+.rail-list .fm-date {
+  margin: -10px 0 10px;
+}
+.rail-list ul.link-listing > li > a > .list-icon.fa-download {
+  font-size: 14px;
+}
+
+.rich-text-block p {
+  margin: 0 0 20px;
+  color: black;
+  font-size: 14px;
+  line-height: 24px;
+}
+.rich-text-block h2 {
+  font-size: 26px;
+  margin: 0 0 20px;
+}
+.rich-text-block h3 {
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+.rich-text-block ul, .rich-text-block ol {
+  padding-left: 20px;
+}
+@media (min-width: 768px) {
+  .rich-text-block ul, .rich-text-block ol {
+    margin-left: 20px;
+  }
+}
+.rich-text-block ul li, .rich-text-block ol li {
+  list-style: inherit;
+  font-size: 14px;
+  line-height: 25px;
+}
+.rich-text-block figure {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.rich-text-block figure img, .rich-text-block figure video {
+  width: 100%;
+  vertical-align: middle;
+}
+.rich-text-block figure figcaption {
+  background-color: #e5f1f4;
+  padding: 30px;
+}
+.rich-text-block figure figcaption h3 {
+  margin: 5px 0;
+}
+.rich-text-block figure figcaption p {
+  margin: 0;
+}
+.rich-text-block figure figcaption p + .small {
+  margin-top: 20px;
+}
+.rich-text-block input[type="radio"],
+.rich-text-block input[type="checkbox"] {
+  margin: 0 5px 3px;
+=======
 .fm-title {
   font-size: 18px;
   display: block;
@@ -4197,6 +4227,7 @@ section.secondary-subpages {
   min-height: 400px;
   padding-bottom: 40px;
   position: relative;
+>>>>>>> 30f924eef86e74a9ebf0ea0b2e87625c61e755ba
 }
 
 .search-call-out {
@@ -4324,6 +4355,76 @@ section.secondary-subpages {
   max-height: 100px;
 }
 
+<<<<<<< HEAD
+.fm-title {
+  font-size: 18px;
+  display: block;
+  margin: 20px 0;
+}
+@media (min-width: 992px) {
+  .fm-title {
+    font-size: 24px;
+  }
+}
+
+.fm-date {
+  font-size: 12px;
+  display: block;
+}
+
+.fm-type {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+@media (min-width: 992px) {
+  .fm-type {
+    font-size: 16px;
+  }
+}
+
+.fm-link {
+  font-size: 18px;
+}
+
+.fm-title ~ .fm-link {
+  margin-bottom: 0;
+}
+
+.cta {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.white-bg .cta {
+  background: #007697;
+  color: white;
+}
+.white-bg .cta:hover {
+  color: white;
+}
+
+.fm-secondary-feature {
+  position: relative;
+  padding-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .fm-secondary-feature {
+    margin-top: 30px;
+    min-height: 255px;
+  }
+}
+
+section.secondary-subpages {
+  min-height: 400px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+=======
+>>>>>>> 30f924eef86e74a9ebf0ea0b2e87625c61e755ba
 .social-share ul {
   float: right;
 }

@@ -40,6 +40,7 @@ directiveModule.directive('fmAccordion', [
           if($scope.open){
             $scope.ignoreBroadcast = true;
             $scope.$parent.$broadcast('fmAccordionItemOpen');
+            if(controller.closeOthers) adjustScroll();
           }
         }, 0);
       };
@@ -58,6 +59,10 @@ directiveModule.directive('fmAccordion', [
       $scope.isOpen = function(){
         return $scope.open;
       };
+
+      var adjustScroll = function(){
+        setPageScroll(element[0]);
+      }
     };
     
     return {
