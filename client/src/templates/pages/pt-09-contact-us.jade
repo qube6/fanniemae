@@ -7,9 +7,10 @@ block top-content
   -var config={withImage : true, title: 'Contact Us', caption: 'Our dedicated staff is here to answer all your mortgage and housing questions. Let us know how we can help.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config={ links : ['Home'], page : 'Contact Us'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config={ links : ['Home'], page : 'Contact Us'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 
 block content

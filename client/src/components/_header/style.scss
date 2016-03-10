@@ -41,7 +41,7 @@
 /* Nav Container */
 .navbar-offcanvas{
   @media only screen and (max-width:$screen-md-max) {
-    height: calc(100vh - #{$header-height-lg});
+    height: $header-site-list-height;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     left: auto;
@@ -54,7 +54,6 @@
     &.open-nav{
       right: 0;
     }
-
     .dropdown-toggle{
       right: 0;
       top: 0;
@@ -184,6 +183,11 @@
 }
 
 /* All FannieMae Sites Menu */
+@media (min-width: $full-width-max){
+  .sites-list{
+    @include transform(translateX(800px));
+  }
+}
 .sites-list, .open .sites-list{
   top: 100%;
   margin-top: $header-element-spacing;
@@ -203,10 +207,6 @@
       background: $color-blue;
     } 
   }
-  // @media (min-width: $screen-xl){
-  //   padding: 0 30px;
-  //   min-height: $carousel-height-xl;
-  // }
   a:hover{
     h2{
       color: $color-light;

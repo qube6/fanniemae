@@ -7,9 +7,10 @@ block top-content
   -var config={withImage : true, title: 'Search Results', caption: 'Fannie Mae is a leading source of residential and commercial mortgage credit in the U.S. secondary market and is your committed housing partner. Search our site to learn more.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
-    -var config = { links : ['Home'], page : 'Search Results'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config = { links : ['Home'], page : 'Search Results'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 block content
   include ../../components/search-call-out/_default.jade

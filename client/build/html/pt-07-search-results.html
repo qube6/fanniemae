@@ -28,101 +28,103 @@
     <main>
       <div id="page-wrapper">
         <header id="navbar" role="banner" fm-sticky-header class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
-            <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
-              <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
-                <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
-              </svg></a>
-          </div>
-          <form action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away="header-search" class="header-search-form">
-            <input placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')" class="header-search-input">
-            <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
-          </form>
-          <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
-            <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
-              <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
-              <div class="sites-list">
-                <h1 class="font-serif">Doing Business with Fannie Mae</h1>
-                <ul fm-accordion close-others="false" class="menu nav">
-                  <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
-                      <h2>Lenders</h2>
-                      <button type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
-                    <ul class="submenu">
-                      <li><a href="https://www.fanniemae.com/singlefamily/index" target="_blank">Single-Family</a></li>
-                      <li><a href="https://www.fanniemae.com/multifamily/index" target="_blank">Multifamily</a></li>
-                    </ul>
-                  </li>
-                  <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
-                      <h2>Servicers</h2>
-                      <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
-                    <ul class="submenu">
-                      <li><a href="https://www.fanniemae.com/singlefamily/servicing" target="_blank">Single-Family</a></li>
-                      <li><a href="https://www.fanniemae.com/multifamily/servicing" target="_blank">MultiFamily</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/capital-market-investors"> 
-                      <h2>Capital Market Investors</h2></a></li>
-                </ul>
-                <h1 class="font-serif">Homeownership & Renting</h1>
-                <ul class="menu nav">
-                  <li><a href="http://knowyouroptions.com" target="_blank">
-                      <h2>Know Your Options</h2>
-                      <div class="subhead">For Owners, Renters & Buyers</div></a></li>
-                  <li><a href="http://homepath.com" target="_blank">
-                      <h2>HomePath</h2>
-                      <div class="subhead">Find & Buy Homes</div></a></li>
-                </ul>
-              </div>
+          <div class="full-width-max">
+            <div class="navbar-header">
+              <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
+              <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
+                <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
+                  <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
+                </svg></a>
             </div>
-            <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn pull-right desktop-only"><span aria-hidden="true" class="icon fm-search-circle"></span></button>
-            <ul fm-accordion close-others="false" class="main-menu">
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/about-us" title="">About Us</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/about-us/what-we-do" title="">What We Do</a></li>
-                  <li><a href="/about-us/leadership-team" title="">Leadership Team</a></li>
-                  <li><a href="/about-us/awards-achievements">Awards & Achievements</a></li>
-                  <li><a href="/about-us/governance">Governance</a></li>
-                  <li><a href="/about-us/investor-relations" title="">Investor Relations</a></li>
-                  <li><a href="/about-us/giving-back">Giving Back</a></li>
-                </ul>
-              </li>
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/research-and-insights" title="">Research & Insights</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/research-and-insights/271" title="">Consumer Research & Analysis</a></li>
-                  <li><a href="/research-and-insights/15" title="">Economic & Housing Outlook</a></li>
-                  <li><a href="/research-and-insights/272" title="">Home Purchase Sentiment Index</a></li>
-                  <li><a href="/research-and-insights/16" title="">Insights</a></li>
-                  <li><a href="/research-and-insights/17" title="">Mortgage Lender Sentiment Survey</a></li>
-                  <li><a href="/research-and-insights/18" title="">National Housing Survey</a></li>
-                </ul>
-              </li>
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/news" title="Description of gucrisa.">Newsroom</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/news/press-center" title="">Press Center</a></li>
-                  <li><a href="/news/in-the-news" title="">In The News</a></li>
-                  <li><a href="/news/industry-news" title="">Industry News</a></li>
-                  <li><a href="/news/fact-sheet">Fact Sheet</a></li>
-                </ul>
-              </li>
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/careers" title="">Careers</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/careers/job-search">Job Search</a></li>
-                  <li><a href="/careers/why-fannie-mae">Why Fannie Mae</a></li>
-                  <li><a href="/careers/what-we-offer">What We Offer</a></li>
-                  <li><a href="/careers/hiring-process">Hiring Process</a></li>
-                  <li><a href="/careers/who-we-seek">Who We Seek</a></li>
-                  <li><a href="/careers/university-recruiting">University Recruiting</a></li>
-                  <li><a href="/careers/locations" title="">Locations</a></li>
-                </ul>
-              </li>
-              <li><a href="/contact-us" title="Description of tho.">Contact Us</a></li>
-            </ul>
-          </nav>
+            <form action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away="header-search" class="header-search-form">
+              <input placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')" class="header-search-input">
+              <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
+            </form>
+            <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
+              <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
+                <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
+                <div class="sites-list">
+                  <h1 class="font-serif">Doing Business with Fannie Mae</h1>
+                  <ul fm-accordion close-others="false" class="menu nav">
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                        <h2>Lenders</h2>
+                        <button type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                      <ul class="submenu">
+                        <li><a href="https://www.fanniemae.com/singlefamily/index" target="_blank">Single-Family</a></li>
+                        <li><a href="https://www.fanniemae.com/multifamily/index" target="_blank">Multifamily</a></li>
+                      </ul>
+                    </li>
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                        <h2>Servicers</h2>
+                        <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                      <ul class="submenu">
+                        <li><a href="https://www.fanniemae.com/singlefamily/servicing" target="_blank">Single-Family</a></li>
+                        <li><a href="https://www.fanniemae.com/multifamily/servicing" target="_blank">MultiFamily</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/capital-market-investors"> 
+                        <h2>Capital Market Investors</h2></a></li>
+                  </ul>
+                  <h1 class="font-serif">Homeownership & Renting</h1>
+                  <ul class="menu nav">
+                    <li><a href="http://knowyouroptions.com" target="_blank">
+                        <h2>Know Your Options</h2>
+                        <div class="subhead">For Owners, Renters & Buyers</div></a></li>
+                    <li><a href="http://homepath.com" target="_blank">
+                        <h2>HomePath</h2>
+                        <div class="subhead">Find & Buy Homes</div></a></li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn pull-right desktop-only"><span aria-hidden="true" class="icon fm-search-circle"></span></button>
+              <ul fm-accordion close-others="false" class="main-menu">
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/about-us" title="">About Us</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/about-us/what-we-do" title="">What We Do</a></li>
+                    <li><a href="/about-us/leadership-team" title="">Leadership Team</a></li>
+                    <li><a href="/about-us/awards-achievements">Awards & Achievements</a></li>
+                    <li><a href="/about-us/governance">Governance</a></li>
+                    <li><a href="/about-us/investor-relations" title="">Investor Relations</a></li>
+                    <li><a href="/about-us/giving-back">Giving Back</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/research-and-insights" title="">Research & Insights</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/research-and-insights/271" title="">Consumer Research & Analysis</a></li>
+                    <li><a href="/research-and-insights/15" title="">Economic & Housing Outlook</a></li>
+                    <li><a href="/research-and-insights/272" title="">Home Purchase Sentiment Index</a></li>
+                    <li><a href="/research-and-insights/16" title="">Insights</a></li>
+                    <li><a href="/research-and-insights/17" title="">Mortgage Lender Sentiment Survey</a></li>
+                    <li><a href="/research-and-insights/18" title="">National Housing Survey</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/news" title="Description of gucrisa.">Newsroom</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/news/press-center" title="">Press Center</a></li>
+                    <li><a href="/news/in-the-news" title="">In The News</a></li>
+                    <li><a href="/news/industry-news" title="">Industry News</a></li>
+                    <li><a href="/news/fact-sheet">Fact Sheet</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/careers" title="">Careers</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/careers/job-search">Job Search</a></li>
+                    <li><a href="/careers/why-fannie-mae">Why Fannie Mae</a></li>
+                    <li><a href="/careers/what-we-offer">What We Offer</a></li>
+                    <li><a href="/careers/hiring-process">Hiring Process</a></li>
+                    <li><a href="/careers/who-we-seek">Who We Seek</a></li>
+                    <li><a href="/careers/university-recruiting">University Recruiting</a></li>
+                    <li><a href="/careers/locations" title="">Locations</a></li>
+                  </ul>
+                </li>
+                <li><a href="/contact-us" title="Description of tho.">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
         </header>
         <div class="container-fluid">
           <div class="row">
@@ -140,21 +142,23 @@
                 </div>
               </section>
               <div class="breadcrumb-social-wrap">
-                <div class="breadcrumb">
-                  <ul>
-                    <li><a href="">Home</a></li>
-                    <li>Search Results</li>
-                  </ul>
-                </div>
-                <div class="social-share">
-                  <ul>
-                    <li>Share This:</li>
-                    <li><span displaytext="Facebook" class="fa fa-facebook st_facebook_custom"></span></li>
-                    <li><span displaytext="Tweet" class="fa fa-twitter st_twitter_custom"></span></li>
-                    <li><span displaytext="Google +" class="fa fa-google-plus st_googleplus_custom"></span></li>
-                    <li><span displaytext="LinkedIn" class="fa fa-linkedin st_linkedin_custom"></span></li>
-                    <li><span displaytext="Email" class="fa fa-envelope st_email_custom"></span></li>
-                  </ul>
+                <div class="full-width-max">
+                  <div class="breadcrumb">
+                    <ul>
+                      <li><a href="">Home</a></li>
+                      <li>Search Results</li>
+                    </ul>
+                  </div>
+                  <div class="social-share">
+                    <ul>
+                      <li>Share This:</li>
+                      <li><span displaytext="Facebook" class="fa fa-facebook st_facebook_custom"></span></li>
+                      <li><span displaytext="Tweet" class="fa fa-twitter st_twitter_custom"></span></li>
+                      <li><span displaytext="Google +" class="fa fa-google-plus st_googleplus_custom"></span></li>
+                      <li><span displaytext="LinkedIn" class="fa fa-linkedin st_linkedin_custom"></span></li>
+                      <li><span displaytext="Email" class="fa fa-envelope st_email_custom"></span></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
