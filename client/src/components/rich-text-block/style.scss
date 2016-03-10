@@ -22,10 +22,15 @@
       margin-left: 20px;
     }
     li{
-      list-style: inherit;
       font-size: 14px;
       line-height: 25px;
     }
+  }
+  ol>li{
+    list-style: inherit;
+  }
+  ul>li{
+    list-style-type: disc;
   }
   
   figure{
