@@ -121,6 +121,50 @@ body.fonts-alternate{
         padding-bottom: 75%;
     }
   }
+  section.overview .caption h1 {
+    font-size: 54px;
+    @media (min-width: 768px){
+      font-size: 88px;
+    }
+  }
+  .breadcrumb li {
+    font-size: 20px;
+  }
+  .article-header .article-category{
+    font-size: 27px;
+  }
+  .article-header h1{
+    font-size: 57px;
+    line-height: 60px;
+  }
+  .article-header h2{
+    font-size: 30px;
+  }
+  .article-header .article-date{
+    font-size: 20px;
+  }
+  .rail-list h1.fm-subtitle{
+    font-size: 27px;
+  }
+  .rail-list .more{
+    font-size: 27px;
+  }
+  figure.bio-teaser{
+    height: 130px;
+    word-wrap: break-word;
+    a{
+      font-size: 24px;
+    }
+   .bio-name{
+      font-size: 37px;
+    }
+    .bio-name{
+      font-size: 24px;
+    }
+  }
+  .article-share{
+    font-size: 27px;
+  }
 }
 
 
