@@ -2407,31 +2407,6 @@ button[type="button"].header-search-btn span.icon {
   color: white;
 }
 
-.article-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
-}
-.article-header h1 {
-  font-size: 30px;
-  line-height: 34px;
-  margin: 0;
-}
-.article-header h2 {
-  font-size: 18px;
-  line-height: 25px;
-  margin: 0;
-}
-.article-header .article-category {
-  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.article-header .article-date {
-  font-size: 12px;
-  margin: 10px 0 0;
-}
-
 .fm-accordion {
   width: 100%;
   margin: 20px 0 0;
@@ -2503,14 +2478,29 @@ button[type="button"].header-search-btn span.icon {
   max-height: 9000px;
 }
 
-.article-share {
-  margin-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-size: 16px;
+.article-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
 }
-.article-share .fa {
-  margin: 0 5px;
+.article-header h1 {
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0;
+}
+.article-header h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+.article-header .article-category {
+  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.article-header .article-date {
+  font-size: 12px;
+  margin: 10px 0 0;
 }
 
 .article-teaser {
@@ -2532,6 +2522,16 @@ button[type="button"].header-search-btn span.icon {
 }
 .article-teaser .rich-text-block hr {
   margin-top: 65px;
+}
+
+.article-share {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 16px;
+}
+.article-share .fa {
+  margin: 0 5px;
 }
 
 figure.bio-teaser {
@@ -2573,6 +2573,11 @@ figure.bio-teaser p.bio-title {
   font-size: 14px;
   line-height: 1.1;
   margin-bottom: 5px;
+}
+@media (max-width: 767px) {
+  figure.bio-teaser p.bio-title {
+    margin-right: 25px;
+  }
 }
 figure.bio-teaser .icon-link {
   position: absolute;
@@ -3316,6 +3321,35 @@ section.grid-listing .load-more {
   margin: 10px;
 }
 
+.image-promo figure {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .image-promo figure {
+    margin-top: 30px;
+  }
+}
+.image-promo figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 50px);
+}
+.image-promo .white-bg .cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000f2b;
+  color: #007697;
+}
+.image-promo img {
+  width: 100%;
+  height: auto;
+}
+.image-promo h1 {
+  font-size: 16px;
+}
+
 .fm-homepage-carousel {
   margin: 0 -15px;
   position: relative;
@@ -3431,35 +3465,6 @@ section.grid-listing .load-more {
   border: 2px solid white;
   top: 2px;
   cursor: default;
-}
-
-.image-promo figure {
-  position: relative;
-}
-@media (max-width: 767px) {
-  .image-promo figure {
-    margin-top: 30px;
-  }
-}
-.image-promo figure figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% - 50px);
-}
-.image-promo .white-bg .cta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #000f2b;
-  color: #007697;
-}
-.image-promo img {
-  width: 100%;
-  height: auto;
-}
-.image-promo h1 {
-  font-size: 16px;
 }
 
 .fm-basic-carousel-wrap {
@@ -3721,6 +3726,9 @@ section.grid-listing .load-more {
 .more-in h1 {
   margin-top: 0;
   font-size: 16px;
+}
+.more-in select::-ms-expand {
+  display: none;
 }
 
 .news-teaser {
@@ -4098,8 +4106,6 @@ section.overview.with-image .caption p {
 .rich-text-block p {
   margin: 0 0 20px;
   color: black;
-  font-size: 14px;
-  line-height: 24px;
 }
 .rich-text-block h2 {
   font-size: 26px;
@@ -4278,6 +4284,12 @@ section.overview.with-image .caption p {
   max-height: 100px;
 }
 
+section.secondary-subpages {
+  min-height: 400px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
 .fm-title {
   font-size: 18px;
   display: block;
@@ -4337,12 +4349,6 @@ section.overview.with-image .caption p {
     margin-top: 30px;
     min-height: 255px;
   }
-}
-
-section.secondary-subpages {
-  min-height: 400px;
-  padding-bottom: 40px;
-  position: relative;
 }
 
 .social-share ul {
@@ -4737,4 +4743,50 @@ body.fonts-alternate .cta {
   body.fonts-alternate .fm-primary-feature .fm-primary-feature-caption {
     padding-bottom: 75%;
   }
+}
+body.fonts-alternate section.overview .caption h1 {
+  font-size: 54px;
+}
+@media (min-width: 768px) {
+  body.fonts-alternate section.overview .caption h1 {
+    font-size: 88px;
+  }
+}
+body.fonts-alternate .breadcrumb li {
+  font-size: 20px;
+}
+body.fonts-alternate .article-header .article-category {
+  font-size: 27px;
+}
+body.fonts-alternate .article-header h1 {
+  font-size: 57px;
+  line-height: 60px;
+}
+body.fonts-alternate .article-header h2 {
+  font-size: 30px;
+}
+body.fonts-alternate .article-header .article-date {
+  font-size: 20px;
+}
+body.fonts-alternate .rail-list h1.fm-subtitle {
+  font-size: 27px;
+}
+body.fonts-alternate .rail-list .more {
+  font-size: 27px;
+}
+body.fonts-alternate figure.bio-teaser {
+  height: 130px;
+  word-wrap: break-word;
+}
+body.fonts-alternate figure.bio-teaser a {
+  font-size: 24px;
+}
+body.fonts-alternate figure.bio-teaser .bio-name {
+  font-size: 37px;
+}
+body.fonts-alternate figure.bio-teaser .bio-name {
+  font-size: 24px;
+}
+body.fonts-alternate .article-share {
+  font-size: 27px;
 }

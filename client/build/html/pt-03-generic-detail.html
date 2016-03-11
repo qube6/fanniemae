@@ -199,7 +199,7 @@
                     <h2>Sample Image Markup</h2>
                     <figure><img src="../media/content-image-1.png">
                       <figcaption>
-                        <h2>Caption Title</h2>
+                        <h3>Caption Title</h3>
                         <p>Caption text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, vitae!</p><i class="small">Photo credit</i>
                       </figcaption>
                     </figure>
@@ -309,7 +309,7 @@
                             </div>
                           </div>
                         </li>
-                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">The Audit Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                        <li fm-accordion-item id="anchor2" ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem(); gotoAnchor(2)">The Audit Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
                           <div class="fm-accordion-content">
                             <div class="rich-text-block">
                               <p>The Audit Committee oversees:</p>
