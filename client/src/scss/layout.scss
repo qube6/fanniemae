@@ -64,7 +64,7 @@ main{
     margin-bottom: 20px;
   }
 }
-.fm-bottom-rail aside:first-child{
+.fm-bottom-rail > *:first-child{
   @media (min-width: $screen-sm){
     margin-top: 20px;
   }
