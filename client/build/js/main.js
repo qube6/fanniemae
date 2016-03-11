@@ -278,7 +278,10 @@ var setPageScroll = function(element){
 function elementTopInViewport(el) {
   var rect = el.getBoundingClientRect();
 
-  return rect.top > 0;
+  return (
+    rect.top > 0 &&
+    rect.top < window.innerHeight
+  );
 }
 
 //From underscore.js
