@@ -346,8 +346,8 @@ directiveModule.directive('fmAccordion', [
     return {
       restrict: 'EA',
       link: link,
-      scope: true,
-      bindToController: {
+      bindToController: true,
+      scope: {
         closeOthers: '=',
         clickAway: '='
       },
