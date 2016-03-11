@@ -20,6 +20,7 @@ section.contact-us
     textarea(id="contact-comments" name="Comments" rows="6" placeholder="Questions/Comments*" required ng-model="contact.form.comments")
     label.sr-only(for="contact-comments") Enter your message
     input(type="hidden" name="submit-email" value="{{contact.email}}")
+    div.g-recaptcha(data-sitekey="6Le1aBoTAAAAAEtEMteoKRlLs8JjuDKdtsgvyUAF")
     .submit.text-center
       hr
       a.more(ng-click="validateForm()") Submit

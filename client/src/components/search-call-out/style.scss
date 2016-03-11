@@ -31,11 +31,11 @@
     text-align: center;
     color: $color-link-dark;
     position: relative;
-    &:hover{
-      color: $color-link-dark-h;
-    }
     &:visited{
       color: $color-link-dark-v;
+    }
+    &:hover{
+      color: $color-link-dark-h;
     }
     @media (min-width: $screen-sm){
       padding: 0;
@@ -54,6 +54,9 @@
       @media (min-width: $screen-sm){
         right: -15px;
       }
+    }
+    &:hover:after{
+      border-color: $color-link-dark-h transparent transparent transparent;
     }
   }
   .open a.dropdown:after{

@@ -9,9 +9,10 @@ block top-content
    -var linkList = linkList || ['Debt Securities', 'Mortgage Backed Securities', 'Credit Risk Sharing', 'Loan Performance Data', 'Non-Performing Loan Sales']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ links : ['Home'], page : 'Capital Market Investors'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config={ links : ['Home'], page : 'Capital Market Investors'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 block content
   .content-row

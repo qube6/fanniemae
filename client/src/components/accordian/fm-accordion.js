@@ -1,5 +1,5 @@
 directiveModule.directive('fmAccordion', [
-  '$timeout',
+  '$timeout', 
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
       $scope.allOpen = false;
@@ -40,9 +40,16 @@ directiveModule.directive('fmAccordion', [
           if($scope.open){
             $scope.ignoreBroadcast = true;
             $scope.$parent.$broadcast('fmAccordionItemOpen');
+            if(controller.closeOthers) setPageScroll(element[0]);
           }
         }, 0);
       };
+
+      $scope.gotoAnchor = function (x) {
+        var hash = 'anchor'+x;
+        document.getElementById(hash).scrollTop;
+        console.log(document.documentElement.scrollTop);
+      }
 
       $scope.$on('fmAccordionItemOpen', function(){
         if(controller.closeOthers && !$scope.ignoreBroadcast){
@@ -58,6 +65,7 @@ directiveModule.directive('fmAccordion', [
       $scope.isOpen = function(){
         return $scope.open;
       };
+
     };
     
     return {

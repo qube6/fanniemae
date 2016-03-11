@@ -34,6 +34,9 @@ figure.bio-teaser{
     font-size: 14px;
     line-height: 1.1;
     margin-bottom: 5px;
+    @media(max-width: $screen-xs-max){
+      margin-right: 25px;
+    }
   }
   .icon-link{
     position: absolute;

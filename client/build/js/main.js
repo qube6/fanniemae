@@ -265,6 +265,22 @@ function findPos(obj) {
   return { left: curleft, top: curtop};
 }
 
+var setPageScroll = function(element){
+  // Allow CSS to change
+  setTimeout(function () {
+    if (elementTopInViewport(element)) return;
+    element.scrollIntoView();
+    window.scrollBy(0, -150);  // to account for sticky nav/header
+  }, 250);
+  
+}
+
+function elementTopInViewport(el) {
+  var rect = el.getBoundingClientRect();
+
+  return rect.top > 0;
+}
+
 //From underscore.js
 function throttle(func, wait, options) {
   var context, args, result;
@@ -314,7 +330,7 @@ angular.module('fannieMae').factory('fannieAPIservice', function($http) {
   return fannieAPI;
 });
 directiveModule.directive('fmAccordion', [
-  '$timeout',
+  '$timeout', 
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
       $scope.allOpen = false;
@@ -355,9 +371,16 @@ directiveModule.directive('fmAccordion', [
           if($scope.open){
             $scope.ignoreBroadcast = true;
             $scope.$parent.$broadcast('fmAccordionItemOpen');
+            if(controller.closeOthers) setPageScroll(element[0]);
           }
         }, 0);
       };
+
+      $scope.gotoAnchor = function (x) {
+        var hash = 'anchor'+x;
+        document.getElementById(hash).scrollTop;
+        console.log(document.documentElement.scrollTop);
+      }
 
       $scope.$on('fmAccordionItemOpen', function(){
         if(controller.closeOthers && !$scope.ignoreBroadcast){
@@ -373,6 +396,7 @@ directiveModule.directive('fmAccordion', [
       $scope.isOpen = function(){
         return $scope.open;
       };
+
     };
     
     return {
@@ -570,7 +594,8 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
       var updateNav = throttle(function(){
         var availableSpace = $nav[0].offsetWidth,
             stillRoom = true,
-            left;
+            left,
+            buttonTemplate;
 
         $visibleLinks.html('');
         $scope.hiddenLinks = [];
@@ -583,7 +608,11 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
               //replace the one we just added with a more button
-              $visibleLinks[0].lastChild.outerHTML = '<li class="nav-toggle" ng-class="{ \'open\' : isOpen() }"><button ng-click="toggleOpen()" ng-class="{ \'openNav\' : isOpen() }" type="button" class="fm-menu-toggle"><span class="sr-only">Toggle more items</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span><span class="count">'+left+'</span></button></li>';
+              buttonTemplate = '<li class="nav-toggle" ng-class="{ \'open\' : isOpen() }" ng-click="toggleOpen()" >';
+              buttonTemplate = buttonTemplate + '<button ng-class="{ \'openNav\' : isOpen() }" type="button" class="fm-menu-toggle">';
+              buttonTemplate = buttonTemplate + '<span class="sr-only">Toggle more items</span><span class="icon-bar one"></span><span class="icon-bar two">';
+              buttonTemplate = buttonTemplate + '</span><span class="icon-bar three"></span><span class="outline"></span><span class="count">'+left+'</span></button></li>';
+              $visibleLinks[0].lastChild.outerHTML = buttonTemplate;
               //lets tuck the item we just replaced as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;
@@ -606,6 +635,7 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
       };
 
       var handleOffElement = throttle(function($event){
+        if ($event.type == 'scroll' && !angular.element($element[0].offsetParent).hasClass('fixed')) return;
         if(!$element[0].contains($event.target)){
           $timeout(function(){
             openFlag = false;
