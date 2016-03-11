@@ -12,6 +12,12 @@
   @media (max-width: $screen-xs-max){
     margin-bottom: 90px;
   }
+  .links a{
+    color: $color-link-light-h;
+    &:hover{
+      color: $color-link-light;
+    }
+  }
   .footer-lead{
     background: $color-dark-blue;
     height: 100%;
