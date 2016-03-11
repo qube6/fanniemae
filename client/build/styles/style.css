@@ -2588,7 +2588,7 @@ figure.bio-teaser p.bio-title {
 }
 @media (max-width: 767px) {
   figure.bio-teaser p.bio-title {
-    margin-right: 25px;
+    margin-right: 30px;
   }
 }
 figure.bio-teaser .icon-link {
