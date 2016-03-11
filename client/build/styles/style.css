@@ -3683,8 +3683,14 @@ section.grid-listing .load-more {
   right: -15px;
   background: #007697;
 }
+.fm-basic-carousel-wrap.theme-2 .fm-basic-carousel a {
+  color: white;
+}
 .fm-basic-carousel-wrap.theme-2 .fm-basic-carousel a:hover {
   color: white;
+}
+.fm-basic-carousel-wrap.theme-2 .fm-basic-carousel a:visited {
+  opacity: 0.75;
 }
 .fm-basic-carousel-wrap.theme-2 .fm-basic-carousel li {
   color: #fff;
