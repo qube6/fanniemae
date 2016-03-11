@@ -268,22 +268,17 @@ function findPos(obj) {
 var setPageScroll = function(element){
   // Allow CSS to change
   setTimeout(function () {
-    if (elementInViewport(element)) return;
+    if (elementTopInViewport(element)) return;
     element.scrollIntoView();
     window.scrollBy(0, -150);  // to account for sticky nav/header
   }, 250);
   
 }
 
-function elementInViewport(el) {
+function elementTopInViewport(el) {
   var rect = el.getBoundingClientRect();
 
-  return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && 
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
-  );
+  return rect.top > 0;
 }
 
 //From underscore.js
@@ -376,7 +371,7 @@ directiveModule.directive('fmAccordion', [
           if($scope.open){
             $scope.ignoreBroadcast = true;
             $scope.$parent.$broadcast('fmAccordionItemOpen');
-            if(controller.closeOthers) adjustScroll();
+            if(controller.closeOthers) setPageScroll(element[0]);
           }
         }, 0);
       };
@@ -402,9 +397,6 @@ directiveModule.directive('fmAccordion', [
         return $scope.open;
       };
 
-      var adjustScroll = function(){
-        setPageScroll(element[0]);
-      }
     };
     
     return {
