@@ -233,7 +233,7 @@ body{
 .color-brand a, a.color-brand{
   color: $color-link-light;
   &:hover{
-    color: white;
+    color: $color-link-light-h;
   }
 }
 
