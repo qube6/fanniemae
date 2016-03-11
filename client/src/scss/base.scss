@@ -195,7 +195,7 @@ body{
       color: $color-link-dark-h;
     }
     &:visited{
-      color: $color-link-dark-v;
+      opacity: $link-opacity-dark;
     }
   }
 }
@@ -212,21 +212,18 @@ body{
   &:hover{
     color: $color-link-light;
   }
-  &:hover{
-    color: $color-link-light-v;
-  }
 }
 
 .color-dark{
   color: $color-dark-blue;
 }
 .color-dark a, a.color-dark{
-  color: $color-dark-blue;
+  color: $color-link-dark;
   &:hover{
-    color: $color-link-light;
+    color: $color-link-dark-h;
   }
   &:hover{
-    color: $color-link-light-v;
+   opacity: $link-opacity-dark;
   }
 }
 
@@ -236,10 +233,7 @@ body{
 .color-brand a, a.color-brand{
   color: $color-link-light;
   &:hover{
-    color: $color-link-light-h;
-  }
-  &:hover{
-    color: $color-link-light-v;
+    color: white;
   }
 }
 
@@ -320,9 +314,6 @@ body{
   &:hover{
     color:$color-link-light-h;
   }  
-  &:visted{
-    color: $color-link-light-v;
-  }
 }
 .block{
   margin-bottom: 30px;

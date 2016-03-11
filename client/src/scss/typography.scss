@@ -23,7 +23,7 @@ a {
   @include transition(none);
 }
 a:visited {
-  color: $color-link-light-v;
+  opacity: $link-opacity-light;
 }
 a:hover {
   color: $color-link-light-h;
