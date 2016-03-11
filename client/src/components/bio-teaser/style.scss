@@ -46,9 +46,12 @@ figure.bio-teaser{
     text-align: right;
     font-size: 20px;
     padding: 10px;
-    background: $color-dark-blue;
+    background: $color-link-light;
     &:hover{
-      color: white;
+      color: $color-link-light-h;
+    }
+    &:visited{
+      opacity: $link-opacity-light;
     }
   }
   
