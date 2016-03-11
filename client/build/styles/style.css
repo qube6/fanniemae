@@ -2608,10 +2608,13 @@ figure.bio-teaser .icon-link {
   text-align: right;
   font-size: 20px;
   padding: 10px;
-  background: #000f2b;
+  background: #007697;
 }
 figure.bio-teaser .icon-link:hover {
-  color: white;
+  color: #000F2B;
+}
+figure.bio-teaser .icon-link:visited {
+  opacity: 0.75;
 }
 @media (max-width: 1199px) {
   .rail-list figure.bio-teaser {
@@ -4378,6 +4381,40 @@ section.secondary-subpages {
   position: relative;
 }
 
+.social-share ul {
+  float: right;
+}
+@media (max-width: 767px) {
+  .social-share ul {
+    float: none;
+    text-align: center;
+  }
+}
+.social-share li {
+  color: #000;
+  display: inline;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 5px;
+}
+.social-share li:last-child {
+  margin-right: 0;
+}
+.social-share span {
+  color: #000;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 18px;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+}
+.social-share span:hover {
+  text-decoration: none;
+  color: #007697;
+}
+
 section.subpage-teaser-listing .display-table {
   border-spacing: 20px;
   margin: 0 -20px;
@@ -4430,40 +4467,6 @@ section.subpage-teaser-listing img {
 section.subpage-teaser-listing img:hover {
   -webkit-filter: saturate(200%);
   filter: saturate(200%);
-}
-
-.social-share ul {
-  float: right;
-}
-@media (max-width: 767px) {
-  .social-share ul {
-    float: none;
-    text-align: center;
-  }
-}
-.social-share li {
-  color: #000;
-  display: inline;
-  font-size: 12px;
-  line-height: 18px;
-  margin: 0 5px;
-}
-.social-share li:last-child {
-  margin-right: 0;
-}
-.social-share span {
-  color: #000;
-  border-radius: 3px;
-  padding: 5px;
-  font-size: 18px;
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  cursor: pointer;
-}
-.social-share span:hover {
-  text-decoration: none;
-  color: #007697;
 }
 
 section.testimonials {
