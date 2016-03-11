@@ -59,7 +59,7 @@ section.testimonials{
   blockquote{
     position: relative;
     @include center-y();
-    font-size: 20px;
+    font-size: 26px;
     @media (max-width: $screen-xs-max){
       font-size: 18px;
       margin-top: -50px;
@@ -68,7 +68,7 @@ section.testimonials{
       font-size: 14px;
       display: block;
       position: absolute;
-      top: 100%;
+      top: 110%;
       line-height: 18px;
     }
   }
