@@ -128,6 +128,10 @@
   font-size: 1.8rem;
   border: 2px solid $color-link-light;
   border-radius: 50%; 
+  &:hover{
+    color: $color-link-light-h;
+    border-color: $color-link-light-h;
+  }
   @media (max-width: $screen-xs-max){
     font-size:1.4rem;
   }
@@ -175,8 +179,12 @@
       }
     }
     .rn-carousel-control{
-      color:#fff;
-      border-color: #fff;
+      color: $color-link-copy-dark;
+      border-color: $color-link-copy-dark;
+      &:hover{
+        color: $color-link-copy-dark-h;
+        border-color: $color-link-copy-dark-h;
+      }
     }
   }
 }
