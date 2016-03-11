@@ -1246,7 +1246,7 @@ main #page-wrapper {
 }
 
 @media (min-width: 768px) {
-  .fm-bottom-rail {
+  .fm-bottom-rail aside:first-child {
     margin-top: 20px;
   }
 }
@@ -1927,31 +1927,6 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   }
 }
 
-.article-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
-}
-.article-header h1 {
-  font-size: 30px;
-  line-height: 34px;
-  margin: 0;
-}
-.article-header h2 {
-  font-size: 18px;
-  line-height: 25px;
-  margin: 0;
-}
-.article-header .article-category {
-  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.article-header .article-date {
-  font-size: 12px;
-  margin: 10px 0 0;
-}
-
 .fm-accordion {
   width: 100%;
   margin: 20px 0 0;
@@ -2524,6 +2499,41 @@ button[type="button"].header-search-btn span.icon {
   color: white;
 }
 
+.article-share {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 16px;
+}
+.article-share .fa {
+  margin: 0 5px;
+}
+
+.article-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+.article-header h1 {
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0;
+}
+.article-header h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+.article-header .article-category {
+  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.article-header .article-date {
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
 .article-teaser {
   padding-bottom: 10px;
 }
@@ -2543,16 +2553,6 @@ button[type="button"].header-search-btn span.icon {
 }
 .article-teaser .rich-text-block hr {
   margin-top: 65px;
-}
-
-.article-share {
-  margin-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-size: 16px;
-}
-.article-share .fa {
-  margin: 0 5px;
 }
 
 figure.bio-teaser {
@@ -3461,6 +3461,35 @@ section.grid-listing .load-more {
   cursor: default;
 }
 
+.image-promo figure {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .image-promo figure {
+    margin-top: 30px;
+  }
+}
+.image-promo figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 50px);
+}
+.image-promo .white-bg .cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000f2b;
+  color: #007697;
+}
+.image-promo img {
+  width: 100%;
+  height: auto;
+}
+.image-promo h1 {
+  font-size: 16px;
+}
+
 .fm-basic-carousel-wrap {
   zoom: 1;
   position: relative;
@@ -3677,33 +3706,13 @@ section.grid-listing .load-more {
   float: left;
 }
 
-.image-promo figure {
-  position: relative;
-}
-@media (max-width: 767px) {
-  .image-promo figure {
-    margin-top: 30px;
+@media (max-width: 720px) {
+  .job-search .blue-block button {
+    width: 100%;
+    right: 0;
+    margin-left: 0;
+    left: auto;
   }
-}
-.image-promo figure figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% - 50px);
-}
-.image-promo .white-bg .cta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #000f2b;
-  color: #007697;
-}
-.image-promo img {
-  width: 100%;
-  height: auto;
-}
-.image-promo h1 {
-  font-size: 16px;
 }
 
 .locator-form {
@@ -3732,15 +3741,6 @@ section.grid-listing .load-more {
 }
 .locator-form ul.inline li {
   padding: 0 10px;
-}
-
-@media (max-width: 720px) {
-  .job-search .blue-block button {
-    width: 100%;
-    right: 0;
-    margin-left: 0;
-    left: auto;
-  }
 }
 
 .more-in {
@@ -4307,12 +4307,6 @@ section.overview.with-image .caption p {
   max-height: 100px;
 }
 
-section.secondary-subpages {
-  min-height: 400px;
-  padding-bottom: 40px;
-  position: relative;
-}
-
 .fm-title {
   font-size: 18px;
   display: block;
@@ -4374,6 +4368,46 @@ section.secondary-subpages {
   }
 }
 
+.social-share ul {
+  float: right;
+}
+@media (max-width: 767px) {
+  .social-share ul {
+    float: none;
+    text-align: center;
+  }
+}
+.social-share li {
+  color: #000;
+  display: inline;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 5px;
+}
+.social-share li:last-child {
+  margin-right: 0;
+}
+.social-share span {
+  color: #000;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 18px;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+}
+.social-share span:hover {
+  text-decoration: none;
+  color: #007697;
+}
+
+section.secondary-subpages {
+  min-height: 400px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
 section.subpage-teaser-listing .display-table {
   border-spacing: 20px;
   margin: 0 -20px;
@@ -4426,40 +4460,6 @@ section.subpage-teaser-listing img {
 section.subpage-teaser-listing img:hover {
   -webkit-filter: saturate(200%);
   filter: saturate(200%);
-}
-
-.social-share ul {
-  float: right;
-}
-@media (max-width: 767px) {
-  .social-share ul {
-    float: none;
-    text-align: center;
-  }
-}
-.social-share li {
-  color: #000;
-  display: inline;
-  font-size: 12px;
-  line-height: 18px;
-  margin: 0 5px;
-}
-.social-share li:last-child {
-  margin-right: 0;
-}
-.social-share span {
-  color: #000;
-  border-radius: 3px;
-  padding: 5px;
-  font-size: 18px;
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  cursor: pointer;
-}
-.social-share span:hover {
-  text-decoration: none;
-  color: #007697;
 }
 
 section.testimonials {
