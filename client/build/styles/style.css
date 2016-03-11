@@ -1758,7 +1758,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   left: calc(50% - 7px);
   width: 14px;
   height: 2px;
-  background: #007697;
+  background: #00acdc;
   display: block;
   height: 2px;
   margin: 0 auto;
@@ -1774,7 +1774,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px solid #007697;
+  border: 2px solid #00acdc;
   top: calc(50% - 8px);
 }
 .fm-menu-toggle .icon-bar.two {
@@ -2033,6 +2033,14 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   background: transparent;
   cursor: pointer;
 }
+@media (max-width: 1199px) {
+  .navbar-offcanvas button[type="button"] {
+    color: #007697;
+  }
+  .navbar-offcanvas button[type="button"]:hover {
+    color: #000F2B;
+  }
+}
 
 /* Drop-down Nav Menu */
 .main-menu {
@@ -2064,6 +2072,9 @@ ul.link-listing:not(.custom-icons) > li > a:after {
     font-size: 16px;
   }
 }
+.main-menu > li a:hover {
+  color: #007697 !important;
+}
 .main-menu > li button {
   position: absolute;
   height: 70px;
@@ -2071,7 +2082,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   width: 65px;
   right: 0;
   padding: 0;
-  color: #007697;
+  color: #00acdc;
 }
 .main-menu > li ul {
   -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -2100,6 +2111,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
 }
 .main-menu > li ul li a:hover {
   text-decoration: underline;
+  color: #000F2B;
 }
 
 /* All FannieMae Sites Button */
@@ -2119,7 +2131,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   }
 }
 .menu-sites .toggle-sites {
-  color: #007697;
+  color: #00acdc;
   text-transform: none;
   font-size: 14px;
   line-height: 40px;
@@ -2184,12 +2196,15 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   }
 }
 .sites-list a:hover h2, .open .sites-list a:hover h2 {
-  color: #e4e4e4;
+  color: white;
   text-decoration: underline;
 }
 @media only screen and (max-width: 1199px) {
   .sites-list a:hover h2, .open .sites-list a:hover h2 {
     color: black;
+  }
+  .sites-list a:hover h2:hover, .open .sites-list a:hover h2:hover {
+    color: #007697;
   }
 }
 .sites-list a:hover .dropdown-toggle:before, .sites-list a:hover .dropdown-toggle:after, .open .sites-list a:hover .dropdown-toggle:before, .open .sites-list a:hover .dropdown-toggle:after {
@@ -2208,7 +2223,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   font-weight: 700;
   text-align: left;
   line-height: 1;
-  border-bottom: 2px solid #007697;
+  border-bottom: 2px solid #00acdc;
   margin: 30px 20px 0;
   padding: 0 0 10px;
 }
@@ -2218,19 +2233,30 @@ ul.link-listing:not(.custom-icons) > li > a:after {
     color: #e4e4e4;
   }
 }
+@media (max-width: 1199px) {
+  .sites-list h1, .open .sites-list h1 {
+    border-color: #007697;
+  }
+}
 .sites-list h2, .open .sites-list h2 {
   font-size: 16px;
   margin: 0;
-  color: #007697;
+  color: #00acdc;
+}
+.sites-list h2:hover, .open .sites-list h2:hover {
+  color: white;
 }
 @media only screen and (max-width: 1199px) {
   .sites-list h2, .open .sites-list h2 {
     padding: 25px 25px 25px 20px;
-    color: black;
+    color: #000f2b;
+  }
+  .sites-list h2:hover, .open .sites-list h2:hover {
+    color: #007697;
   }
 }
 .sites-list .subhead, .open .sites-list .subhead {
-  color: #007697;
+  color: #000f2b;
   font-size: 12px;
 }
 @media (min-width: 1200px) {
@@ -2241,15 +2267,22 @@ ul.link-listing:not(.custom-icons) > li > a:after {
 .sites-list button.icon, .open .sites-list button.icon {
   font-size: 30px;
   position: absolute;
-  color: #007697;
   padding: 0;
   top: 20px;
   right: 20px;
+  color: #007697;
+}
+.sites-list button.icon:hover, .open .sites-list button.icon:hover {
+  color: #000F2B;
 }
 @media (min-width: 1200px) {
   .sites-list button.icon, .open .sites-list button.icon {
     right: 0;
     top: 9px;
+    color: #00acdc;
+  }
+  .sites-list button.icon:hover, .open .sites-list button.icon:hover {
+    color: white;
   }
 }
 @media (min-width: 1200px) {
@@ -2299,15 +2332,20 @@ ul.link-listing:not(.custom-icons) > li > a:after {
 .sites-list .submenu li a, .open .sites-list .submenu li a {
   padding: 0 0 0 20px !important;
   font-size: 14px;
+  color: #00acdc;
 }
 @media only screen and (max-width: 1199px) {
   .sites-list .submenu li a, .open .sites-list .submenu li a {
     padding: 15px 20px !important;
     display: block;
+    color: #007697;
+  }
+  .sites-list .submenu li a:hover, .open .sites-list .submenu li a:hover {
+    color: #000F2B;
   }
 }
 .sites-list .submenu li a:hover, .open .sites-list .submenu li a:hover {
-  color: #e4e4e4;
+  color: white;
   text-decoration: underline;
 }
 
@@ -2379,7 +2417,7 @@ input[type="submit"].header-search-submit {
 
 button[type="button"].header-search-btn {
   width: 60px;
-  color: #007697;
+  color: #00acdc;
   position: relative;
 }
 button[type="button"].header-search-btn:hover {
@@ -2426,7 +2464,7 @@ button[type="button"].header-search-btn span.icon {
   right: 10px;
   font-size: 30px;
   padding: 5px 10px;
-  color: #007697;
+  color: #00acdc;
 }
 @media (min-width: 1200px) {
   .header-search-form .icon {
@@ -3667,6 +3705,10 @@ section.grid-listing .load-more {
   border: 2px solid #007697;
   border-radius: 50%;
 }
+.rn-carousel-control:hover {
+  color: #000F2B;
+  border-color: #000F2B;
+}
 @media (max-width: 767px) {
   .rn-carousel-control {
     font-size: 1.4rem;
@@ -3710,8 +3752,12 @@ section.grid-listing .load-more {
   background: transparent;
 }
 .fm-basic-carousel-wrap.theme-2 .fm-basic-carousel .rn-carousel-control {
-  color: #fff;
-  border-color: #fff;
+  color: white;
+  border-color: white;
+}
+.fm-basic-carousel-wrap.theme-2 .fm-basic-carousel .rn-carousel-control:hover {
+  color: #007697;
+  border-color: #007697;
 }
 
 .fm-basic-carousel-wrap.theme-3 .fm-basic-carousel {
