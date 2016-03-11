@@ -26,11 +26,14 @@
       background: white;
       color: $color-dark-blue;
     }
-    a:not(.more){
+    a, a.more{
       color: white;
       &:hover{
         color: $color-link-light;
       }
+    }
+    .fm-date{
+      color: white;
     }
     .block{
       border-color: rgba(255, 255, 255, .5);
@@ -40,7 +43,10 @@
     position: absolute;
     right: 10px;
     bottom: 5px;
-    color: white;
+    color: $color-link-light;
+    &:hover{
+      color: $color-dark-blue;
+    }
     @media (min-width: $screen-sm){
       right: 30px;
       bottom: 30px;
