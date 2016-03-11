@@ -386,7 +386,7 @@ ul.link-listing{
     left: calc(50% - 7px);
     width: 14px;
     height: 2px;
-    background: $color-teal;
+    background: $color-link-dark;
     display: block;
     height: 2px;
     margin: 0 auto;
@@ -399,7 +399,7 @@ ul.link-listing{
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    border: 2px solid $color-teal;
+    border: 2px solid $color-link-dark;
     top: calc(50% - 8px);
   }
   .icon-bar{
