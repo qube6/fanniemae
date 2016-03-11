@@ -278,7 +278,10 @@ var setPageScroll = function(element){
 function elementTopInViewport(el) {
   var rect = el.getBoundingClientRect();
 
-  return rect.top > 0;
+  return (
+    rect.top > 0 &&
+    rect.top < window.innerHeight
+  );
 }
 
 //From underscore.js
@@ -364,6 +367,7 @@ directiveModule.directive('fmAccordion', [
     var link = function ($scope, element, attrs, controller) {
       $scope.open = attrs.open != undefined;
       $scope.ignoreBroadcast = false;
+      var closeOthers = controller.closeOthers;
 
       $scope.toggleItem = function(){
         $timeout(function(){
@@ -371,7 +375,7 @@ directiveModule.directive('fmAccordion', [
           if($scope.open){
             $scope.ignoreBroadcast = true;
             $scope.$parent.$broadcast('fmAccordionItemOpen');
-            if(controller.closeOthers) setPageScroll(element[0]);
+            if(closeOthers) setPageScroll(element[0]);
           }
         }, 0);
       };
@@ -383,7 +387,7 @@ directiveModule.directive('fmAccordion', [
       }
 
       $scope.$on('fmAccordionItemOpen', function(){
-        if(controller.closeOthers && !$scope.ignoreBroadcast){
+        if(closeOthers && !$scope.ignoreBroadcast){
           $scope.open = false;
         }
         $scope.ignoreBroadcast = false;
