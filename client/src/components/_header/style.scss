@@ -112,6 +112,9 @@
       @media only screen and (max-width: $screen-md-max){
         font-size: 16px;
       }
+      &:hover{
+        color: $color-link-light !important;
+      }
     }
     button{
       position: absolute;
@@ -260,9 +263,9 @@
     }
     @media only screen and (max-width: $screen-md-max){
       padding: 25px 25px 25px 20px;
-      color: $color-link-light;
+      color: $color-dark-blue;
       &:hover{
-        color: $color-link-light-h;
+        color: $color-link-light
       }
     }
 
