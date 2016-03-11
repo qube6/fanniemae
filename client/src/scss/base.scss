@@ -270,6 +270,9 @@ body{
     width: 100%;
     margin: 0 0 15px;
     -moz-appearance:none;
+    &::-ms-expand{
+      display:none; //hides arrow for ie10
+    }
   }
   &:after{
     border-top-color:#fff;
