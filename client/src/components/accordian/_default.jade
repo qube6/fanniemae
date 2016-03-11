@@ -5,8 +5,19 @@ fm-accordion.fm-accordion
       div(ng-show="!allOpen") Expand All
       span.icon.list-icon(ng-class=" allOpen ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
   ul.link-listing.custom-icons.bottom-border
+<<<<<<< HEAD
     li(fm-accordion-item ng-class="{ 'open' : isOpen() }" open)
       a(href="" ng-click="toggleItem()") The Executive Committee
+=======
+    //- li(fm-accordion-item ng-class="{ 'open' : isOpen() }" open)
+    //-   a(href="" ng-click="toggleItem()") Committee Composition
+    //-     span.icon.list-icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
+    //-   .fm-accordion-content
+    //-     .rich-text-block
+    //-       p No mea saepe consequat deseruisse. Vidisse nominavi no per, in vel ludus animal offendit. Mnesarchum scribentur ad duo, mea liber corpora vulputate te.
+    li(fm-accordion-item id="anchor1" ng-class="{ 'open' : isOpen() }")
+      a(href="" ng-click="toggleItem(); gotoAnchor(1)") The Executive Committee
+>>>>>>> 14f46171929c5a5b8bebf98d5efc6231b1249cd9
         span.icon.list-icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
       .fm-accordion-content
         .rich-text-block
@@ -28,8 +39,8 @@ fm-accordion.fm-accordion
           include ../bio-teaser/_default.jade
           -var config = { name: "Timothy J. Mayopoulos", title: "President and Chief Executive Officer, Fannie Mae", link: true}
           include ../bio-teaser/_default.jade
-    li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
-      a(href="" ng-click="toggleItem()") The Audit Committee
+    li(fm-accordion-item id="anchor2" ng-class="{ 'open' : isOpen() }")
+      a(href="" ng-click="toggleItem(); gotoAnchor(2)") The Audit Committee
         span.icon.list-icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
       .fm-accordion-content
         .rich-text-block
