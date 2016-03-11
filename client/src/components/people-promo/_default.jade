@@ -1,4 +1,4 @@
-aside.rail-list.white-bg.padding-30(fm-accordion)
+aside.rail-list.white-bg.padding-30(fm-accordion close-others="false")
   div(fm-accordion-item)
     h1.fm-subtitle Authors
     ul.bottom-border(ng-cloak)
@@ -19,4 +19,4 @@ aside.rail-list.white-bg.padding-30(fm-accordion)
         span(ng-show="!isOpen()") View All
           i.icon.fm-plus-circle(aria-hidden="true")
         span(ng-show="isOpen()") View Less
-          i.icon.fm-minus-circle(aria-hidden="true")
+          i.icon.fm-minus.circle(aria-hidden="true")

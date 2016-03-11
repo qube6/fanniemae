@@ -20,6 +20,7 @@ a {
   color: $color-link-light;
   text-decoration: none;
   cursor: pointer;
+  @include transition(none);
 }
 a:visited {
   color: $color-link-light-v;
