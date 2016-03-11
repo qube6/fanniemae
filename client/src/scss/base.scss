@@ -233,7 +233,7 @@ body{
   &:hover{
     color: $color-link-dark-h;
   }
-  &:hover{
+  &:visited{
    opacity: $link-opacity-dark;
   }
 }
@@ -244,7 +244,7 @@ body{
 .color-brand a, a.color-brand{
   color: $color-link-light;
   &:hover{
-    color: white;
+    color: $color-link-light-h;
   }
 }
 

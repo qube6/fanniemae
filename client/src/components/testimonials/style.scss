@@ -42,14 +42,18 @@ section.testimonials{
     }
     .rn-carousel-control{
       top: 50%; 
-      color: white;
-      border-color: white;
+      color: $color-link-dark;
+      border-color: $color-link-dark;
+      &:hover{
+        color: $color-link-dark-h;
+        border-color: $color-link-dark-h;
+      }
     }
     .fm-carousel-controls{
       @include center-x;
       span{
-        border-color: white;
-        background-color: white;
+        border-color: $color-link-dark;
+        background-color: $color-link-dark;
         &.active{
           background: transparent;
         }
