@@ -31,9 +31,6 @@
     text-align: center;
     color: $color-link-dark;
     position: relative;
-    &:visited{
-      color: $color-link-dark-v;
-    }
     &:hover{
       color: $color-link-dark-h;
     }
@@ -89,9 +86,6 @@
         color: $color-link-light;
         &:hover{
           color: $color-link-light-h;
-        }
-        &:visted{
-          color: $color-link-light-v;
         }
       }
     }

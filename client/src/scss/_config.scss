@@ -17,13 +17,17 @@ $color-body-bg: rgba(230, 230, 230, 1);
 $color-body-bg-50: rgba(230, 230, 230, .5);
 $color-hr: rgba(0, 0, 0, .3);
 
-$color-link-light: $color-teal;
-$color-link-light-v: rgba(0, 118, 151, .8);
-$color-link-light-h: $color-dark;
+$color-link-light: #007697;
+$link-opacity-light: .75;
+$color-link-light-h:  #000F2B;
 
-$color-link-dark: $color-teal;
-$color-link-dark-v: rgba(0, 118, 151, .8);
+$color-link-dark:  #00acdc;
+$link-opacity-dark: .75;
 $color-link-dark-h: white;
+
+$color-link-copy-dark:  white;
+$link-opacity-copy-dark: .75;
+$color-link-copy-dark-h:  #007697;
 
 $font-sans-serif: 'Urbano-Regular', 'Arial', sans-serif;
 $font-serif: 'Glyddon-Regular', 'Georgia', 'Century', serif;

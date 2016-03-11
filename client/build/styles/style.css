@@ -377,11 +377,11 @@ a {
 }
 
 a:visited {
-  color: rgba(0, 118, 151, 0.8);
+  opacity: 0.75;
 }
 
 a:hover {
-  color: #000f2b;
+  color: #000F2B;
   text-decoration: underline;
 }
 
@@ -1418,7 +1418,7 @@ body {
   line-height: 26px;
 }
 a:hover .icon.circle {
-  border-color: #000f2b;
+  border-color: #000F2B;
 }
 
 .dropdown-toggle {
@@ -1560,13 +1560,13 @@ li.open .dropdown-toggle:before {
   color: white;
 }
 .dark-bg a {
-  color: #007697;
+  color: #00acdc;
 }
 .dark-bg a:hover {
   color: white;
 }
 .dark-bg a:visited {
-  color: rgba(0, 118, 151, 0.8);
+  opacity: 0.75;
 }
 
 .white-bg {
@@ -1584,22 +1584,19 @@ li.open .dropdown-toggle:before {
 .color-white a:hover, a.color-white:hover {
   color: #007697;
 }
-.color-white a:hover, a.color-white:hover {
-  color: rgba(0, 118, 151, 0.8);
-}
 
 .color-dark {
   color: #000f2b;
 }
 
 .color-dark a, a.color-dark {
-  color: #000f2b;
+  color: #00acdc;
 }
 .color-dark a:hover, a.color-dark:hover {
-  color: #007697;
+  color: white;
 }
 .color-dark a:hover, a.color-dark:hover {
-  color: rgba(0, 118, 151, 0.8);
+  opacity: 0.75;
 }
 
 .color-brand {
@@ -1610,10 +1607,7 @@ li.open .dropdown-toggle:before {
   color: #007697;
 }
 .color-brand a:hover, a.color-brand:hover {
-  color: #000f2b;
-}
-.color-brand a:hover, a.color-brand:hover {
-  color: rgba(0, 118, 151, 0.8);
+  color: white;
 }
 
 .padding-10 {
@@ -1695,10 +1689,7 @@ li.open .dropdown-toggle:before {
   line-height: 30px;
 }
 .more:hover {
-  color: #000f2b;
-}
-.more:visted {
-  color: rgba(0, 118, 151, 0.8);
+  color: #000F2B;
 }
 
 .block {
@@ -2431,6 +2422,31 @@ button[type="button"].header-search-btn span.icon {
   color: white;
 }
 
+.article-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+.article-header h1 {
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0;
+}
+.article-header h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+.article-header .article-category {
+  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.article-header .article-date {
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
 .fm-accordion {
   width: 100%;
   margin: 20px 0 0;
@@ -2500,31 +2516,6 @@ button[type="button"].header-search-btn span.icon {
 }
 .fm-accordion li.open .fm-accordion-content {
   max-height: 9000px;
-}
-
-.article-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
-}
-.article-header h1 {
-  font-size: 30px;
-  line-height: 34px;
-  margin: 0;
-}
-.article-header h2 {
-  font-size: 18px;
-  line-height: 25px;
-  margin: 0;
-}
-.article-header .article-category {
-  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.article-header .article-date {
-  font-size: 12px;
-  margin: 10px 0 0;
 }
 
 .article-share {
@@ -3341,7 +3332,7 @@ section.grid-listing li.block .cta i {
   padding: 0;
 }
 section.grid-listing li.block .cta:hover {
-  color: #000f2b;
+  color: #000F2B;
 }
 section.grid-listing .load-more {
   margin: 10px;
@@ -4085,7 +4076,7 @@ section.overview.with-image .caption p {
   border-color: rgba(255, 255, 255, 0.3);
 }
 .rail-navigation ul.link-listing li a {
-  color: #007697;
+  color: #00acdc;
   font-size: 16px;
 }
 .rail-navigation ul.link-listing li a.active {
@@ -4229,11 +4220,8 @@ section.overview.with-image .caption p {
 .search-call-out a {
   padding: 0 30px 0 0;
   text-align: center;
-  color: #007697;
+  color: #00acdc;
   position: relative;
-}
-.search-call-out a:visited {
-  color: rgba(0, 118, 151, 0.8);
 }
 .search-call-out a:hover {
   color: white;
@@ -4249,7 +4237,7 @@ section.overview.with-image .caption p {
   height: 0;
   border-style: solid;
   border-width: 5px 5px 0 5px;
-  border-color: #007697 transparent transparent transparent;
+  border-color: #00acdc transparent transparent transparent;
   right: 0;
   top: calc(50% - 3px);
   position: absolute;
@@ -4310,10 +4298,7 @@ section.overview.with-image .caption p {
     color: #007697;
   }
   .search-call-out .submenu a:hover {
-    color: #000f2b;
-  }
-  .search-call-out .submenu a:visted {
-    color: rgba(0, 118, 151, 0.8);
+    color: #000F2B;
   }
 }
 .search-call-out .open .submenu {
