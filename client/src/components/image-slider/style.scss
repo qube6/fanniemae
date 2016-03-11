@@ -122,21 +122,23 @@
   line-height: 1;
   display: inline-block;
   text-decoration: none;
-  color:#007697;
+  color: $color-link-light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.8rem;
+  border: 2px solid $color-link-light;
+  border-radius: 50%; 
   @media (max-width: $screen-xs-max){
     font-size:1.4rem;
   }
   &.rn-carousel-control-prev{
     &:before{      
-      content: '\e900';
+      content: "\e901";
     }
   }
   &.rn-carousel-control-next{
     &:before{
-      content: '\e902';
+      content: "\e903";
     }
   }
 }
@@ -168,6 +170,7 @@
     }
     .rn-carousel-control{
       color:#fff;
+      border-color: #fff;
     }
   }
 }
