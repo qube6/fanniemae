@@ -6,7 +6,9 @@
     margin: 20px 0 30px;
   }
   .full-width-max {
-    padding: 0 35px;
+    @media (min-width: $full-width-max){
+      padding: 0 35px;
+    }
   }
 }
 .breadcrumb{

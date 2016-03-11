@@ -1639,6 +1639,18 @@ li.open .dropdown-toggle:before {
   border-top-color: #fff;
   pointer-events: none;
 }
+.styled-select:before {
+  display: block;
+  position: absolute;
+  content: '';
+  right: 30px;
+  top: 3px;
+  height: 34px;
+  width: 25px;
+  background: #26334b;
+  z-index: 5;
+  pointer-events: none;
+}
 
 .more {
   font-size: 16px;
@@ -2503,6 +2515,16 @@ button[type="button"].header-search-btn span.icon {
   margin: 10px 0 0;
 }
 
+.article-share {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 16px;
+}
+.article-share .fa {
+  margin: 0 5px;
+}
+
 .article-teaser {
   padding-bottom: 10px;
 }
@@ -2522,16 +2544,6 @@ button[type="button"].header-search-btn span.icon {
 }
 .article-teaser .rich-text-block hr {
   margin-top: 65px;
-}
-
-.article-share {
-  margin-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-size: 16px;
-}
-.article-share .fa {
-  margin: 0 5px;
 }
 
 figure.bio-teaser {
@@ -2691,8 +2703,10 @@ figure.bio-teaser .icon-link:hover {
     margin: 20px 0 30px;
   }
 }
-.breadcrumb-social-wrap .full-width-max {
-  padding: 0 35px;
+@media (min-width: 1440px) {
+  .breadcrumb-social-wrap .full-width-max {
+    padding: 0 35px;
+  }
 }
 
 .breadcrumb {
@@ -3321,35 +3335,6 @@ section.grid-listing .load-more {
   margin: 10px;
 }
 
-.image-promo figure {
-  position: relative;
-}
-@media (max-width: 767px) {
-  .image-promo figure {
-    margin-top: 30px;
-  }
-}
-.image-promo figure figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% - 50px);
-}
-.image-promo .white-bg .cta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #000f2b;
-  color: #007697;
-}
-.image-promo img {
-  width: 100%;
-  height: auto;
-}
-.image-promo h1 {
-  font-size: 16px;
-}
-
 .fm-homepage-carousel {
   margin: 0 -15px;
   position: relative;
@@ -3465,6 +3450,35 @@ section.grid-listing .load-more {
   border: 2px solid white;
   top: 2px;
   cursor: default;
+}
+
+.image-promo figure {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .image-promo figure {
+    margin-top: 30px;
+  }
+}
+.image-promo figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 50px);
+}
+.image-promo .white-bg .cta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000f2b;
+  color: #007697;
+}
+.image-promo img {
+  width: 100%;
+  height: auto;
+}
+.image-promo h1 {
+  font-size: 16px;
 }
 
 .fm-basic-carousel-wrap {
@@ -4284,12 +4298,6 @@ section.overview.with-image .caption p {
   max-height: 100px;
 }
 
-section.secondary-subpages {
-  min-height: 400px;
-  padding-bottom: 40px;
-  position: relative;
-}
-
 .fm-title {
   font-size: 18px;
   display: block;
@@ -4349,6 +4357,12 @@ section.secondary-subpages {
     margin-top: 30px;
     min-height: 255px;
   }
+}
+
+section.secondary-subpages {
+  min-height: 400px;
+  padding-bottom: 40px;
+  position: relative;
 }
 
 .social-share ul {
@@ -4635,21 +4649,6 @@ nav.top-navigation ul.hidden-links li a {
 }
 nav.top-navigation ul.hidden-links.open {
   max-height: 500px;
-}
-
-section.topic-box select::-ms-expand {
-  display: none;
-}
-section.topic-box .styled-select:before {
-  display: block;
-  position: absolute;
-  content: '';
-  right: 30px;
-  top: 0px;
-  height: 40px;
-  width: 25px;
-  background: #26334b;
-  z-index: 5;
 }
 
 body.fonts-alternate {
