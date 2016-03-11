@@ -152,8 +152,14 @@
       right: -15px;
       background: #007697;
     }
-    a:hover{
-      color: white;
+    a{
+      color: $color-link-copy-dark;
+      &:hover{
+        color: $color-link-dark-h;
+      }
+      &:visited{
+        opacity: $link-opacity-dark;
+      }
     }
     li{
       color:#fff;
