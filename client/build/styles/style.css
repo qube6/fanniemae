@@ -4544,7 +4544,7 @@ section.testimonials blockquote {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-size: 20px;
+  font-size: 26px;
 }
 @media (max-width: 767px) {
   section.testimonials blockquote {
@@ -4556,7 +4556,7 @@ section.testimonials blockquote cite {
   font-size: 14px;
   display: block;
   position: absolute;
-  top: 100%;
+  top: 110%;
   line-height: 18px;
 }
 
