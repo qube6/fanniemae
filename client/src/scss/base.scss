@@ -222,7 +222,7 @@ body{
   &:hover{
     color: $color-link-dark-h;
   }
-  &:hover{
+  &:visited{
    opacity: $link-opacity-dark;
   }
 }
