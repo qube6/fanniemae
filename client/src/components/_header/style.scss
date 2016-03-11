@@ -78,6 +78,12 @@
     outline: none;
     background: transparent;
     cursor: pointer;
+    @media (max-width: $screen-md-max){
+      color: $color-link-light;
+      &:hover{
+        color: $color-link-light-h;
+      }
+    }
   }
 }
 
@@ -114,7 +120,7 @@
       width: 65px;
       right: 0;
       padding: 0;
-      color: $color-teal;
+      color: $color-link-dark;
     }
     ul{
       @include box-shadow(5px 5px 5px 0px rgba(0,0,0,0.25));
@@ -129,12 +135,13 @@
       }
       li a{
         line-height: 20px;
-        color: $color-teal;
+        color: $color-link-light;
         @media only screen and (max-width: $screen-md-max){
           font-size: 14px;
         }
         &:hover{
           text-decoration: underline;
+          color: $color-link-light-h;
         }
       }
     }
@@ -154,7 +161,7 @@
     border-left: 1px solid $color-gray;
   }
   .toggle-sites{
-    color: $color-teal;
+    color: $color-link-dark;
     text-transform: none;
     font-size: 14px;
     line-height: $header-element-height;
@@ -164,7 +171,7 @@
     text-align: left;
     width: 100%;
     &:hover{
-      color: white;
+      color: $color-link-dark-h;
     }
     span.icon{
       position: absolute;
@@ -209,10 +216,13 @@
   }
   a:hover{
     h2{
-      color: $color-light;
+      color: $color-link-dark-h;
       text-decoration: underline;
       @media only screen and (max-width: $screen-md-max){
         color: black;
+        &:hover{
+          color: $color-link-light;
+        }
       }
     }
     .dropdown-toggle:before, .dropdown-toggle:after{
@@ -230,25 +240,35 @@
     font-weight: 700;
     text-align: left;
     line-height: 1;
-    border-bottom: 2px solid $color-teal;
+    border-bottom: 2px solid $color-link-dark;
     margin: 30px 20px 0;
     padding: 0 0 10px;
     @media (min-width: $screen-lg){
       margin: 30px 0 0;
       color: $color-light;
     }
+    @media (max-width: $screen-md-max){
+      border-color: $color-link-light;
+    }
   }
   h2{
     font-size: 16px;
     margin: 0;
-    color: $color-teal;
+    color: $color-link-dark;
+    &:hover{
+      color: $color-link-dark-h;
+    }
     @media only screen and (max-width: $screen-md-max){
       padding: 25px 25px 25px 20px;
-      color: black;
+      color: $color-link-light;
+      &:hover{
+        color: $color-link-light-h;
+      }
     }
+
   }
   .subhead{
-    color: $color-teal;
+    color: $color-dark-blue;
     font-size: 12px;
     @media (min-width:$screen-lg){
       color: white;
@@ -257,13 +277,20 @@
   button.icon{
     font-size: 30px;
     position: absolute;
-    color: $color-teal;
     padding: 0;
     top: 20px;
     right: 20px;
+    color: $color-link-light;
+    &:hover{
+      color: $color-link-light-h;
+    }
     @media (min-width: $screen-lg){
       right: 0;
       top: 9px; 
+      color: $color-link-dark;
+      &:hover{
+        color: $color-link-dark-h;
+      }
     }
   }
   li.open ul{
@@ -307,12 +334,17 @@
       a{
         padding: 0 0 0 20px !important;
         font-size: 14px;
+        color: $color-link-dark;
         @media only screen and (max-width:$screen-md-max){
           padding: 15px 20px !important;
           display: block;
+          color: $color-link-light;
+          &:hover{
+            color: $color-link-light-h;
+          }
         }
         &:hover{
-          color: $color-light;
+          color: $color-link-dark-h;
           text-decoration: underline;
         }
       }
@@ -376,10 +408,10 @@ input[type="submit"].header-search-submit{
 
 button[type="button"].header-search-btn{
   width: 60px;
-  color: $color-teal;
+  color: $color-link-dark;
   position: relative;
   &:hover{
-    color: white;
+    color: $color-link-dark-h;
   }
   span.icon{
     font-size: 30px;
@@ -418,12 +450,12 @@ button[type="button"].header-search-btn{
     right: 10px;
     font-size: 30px;
     padding: 5px 10px;
-    color: $color-teal;
+    color: $color-link-dark;
     @media (min-width: $screen-lg){
       padding: 5px 20px;
     }
     &:hover{
-      color: white;
+      color: $color-link-dark-h;
     }
   }
 }
