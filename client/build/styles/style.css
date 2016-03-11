@@ -2518,16 +2518,6 @@ button[type="button"].header-search-btn span.icon {
   max-height: 9000px;
 }
 
-.article-share {
-  margin-top: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-  text-align: center;
-  font-size: 16px;
-}
-.article-share .fa {
-  margin: 0 5px;
-}
-
 .article-teaser {
   padding-bottom: 10px;
 }
@@ -2549,13 +2539,23 @@ button[type="button"].header-search-btn span.icon {
   margin-top: 65px;
 }
 
+.article-share {
+  margin-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 16px;
+}
+.article-share .fa {
+  margin: 0 5px;
+}
+
 figure.bio-teaser {
   display: block;
   background: #f2f2f2;
   position: relative;
   width: 100%;
   margin: 20px 0;
-  height: 115px;
+  height: 130px;
 }
 figure.bio-teaser img {
   float: left;
