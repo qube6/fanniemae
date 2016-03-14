@@ -73,6 +73,9 @@ main{
   @media (min-width: $screen-sm) and (max-width: $screen-md-max){
     padding-left: 0;
   }
+  @media (max-width: $screen-xs-max){
+    margin-top: 20px;
+  }
 }
 .rail-row{
   margin: 20px 0;
