@@ -47,7 +47,7 @@
   }
   &.white-bg{
     .fm-title{
-      a{
+      a:not(.color-brand){
         color: $color-dark-blue;
         &:hover{
           color: $color-link-light;

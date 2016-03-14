@@ -381,7 +381,7 @@ a:visited {
 }
 
 a:hover {
-  color: #000F2B;
+  color: #000f2b;
   text-decoration: underline;
 }
 
@@ -624,17 +624,20 @@ fieldset {
   margin: 0;
   border: 0;
 }
+fieldset ul.inline {
+  margin: 0;
+  padding: 0;
+}
 
 legend {
-  display: block;
+  display: inline;
   width: 100%;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 21px;
   line-height: 40px;
   color: #333333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 legend small {
@@ -1343,7 +1346,7 @@ main #page-wrapper {
 }
 
 body {
-  background: #e6e6e6;
+  background: #ecebee;
   -moz-transform: none !important;
   -ms-transform: none !important;
   -webkit-transform: none !important;
@@ -1365,8 +1368,8 @@ body {
   transform: translateY(-50%);
 }
 .site-logo svg {
-  width: 189px;
-  height: 37px;
+  width: 190px;
+  height: 57px;
   padding: 0;
 }
 .site-logo svg, .site-logo svg use {
@@ -1382,7 +1385,7 @@ body {
 
 [fm-sticky-header] .wrapper {
   display: block;
-  background: #e6e6e6;
+  background: #ecebee;
   z-index: 1;
 }
 
@@ -1423,7 +1426,7 @@ body {
   line-height: 26px;
 }
 a:hover .icon.circle {
-  border-color: #000F2B;
+  border-color: #000f2b;
 }
 
 .dropdown-toggle {
@@ -1621,7 +1624,66 @@ li.open .dropdown-toggle:before {
   color: #007697;
 }
 .color-brand a:hover, a.color-brand:hover {
-  color: #000F2B;
+  color: #000f2b;
+}
+
+.color-desc {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.color-square {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  color: white;
+}
+.color-square span {
+  font-size: 18px;
+  padding-top: 40%;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.color-dark-blue {
+  background: #000f2b;
+}
+
+.color-light {
+  background: #e4e4e4;
+}
+
+.color-body-bg {
+  background: #ecebee;
+}
+
+.color-link-light {
+  background: #007697;
+}
+
+.color-link-dark {
+  background: #00acdc;
+}
+
+.color-light-blue {
+  background: #e5f1f4;
+}
+
+.color-hr {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.color-gray {
+  background: #324456;
+}
+
+.color-dark-gray {
+  background: #46525e;
+}
+
+.color-error {
+  background: #b03535;
 }
 
 .padding-10 {
@@ -1703,7 +1765,7 @@ li.open .dropdown-toggle:before {
   line-height: 30px;
 }
 .more:hover {
-  color: #000F2B;
+  color: #000f2b;
 }
 
 .block {
@@ -1833,7 +1895,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   }
 }
 .footer .links a {
-  color: #000F2B;
+  color: #000f2b;
 }
 .footer .links a:hover {
   color: #007697;
@@ -1856,7 +1918,6 @@ ul.link-listing:not(.custom-icons) > li > a:after {
     text-align: center;
   }
   .footer .footer-lead > * {
-    float: none !important;
     display: inline-block;
   }
 }
@@ -1912,15 +1973,16 @@ ul.link-listing:not(.custom-icons) > li > a:after {
 .footer .site-logo {
   padding: 0;
   height: 100%;
-  height: 30px;
 }
 .footer .site-logo svg {
-  height: 100%;
-  width: 151px;
+  height: auto;
+  width: 150px;
 }
 @media (max-width: 767px) {
   .footer .site-logo {
     padding-top: 5px;
+    margin-left: 5%;
+    height: auto;
   }
 }
 .footer .copyright {
@@ -1933,11 +1995,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   .footer .copyright {
     float: left;
     margin-left: 10px;
-  }
-}
-@media only screen and (max-width: 991px) {
-  .footer .copyright {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 }
 
@@ -2043,7 +2101,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
     color: #007697;
   }
   .navbar-offcanvas button[type="button"]:hover {
-    color: #000F2B;
+    color: #000f2b;
   }
 }
 
@@ -2116,7 +2174,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
 }
 .main-menu > li ul li a:hover {
   text-decoration: underline;
-  color: #000F2B;
+  color: #000f2b;
 }
 
 /* All FannieMae Sites Button */
@@ -2278,7 +2336,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
   color: #007697;
 }
 .sites-list button.icon:hover, .open .sites-list button.icon:hover {
-  color: #000F2B;
+  color: #000f2b;
 }
 @media (min-width: 1200px) {
   .sites-list button.icon, .open .sites-list button.icon {
@@ -2346,7 +2404,7 @@ ul.link-listing:not(.custom-icons) > li > a:after {
     color: #007697;
   }
   .sites-list .submenu li a:hover, .open .sites-list .submenu li a:hover {
-    color: #000F2B;
+    color: #000f2b;
   }
 }
 .sites-list .submenu li a:hover, .open .sites-list .submenu li a:hover {
@@ -2661,6 +2719,7 @@ figure.bio-teaser .icon-link {
   font-size: 20px;
   padding: 10px;
   background: #000f2b;
+  color: #00acdc;
 }
 figure.bio-teaser .icon-link:hover {
   color: white;
@@ -2925,7 +2984,7 @@ table td {
 }
 table tr {
   margin-bottom: 1em;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #ecebee;
   color: #000f2b;
 }
 table tr:last-of-type {
@@ -2939,7 +2998,7 @@ table tr:last-of-type {
 table th, table td {
   padding: .5em 1em;
   vertical-align: middle;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #ecebee;
 }
 
 @media (min-width: 992px) {
@@ -3062,7 +3121,7 @@ table th, table td {
 }
 @media (min-width: 768px) {
   .responsive-table tbody td {
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid #ecebee;
   }
 }
 @media (min-width: 992px) {
@@ -3390,7 +3449,7 @@ section.grid-listing li.block .cta i {
   padding: 0;
 }
 section.grid-listing li.block .cta:hover {
-  color: #000F2B;
+  color: #000f2b;
 }
 section.grid-listing .load-more {
   margin: 10px;
@@ -3714,8 +3773,8 @@ section.grid-listing .load-more {
   border-radius: 50%;
 }
 .rn-carousel-control:hover {
-  color: #000F2B;
-  border-color: #000F2B;
+  color: #000f2b;
+  border-color: #000f2b;
 }
 @media (max-width: 767px) {
   .rn-carousel-control {
@@ -3881,7 +3940,7 @@ section.grid-listing .load-more {
   color: #007697;
 }
 .news-teaser a.more:hover {
-  color: #000F2B;
+  color: #000f2b;
 }
 @media (min-width: 768px) {
   .news-teaser a.more {
@@ -4379,7 +4438,7 @@ section.overview.with-image .caption p {
     color: #007697;
   }
   .search-call-out .submenu a:hover {
-    color: #000F2B;
+    color: #000f2b;
   }
 }
 .search-call-out .open .submenu {
@@ -4446,10 +4505,10 @@ section.overview.with-image .caption p {
     min-height: 255px;
   }
 }
-.fm-secondary-feature.white-bg .fm-title a {
+.fm-secondary-feature.white-bg .fm-title a:not(.color-brand) {
   color: #000f2b;
 }
-.fm-secondary-feature.white-bg .fm-title a:hover {
+.fm-secondary-feature.white-bg .fm-title a:not(.color-brand):hover {
   color: #007697;
 }
 
@@ -4703,6 +4762,12 @@ nav.top-navigation button {
   right: 0;
   top: -10px;
   padding: 0;
+}
+nav.top-navigation button .icon-bar {
+  background: #007697;
+}
+nav.top-navigation button .outline {
+  border: 2px solid #007697;
 }
 nav.top-navigation span.label {
   visibility: hidden;

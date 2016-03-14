@@ -3,6 +3,15 @@ extends ../layouts/layout-two-column
 block title
   title Generic 2 Column
 
+block top-content
+  -var config={withImage : true, title: 'Two Column Style Guide', caption: 'We help to ensure that qualified homebuyers across the nation have access to mortgage credit in good times and bad, and that quality, affordable rental housing is available.'};
+  include ../../components/overview/_default.jade
+  .breadcrumb-social-wrap
+    .full-width-max
+      -var config={ links : ['Home'], page : 'Generic Two Column'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
+
 block content
   .article-wrapper.white-bg.padding-30
     include ../../components/article-header/_default.jade
@@ -69,7 +78,19 @@ block rail
         | 20016-2892
       p: a.email(href="mailto:board@fanniemae.com") board@fanniemae.com
   .rail-row
+    include ../../components/promo/_default.jade
+    +promo('Our Locations', true, true)
+      h2 Headquarters
+      p 3900 Wisconsin Ave, NW Washington, DC 20016-2892
+      img(src="../media/promo-1.png")
+      br
+      br
+      h2 Regional Offices
+      p Fannie Mae ‘s regional offices serve as day-to-day contacts for our business customers (mortgage lenders).
+  .rail-row
     include ../../components/image-promo/_default.jade
+  .rail-row
+    include ../../components/rail-list/_default.jade
   .rail-row
     -var isAlt = true;
     include ../../components/rail-list/_default.jade
