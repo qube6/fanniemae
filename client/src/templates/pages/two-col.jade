@@ -4,27 +4,76 @@ block title
   title Generic 2 Column
 
 block content
-  .article-wrapper.white-bg
-    include ../../components/rich-text-block/_default.jade
-    include ../../components/accordian/_default.jade
+  .article-wrapper.white-bg.padding-30
     include ../../components/article-header/_default.jade
-    include ../../components/rich-text-block/_default.jade
-    include ../../components/content-image/_default.jade
-    include ../../components/content-video/_default.jade
-    include ../../components/content-table/_default.jade
-    include ../../components/article-share/_default.jade
-    include ../../components/disclaimer/_default.jade
+    .rich-text-block
+      p On Sept. 6, 2008, the Federal Housing Finance Agency (FHFA) was appointed Conservator of Fannie Mae. Under the conservatorship, FHFA has succeeded all Fannie Mae rights, titles, powers, and privileges.
+
+      p Additionally, on Nov. 24, 2008, FHFA reconstituted the function and authority of Fannie Mae’s the Board of Directors. Today, the directors serve on behalf of the Conservator and exercise their authority as directed by the Conservator on all Fannie Mae affairs.
+
+      p FHFA has directed that the board will have a minimum of nine and not more than 13 directors.
+
+      p Pursuant to the Company's Bylaws, the Board of Directors has the following standing committees: 
+      ul
+        li Audit, 
+        li Compensation, 
+        li Executive, 
+        li Nominating & Corporate Governance (N&CG), 
+        li Risk Policy & Capital (RP&C), 
+        li Strategic Initiatives.
+      br
+      br
+
+      h2 Sample Video Markup
+      figure
+        include ../../components/content-video/_default.jade
+        figcaption 
+          h3 Caption title
+          | Video caption
+
+      h2 Sample Image Markup
+      include ../../components/content-image/_default.jade
+
+      h2 Sample Table Markup
+      include ../../components/content-table/_default.jade
+
+      include ../../components/accordian/_default.jade
+
+      include ../../components/article-share/_default.jade
+      include ../../components/disclaimer/_default.jade
+
   include ../../components/search-call-out/_default.jade
-  include ../../components/search/_default.jade
-  include ../../components/contact-form/_default.jade
+  .article-wrapper.padding-30
+    include ../../components/search/_default.jade
+
+  fm-contact-form(data-api-url="../data/contact-form.json")
+    include ../../components/topic-box/_default.jade
+    .article-wrapper.padding-30
+      include ../../components/contact-form/_default.jade
+
+block top-rail
+  include ../../components/rail-navigation/_default.jade
+block bottom-rail
+  include ../../components/more-in/_default.jade
 
 block rail
-  include ../../components/rail-navigation/_default.jade
-  include ../../components/promo/_default.jade
-  include ../../components/promo/_default.jade
-  include ../../components/promo/_default.jade
-  include ../../components/image-promo/_default.jade
-  include ../../components/rail-list/_default.jade
-  include ../../components/rail-list/_default.jade
-  include ../../components/people-promo/_default.jade
-  include ../../components/email-updates/_default.jade
+  .rail-row
+    include ../../components/promo/_default.jade
+    +promo('Contact the Board', false, false)
+      p Need to connect with our board? Please direct all questions, comments, or concerns to the information below.
+      h2 Board of Directors
+      p c/o Office of the Secretary Mailstop: 1H 2S 05
+        br
+        | 3900 Wisconsin Avenue, NW Washington, DC
+        br
+        | 20016-2892
+      p: a.email(href="mailto:board@fanniemae.com") board@fanniemae.com
+  .rail-row
+    include ../../components/image-promo/_default.jade
+  .rail-row
+    -var isAlt = true;
+    include ../../components/rail-list/_default.jade
+  .rail-row
+    include ../../components/people-promo/_default.jade
+  .rail-row
+    include ../../components/email-updates/_default.jade
