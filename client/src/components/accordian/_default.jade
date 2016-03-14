@@ -28,7 +28,7 @@ fm-accordion.fm-accordion
           include ../bio-teaser/_default.jade
           -var config = { name: "Timothy J. Mayopoulos", title: "President and Chief Executive Officer, Fannie Mae", link: true}
           include ../bio-teaser/_default.jade
-    li(fm-accordion-item id="anchor2" ng-class="{ 'open' : isOpen() }")
+    li(fm-accordion-item ng-class="{ 'open' : isOpen() }")
       a(href="" ng-click="toggleItem(); gotoAnchor(2)") The Audit Committee
         span.icon.list-icon(ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true")
       .fm-accordion-content
