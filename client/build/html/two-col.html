@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html ng-app="fannieMae">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="155 characters. Call to action. Should be unique and not match content on the page">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="shortcut icon" href="../media/favicon.ico?v=123"><!-- bower:css -->
+    <link rel="stylesheet" href="/js/lib/bower_components/angular-carousel/dist/angular-carousel.css">
+    <!-- endinject -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/styles/fannie-mae-styles.css">
+    <link rel="stylesheet" href="/styles/fm-icon-font.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- endinject -->
+    <!-- Picture element HTML5 shiv-->
+    <script>document.createElement( "picture" );</script>
+    <script src="/js/lib/picturefill.min.js" async></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    
+    
+    <title>Generic 2 Column</title>
+  </head>
+  <body ng-controller="MainController">
+    <main>
+      <div id="page-wrapper">
+        <header id="navbar" role="banner" fm-sticky-header class="navbar navbar-default">
+          <div class="full-width-max">
+            <div class="navbar-header">
+              <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
+              <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
+                <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
+                  <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
+                </svg></a>
+            </div>
+            <form action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away="header-search" class="header-search-form">
+              <input placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')" class="header-search-input">
+              <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
+            </form>
+            <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
+              <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
+                <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
+                <div class="sites-list">
+                  <h1 class="font-serif">Doing Business with Fannie Mae</h1>
+                  <ul fm-accordion close-others="false" class="menu nav">
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                        <h2>Lenders</h2>
+                        <button type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                      <ul class="submenu">
+                        <li><a href="https://www.fanniemae.com/singlefamily/index" target="_blank">Single-Family</a></li>
+                        <li><a href="https://www.fanniemae.com/multifamily/index" target="_blank">Multifamily</a></li>
+                      </ul>
+                    </li>
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                        <h2>Servicers</h2>
+                        <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                      <ul class="submenu">
+                        <li><a href="https://www.fanniemae.com/singlefamily/servicing" target="_blank">Single-Family</a></li>
+                        <li><a href="https://www.fanniemae.com/multifamily/servicing" target="_blank">MultiFamily</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/capital-market-investors"> 
+                        <h2>Capital Market Investors</h2></a></li>
+                  </ul>
+                  <h1 class="font-serif">Homeownership & Renting</h1>
+                  <ul class="menu nav">
+                    <li><a href="http://knowyouroptions.com" target="_blank">
+                        <h2>Know Your Options</h2>
+                        <div class="subhead">For Owners, Renters & Buyers</div></a></li>
+                    <li><a href="http://homepath.com" target="_blank">
+                        <h2>HomePath</h2>
+                        <div class="subhead">Find & Buy Homes</div></a></li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn pull-right desktop-only"><span aria-hidden="true" class="icon fm-search-circle"></span></button>
+              <ul fm-accordion close-others="false" class="main-menu">
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/about-us" title="">About Us</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/about-us/what-we-do" title="">What We Do</a></li>
+                    <li><a href="/about-us/leadership-team" title="">Leadership Team</a></li>
+                    <li><a href="/about-us/awards-achievements">Awards & Achievements</a></li>
+                    <li><a href="/about-us/governance">Governance</a></li>
+                    <li><a href="/about-us/investor-relations" title="">Investor Relations</a></li>
+                    <li><a href="/about-us/giving-back">Giving Back</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/research-and-insights" title="">Research & Insights</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/research-and-insights/271" title="">Consumer Research & Analysis</a></li>
+                    <li><a href="/research-and-insights/15" title="">Economic & Housing Outlook</a></li>
+                    <li><a href="/research-and-insights/272" title="">Home Purchase Sentiment Index</a></li>
+                    <li><a href="/research-and-insights/16" title="">Insights</a></li>
+                    <li><a href="/research-and-insights/17" title="">Mortgage Lender Sentiment Survey</a></li>
+                    <li><a href="/research-and-insights/18" title="">National Housing Survey</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/news" title="Description of gucrisa.">Newsroom</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/news/press-center" title="">Press Center</a></li>
+                    <li><a href="/news/in-the-news" title="">In The News</a></li>
+                    <li><a href="/news/industry-news" title="">Industry News</a></li>
+                    <li><a href="/news/fact-sheet">Fact Sheet</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/careers" title="">Careers</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/careers/job-search">Job Search</a></li>
+                    <li><a href="/careers/why-fannie-mae">Why Fannie Mae</a></li>
+                    <li><a href="/careers/what-we-offer">What We Offer</a></li>
+                    <li><a href="/careers/hiring-process">Hiring Process</a></li>
+                    <li><a href="/careers/who-we-seek">Who We Seek</a></li>
+                    <li><a href="/careers/university-recruiting">University Recruiting</a></li>
+                    <li><a href="/careers/locations" title="">Locations</a></li>
+                  </ul>
+                </li>
+                <li><a href="/contact-us" title="Description of tho.">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="fm-main-content">
+              <div class="fm-content col-xs-12 col-sm-8">
+                <div class="article-wrapper white-bg padding-30">
+                  <div class="article-header">
+                    <div class="article-category">Economic & Housing Outlook, Report</div>
+                    <h1>Economic Rebound on the Horizon with Q1 Slump in Rearview Mirror</h1>
+                    <h2>Subheading is displayed here</h2>
+                    <div class="article-date">June 23, 2015</div>
+                  </div>
+                  <div class="rich-text-block">
+                    <p>On Sept. 6, 2008, the Federal Housing Finance Agency (FHFA) was appointed Conservator of Fannie Mae. Under the conservatorship, FHFA has succeeded all Fannie Mae rights, titles, powers, and privileges.</p>
+                    <p>Additionally, on Nov. 24, 2008, FHFA reconstituted the function and authority of Fannie Mae’s the Board of Directors. Today, the directors serve on behalf of the Conservator and exercise their authority as directed by the Conservator on all Fannie Mae affairs.</p>
+                    <p>FHFA has directed that the board will have a minimum of nine and not more than 13 directors.</p>
+                    <p>Pursuant to the Company's Bylaws, the Board of Directors has the following standing committees: </p>
+                    <ul>
+                      <li>Audit, </li>
+                      <li>Compensation, </li>
+                      <li>Executive, </li>
+                      <li>Nominating & Corporate Governance (N&CG), </li>
+                      <li>Risk Policy & Capital (RP&C), </li>
+                      <li>Strategic Initiatives.</li>
+                    </ul><br><br>
+                    <h2>Sample Video Markup</h2>
+                    <figure>
+                      <fm-video-player poster="../media/video-poster.png">
+                        <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                        <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+                        <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+                        <!-- fallback to Flash:-->
+                        <object type="application/x-shockwave-flash" data="player.swf">
+                          <!-- Firefox uses the `data` attribute above, IE/Safari uses the param below-->
+                          <param name="movie" value="player.swf">
+                          <param name="flashvars" value="autostart=true&amp;controlbar=over&amp;image=../media/video-poster.png&amp;file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4">
+                          <!-- fallback image--><img src="../media/video-poster.png" alt="Big Buck Bunny" title="No video playback capabilities, please download the video below">
+                        </object>
+                      </fm-video-player>
+                      <figcaption> 
+                        <h3>Caption title</h3>Video caption
+                      </figcaption>
+                    </figure>
+                    <h2>Sample Image Markup</h2>
+                    <figure><img src="../media/content-image-1.png">
+                      <figcaption>
+                        <h3>Caption Title</h3>
+                        <p>Caption text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, vitae!</p><i class="small">Photo credit</i>
+                      </figcaption>
+                    </figure>
+                    <h2>Sample Table Markup</h2>
+                    <table class="responsive-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">CUSIP</th>
+                          <th scope="col">Issue Date</th>
+                          <th scope="col">Maturity Date</th>
+                          <th scope="col">Coupon</th>
+                          <th scope="col">Amount Issued</th>
+                        </tr>
+                      </thead>
+                      <tr>
+                        <th scope="row" data-title="CUSIP">3135G0NV1</th>
+                        <td data-title="Issue Date">08/17/2012</td>
+                        <td data-title="Maturity Date">09/28/2015</td>
+                        <td data-title="Coupon">0.500%</td>
+                        <td data-title="Amount Issued">5,000,000,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-title="CUSIP">31359MZC0</th>
+                        <td data-title="Issue Date">09/12/2005</td>
+                        <td data-title="Maturity Date">10/15/2015</td>
+                        <td data-title="Coupon">4.375%</td>
+                        <td data-title="Amount Issued">4,000,000,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-title="CUSIP">31398A4M1</th>
+                        <td data-title="Issue Date">09/27/2010</td>
+                        <td data-title="Maturity Date">10/26/2015</td>
+                        <td data-title="Coupon">1.625%</td>
+                        <td data-title="Amount Issued">6,500,000,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-title="CUSIP">31359MH89</th>
+                        <td data-title="Issue Date">02/16/2006</td>
+                        <td data-title="Maturity Date">12/21/2015</td>
+                        <td data-title="Coupon">0.375%</td>
+                        <td data-title="Amount Issued">4,000,000,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-title="CUSIP">31359MH89</th>
+                        <td data-title="Issue Date">02/16/2006</td>
+                        <td data-title="Maturity Date">03/15/2016</td>
+                        <td data-title="Coupon">5.000%</td>
+                        <td data-title="Amount Issued">5,000,000,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" data-title="CUSIP">3135G0VA8</th>
+                        <td data-title="Issue Date">02/15/2013</td>
+                        <td data-title="Maturity Date">03/30/2016</td>
+                        <td data-title="Coupon">0.500%</td>
+                        <td data-title="Amount Issued">6,000,000,000</td>
+                      </tr>
+                    </table>
+                    <fm-accordion class="fm-accordion">
+                      <h1 class="fm-subtitle">Board Committees
+                        <button type="button" ng-click="setAll()" class="fm-accordion-toggle-all">
+                          <div ng-show="allOpen">Close All</div>
+                          <div ng-show="!allOpen">Expand All</div><span ng-class=" allOpen ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span>
+                        </button>
+                      </h1>
+                      <ul class="link-listing custom-icons bottom-border">
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }" open><a href="" ng-click="toggleItem()">The Executive Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <p>The Executive Committee has all the authority of the Board during the interim periods between Board meetings, except for certain specified powers that are stated in the Fannie Mae Bylaws.</p>
+                              <h2>Chair</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Egbert L.J. Perry</a>
+                                  <p class="bio-title">Chairman and Chief Executive Officer, The Integral Group LLC</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure><br>
+                              <h2>Members</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Jonathan Plutzik</a>
+                                  <p class="bio-title">Chairman, Betsy Ross Investors, LLC</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">William Thomas Forrester </a>
+                                  <p class="bio-title">Retired Chief Financial Officer, The Progressive Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Brenda J. Gaines</a>
+                                  <p class="bio-title">Retired President and Chief Executive Officer, Diners Club North America</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Frederick B. &quot;Bart&quot; Harvey III </a>
+                                  <p class="bio-title">Retired chairman of the Board of Trustees, Enterprise Community Partners and Enterprise Community Investment</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">David H. Sidwell </a>
+                                  <p class="bio-title">Retired Executive Vice President and Chief Financial Officer, Morgan Stanley</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Timothy J. Mayopoulos</a>
+                                  <p class="bio-title">President and Chief Executive Officer, Fannie Mae</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li fm-accordion-item id="anchor2" ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem(); gotoAnchor(2)">The Audit Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <p>The Audit Committee oversees:</p>
+                              <ul>
+                                <li>the accounting, reporting, and financial practices of the Corporation and its subsidiaries,</li>
+                                <li>the Corporation's compliance with legal and regulatory requirements,</li>
+                                <li>the external auditor's qualifications and independence,</li>
+                                <li>the performance of the Corporation's internal audit function and the Corporation's external auditor,</li>
+                                <li>the Corporation's technology and operations environment.</li>
+                              </ul>
+                              <h2>Chair</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">William Thomas Forrester </a>
+                                  <p class="bio-title">Retired Chief Financial Officer, The Progressive Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure><br>
+                              <h2>Members</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Brenda J. Gaines</a>
+                                  <p class="bio-title">Retired President and Chief Executive Officer, Diners Club North America</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Robert H. Herz</a>
+                                  <p class="bio-title">President, Robert H. Herz LLC</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Diane C. Nordin</a>
+                                  <p class="bio-title">Retired Partner, Wellington Management Company, LLP</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">The Compensation Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <p>In conjunction with the Conservator, the Compensation Committee makes recommendations to the Board relating to:</p>
+                              <ul>
+                                <li>the appointment and compensation of Fannie Mae's senior management,</li>
+                                <li>the adoption of policies that govern certain annual compensation and stock ownership plans,</li>
+                                <li>the compensation discussion and analysis (CD&amp;A) for inclusion in Fannie Mae's annual report or proxy statement,</li>
+                                <li>the report of the committee to accompany the CD&amp;A in annual reports or proxy statements.</li>
+                              </ul>
+                              <h2>Chair</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Brenda J. Gaines</a>
+                                  <p class="bio-title">Retired President and Chief Executive Officer, Diners Club North America</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure><br>
+                              <h2>Members</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Diane C. Nordin</a>
+                                  <p class="bio-title">Retired Partner, Wellington Management Company, LLP</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Jonathan Plutzik</a>
+                                  <p class="bio-title">Chairman, Betsy Ross Investors, LLC</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">David H. Sidwell</a>
+                                  <p class="bio-title">Retired Executive Vice President and Chief Financial Officer, Morgan Stanley</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">The Nominating &amp; Corporate Governance Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <p>The Nominating &amp; Corporate Governance Committee identifies individuals qualified to become members of the Board; recommends directors to be elected by the Board to fill any vacancies; develops a set of corporate governance principles; and plays a leadership role in shaping Fannie Mae's corporate governance.</p>
+                              <h2>Chair</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Frederick B. &quot;Bart&quot; Harvey III</a>
+                                  <p class="bio-title">Retired chairman of the Board of Trustees, Enterprise Community Partners and Enterprise Community Investment</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure><br>
+                              <h2>Members</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Amy E. Alving</a>
+                                  <p class="bio-title">Retired Chief Technology Officer and Senior Vice President, Science Applications International Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Robert H. Herz</a>
+                                  <p class="bio-title">President, Robert H. Herz LLC</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">The Risk Policy &amp; Capital Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <p>The Risk Policy &amp; Capital Committee assists the Board in overseeing Fannie Mae's capital management and risk management, including overseeing the management of credit risk, market risk, liquidity risk, and operational risk.</p>
+                              <h2>Chair</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">David H. Sidwell</a>
+                                  <p class="bio-title">Retired Executive Vice President and Chief Financial Officer, Morgan Stanley</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure><br>
+                              <h2>Members</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Amy E. Alving</a>
+                                  <p class="bio-title">Retired Chief Technology Officer and Senior Vice President, Science Applications International Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">William Thomas Forrester</a>
+                                  <p class="bio-title">Retired Chief Financial Officer, The Progressive Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">The Risk Policy &amp; Capital Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <p>The Strategic Initiatives Committee assists the Board in overseeing Fannie Mae's implementation of key strategic initiatives.</p>
+                              <h2>Chair</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Jonathan Plutzik</a>
+                                  <p class="bio-title">Chairman, Betsy Ross Investors, LLC</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure><br>
+                              <h2>Members</h2>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">Amy E. Alving</a>
+                                  <p class="bio-title">Retired Chief Technology Officer and Senior Vice President, Science Applications International Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                              <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                                <figcaption><a href="" class="bio-name">William Thomas Forrester</a>
+                                  <p class="bio-title">Retired Chief Financial Officer, The Progressive Corporation</p>
+                                </figcaption><a href="" class="icon-link"><span class="icon fm-arrow-right-circle"></span></a>
+                              </figure>
+                            </div>
+                          </div>
+                        </li>
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">Sample Accordion Markup<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                          <div class="fm-accordion-content">
+                            <div class="rich-text-block">
+                              <h1>CSS Basic Elements</h1>
+                              <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
+                              <hr>
+                              <h1 id="headings">Headings</h1>
+                              <h1>Heading 1</h1>
+                              <h2>Heading 2</h2>
+                              <h3>Heading 3</h3>
+                              <h4>Heading 4</h4>
+                              <h5>Heading 5</h5>
+                              <h6>Heading 6</h6>
+                              <hr>
+                              <h1>Paragraph</h1>
+                              <p>Lorem ipsum dolor sit amet, <a href="/">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+                              <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+                              <hr>
+                              <h1 id="list_types">List Types</h1>
+                              <h3>Definition List</h3>
+                              <dl>
+                                <dt>Definition List Title</dt>
+                                <dd>This is a definition list division.</dd>
+                              </dl>
+                              <h3>Ordered Lists</h3>
+                              <ol type="1">
+                                <li>List Item 1</li>
+                                <li>List Item 2</li>
+                                <li>List Item 3</li>
+                              </ol>
+                              <ol type="i">
+                                <li>List Item i</li>
+                                <li>List Item ii</li>
+                                <li>List Item iii</li>
+                              </ol>
+                              <h3>Unordered List</h3>
+                              <ul>
+                                <li>List Item 1</li>
+                                <li>List Item 2</li>
+                                <li>List Item 3</li>
+                              </ul>
+                              <hr>
+                              <fieldset>
+                                <legend>Legend</legend>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+                              </fieldset>
+                              <h1 id="misc">Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.</h1>
+                              <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. 
+                                <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  
+                              </p>
+                              <blockquote class="with-citation">This stylesheet is going to help so freaking much.
+                                <footer>
+                                  <cite>Citation</cite>
+                                </footer>
+                              </blockquote>
+                              <h1 id="tables">Tables</h1>
+                              <h2>Non-Responsive Table</h2>
+                              <div class="overflow-wrapper">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Table Header 1</th>
+                                      <th>Table Header 2</th>
+                                      <th>Table Header 3</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Division 1</td>
+                                      <td>Division 2</td>
+                                      <td>Division 3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Division 1</td>
+                                      <td>Division 2</td>
+                                      <td>Division 3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Division 1</td>
+                                      <td>Division 2</td>
+                                      <td>Division 3</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <h2>Responsive Table</h2>
+                              <table class="responsive-table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">CUSIP</th>
+                                    <th scope="col">Issue Date</th>
+                                    <th scope="col">Maturity Date</th>
+                                    <th scope="col">Coupon</th>
+                                    <th scope="col">Amount Issued</th>
+                                  </tr>
+                                </thead>
+                                <tr>
+                                  <th scope="row" data-title="CUSIP">3135G0NV1</th>
+                                  <td data-title="Issue Date">08/17/2012</td>
+                                  <td data-title="Maturity Date">09/28/2015</td>
+                                  <td data-title="Coupon">0.500%</td>
+                                  <td data-title="Amount Issued">5,000,000,000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" data-title="CUSIP">31359MZC0</th>
+                                  <td data-title="Issue Date">09/12/2005</td>
+                                  <td data-title="Maturity Date">10/15/2015</td>
+                                  <td data-title="Coupon">4.375%</td>
+                                  <td data-title="Amount Issued">4,000,000,000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" data-title="CUSIP">31398A4M1</th>
+                                  <td data-title="Issue Date">09/27/2010</td>
+                                  <td data-title="Maturity Date">10/26/2015</td>
+                                  <td data-title="Coupon">1.625%</td>
+                                  <td data-title="Amount Issued">6,500,000,000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" data-title="CUSIP">31359MH89</th>
+                                  <td data-title="Issue Date">02/16/2006</td>
+                                  <td data-title="Maturity Date">12/21/2015</td>
+                                  <td data-title="Coupon">0.375%</td>
+                                  <td data-title="Amount Issued">4,000,000,000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" data-title="CUSIP">31359MH89</th>
+                                  <td data-title="Issue Date">02/16/2006</td>
+                                  <td data-title="Maturity Date">03/15/2016</td>
+                                  <td data-title="Coupon">5.000%</td>
+                                  <td data-title="Amount Issued">5,000,000,000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" data-title="CUSIP">3135G0VA8</th>
+                                  <td data-title="Issue Date">02/15/2013</td>
+                                  <td data-title="Maturity Date">03/30/2016</td>
+                                  <td data-title="Coupon">0.500%</td>
+                                  <td data-title="Amount Issued">6,000,000,000</td>
+                                </tr>
+                              </table>
+                            </div><br><br>
+                            <figure>
+                              <fm-video-player poster="../media/video-poster.png">
+                                <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                                <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+                                <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+                                <!-- fallback to Flash:-->
+                                <object type="application/x-shockwave-flash" data="player.swf">
+                                  <!-- Firefox uses the `data` attribute above, IE/Safari uses the param below-->
+                                  <param name="movie" value="player.swf">
+                                  <param name="flashvars" value="autostart=true&amp;controlbar=over&amp;image=../media/video-poster.png&amp;file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4">
+                                  <!-- fallback image--><img src="../media/video-poster.png" alt="Big Buck Bunny" title="No video playback capabilities, please download the video below">
+                                </object>
+                              </fm-video-player>
+                              <figcaption>
+                                <h3>Adding new technology for mortgage servicers</h3>
+                                <p>The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...</p>
+                              </figcaption>
+                            </figure>
+                            <figure><img src="../media/content-image-1.png" alt="Placeholder Image" title="Placeholder image">
+                              <figcaption>
+                                <h3>Adding new technology for mortgage servicers</h3>
+                                <p>The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...</p><i class="small">Photo credit info</i>
+                              </figcaption>
+                            </figure>
+                          </div>
+                        </li>
+                      </ul>
+                    </fm-accordion>
+                    <div class="article-share padding-30"><a st_url="http://linktothearticle.com" st_title="FannieMae Article Title" displayText="Share this article" class="st_sharethis_custom">Share This<span class="fa fa-share-alt"></span></a></div><i class="small disclaimer">Opinions, analyses, estimates, forecasts, and other views of Fannie Mae's Economic & Strategic Research (ESR) Group included in these materials should not be construed as indicating Fannie Mae's business prospects.</i>
+                  </div>
+                </div>
+                <div class="search-call-out dark-bg padding-30"><span>Not finding what you need?  Tell us who you are:</span>
+                  <ul fm-accordion class="search-links">
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href ng-click="toggleItem()" class="dropdown">Lender</a>
+                      <ul class="submenu">
+                        <li><a href="/">Single-Family</a></li>
+                        <li><a href="/">MultiFamily</a></li>
+                      </ul>
+                    </li>
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href ng-click="toggleItem()" class="dropdown">Servicer</a>
+                      <ul class="submenu">
+                        <li><a href="/">Single-Family</a></li>
+                        <li><a href="/">MultiFamily</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/">Homeowner or Buyer</a></li>
+                  </ul>
+                </div>
+                <div class="article-wrapper padding-30">
+                  <p>placeholder for search results page</p>
+                </div>
+                <fm-contact-form data-api-url="../data/contact-form.json">
+                  <!-- Must keep "contact.topicBox" as ng-model, but "parentSelect/childSelect" can be changed to match backend model-->
+                  <section class="topic-box blue-block">
+                    <div class="display-table">
+                      <div class="table-row">
+                        <label class="table-cell">Topic:</label>
+                        <div class="table-cell styled-select">
+                          <select ng-model="contact.topicBox.parentSelect" ng-change="submitParent()" name="parentSelect">
+                            <option value="" selected="selected" disabled="disabled">Select</option>
+                            <option value="foo1">Single-family and Multifamily Business</option>
+                            <option value="foo2">2 Single-family and Multifamily Business</option>
+                            <option value="foo3">3 Single-family and Multifamily Business</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="table-row">
+                        <label class="table-cell">Sub-topic:</label>
+                        <div class="table-cell styled-select">
+                          <select ng-disabled="contact.isDisabled" ng-model="contact.topicBox.childSelect" ng-options="item.id as item.name for item in contact.selectOptions track by item.id" ng-change="submitChild()" name="childSelect">
+                            <option value="" selected="selected" disabled="disabled">Select</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div class="article-wrapper padding-30">
+                    <section class="contact-us">
+                      <div ng-bind-html="contact.text" class="rich-text-block"></div>
+                      <hr>
+                      <h3>Email Us</h3>
+                      <form action="" method="post" name="contactForm" novalidate fm-validator>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <input id="contact-name" name="Name" type="text" placeholder="Name*" required ng-model="contact.form.name">
+                            <label for="contact-name" class="sr-only">Enter your name</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input id="contact-company" name="Company" type="text" placeholder="Company" ng-model="contact.form.company">
+                            <label for="contact-company" class="sr-only">Enter your company name</label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <input id="contact-email" name="Email" type="email" placeholder="Email*" required ng-model="contact.form.email">
+                            <label for="contact-email" class="sr-only">Enter your email address</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <input id="contact-phone" name="Phone" type="tel" placeholder="Phone Number" ng-model="contact.form.phone">
+                            <label for="contact-phone" class="sr-only">Enter your telephone number</label>
+                          </div>
+                        </div>
+                        <textarea id="contact-comments" name="Comments" rows="6" placeholder="Questions/Comments*" required ng-model="contact.form.comments"></textarea>
+                        <label for="contact-comments" class="sr-only">Enter your message</label>
+                        <input type="hidden" name="submit-email" value="{{contact.email}}">
+                        <div data-sitekey="6Le1aBoTAAAAAEtEMteoKRlLs8JjuDKdtsgvyUAF" class="g-recaptcha"></div>
+                        <div class="submit text-center">
+                          <hr><a ng-click="validateForm()" class="more">Submit<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        </div>
+                      </form>
+                    </section>
+                  </div>
+                </fm-contact-form>
+              </div>
+              <div class="fm-top-rail col-xs-12 col-sm-4">
+                <nav fm-accordion class="rail-navigation dark-bg padding-30">
+                  <fm-accordion-item ng-class="{ 'rail-nav-open' : isOpen() }">
+                    <div ng-click="toggleItem()" class="rail-nav-header">
+                      <h1 class="fm-subtitle">Governance</h1><span ng-class="{ 'openNav' : isOpen() }" aria-hidden="true" class="fm-list-icon icon fm-menu-toggle mobile-only"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></span>
+                    </div>
+                    <ul class="link-listing">
+                      <li><a href="/">Guidelines</a></li>
+                      <li><a href="/">Fannie Mae Charter</a></li>
+                      <li class="open"><a class="active">Board of Directors</a>
+                        <ul class="submenu fm-accordion-content">
+                          <li><a href="/">Guideline 1</a></li>
+                          <li><a href="/">Guideline 2</a></li>
+                          <li><a href="/">Guideline 3</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="/">Board Committees</a></li>
+                      <li><a href="/">Committee Charters</a></li>
+                      <li><a href="/">Code of Conduct</a></li>
+                      <li><a href="/">Bylaws</a></li>
+                      <li><a href="/">Contact Board of Directors Housing</a></li>
+                      <li><a href="/">Reports</a></li>
+                    </ul>
+                  </fm-accordion-item>
+                </nav>
+              </div>
+              <div class="fm-bottom-rail col-xs-12 col-sm-4">
+                <form action="/" method="post" class="more-in dark-bg padding-20">
+                  <h1>More In About Us</h1>
+                  <div class="styled-select"> 
+                    <select name="foo" onchange="this.form.submit()">
+                      <option value="" selected="selected" disabled="true">Select</option>
+                      <option value="foo1">Other Link 1</option>
+                      <option value="foo2">Other Link 2</option>
+                      <option value="foo3">Other Link 3</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+              <div class="fm-rail col-xs-12 col-sm-4">
+                <div class="rail-row">
+                                    <aside class="promo white-bg padding-30">
+                                      <h1 class="fm-subtitle">Contact the Board</h1>
+                                      <p>Need to connect with our board? Please direct all questions, comments, or concerns to the information below.</p>
+                                      <h2>Board of Directors</h2>
+                                      <p>c/o Office of the Secretary Mailstop: 1H 2S 05<br>3900 Wisconsin Avenue, NW Washington, DC<br>20016-2892</p>
+                                      <p><a href="mailto:board@fanniemae.com" class="email">board@fanniemae.com</a></p>
+                                    </aside>
+                </div>
+                <div class="rail-row"><a href="/" class="image-promo">
+                    <figure class="white-bg"><img src="../media/image-promo-1.png">
+                      <figcaption class="padding-30">
+                        <h1 class="color-white font-serif">Team Leadership</h1>
+                      </figcaption><span href="#" class="cta">View Bios<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></span>
+                    </figure></a></div>
+                <div class="rail-row">
+                  <aside fm-accordion class="rail-list white-bg padding-30">
+                    <div fm-accordion-item>
+                      <h1 class="fm-subtitle">Weekly Updates</h1>
+                      <ul class="link-listing bottom-border">
+                        <li><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                        <li><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                        <li ng-show="isOpen()"><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                        <li ng-show="isOpen()"><a href="/">
+                             
+                             Finally, the Boost Materializes as Consumers Spend Big in May </a>
+                          <div class="fm-date">June 25, 2015</div>
+                        </li>
+                      </ul>
+                      <div class="text-center"><a href ng-click="toggleItem()" class="more"> <span ng-show="!isOpen()">View All<i aria-hidden="true" class="icon fm-plus-circle"></i></span><span ng-show="isOpen()">View Less<i aria-hidden="true" class="icon fm-minus circle"></i></span></a></div>
+                    </div>
+                  </aside>
+                </div>
+                <div class="rail-row">
+                  <aside fm-accordion close-others="false" class="rail-list white-bg padding-30">
+                    <div fm-accordion-item>
+                      <h1 class="fm-subtitle">Authors</h1>
+                      <ul ng-cloak class="bottom-border">
+                        <li>
+                          <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                            <figcaption><a href="" class="bio-name">Katie Penote</a>
+                              <p class="bio-title">Senior Communications & Marketing Manager, Fannie Mae</p><a href="tel:321-121-3423">321 121 3423</a><a href="mailto:dbenson@fanniemae.com">dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                        <li>
+                          <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                            <figcaption><a href="" class="bio-name">David Benson</a>
+                              <p class="bio-title">Executive Vice President Chief Financial Officer, Fannie Mae</p><a href="tel:321-121-3423">321 121 3423</a><a href="mailto:dbenson@fanniemae.com">dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                        <li ng-show="isOpen()">
+                          <figure class="bio-teaser"><img src="../media/bio-teaser-1.png">
+                            <figcaption><a href="" class="bio-name">David Benson</a>
+                              <p class="bio-title">Executive Vice President Chief Financial Officer, Fannie Mae</p><a href="tel:321-121-3423">321 121 3423</a><a href="mailto:dbenson@fanniemae.com">dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                        <li ng-show="isOpen()">
+                          <figure class="bio-teaser"><img src="../media/bio-generic.png">
+                            <figcaption><a href="" class="bio-name">David Benson</a>
+                              <p class="bio-title">Executive Vice President Chief Financial Officer, Fannie Mae</p><a href="tel:321-121-3423">321 121 3423</a><a href="mailto:dbenson@fanniemae.com">dbenson@fanniemae.com</a>
+                            </figcaption>
+                          </figure>
+                        </li>
+                      </ul>
+                      <div class="text-center"><a href ng-click="toggleItem()" class="more"> <span ng-show="!isOpen()">View All<i aria-hidden="true" class="icon fm-plus-circle"></i></span><span ng-show="isOpen()">View Less<i aria-hidden="true" class="icon fm-minus circle"></i></span></a></div>
+                    </div>
+                  </aside>
+                </div>
+                <div class="rail-row">
+                  <aside class="padding-20 white-bg text-center"><a href="mailto:foo@foo.com">Get Email Updates: <i class="fa fa-envelope"></i></a></aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <section class="footer-lead pull-left"><a href="/" title="home" class="site-logo navbar-btn pull-left">
+            <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none">
+              <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
+            </svg></a>
+          <div class="copyright">© 2016 Fannie Mae</div>
+        </section>
+        <section class="footer-menus pull-left">
+          <ul class="footer-menu links list-inline display-table">
+            <li class="table-cell align-middle"><a href="/" title="" class="active">Suppliers</a></li>
+            <li class="table-cell align-middle"><a href="/careers" title="">Careers</a></li>
+            <li class="table-cell align-middle"><a href="/contact-us" title="">Contact Us</a></li>
+            <li class="table-cell align-middle"><a href="/legal" title="">Legal</a></li>
+            <li class="table-cell align-middle"><a href="/privacy" title="">Privacy</a></li>
+            <li class="table-cell align-middle"><a href="/stay-connected">Stay Connected</a></li>
+          </ul>
+        </section>
+      </footer>
+    </main>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script>
+      window.angular || document.write('<script src="/js/lib/angular.min.js"><\/script>');
+      
+    </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+      stLight.options({publisher: "33ebdc2e-6083-4e55-b1e2-20aed9634269", doNotHash: false, doNotCopy: false, hashAddressBar: false, servicePopup:true});
+      
+      
+    </script><!-- bower:js -->
+    <script src="/js/lib/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/js/lib/bower_components/hammerjs/hammer.js"></script>
+    <script src="/js/lib/bower_components/svgxuse/svgxuse.js"></script>
+    <script src="/js/lib/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/js/lib/bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <script src="/js/lib/bower_components/angular-hammer/angular-hammer.js"></script>
+    <!-- endinject -->
+    <!-- Any other scripts not being injected -->
+    <!-- inject:js -->
+    <script src="/js/main.js"></script>
+    <!-- endinject -->
+  </body>
+</html>
