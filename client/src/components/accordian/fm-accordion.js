@@ -2,27 +2,27 @@ directiveModule.directive('fmAccordion', [
   '$timeout', 
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
-      $scope.allOpen = false;
-
-      $scope.setAll = function(){
-        $timeout(function(){
-          $scope.allOpen = !$scope.allOpen;
-          $scope.$broadcast('fmAccordionStateChange', $scope.allOpen);
-        }, 0);
-      }
+        this.closeOthers = attrs.closeOthers == undefined ? true : eval(attrs.closeOthers);
+        this.clickAway = attrs.clickAway == undefined ? false : eval(attrs.clickAway);
     };
     
     return {
       restrict: 'EA',
       link: link,
+      // scope: true
+      bindToController: true,
       scope: true,
-      bindToController: {
-        closeOthers: '=',
-        clickAway: '='
-      },
       controllerAs: "$ctrl",
-      controller: function () {
-        this.closeOthers = this.closeOthers == undefined ? true : this.closeOthers;
+      controller: function ($scope) {
+
+        $scope.allOpen = false;
+
+        $scope.setAll = function(){
+          $timeout(function(){
+            $scope.allOpen = !$scope.allOpen;
+            $scope.$broadcast('fmAccordionStateChange', $scope.allOpen);
+          }, 0);
+        }
       }
     };
 }])
@@ -33,6 +33,7 @@ directiveModule.directive('fmAccordion', [
     var link = function ($scope, element, attrs, controller) {
       $scope.open = attrs.open != undefined;
       $scope.ignoreBroadcast = false;
+      var closeOthers = controller.closeOthers;
 
       $scope.toggleItem = function(){
         $timeout(function(){
@@ -40,18 +41,13 @@ directiveModule.directive('fmAccordion', [
           if($scope.open){
             $scope.ignoreBroadcast = true;
             $scope.$parent.$broadcast('fmAccordionItemOpen');
+            if(closeOthers) setPageScroll(element[0]);
           }
         }, 0);
       };
 
-      $scope.gotoAnchor = function (x) {
-        var hash = 'anchor'+x;
-        document.getElementById(hash).scrollTop;
-        console.log(document.documentElement.scrollTop);
-      }
-
       $scope.$on('fmAccordionItemOpen', function(){
-        if(controller.closeOthers && !$scope.ignoreBroadcast){
+        if(closeOthers && !$scope.ignoreBroadcast){
           $scope.open = false;
         }
         $scope.ignoreBroadcast = false;
@@ -64,6 +60,7 @@ directiveModule.directive('fmAccordion', [
       $scope.isOpen = function(){
         return $scope.open;
       };
+
     };
     
     return {

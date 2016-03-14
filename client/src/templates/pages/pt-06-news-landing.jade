@@ -6,24 +6,25 @@ block title
 block top-content
   -var config={withImage : true, title: 'News', caption: 'Stay informed on Fannie Mae’s efforts to create a stable housing market with our extensive library of articles, speeches and much more.'};
   include ../../components/overview/_default.jade
-  -var linkList = linkList || ['Corporate News', 'Financial News', 'Speeches', 'Statements', 'Media Contact', 'Fact Sheet']
+  -var linkList = linkList || ['Corporate News', 'Financial News', 'Statements', 'Speeches', 'Media Contact', 'Fact Sheet']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ links : ['Home'], page : 'News'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config={ links : ['Home'], page : 'News'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 block content
   .content-row
     include ../../components/featured-hero/_default.jade
   .content-row
-    -config = {title: 'Corporate News', cls: 'white-bg', linkText: 'All Our News', linkCls: 'more', h1Cls:"offset"}
+    -config = {title: 'Corporate News', cls: 'white-bg', linkText: 'See All Corporate News', linkCls: 'more', h1Cls:"offset"}
     include ../../components/news-teaser/_default.jade
   .content-row
-    -config = {title: 'Financial News', cls: 'white-bg', linkText: 'All Our News', linkCls: 'more', h1Cls:"offset"}
+    -config = {title: 'Financial News', cls: 'white-bg', linkText: 'See All Financial News', linkCls: 'more', h1Cls:"offset"}
     include ../../components/news-teaser/_default.jade
   .content-row
-    -config = {title: 'Statements', cls: 'dark-bg', linkText: 'All Our News', linkCls: 'more', h1Cls:"offset"}
+    -config = {title: 'Statements', cls: 'dark-bg', linkText: 'See All Statements', linkCls: 'more', h1Cls:"offset"}
     include ../../components/news-teaser/_default.jade
   .content-row
     include ../../components/subpage-teaser-listing/_default.jade

@@ -20,13 +20,14 @@ a {
   color: $color-link-light;
   text-decoration: none;
   cursor: pointer;
+  @include transition(none);
+}
+a:visited {
+  opacity: $link-opacity-light;
 }
 a:hover {
   color: $color-link-light-h;
   text-decoration: underline;
-}
-a:visited {
-  color: $color-link-light-v;
 }
 a:focus {
   outline: none;

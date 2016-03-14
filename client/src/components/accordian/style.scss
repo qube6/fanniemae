@@ -17,6 +17,8 @@
       position: absolute;
       right: 0;
       top: -3px;
+      border: 2px solid $color-dark-blue;
+      border-radius: 50%;
       @media (min-width: $screen-sm) {
         font-size: 30px;
         top: -6px;

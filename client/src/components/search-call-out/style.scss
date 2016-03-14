@@ -34,9 +34,6 @@
     &:hover{
       color: $color-link-dark-h;
     }
-    &:visited{
-      color: $color-link-dark-v;
-    }
     @media (min-width: $screen-sm){
       padding: 0;
     }
@@ -54,6 +51,9 @@
       @media (min-width: $screen-sm){
         right: -15px;
       }
+    }
+    &:hover:after{
+      border-color: $color-link-dark-h transparent transparent transparent;
     }
   }
   .open a.dropdown:after{
@@ -86,9 +86,6 @@
         color: $color-link-light;
         &:hover{
           color: $color-link-light-h;
-        }
-        &:visted{
-          color: $color-link-light-v;
         }
       }
     }

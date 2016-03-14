@@ -36,6 +36,7 @@ nav.top-navigation{
       &.nav-toggle{
         border-left: none;
         margin: 0;
+        cursor: pointer;
         &.open:after{
           position: absolute;
           top: -20px;

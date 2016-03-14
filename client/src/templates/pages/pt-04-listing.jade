@@ -9,9 +9,10 @@ block top-content
   -var linkList = linkList || ['Economic & Housing Outlook', 'Mortgage Lender Sentiment Survey', 'National Housing Survey', 'Insights']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ links : ['Home', 'Research & Insights'], page : 'Economic & Housing Outlook'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config={ links : ['Home', 'Research & Insights'], page : 'Economic & Housing Outlook'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 block content
   .content-row

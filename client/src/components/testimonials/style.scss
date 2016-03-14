@@ -42,13 +42,18 @@ section.testimonials{
     }
     .rn-carousel-control{
       top: 50%; 
-      color: white;
+      color: $color-link-dark;
+      border-color: $color-link-dark;
+      &:hover{
+        color: $color-link-dark-h;
+        border-color: $color-link-dark-h;
+      }
     }
     .fm-carousel-controls{
       @include center-x;
       span{
-        border-color: white;
-        background-color: white;
+        border-color: $color-link-dark;
+        background-color: $color-link-dark;
         &.active{
           background: transparent;
         }
@@ -58,7 +63,7 @@ section.testimonials{
   blockquote{
     position: relative;
     @include center-y();
-    font-size: 20px;
+    font-size: 26px;
     @media (max-width: $screen-xs-max){
       font-size: 18px;
       margin-top: -50px;
@@ -67,7 +72,7 @@ section.testimonials{
       font-size: 14px;
       display: block;
       position: absolute;
-      top: 100%;
+      top: 110%;
       line-height: 18px;
     }
   }

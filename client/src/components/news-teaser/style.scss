@@ -26,11 +26,20 @@
       background: white;
       color: $color-dark-blue;
     }
-    a:not(.more){
-      color: white;
+    a{
+      color: $color-link-copy-dark;
       &:hover{
-        color: $color-link-light;
+        color: $color-link-copy-dark-h;
       }
+    }
+    a.more{
+      color: $color-link-dark;
+      &:hover{
+        color: $color-link-dark-h;
+      }
+    }
+    .fm-date{
+      color: white;
     }
     .block{
       border-color: rgba(255, 255, 255, .5);
@@ -40,7 +49,10 @@
     position: absolute;
     right: 10px;
     bottom: 5px;
-    color: white;
+    color: $color-link-light;
+    &:hover{
+      color: $color-link-light-h;
+    }
     @media (min-width: $screen-sm){
       right: 30px;
       bottom: 30px;

@@ -5,6 +5,11 @@
   @media (max-width: $screen-sm-max){
     margin: 20px 0 30px;
   }
+  .full-width-max {
+    @media (min-width: $full-width-max){
+      padding: 0 35px;
+    }
+  }
 }
 .breadcrumb{
   float: left;

@@ -51,6 +51,15 @@ body{
   @include transform(rotate(0deg));
 }
 
+.icon.circle{
+  border: 2px solid $color-link-light;
+  border-radius: 50%;
+  line-height: 26px;
+  a:hover &{
+    border-color: $color-link-light-h;
+  }
+}
+
 .dropdown-toggle {
   cursor: pointer;
   height: 100%;
@@ -180,13 +189,24 @@ body{
 .dark-bg{
   background: $color-dark-blue;
   color: white;
+  .fm-title{
+    a{
+      color: $color-link-copy-dark;
+      &:hover{
+        color: $color-link-copy-dark-h;
+      }
+      &:visited{
+        opacity: $link-opacity-copy-dark;
+      }
+    }
+  }
   a{
     color: $color-link-dark;
     &:hover{
       color: $color-link-dark-h;
     }
     &:visited{
-      color: $color-link-dark-v;
+      opacity: $link-opacity-dark;
     }
   }
 }
@@ -203,21 +223,18 @@ body{
   &:hover{
     color: $color-link-light;
   }
-  &:hover{
-    color: $color-link-light-v;
-  }
 }
 
 .color-dark{
   color: $color-dark-blue;
 }
 .color-dark a, a.color-dark{
-  color: $color-dark-blue;
+  color: $color-link-dark;
   &:hover{
-    color: $color-link-light;
+    color: $color-link-dark-h;
   }
-  &:hover{
-    color: $color-link-light-v;
+  &:visited{
+   opacity: $link-opacity-dark;
   }
 }
 
@@ -228,9 +245,6 @@ body{
   color: $color-link-light;
   &:hover{
     color: $color-link-light-h;
-  }
-  &:hover{
-    color: $color-link-light-v;
   }
 }
 
@@ -261,9 +275,24 @@ body{
     width: 100%;
     margin: 0 0 15px;
     -moz-appearance:none;
+    &::-ms-expand{
+      display:none; //hides arrow for ie10
+    }
   }
   &:after{
     border-top-color:#fff;
+    pointer-events: none;
+  }
+  &:before{
+    display:block;
+    position:absolute;
+    content:'';
+    right:30px;
+    top:3px;
+    height:34px;
+    width:25px;
+    background:#26334b;
+    z-index:5;
     pointer-events: none;
   }
 }
@@ -281,7 +310,6 @@ body{
   padding: 5px 40px 5px 8px;
   position: relative;
   display: inline-block;
-  @include transition(color 0.25s linear);
   i{
     position: absolute;
     top: 4px;
@@ -297,9 +325,6 @@ body{
   &:hover{
     color:$color-link-light-h;
   }  
-  &:visted{
-    color: $color-link-light-v;
-  }
 }
 .block{
   margin-bottom: 30px;
@@ -361,7 +386,7 @@ ul.link-listing{
     left: calc(50% - 7px);
     width: 14px;
     height: 2px;
-    background: $color-teal;
+    background: $color-link-dark;
     display: block;
     height: 2px;
     margin: 0 auto;
@@ -374,7 +399,7 @@ ul.link-listing{
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    border: 2px solid $color-teal;
+    border: 2px solid $color-link-dark;
     top: calc(50% - 8px);
   }
   .icon-bar{

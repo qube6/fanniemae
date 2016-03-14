@@ -1,6 +1,9 @@
 .image-promo{
   figure{
     position: relative;
+    @media(max-width: $screen-xs-max){
+      margin-top: 30px;
+    }
     figcaption{
       position: absolute;
       top: 0;
@@ -13,7 +16,10 @@
     bottom: 0;
     left: 0;
     background: $color-dark-blue;
-    color: $color-teal;
+    color: $color-link-dark;
+    &:hover{
+      color: $color-link-dark-h;
+    }
   }
   img{
     width: 100%;

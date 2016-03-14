@@ -25,10 +25,6 @@ section.overview{
       }
     }
   }
-  @media (min-width: 600px) {
-  }
-  @media (min-width: 1080px) {
-  }
   .image-wrap{
     min-height: 220px;
     position: relative;
@@ -40,16 +36,12 @@ section.overview{
     min-width: 100%;
     position: absolute;
     top: 0;
-    left: 50%;    
-    width: 600px;
-    margin-left: -300px;
+    @include center-x();
     @media (min-width: 600px) {
       width: 1280px;
-      margin-left: -640px
     }
     @media (min-width: 1080px) {
       width: 2000px;
-      margin-left: -1000px;
     }
   }  
   &.with-image{

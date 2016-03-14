@@ -9,9 +9,10 @@ block top-content
   -var linkList = linkList || ['Corporate News', 'Financial News', 'Speeches', 'Statements', 'Media Contact', 'Fact Sheet']
   include ../../components/top-navigation/_default.jade
   .breadcrumb-social-wrap
-    -var config={ links : ['Home', 'News'], page : 'Corporate News'}
-    include ../../components/breadcrumb/_default.jade
-    include ../../components/social-share/_default.jade
+    .full-width-max
+      -var config={ links : ['Home', 'News'], page : 'Corporate News'}
+      include ../../components/breadcrumb/_default.jade
+      include ../../components/social-share/_default.jade
 
 block content
       

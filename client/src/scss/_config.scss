@@ -17,21 +17,32 @@ $color-body-bg: rgba(230, 230, 230, 1);
 $color-body-bg-50: rgba(230, 230, 230, .5);
 $color-hr: rgba(0, 0, 0, .3);
 
-$color-link-light: $color-teal;
-$color-link-light-v: rgba(0, 118, 151, .8);
-$color-link-light-h: $color-dark;
+$color-link-light: #007697;
+$link-opacity-light: .75;
+$color-link-light-h:  #000F2B;
 
-$color-link-dark: $color-teal;
-$color-link-dark-v: rgba(0, 118, 151, .8);
+$color-link-dark:  #00acdc;
+$link-opacity-dark: .75;
 $color-link-dark-h: white;
+
+$color-link-copy-dark:  white;
+$link-opacity-copy-dark: .75;
+$color-link-copy-dark-h:  #007697;
+
+$color-cta: white;
+$color-cta-h: #000F2B;
 
 $font-sans-serif: 'Urbano-Regular', 'Arial', sans-serif;
 $font-serif: 'Glyddon-Regular', 'Georgia', 'Century', serif;
+
+$full-width-max: 1440px;
 
 $header-height-lg: 70px;
 $header-element-height: 40px;
 $header-element-spacing: ($header-height-lg - $header-element-height) / 2;
 $header-site-list-width: 385px;
+$header-site-list-height: calc(100vh - #{$header-height-lg});
+
 
 $footer-height-md: 70px;
 $footer-height-sm: 140px;

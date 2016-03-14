@@ -15,7 +15,8 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
       var updateNav = throttle(function(){
         var availableSpace = $nav[0].offsetWidth,
             stillRoom = true,
-            left;
+            left,
+            buttonTemplate;
 
         $visibleLinks.html('');
         $scope.hiddenLinks = [];
@@ -28,7 +29,11 @@ directiveModule.directive('fmGreedyNav', ['$window', '$compile', '$timeout', '$d
             if($visibleLinks[0].offsetWidth > availableSpace - 70){
               left = items.length-i;
               //replace the one we just added with a more button
-              $visibleLinks[0].lastChild.outerHTML = '<li class="nav-toggle" ng-class="{ \'open\' : isOpen() }"><button ng-click="toggleOpen()" ng-class="{ \'openNav\' : isOpen() }" type="button" class="fm-menu-toggle"><span class="sr-only">Toggle more items</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span><span class="count">'+left+'</span></button></li>';
+              buttonTemplate = '<li class="nav-toggle" ng-class="{ \'open\' : isOpen() }" ng-click="toggleOpen()" >';
+              buttonTemplate = buttonTemplate + '<button ng-class="{ \'openNav\' : isOpen() }" type="button" class="fm-menu-toggle">';
+              buttonTemplate = buttonTemplate + '<span class="sr-only">Toggle more items</span><span class="icon-bar one"></span><span class="icon-bar two">';
+              buttonTemplate = buttonTemplate + '</span><span class="icon-bar three"></span><span class="outline"></span><span class="count">'+left+'</span></button></li>';
+              $visibleLinks[0].lastChild.outerHTML = buttonTemplate;
               //lets tuck the item we just replaced as the first item in hidden
               $scope.hiddenLinks.push(item);
               stillRoom = false;

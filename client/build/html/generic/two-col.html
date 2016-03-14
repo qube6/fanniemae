@@ -28,101 +28,103 @@
     <main>
       <div id="page-wrapper">
         <header id="navbar" role="banner" fm-sticky-header class="navbar navbar-default">
-          <div class="navbar-header">
-            <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
-            <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
-              <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
-                <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
-              </svg></a>
-          </div>
-          <form action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away="header-search" class="header-search-form">
-            <input placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')" class="header-search-input">
-            <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
-          </form>
-          <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
-            <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
-              <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
-              <div class="sites-list">
-                <h1 class="font-serif">Doing Business with Fannie Mae</h1>
-                <ul fm-accordion close-others="false" class="menu nav">
-                  <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
-                      <h2>Lenders</h2>
-                      <button type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
-                    <ul class="submenu">
-                      <li><a href="https://www.fanniemae.com/singlefamily/index" target="_blank">Single-Family</a></li>
-                      <li><a href="https://www.fanniemae.com/multifamily/index" target="_blank">Multifamily</a></li>
-                    </ul>
-                  </li>
-                  <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
-                      <h2>Servicers</h2>
-                      <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
-                    <ul class="submenu">
-                      <li><a href="https://www.fanniemae.com/singlefamily/servicing" target="_blank">Single-Family</a></li>
-                      <li><a href="https://www.fanniemae.com/multifamily/servicing" target="_blank">MultiFamily</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/capital-market-investors"> 
-                      <h2>Capital Market Investors</h2></a></li>
-                </ul>
-                <h1 class="font-serif">Homeownership & Renting</h1>
-                <ul class="menu nav">
-                  <li><a href="http://knowyouroptions.com" target="_blank">
-                      <h2>Know Your Options</h2>
-                      <div class="subhead">For Owners, Renters & Buyers</div></a></li>
-                  <li><a href="http://homepath.com" target="_blank">
-                      <h2>HomePath</h2>
-                      <div class="subhead">Find & Buy Homes</div></a></li>
-                </ul>
-              </div>
+          <div class="full-width-max">
+            <div class="navbar-header">
+              <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
+              <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
+                <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
+                  <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
+                </svg></a>
             </div>
-            <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn pull-right desktop-only"><span aria-hidden="true" class="icon fm-search-circle"></span></button>
-            <ul fm-accordion close-others="false" class="main-menu">
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/about-us" title="">About Us</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/about-us/what-we-do" title="">What We Do</a></li>
-                  <li><a href="/about-us/leadership-team" title="">Leadership Team</a></li>
-                  <li><a href="/about-us/awards-achievements">Awards & Achievements</a></li>
-                  <li><a href="/about-us/governance">Governance</a></li>
-                  <li><a href="/about-us/investor-relations" title="">Investor Relations</a></li>
-                  <li><a href="/about-us/giving-back">Giving Back</a></li>
-                </ul>
-              </li>
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/research-and-insights" title="">Research & Insights</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/research-and-insights/271" title="">Consumer Research & Analysis</a></li>
-                  <li><a href="/research-and-insights/15" title="">Economic & Housing Outlook</a></li>
-                  <li><a href="/research-and-insights/272" title="">Home Purchase Sentiment Index</a></li>
-                  <li><a href="/research-and-insights/16" title="">Insights</a></li>
-                  <li><a href="/research-and-insights/17" title="">Mortgage Lender Sentiment Survey</a></li>
-                  <li><a href="/research-and-insights/18" title="">National Housing Survey</a></li>
-                </ul>
-              </li>
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/news" title="Description of gucrisa.">Newsroom</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/news/press-center" title="">Press Center</a></li>
-                  <li><a href="/news/in-the-news" title="">In The News</a></li>
-                  <li><a href="/news/industry-news" title="">Industry News</a></li>
-                  <li><a href="/news/fact-sheet">Fact Sheet</a></li>
-                </ul>
-              </li>
-              <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/careers" title="">Careers</a>
-                <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
-                <ul class="menu nav">
-                  <li><a href="/careers/job-search">Job Search</a></li>
-                  <li><a href="/careers/why-fannie-mae">Why Fannie Mae</a></li>
-                  <li><a href="/careers/what-we-offer">What We Offer</a></li>
-                  <li><a href="/careers/hiring-process">Hiring Process</a></li>
-                  <li><a href="/careers/who-we-seek">Who We Seek</a></li>
-                  <li><a href="/careers/university-recruiting">University Recruiting</a></li>
-                  <li><a href="/careers/locations" title="">Locations</a></li>
-                </ul>
-              </li>
-              <li><a href="/contact-us" title="Description of tho.">Contact Us</a></li>
-            </ul>
-          </nav>
+            <form action="/" method="post" accept-charset="UTF-8" ng-class="{ 'header-search-open' : isActive('header-search') }" fm-close-on-click-away="header-search" class="header-search-form">
+              <input placeholder="Search" type="search" ng-model="header.search" ng-change="setHeaderSubmit('header-submit')" class="header-search-input">
+              <input type="submit" value="" ng-class="{ 'header-search-active' : isActive('header-submit') }" class="header-search-submit"><span aria-hidden="true" class="icon fm-arrow-right-circle"></span>
+            </form>
+            <nav ng-class="{ 'open-nav' : isActive('header-mobile-menu') }" fm-close-on-click-away="header-mobile-menu" hm-Swiperight="toggleActive('header-mobile-menu', false)" class="navbar-offcanvas pull-right">
+              <div ng-class="{ 'open' : isActive('header-side-menu') }" fm-close-on-click-away="header-side-menu" hm-Swiperight="toggleActive('header-side-menu', false)" class="menu-sites">
+                <button type="button" ng-click="toggleActive('header-side-menu')" class="toggle-sites desktop-only">All Fannie Mae Sites<span aria-hidden="true" ng-class=" isActive('header-side-menu') ? 'fm-minus-circle' : 'fm-plus-circle' " class="icon"></span></button>
+                <div class="sites-list">
+                  <h1 class="font-serif">Doing Business with Fannie Mae</h1>
+                  <ul fm-accordion close-others="false" class="menu nav">
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                        <h2>Lenders</h2>
+                        <button type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                      <ul class="submenu">
+                        <li><a href="https://www.fanniemae.com/singlefamily/index" target="_blank">Single-Family</a></li>
+                        <li><a href="https://www.fanniemae.com/multifamily/index" target="_blank">Multifamily</a></li>
+                      </ul>
+                    </li>
+                    <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a ng-click="toggleItem()">
+                        <h2>Servicers</h2>
+                        <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " class="icon fm-plus"></button></a>
+                      <ul class="submenu">
+                        <li><a href="https://www.fanniemae.com/singlefamily/servicing" target="_blank">Single-Family</a></li>
+                        <li><a href="https://www.fanniemae.com/multifamily/servicing" target="_blank">MultiFamily</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/capital-market-investors"> 
+                        <h2>Capital Market Investors</h2></a></li>
+                  </ul>
+                  <h1 class="font-serif">Homeownership & Renting</h1>
+                  <ul class="menu nav">
+                    <li><a href="http://knowyouroptions.com" target="_blank">
+                        <h2>Know Your Options</h2>
+                        <div class="subhead">For Owners, Renters & Buyers</div></a></li>
+                    <li><a href="http://homepath.com" target="_blank">
+                        <h2>HomePath</h2>
+                        <div class="subhead">Find & Buy Homes</div></a></li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn pull-right desktop-only"><span aria-hidden="true" class="icon fm-search-circle"></span></button>
+              <ul fm-accordion close-others="false" class="main-menu">
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/about-us" title="">About Us</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/about-us/what-we-do" title="">What We Do</a></li>
+                    <li><a href="/about-us/leadership-team" title="">Leadership Team</a></li>
+                    <li><a href="/about-us/awards-achievements">Awards & Achievements</a></li>
+                    <li><a href="/about-us/governance">Governance</a></li>
+                    <li><a href="/about-us/investor-relations" title="">Investor Relations</a></li>
+                    <li><a href="/about-us/giving-back">Giving Back</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/research-and-insights" title="">Research & Insights</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/research-and-insights/271" title="">Consumer Research & Analysis</a></li>
+                    <li><a href="/research-and-insights/15" title="">Economic & Housing Outlook</a></li>
+                    <li><a href="/research-and-insights/272" title="">Home Purchase Sentiment Index</a></li>
+                    <li><a href="/research-and-insights/16" title="">Insights</a></li>
+                    <li><a href="/research-and-insights/17" title="">Mortgage Lender Sentiment Survey</a></li>
+                    <li><a href="/research-and-insights/18" title="">National Housing Survey</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/news" title="Description of gucrisa.">Newsroom</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/news/press-center" title="">Press Center</a></li>
+                    <li><a href="/news/in-the-news" title="">In The News</a></li>
+                    <li><a href="/news/industry-news" title="">Industry News</a></li>
+                    <li><a href="/news/fact-sheet">Fact Sheet</a></li>
+                  </ul>
+                </li>
+                <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="/careers" title="">Careers</a>
+                  <button aria-hidden="true" type="button" ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " ng-click="toggleItem()" class="no-desktop icon fm-plus"></button>
+                  <ul class="menu nav">
+                    <li><a href="/careers/job-search">Job Search</a></li>
+                    <li><a href="/careers/why-fannie-mae">Why Fannie Mae</a></li>
+                    <li><a href="/careers/what-we-offer">What We Offer</a></li>
+                    <li><a href="/careers/hiring-process">Hiring Process</a></li>
+                    <li><a href="/careers/who-we-seek">Who We Seek</a></li>
+                    <li><a href="/careers/university-recruiting">University Recruiting</a></li>
+                    <li><a href="/careers/locations" title="">Locations</a></li>
+                  </ul>
+                </li>
+                <li><a href="/contact-us" title="Description of tho.">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
         </header>
         <div class="container-fluid">
           <div class="row">
@@ -139,11 +141,11 @@
                     <h1 class="fm-subtitle">Board Committees
                       <button type="button" ng-click="setAll()" class="fm-accordion-toggle-all">
                         <div ng-show="allOpen">Close All</div>
-                        <div ng-show="!allOpen">Expand All</div><span ng-class=" allOpen ? 'fm-minus-circle' : 'fm-plus-circle' " aria-hidden="true" class="icon list-icon"></span>
+                        <div ng-show="!allOpen">Expand All</div><span ng-class=" allOpen ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span>
                       </button>
                     </h1>
                     <ul class="link-listing custom-icons bottom-border">
-                      <li fm-accordion-item id="anchor1" ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem(); gotoAnchor(1)">The Executive Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                      <li fm-accordion-item ng-class="{ 'open' : isOpen() }" open><a href="" ng-click="toggleItem()">The Executive Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
                         <div class="fm-accordion-content">
                           <div class="rich-text-block">
                             <p>The Executive Committee has all the authority of the Board during the interim periods between Board meetings, except for certain specified powers that are stated in the Fannie Mae Bylaws.</p>
@@ -330,6 +332,172 @@
                           </div>
                         </div>
                       </li>
+                      <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem()">Sample Accordion Markup<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                        <div class="fm-accordion-content">
+                          <div class="rich-text-block">
+                            <h1>CSS Basic Elements</h1>
+                            <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
+                            <hr>
+                            <h1 id="headings">Headings</h1>
+                            <h1>Heading 1</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <h5>Heading 5</h5>
+                            <h6>Heading 6</h6>
+                            <hr>
+                            <h1>Paragraph</h1>
+                            <p>Lorem ipsum dolor sit amet, <a href="/">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+                            <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+                            <hr>
+                            <h1 id="list_types">List Types</h1>
+                            <h3>Definition List</h3>
+                            <dl>
+                              <dt>Definition List Title</dt>
+                              <dd>This is a definition list division.</dd>
+                            </dl>
+                            <h3>Ordered Lists</h3>
+                            <ol type="1">
+                              <li>List Item 1</li>
+                              <li>List Item 2</li>
+                              <li>List Item 3</li>
+                            </ol>
+                            <ol type="i">
+                              <li>List Item i</li>
+                              <li>List Item ii</li>
+                              <li>List Item iii</li>
+                            </ol>
+                            <h3>Unordered List</h3>
+                            <ul>
+                              <li>List Item 1</li>
+                              <li>List Item 2</li>
+                              <li>List Item 3</li>
+                            </ul>
+                            <hr>
+                            <fieldset>
+                              <legend>Legend</legend>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+                            </fieldset>
+                            <h1 id="misc">Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.</h1>
+                            <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. 
+                              <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title="National Basketball Association">NBA</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  
+                            </p>
+                            <blockquote class="with-citation">This stylesheet is going to help so freaking much.
+                              <footer>
+                                <cite>Citation</cite>
+                              </footer>
+                            </blockquote>
+                            <h1 id="tables">Tables</h1>
+                            <h2>Non-Responsive Table</h2>
+                            <div class="overflow-wrapper">
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Table Header 1</th>
+                                    <th>Table Header 2</th>
+                                    <th>Table Header 3</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Division 1</td>
+                                    <td>Division 2</td>
+                                    <td>Division 3</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Division 1</td>
+                                    <td>Division 2</td>
+                                    <td>Division 3</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Division 1</td>
+                                    <td>Division 2</td>
+                                    <td>Division 3</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <h2>Responsive Table</h2>
+                            <table class="responsive-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">CUSIP</th>
+                                  <th scope="col">Issue Date</th>
+                                  <th scope="col">Maturity Date</th>
+                                  <th scope="col">Coupon</th>
+                                  <th scope="col">Amount Issued</th>
+                                </tr>
+                              </thead>
+                              <tr>
+                                <th scope="row" data-title="CUSIP">3135G0NV1</th>
+                                <td data-title="Issue Date">08/17/2012</td>
+                                <td data-title="Maturity Date">09/28/2015</td>
+                                <td data-title="Coupon">0.500%</td>
+                                <td data-title="Amount Issued">5,000,000,000</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" data-title="CUSIP">31359MZC0</th>
+                                <td data-title="Issue Date">09/12/2005</td>
+                                <td data-title="Maturity Date">10/15/2015</td>
+                                <td data-title="Coupon">4.375%</td>
+                                <td data-title="Amount Issued">4,000,000,000</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" data-title="CUSIP">31398A4M1</th>
+                                <td data-title="Issue Date">09/27/2010</td>
+                                <td data-title="Maturity Date">10/26/2015</td>
+                                <td data-title="Coupon">1.625%</td>
+                                <td data-title="Amount Issued">6,500,000,000</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" data-title="CUSIP">31359MH89</th>
+                                <td data-title="Issue Date">02/16/2006</td>
+                                <td data-title="Maturity Date">12/21/2015</td>
+                                <td data-title="Coupon">0.375%</td>
+                                <td data-title="Amount Issued">4,000,000,000</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" data-title="CUSIP">31359MH89</th>
+                                <td data-title="Issue Date">02/16/2006</td>
+                                <td data-title="Maturity Date">03/15/2016</td>
+                                <td data-title="Coupon">5.000%</td>
+                                <td data-title="Amount Issued">5,000,000,000</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" data-title="CUSIP">3135G0VA8</th>
+                                <td data-title="Issue Date">02/15/2013</td>
+                                <td data-title="Maturity Date">03/30/2016</td>
+                                <td data-title="Coupon">0.500%</td>
+                                <td data-title="Amount Issued">6,000,000,000</td>
+                              </tr>
+                            </table>
+                          </div><br><br>
+                          <figure>
+                            <fm-video-player poster="../media/video-poster.png">
+                              <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+                              <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+                              <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+                              <!-- fallback to Flash:-->
+                              <object type="application/x-shockwave-flash" data="player.swf">
+                                <!-- Firefox uses the `data` attribute above, IE/Safari uses the param below-->
+                                <param name="movie" value="player.swf">
+                                <param name="flashvars" value="autostart=true&amp;controlbar=over&amp;image=../media/video-poster.png&amp;file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4">
+                                <!-- fallback image--><img src="../media/video-poster.png" alt="Big Buck Bunny" title="No video playback capabilities, please download the video below">
+                              </object>
+                            </fm-video-player>
+                            <figcaption>
+                              <h3>Adding new technology for mortgage servicers</h3>
+                              <p>The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...</p>
+                            </figcaption>
+                          </figure>
+                          <figure><img src="../media/content-image-1.png" alt="Placeholder Image" title="Placeholder image">
+                            <figcaption>
+                              <h3>Adding new technology for mortgage servicers</h3>
+                              <p>The Consumer Financial Protection Bureau (CFPB) passed comprehensive mortgage servicing regulations in January 2014.The impending passage of these regulations spurred many mortgage...</p><i class="small">Photo credit info</i>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </li>
                     </ul>
                   </fm-accordion>
                   <div class="article-header">
@@ -338,6 +506,12 @@
                     <h2>Subheading is displayed here</h2>
                     <div class="article-date">June 23, 2015</div>
                   </div>
+                  <figure><img src="../media/content-image-1.png">
+                    <figcaption>
+                      <h3>Caption Title</h3>
+                      <p>Caption text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, vitae!</p><i class="small">Photo credit</i>
+                    </figcaption>
+                  </figure>
                   <fm-video-player poster="../media/video-poster.png">
                     <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
                     <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
@@ -460,6 +634,8 @@
               </div>
               <div class="fm-top-rail col-xs-12 col-sm-4">
               </div>
+              <div class="fm-bottom-rail col-xs-12 col-sm-4">
+              </div>
               <div class="fm-rail col-xs-12 col-sm-4">
                 <nav fm-accordion class="rail-navigation dark-bg padding-30">
                   <fm-accordion-item ng-class="{ 'rail-nav-open' : isOpen() }">
@@ -503,8 +679,8 @@
                     <li><a href="/">
                          
                          June Multifamily Market Commentary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
-                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-audio-o color-dark"></span> Podcast<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
-                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-video-o color-dark"></span> Video Summary<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-audio-o color-dark"></span> Podcast<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-video-o color-dark"></span> Video Summary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
                     <li><a href="/">
                          
                          June News Release<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
@@ -523,14 +699,14 @@
                     <li><a href="/">
                          
                          June Multifamily Market Commentary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
-                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-audio-o color-dark"></span> Podcast<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
-                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-video-o color-dark"></span> Video Summary<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-audio-o color-dark"></span> Podcast<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                    <li><a href="/"> <span aria-hidden="true" class="fa fa-file-video-o color-dark"></span> Video Summary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
                     <li><a href="/">
                          
                          June News Release<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
                   </ul>
                 </aside>
-                <aside fm-accordion class="rail-list white-bg padding-30">
+                <aside fm-accordion close-others="false" class="rail-list white-bg padding-30">
                   <div fm-accordion-item>
                     <h1 class="fm-subtitle">Authors</h1>
                     <ul ng-cloak class="bottom-border">
@@ -563,7 +739,7 @@
                         </figure>
                       </li>
                     </ul>
-                    <div class="text-center"><a href ng-click="toggleItem()" class="more"> <span ng-show="!isOpen()">View All<i aria-hidden="true" class="icon fm-plus-circle"></i></span><span ng-show="isOpen()">View Less<i aria-hidden="true" class="icon fm-minus-circle"></i></span></a></div>
+                    <div class="text-center"><a href ng-click="toggleItem()" class="more"> <span ng-show="!isOpen()">View All<i aria-hidden="true" class="icon fm-plus-circle"></i></span><span ng-show="isOpen()">View Less<i aria-hidden="true" class="icon fm-minus circle"></i></span></a></div>
                   </div>
                 </aside>
                 <aside class="padding-20 white-bg text-center"><a href="mailto:foo@foo.com">Get Email Updates: <i class="fa fa-envelope"></i></a></aside>
