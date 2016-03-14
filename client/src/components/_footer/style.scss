@@ -31,7 +31,6 @@
       padding: 15px 0;
       text-align: center;
       > *{
-        float: none !important;
         display: inline-block;
       }
     }
@@ -78,13 +77,14 @@
   .site-logo{
     padding: 0;
     height: 100%;
-    height: 30px;
     svg{
-      height: 100%;
-      width: 151px;
+      height: auto;
+      width: 150px;
     }
     @media (max-width: $screen-xs-max){
       padding-top: 5px;
+      margin-left: 5%;
+      height: auto;
     }
   }
   .copyright{
@@ -95,9 +95,7 @@
     @media only screen and (max-width:$screen-sm-max) {
       float: left;
       margin-left: 10px;
-    }
-    @media only screen and (max-width:$screen-sm-max) {
-      padding-left: 20px;
+      padding-left: 10px;
     }
   }
 }

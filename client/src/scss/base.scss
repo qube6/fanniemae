@@ -15,8 +15,8 @@ body{
     width: auto;
     @include center-y();
   svg{
-    width: 189px;
-    height: 37px;
+    width: 190px;
+    height: 57px;
     padding: 0;
     @include svg-color(white);
     @media only screen and (max-width:400px) {
@@ -246,6 +246,56 @@ body{
   &:hover{
     color: $color-link-light-h;
   }
+}
+
+
+.color-desc{
+  text-align: center;
+  padding: 10px 0;
+}
+.color-square{
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  color: white;
+  span{
+    font-size: 18px;
+    padding-top: 40%;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
+
+.color-dark-blue{
+  background: $color-dark-blue;
+}
+.color-light{
+  background: $color-light;
+}
+.color-body-bg{
+  background: $color-body-bg;
+}
+.color-link-light{
+  background: $color-link-light;
+}
+.color-link-dark{
+  background: $color-link-dark;
+}
+.color-light-blue{
+  background: $color-light-blue;
+}
+.color-hr{
+  background: $color-hr;
+}
+.color-gray{
+  background: $color-gray;
+}
+.color-dark-gray{
+  background: $color-dark-gray;
+}
+.color-error{
+  background: $color-error;
 }
 
 .padding-10{

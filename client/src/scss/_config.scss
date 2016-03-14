@@ -2,7 +2,6 @@ $color-dark-blue: rgba(0, 15, 43, 1);
 $color-dark-blue-80: rgba(0, 15, 43, .8);
 $color-blue: rgba(13, 35, 56, 1);
 $color-teal: rgba(0, 118, 151, 1);
-$color-green: rgba(34, 179, 113, 1);
 $color-light-blue: rgba(229, 241, 244, 1);
 $color-gray: rgba(50, 68, 86, 1);
 $color-dark-gray: rgba(70, 82, 94, 1);
@@ -13,24 +12,24 @@ $color-error: rgba(176, 53, 53, 1);
 $color-dark: $color-dark-blue;
 $color-light: rgba(228, 228, 228, 1);
 
-$color-body-bg: rgba(230, 230, 230, 1);
+$color-body-bg: rgba(236, 235, 238, 1);
 $color-body-bg-50: rgba(230, 230, 230, .5);
 $color-hr: rgba(0, 0, 0, .3);
 
-$color-link-light: #007697;
+$color-link-light: rgba(0, 118, 151, 1);
 $link-opacity-light: .75;
-$color-link-light-h:  #000F2B;
+$color-link-light-h:  rgba(0, 15, 43, 1);
 
-$color-link-dark:  #00acdc;
+$color-link-dark:  rgba(0, 172, 220, 1);
 $link-opacity-dark: .75;
 $color-link-dark-h: white;
 
 $color-link-copy-dark:  white;
 $link-opacity-copy-dark: .75;
-$color-link-copy-dark-h:  #007697;
+$color-link-copy-dark-h:  rgba(0, 118, 151, 1);
 
 $color-cta: white;
-$color-cta-h: #000F2B;
+$color-cta-h: rgba(0, 15, 43, 1);
 
 $font-sans-serif: 'Urbano-Regular', 'Arial', sans-serif;
 $font-serif: 'Glyddon-Regular', 'Georgia', 'Century', serif;

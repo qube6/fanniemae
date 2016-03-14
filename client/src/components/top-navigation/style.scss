@@ -55,6 +55,12 @@ nav.top-navigation{
     right: 0;
     top: -10px;
     padding: 0;
+    .icon-bar{
+      background: $color-link-light;
+    }
+    .outline{
+      border: 2px solid $color-link-light;
+    }
   }
   span.label{
     visibility: hidden;
@@ -70,7 +76,7 @@ nav.top-navigation{
     font-size: 10px;
     line-height: 14px;
     text-align: center;
-    background: #007697;
+    background: $color-link-light;
     color:#fff;
   }
   

@@ -5,10 +5,11 @@ block title
 
 block top-content
   include ../../components/homepage-carousel/_default.jade
+  -var config={withImage : false, title: 'One Column Style Guide', caption: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque sequi ad id totam placeat! Error sed deleniti, quidem ipsum laudantium, quisquam doloremque nesciunt, officia nobis fugit, tempore expedita numquam illum.'};
   include ../../components/overview/_default.jade
   .breadcrumb-social-wrap
     .full-width-max
-      -var config={ links : ['Home'], page : 'Generic'}
+      -var config={ links : ['Home'], page : 'Generic One Column'}
       include ../../components/breadcrumb/_default.jade
       include ../../components/social-share/_default.jade
   include ../../components/top-navigation/_default.jade
@@ -26,9 +27,15 @@ block content
       include ../../components/secondary-feature/_default.jade
        - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Mortgage Lender Sentiment Survey", "title" : "Further Easing of Mortgage Credit Standards on the Horizon.", "date" : "May 8, 2015", "ctaText" : "View All"}
       include ../../components/secondary-feature/_default.jade
+  .content-row
+    .equal-height-sm-row
+      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Twitter", "title" : "Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a href='' class='color-brand'>http://bit.ly/1FHNQTY</a>", "date" : "April 23, 2015", "ctaText" : "Read More"}
+      include ../../components/secondary-feature/_default.jade
+      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Linkedin", "text" : "Short description about Fannie Mae on LinkedIn, onec sed eros sit amet libero gravida pellentesque. In fermentum ex feugiat.", "ctaText" : "Read More"}
+      include ../../components/secondary-feature/_default.jade
+      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Glassdoor", "text" : "Short description about Fannie Mae on Glassdoor, onec sed eros sit amet libero gravida pellentesque. In fermentum ex feugiat.", "ctaText" : "Read More"}
+      include ../../components/secondary-feature/_default.jade
 
-  include ../../components/image-slider/_default.jade
-  include ../../components/image-slider/_default.jade
   include ../../components/image-slider/_default.jade
 
   .content-row
@@ -42,39 +49,40 @@ block content
   .content-row
     include ../../components/featured-hero/_default.jade
   .content-row
+    -config = {title: 'Corporate News', cls: 'white-bg', linkText: 'See All Corporate News', linkCls: 'more', h1Cls:"offset"}
+    include ../../components/news-teaser/_default.jade
+  .content-row
+    -config = {title: 'Financial News', cls: 'white-bg', linkText: 'See All Financial News', linkCls: 'more', h1Cls:"offset"}
+    include ../../components/news-teaser/_default.jade
+  .content-row
+    -config = {title: 'Statements', cls: 'dark-bg', linkText: 'See All Statements', linkCls: 'more', h1Cls:"offset"}
+    include ../../components/news-teaser/_default.jade
+  .content-row
+    - text = { "title" : "Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a>", "date" : "May 22, 2015", "ctaText" : "Follow Us on Twitter"}
+    - config = {title: 'Twitter', cls: 'white-bg twitter-theme', linkText: 'Follow Us on Twitter', linkCls: 'cta'}
     include ../../components/news-teaser/_default.jade
   
   .content-row
-    .equal-height-sm-row
-      include ../../components/secondary-feature/_default.jade
-      include ../../components/secondary-feature/_default.jade
-      include ../../components/secondary-feature/_default.jade
-  .content-row
     include ../../components/locator-form/_default.jade
   .content-row
-    include ../../components/locator-form/_default.jade
-  .content-row
-    -var config = {type: 'img-right', title:'Debt Securities', caption:'', productList: ['Short-term Debt Securities', 'Long-term Debt Securities', 'Foreign Currency Denominated Notes'], toolsList: ['Benchmark Automated Syndication System (BASS)', 'Debt Transaction Application (DTA)', 'Fannie Mae Auction System Technology (FAST)']};
+    -var config = {type: 'img-right', title:'Debt Securities', caption:'Fannie Mae is the largest seller of debt securities in the U.S., helping support the mortgage market. We offer a wide range of tools to help you navigate the market.', productList: ['Short-term Debt Securities', 'Long-term Debt Securities', 'Foreign Currency Denominated Notes'], toolsList: ['Benchmark Automated Syndication System (BASS)', 'Debt Transaction Application (DTA)', 'Fannie Mae Auction System Technology (FAST)']};
     include ../../components/featured-subpages/_default.jade
   .content-row
+    -var config = {type: 'img-left', title:'Mortgage-Backed Securities', caption:'Mortgage-Backed Securities Fannie Mae provides a wide range of tools and resources to help investors research and select our mortgage-backed securities.', productList: ['Single-Family', 'Multifamily', 'Structured Transactions and Megas'], toolsList: ['ARM MBS Subtypes', 'General Word Search', 'MBSenger', 'Multifamily Securities Locator']};
     include ../../components/featured-subpages/_default.jade
-  -var config = { title: 'Credit Risk Sharing', caption: '', list: ['Connecticut Avenue Securities', 'Credit Insurance Risk Sharing', 'Mortgage Insurance Risk Sharing']}
   .content-row
     .col-md-6
+      -var config = { title: 'Credit Risk Sharing', caption: 'Fannie Mae’s Credit Risk Sharing initiatives aim to reduce our mortgage default (credit) risk. Learn more about how this initiative makes your investments more secure.', list: ['Connecticut Avenue Securities', 'Credit Insurance Risk Sharing', 'Mortgage Insurance Risk Sharing']}
       include ../../components/secondary-subpages/_default.jade
     .col-md-6
+      -var config = { title: 'Non-Performing Loan Sales', caption: 'Intended for investors, nonprofits, and public sector organizations, learn more how these loans encourage broad buyer participation and provide safeguards for borrowers.', list: ['Link 1', 'Link 2']}
       include ../../components/secondary-subpages/_default.jade
   .content-row
     include ../../components/job-search/_default.jade
   .content-row
     include ../../components/subpage-teaser-listing/_default.jade
   .content-row
-    .equal-height-sm-row
-      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Economic Housing  and Outlook", "title" : "Lenders Expect Benefits from the GSE 97% LTV Products and the FHA Mortgage Insurance Premium Reduction", "date" : "April 23, 2015", "ctaText" : "View All Surveys"}
-      include ../../components/secondary-feature/_default.jade
-      - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Twitter", "title" : "Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a>", "date" : "May 22, 2015", "ctaText" : "Follow Us on Twitter"}
-      include ../../components/secondary-feature/_default.jade
-       - config = { "className" : "col-sm-4 col-sm-height", "theme": "white-bg color-dark", "type" : "Mortgage Lender Sentiment Survey", "title" : "Further Easing of Mortgage Credit Standards on the Horizon.", "date" : "May 8, 2015", "ctaText" : "View All"}
-      include ../../components/secondary-feature/_default.jade
+     -var isCareers = true
+    include ../../components/subpage-teaser-listing/_default.jade
   .content-row
     include ../../components/testimonials/_default.jade

@@ -32,7 +32,7 @@
             <div class="navbar-header">
               <button type="button" ng-click="toggleActive('header-mobile-menu')" ng-class="{ 'openNav' : isActive('header-mobile-menu') }" class="fm-menu-toggle pull-right no-desktop"><span class="sr-only">Toggle navigation</span><span class="icon-bar one"></span><span class="icon-bar two"></span><span class="icon-bar three"></span><span class="outline"></span></button>
               <button type="button" ng-click="toggleActive('header-search')" class="header-search-btn no-desktop pull-right"><span aria-hidden="true" class="icon fm-search-circle"></span></button><a href="../html/" title="home" class="site-logo navbar-btn pull-left">
-                <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none" class="logo">
+                <svg role="img" title="Fannie Mae" viewBox="0 0 423 126" preserveAspectRatio="none" class="logo">
                   <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
                 </svg></a>
             </div>
@@ -129,6 +129,38 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12">
+              <section class="overview with-image">
+                <div class="image-wrap no-mobile">
+                  <picture> 
+                    <source srcset="http://placehold.it/2000x380/333/444" media="(min-width: 1080px)">
+                    <source srcset="http://placehold.it/1280x360/d13120/fff" media="(min-width: 600px)"><img src="http://placehold.it/600x300/aaa/fff" alt="" class="fade-in hero">
+                  </picture>
+                </div>
+                <div class="caption">
+                  <h1>Two Column Style Guide</h1>
+                  <p>We help to ensure that qualified homebuyers across the nation have access to mortgage credit in good times and bad, and that quality, affordable rental housing is available.</p>
+                </div>
+              </section>
+              <div class="breadcrumb-social-wrap">
+                <div class="full-width-max">
+                  <div class="breadcrumb">
+                    <ul>
+                      <li><a href="">Home</a></li>
+                      <li>Generic Two Column</li>
+                    </ul>
+                  </div>
+                  <div class="social-share">
+                    <ul>
+                      <li>Share This:</li>
+                      <li><span displaytext="Facebook" class="fa fa-facebook st_facebook_custom"></span></li>
+                      <li><span displaytext="Tweet" class="fa fa-twitter st_twitter_custom"></span></li>
+                      <li><span displaytext="Google +" class="fa fa-google-plus st_googleplus_custom"></span></li>
+                      <li><span displaytext="LinkedIn" class="fa fa-linkedin st_linkedin_custom"></span></li>
+                      <li><span displaytext="Email" class="fa fa-envelope st_email_custom"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -287,7 +319,7 @@
                             </div>
                           </div>
                         </li>
-                        <li fm-accordion-item id="anchor2" ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem(); gotoAnchor(2)">The Audit Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
+                        <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href="" ng-click="toggleItem(); gotoAnchor(2)">The Audit Committee<span ng-class=" isOpen() ? 'fm-minus' : 'fm-plus' " aria-hidden="true" class="icon list-icon"></span></a>
                           <div class="fm-accordion-content">
                             <div class="rich-text-block">
                               <p>The Audit Committee oversees:</p>
@@ -602,7 +634,7 @@
                   </div>
                 </div>
                 <div class="search-call-out dark-bg padding-30"><span>Not finding what you need?  Tell us who you are:</span>
-                  <ul fm-accordion class="search-links">
+                  <ul fm-accordion click-away="true" class="search-links">
                     <li fm-accordion-item ng-class="{ 'open' : isOpen() }"><a href ng-click="toggleItem()" class="dropdown">Lender</a>
                       <ul class="submenu">
                         <li><a href="/">Single-Family</a></li>
@@ -757,6 +789,28 @@
                       </figcaption><span href="#" class="cta">View Bios<span aria-hidden="true" class="icon fm-arrow-right-circle"></span></span>
                     </figure></a></div>
                 <div class="rail-row">
+                  <aside class="rail-list white-bg padding-30">
+                    <h1 class="fm-subtitle">Report Details</h1>
+                    <ul class="link-listing custom-icons">
+                      <li><a href="/"> <span aria-hidden="true" class="fa fa-file-pdf-o color-dark"></span> June Report<span aria-hidden="true" class="list-icon fa fa-download"></span></a></li>
+                      <li><a href="/">
+                           
+                           June Economic Forecast<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                      <li><a href="/">
+                           
+                           June Housing Forecast <span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                      <li><a href="/">
+                           
+                           June Multifamily Market Commentary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                      <li><a href="/"> <span aria-hidden="true" class="fa fa-file-audio-o color-dark"></span> Podcast<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                      <li><a href="/"> <span aria-hidden="true" class="fa fa-file-video-o color-dark"></span> Video Summary<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                      <li><a href="/">
+                           
+                           June News Release<span aria-hidden="true" class="list-icon icon fm-arrow-right"></span></a></li>
+                    </ul>
+                  </aside>
+                </div>
+                <div class="rail-row">
                   <aside fm-accordion class="rail-list white-bg padding-30">
                     <div fm-accordion-item>
                       <h1 class="fm-subtitle">Weekly Updates</h1>
@@ -840,7 +894,7 @@
       </div>
       <footer class="footer">
         <section class="footer-lead pull-left"><a href="/" title="home" class="site-logo navbar-btn pull-left">
-            <svg role="img" title="Fannie Mae" viewBox="0 0 375.4 74.5" preserveAspectRatio="none">
+            <svg role="img" title="Fannie Mae" viewBox="0 0 423 126" preserveAspectRatio="none">
               <use xlink:href="../media/FannieMae-Logo.svg#Logo"></use>
             </svg></a>
           <div class="copyright">© 2016 Fannie Mae</div>
