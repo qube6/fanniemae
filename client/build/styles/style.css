@@ -1256,6 +1256,11 @@ main #page-wrapper {
     padding-left: 0;
   }
 }
+@media (max-width: 767px) {
+  .fm-rail {
+    margin-top: 20px;
+  }
+}
 
 .rail-row {
   margin: 20px 0;
@@ -3527,7 +3532,10 @@ section.grid-listing .load-more {
   bottom: 0;
   left: 0;
   background: #000f2b;
-  color: #007697;
+  color: #00acdc;
+}
+.image-promo .white-bg .cta:hover {
+  color: white;
 }
 .image-promo img {
   width: 100%;
@@ -4103,6 +4111,24 @@ section.overview.with-image .caption p {
   }
 }
 
+.promo p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.promo h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.promo .links {
+  margin: 0 0 20px;
+}
+.promo .links li {
+  font-size: 18px;
+}
+.promo ul.link-listing {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 .rail-list .more {
   margin-top: 10px;
 }
@@ -4239,24 +4265,6 @@ section.overview.with-image .caption p {
 .rich-text-block input[type="radio"],
 .rich-text-block input[type="checkbox"] {
   margin: 0 5px 3px;
-}
-
-.promo p {
-  font-size: 14px;
-  line-height: 20px;
-}
-.promo h2 {
-  font-size: 18px;
-  margin: 0;
-}
-.promo .links {
-  margin: 0 0 20px;
-}
-.promo .links li {
-  font-size: 18px;
-}
-.promo ul.link-listing {
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .search-call-out {
@@ -4485,111 +4493,6 @@ section.secondary-subpages {
   color: #007697;
 }
 
-nav.top-navigation {
-  margin: 0 -15px;
-  position: relative;
-  text-align: center;
-  height: 80px;
-}
-nav.top-navigation .wrapper {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  position: absolute;
-  width: 100%;
-  padding: 10px 0;
-  z-index: 5;
-}
-nav.top-navigation .wrapper.fixed {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 0;
-}
-nav.top-navigation .wrap {
-  position: relative;
-  display: inline-block;
-}
-nav.top-navigation ul.visible-links {
-  white-space: nowrap;
-  display: inline-block;
-  padding: 20px 0 10px;
-  transition: padding .2s;
-}
-nav.top-navigation ul.visible-links li {
-  display: inline-block;
-  padding: 0 15px;
-  border-left: 1px solid #ccc;
-  line-height: 20px;
-  margin: 0 0 10px;
-  position: relative;
-}
-nav.top-navigation ul.visible-links li:first-child {
-  border-left: none;
-}
-nav.top-navigation ul.visible-links li.nav-toggle {
-  border-left: none;
-  margin: 0;
-  cursor: pointer;
-}
-nav.top-navigation ul.visible-links li.nav-toggle.open:after {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  background: white;
-  content: '';
-  height: 80px;
-  width: 100%;
-  z-index: -1;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-nav.top-navigation button {
-  right: 0;
-  top: -10px;
-  padding: 0;
-}
-nav.top-navigation span.label {
-  visibility: hidden;
-}
-nav.top-navigation span.count {
-  position: absolute;
-  top: 50%;
-  right: calc(50% - 22px);
-  border-radius: 50%;
-  display: block;
-  height: 14px;
-  width: 14px;
-  font-size: 10px;
-  line-height: 14px;
-  text-align: center;
-  background: #007697;
-  color: #fff;
-}
-nav.top-navigation ul.hidden-links {
-  position: absolute;
-  overflow: hidden;
-  right: 0px;
-  top: 100%;
-  background: #fff;
-  text-align: right;
-  width: 300px;
-  max-width: 100%;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-  z-index: 15;
-  max-height: 0;
-  -moz-transition: all 0.4s ease-in;
-  -o-transition: all 0.4s ease-in;
-  -webkit-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
-}
-nav.top-navigation ul.hidden-links li {
-  display: block;
-  border-bottom: 1px solid #ccc;
-}
-nav.top-navigation ul.hidden-links li a {
-  display: block;
-  padding: 20px;
-}
-nav.top-navigation ul.hidden-links.open {
-  max-height: 500px;
-}
-
 section.subpage-teaser-listing .display-table {
   border-spacing: 20px;
   margin: 0 -20px;
@@ -4740,6 +4643,111 @@ section.testimonials blockquote cite {
   position: absolute;
   top: 110%;
   line-height: 18px;
+}
+
+nav.top-navigation {
+  margin: 0 -15px;
+  position: relative;
+  text-align: center;
+  height: 80px;
+}
+nav.top-navigation .wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 5;
+}
+nav.top-navigation .wrapper.fixed {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+nav.top-navigation .wrap {
+  position: relative;
+  display: inline-block;
+}
+nav.top-navigation ul.visible-links {
+  white-space: nowrap;
+  display: inline-block;
+  padding: 20px 0 10px;
+  transition: padding .2s;
+}
+nav.top-navigation ul.visible-links li {
+  display: inline-block;
+  padding: 0 15px;
+  border-left: 1px solid #ccc;
+  line-height: 20px;
+  margin: 0 0 10px;
+  position: relative;
+}
+nav.top-navigation ul.visible-links li:first-child {
+  border-left: none;
+}
+nav.top-navigation ul.visible-links li.nav-toggle {
+  border-left: none;
+  margin: 0;
+  cursor: pointer;
+}
+nav.top-navigation ul.visible-links li.nav-toggle.open:after {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: white;
+  content: '';
+  height: 80px;
+  width: 100%;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+nav.top-navigation button {
+  right: 0;
+  top: -10px;
+  padding: 0;
+}
+nav.top-navigation span.label {
+  visibility: hidden;
+}
+nav.top-navigation span.count {
+  position: absolute;
+  top: 50%;
+  right: calc(50% - 22px);
+  border-radius: 50%;
+  display: block;
+  height: 14px;
+  width: 14px;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  background: #007697;
+  color: #fff;
+}
+nav.top-navigation ul.hidden-links {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 100%;
+  background: #fff;
+  text-align: right;
+  width: 300px;
+  max-width: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  z-index: 15;
+  max-height: 0;
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+nav.top-navigation ul.hidden-links li {
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+nav.top-navigation ul.hidden-links li a {
+  display: block;
+  padding: 20px;
+}
+nav.top-navigation ul.hidden-links.open {
+  max-height: 500px;
 }
 
 body.fonts-alternate {

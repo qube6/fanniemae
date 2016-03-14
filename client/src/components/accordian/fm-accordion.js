@@ -2,27 +2,27 @@ directiveModule.directive('fmAccordion', [
   '$timeout', 
   function ($timeout) {
     var link = function ($scope, element, attrs, controller) {
-      $scope.allOpen = false;
-
-      $scope.setAll = function(){
-        $timeout(function(){
-          $scope.allOpen = !$scope.allOpen;
-          $scope.$broadcast('fmAccordionStateChange', $scope.allOpen);
-        }, 0);
-      }
+        this.closeOthers = attrs.closeOthers == undefined ? true : eval(attrs.closeOthers);
+        this.clickAway = attrs.clickAway == undefined ? false : eval(attrs.clickAway);
     };
     
     return {
       restrict: 'EA',
       link: link,
+      // scope: true
       bindToController: true,
-      scope: {
-        closeOthers: '=',
-        clickAway: '='
-      },
+      scope: true,
       controllerAs: "$ctrl",
-      controller: function () {
-        this.closeOthers = this.closeOthers == undefined ? true : this.closeOthers;
+      controller: function ($scope) {
+
+        $scope.allOpen = false;
+
+        $scope.setAll = function(){
+          $timeout(function(){
+            $scope.allOpen = !$scope.allOpen;
+            $scope.$broadcast('fmAccordionStateChange', $scope.allOpen);
+          }, 0);
+        }
       }
     };
 }])
@@ -45,12 +45,6 @@ directiveModule.directive('fmAccordion', [
           }
         }, 0);
       };
-
-      $scope.gotoAnchor = function (x) {
-        var hash = 'anchor'+x;
-        document.getElementById(hash).scrollTop;
-        console.log(document.documentElement.scrollTop);
-      }
 
       $scope.$on('fmAccordionItemOpen', function(){
         if(closeOthers && !$scope.ignoreBroadcast){
