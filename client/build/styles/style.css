@@ -554,18 +554,24 @@ blockquote {
   line-height: 34px;
   border: none;
   position: relative;
-  margin: 0 2px 20px;
+  margin: 0 2px 40px;
 }
-blockquote.with-citation {
-  margin: 0 20px 50px;
+blockquote footer {
+  display: block;
+  font-size: 80%;
+  line-height: 1.5;
+  color: #000f2b;
+  position: absolute;
 }
-@media (min-width: 768px) {
-  blockquote {
-    margin: 0 50px 20px;
-  }
-  blockquote.with-citation {
-    margin: 0 50px 50px;
-  }
+blockquote footer:before {
+  content: '';
+}
+blockquote cite {
+  font-size: 14px;
+  display: block;
+  position: absolute;
+  top: 110%;
+  line-height: 18px;
 }
 blockquote:before, blockquote:after {
   font-size: 16px;
@@ -585,13 +591,6 @@ blockquote:before {
 blockquote:after {
   content: "\f10e";
   padding-left: 5px;
-}
-blockquote footer {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  color: #007697;
-  font-size: 60%;
 }
 
 address {
@@ -1148,7 +1147,11 @@ form.show-errors .styled-radio.ng-invalid + label {
   top: 50%;
   right: 50%;
   margin: -15px -15px 0 0;
-  background: #000f2b;
+  background: transparent;
+  color: #00acdc;
+}
+.blue-block button i:hover {
+  color: white;
 }
 @media (max-width: 720px) {
   .blue-block button i {
@@ -1424,6 +1427,7 @@ body {
   border: 2px solid #007697;
   border-radius: 50%;
   line-height: 26px;
+  font-size: 26px;
 }
 a:hover .icon.circle {
   border-color: #000f2b;
@@ -1553,6 +1557,18 @@ li.open .dropdown-toggle:before {
   padding: 0 20px;
   position: relative;
   top: 5.5px;
+}
+.cta.dark-bg {
+  background: #000f2b !important;
+  color: #00acdc !important;
+}
+.cta.dark-bg:hover {
+  color: #00acdc !important;
+}
+
+.cta-wrapper {
+  position: relative;
+  height: 50px;
 }
 
 .font-serif {
@@ -2538,6 +2554,31 @@ button[type="button"].header-search-btn span.icon {
   color: white;
 }
 
+.article-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+.article-header h1 {
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0;
+}
+.article-header h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+.article-header .article-category {
+  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.article-header .article-date {
+  font-size: 12px;
+  margin: 10px 0 0;
+}
+
 .fm-accordion {
   width: 100%;
   margin: 20px 0 0;
@@ -2607,31 +2648,6 @@ button[type="button"].header-search-btn span.icon {
 }
 .fm-accordion li.open .fm-accordion-content {
   max-height: 9000px;
-}
-
-.article-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
-}
-.article-header h1 {
-  font-size: 30px;
-  line-height: 34px;
-  margin: 0;
-}
-.article-header h2 {
-  font-size: 18px;
-  line-height: 25px;
-  margin: 0;
-}
-.article-header .article-category {
-  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.article-header .article-date {
-  font-size: 12px;
-  margin: 10px 0 0;
 }
 
 .article-share {
@@ -4695,13 +4711,6 @@ section.testimonials blockquote {
     font-size: 18px;
     margin-top: -50px;
   }
-}
-section.testimonials blockquote cite {
-  font-size: 14px;
-  display: block;
-  position: absolute;
-  top: 110%;
-  line-height: 18px;
 }
 
 nav.top-navigation {

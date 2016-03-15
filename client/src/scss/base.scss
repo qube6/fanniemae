@@ -55,6 +55,7 @@ body{
   border: 2px solid $color-link-light;
   border-radius: 50%;
   line-height: 26px;
+  font-size: 26px;
   a:hover &{
     border-color: $color-link-light-h;
   }
@@ -177,6 +178,18 @@ body{
     position: relative;
     top: ($cta-height - 28px) / 4;
   }
+  &.dark-bg{
+    background: $color-dark-blue !important;
+    color: $color-link-dark !important;
+    &:hover{
+      color: $color-link-dark !important;
+    }
+  }
+}
+
+.cta-wrapper{
+  position: relative;
+  height: $cta-height;
 }
 
 .font-serif{

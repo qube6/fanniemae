@@ -200,13 +200,22 @@ block content
              button.more(ng-click="validateForm()") Submit
               i.icon.fm-arrow-right-circle(aria-hidden="true")
         hr
-        h2 CTA Link
+        h2 CTA/Button Styles
         .row
           .col-sm-6.col-sm-offset-3
+            .cta-wrapper
+              a.cta Read More
+                i.icon.fm-arrow-right-circle(aria-hidden="true")
             br
             br
+            .cta-wrapper
+              a.cta.dark-bg Read More
+                i.icon.fm-arrow-right-circle(aria-hidden="true")
             br
-            a.cta Read More
-              i.icon.fm-arrow-right-circle(aria-hidden="true")
+            br
+            a.more( ng-click="toggleActive(styleguide.button1)" )
+              span(ng-show="isActive(styleguide.button1)") View More
+              span(ng-show="!isActive(styleguide.button1)") View Less
+              i.icon.fm-plus.circle(aria-hidden="true" ng-class=" isActive(styleguide.button1) ? 'fm-minus' : 'fm-plus' ")
 
 
