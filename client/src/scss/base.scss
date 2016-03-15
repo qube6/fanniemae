@@ -222,6 +222,12 @@ body{
       opacity: $link-opacity-dark;
     }
   }
+  a.color-white{
+    color: white;
+    &:hover{
+      color: $color-link-dark;
+    }
+  }
 }
 .white-bg{
   background: white;
