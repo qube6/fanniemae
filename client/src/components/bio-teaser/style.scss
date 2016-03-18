@@ -38,19 +38,11 @@ figure.bio-teaser{
       margin-right: 30px;
     }
   }
-  .icon-link{
+  .cta.special{
     position: absolute;
     right: 0;
     bottom: 0;
-    width: auto;
-    text-align: right;
-    font-size: 20px;
-    padding: 10px;
-    background: $color-dark-blue;
-    color: $color-link-dark;
-    &:hover{
-      color: white;
-    }
+    left: auto;
   }
   
   //Styling for rail only
@@ -121,7 +113,7 @@ figure.bio-teaser{
         font-size: 20px;
       }
     }
-    .icon-link{
+    .cta.special{
       @media(min-width: $screen-md){
         font-size: 30px;
       }

@@ -28,13 +28,7 @@
     left: -15px;
     top: 30px;
     display: inline-block;
-    background: #000f2b;
-    color: #fff;
-    font-size: 16px;
-    font-family: $font-serif;
-    text-align: center;
     min-width: 160px;
-    padding: 10px;
     z-index: 15;
     @media (max-width: $screen-xs-max){
       top: 20px;
@@ -72,24 +66,6 @@
     @media (max-width: $screen-xs-max){
       left: 30px;
     }    
-    span {
-      height: 8px;
-      width: 8px;
-      background: #007697;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 5px;
-      position: relative;
-      cursor: pointer;
-      &.active{
-        height: 12px;
-        width: 12px;
-        background: transparent;
-        border: 2px solid #007697;
-        top: 2px;
-        cursor: default;
-      }
-    }
   }
 }
 .fm-basic-carousel-images {
@@ -111,41 +87,6 @@
     margin: 0 auto;
   }
 }
-.rn-carousel-control{
-  @extend .fade-in;
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: bold;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  color: $color-link-light;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.8rem;
-  border: 2px solid $color-link-light;
-  border-radius: 50%; 
-  &:hover{
-    color: $color-link-light-h;
-    border-color: $color-link-light-h;
-  }
-  @media (max-width: $screen-xs-max){
-    font-size:1.4rem;
-  }
-  &.rn-carousel-control-prev{
-    &:before{      
-      content: "\e901";
-    }
-  }
-  &.rn-carousel-control-next{
-    &:before{
-      content: "\e903";
-    }
-  }
-}
 .fm-basic-carousel-wrap.theme-2{
   @media(min-width: $screen-sm){
     margin: 0 60px 30px 0;
@@ -154,7 +95,6 @@
     h1{
       left: auto;
       right: -15px;
-      background: #007697;
     }
     a{
       color: $color-link-copy-dark;
@@ -170,13 +110,6 @@
       background: #000f2b;
     }
     .fm-carousel-controls{
-      span{
-        background: #fff;
-        &.active{
-          border-color:#fff;
-          background: transparent;
-        }
-      }
     }
     .rn-carousel-control{
       color: $color-link-copy-dark;

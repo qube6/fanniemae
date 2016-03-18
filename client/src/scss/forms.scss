@@ -483,7 +483,11 @@ input[type="submit"].btn::-moz-focus-inner {
       top: 50%;
       right: 50%;
       margin: -15px -15px 0 0;
-      background: #000f2b;
+      background: transparent;
+      color: $color-link-dark;
+      &:hover{
+        color: $color-link-dark-h;
+      }
       @media (max-width: 720px){
         right: 0;
         top: 4px;

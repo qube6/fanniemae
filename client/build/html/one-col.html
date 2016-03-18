@@ -130,7 +130,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div fm-carousel class="fm-homepage-carousel">
-                <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav c-white"></span></div>
                 <ul rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex" class="pane-homepage-slider-slider-home">
                   <li class="fm-carousel-item">
                     <figure class="fm-carousel-figure">
@@ -308,8 +308,8 @@
                 <div class="content-row">
                   <section fm-carousel class="fm-basic-carousel-wrap">
                     <div class="fm-basic-carousel">
-                      <h1>History </h1>
-                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                      <h1 class="banner">History </h1>
+                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                       <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls>
                         <li class="fm-carousel-item">
                           <p><a href="/">Fannie Mae was born out of the Great Depression in 1938 to bolster the nation’s housing system. Since then, we’ve played a critical role in the nation’s housing finance system.</a></p>
@@ -328,8 +328,8 @@
                 <div class="content-row">
                   <section fm-carousel class="fm-basic-carousel-wrap theme-2">
                     <div class="fm-basic-carousel">
-                      <h1>By The Numbers </h1>
-                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                      <h1 class="banner b-teal">By The Numbers </h1>
+                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav c-white"></span></div>
                       <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls>
                         <li class="fm-carousel-item">
                           <p><a href="/">We Provide Stability, Liquidity and  Affordability</a></p>
@@ -348,8 +348,8 @@
                 <div class="content-row">
                   <section fm-carousel class="fm-basic-carousel-wrap theme-3">
                     <div class="fm-basic-carousel">
-                      <h1>Innovations </h1>
-                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                      <h1 class="banner">Innovations </h1>
+                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                       <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls>
                         <li class="fm-carousel-item">
                           <p><a href="/">We are working to establish and implement industry standards, develop: a(href="/") better tools to price and manage credit risk, and build new infrastructure.</a></p>
@@ -437,31 +437,31 @@
                     <h1 class="fm-section-title">Economic &amp; Housing Outlook</h1>
                     <ul>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-if="!dynamic" class="block white-bg padding-30"><span class="fm-type font-serif">Weekly Note</span>
-                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
+                        <h2 class="fm-title"><a href="">2015 Economic Growth Forecast Downgraded, but Housing on a Better Path</a></h2><span class="fm-date">May 21, 2015</span><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                       </li>
                       <li ng-repeat="item in items" class="block white-bg padding-30 fade-in"><span class="fm-type font-serif">{{item.type}}</span>
                         <h2 class="fm-title"><a href="{{item.url}}">{{item.title}}</a></h2><span class="fm-date">{{item.date}}</span><a href="{{item.url}}" class="cta"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
@@ -483,7 +483,7 @@
                 </div>
                 <div class="content-row">
                   <section fm-carousel class="news-teaser white-bg">
-                    <h1 class="font-serif offset">Corporate News</h1>
+                    <h1 class="banner font-serif offset">Corporate News</h1>
                     <ul rn-carousel rn-carousel-index="carouselIndex" class="equal-height-sm-row">
                       <li class="block col-sm-height"> 
                         <h2><a href="/">Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018</a></h2>
@@ -498,12 +498,12 @@
                         <div class="fm-date">May 22, 2015</div>
                       </li>
                     </ul><a href="/" class="more">See All Corporate News<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
-                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                   </section>
                 </div>
                 <div class="content-row">
                   <section fm-carousel class="news-teaser white-bg">
-                    <h1 class="font-serif offset">Financial News</h1>
+                    <h1 class="banner font-serif offset">Financial News</h1>
                     <ul rn-carousel rn-carousel-index="carouselIndex" class="equal-height-sm-row">
                       <li class="block col-sm-height"> 
                         <h2><a href="/">Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018</a></h2>
@@ -518,12 +518,12 @@
                         <div class="fm-date">May 22, 2015</div>
                       </li>
                     </ul><a href="/" class="more">See All Financial News<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
-                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                   </section>
                 </div>
                 <div class="content-row">
                   <section fm-carousel class="news-teaser dark-bg">
-                    <h1 class="font-serif offset">Statements</h1>
+                    <h1 class="banner b-white font-serif offset">Statements</h1>
                     <ul rn-carousel rn-carousel-index="carouselIndex" class="equal-height-sm-row">
                       <li class="block col-sm-height"> 
                         <h2><a href="/">Fannie Mae Prices New Issue 3-Year Benchmark Notes® due July 20, 2018</a></h2>
@@ -538,12 +538,12 @@
                         <div class="fm-date">May 22, 2015</div>
                       </li>
                     </ul><a href="/" class="more">See All Statements<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
-                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                   </section>
                 </div>
                 <div class="content-row">
                   <section fm-carousel class="news-teaser white-bg twitter-theme">
-                    <h1 class="font-serif">Twitter</h1>
+                    <h1 class="banner font-serif">Twitter</h1>
                     <ul rn-carousel rn-carousel-index="carouselIndex" class="equal-height-sm-row">
                       <li class="block col-sm-height"> 
                         <h2><a href="/">Our Economic and Strategic Research will keep you informed + up-to-date on the latest in housing trends: <a class='color-brand' href=''>http://bit.ly/1FHNQTY</a></a></h2>
@@ -558,7 +558,7 @@
                         <div class="fm-date">May 22, 2015</div>
                       </li>
                     </ul><a href="/" class="cta">Follow Us on Twitter<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
-                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                    <div rn-carousel-indicator custom-indicator class="mobile-only fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                   </section>
                 </div>
                 <div class="content-row">
@@ -811,8 +811,8 @@
                 <div class="content-row">
                   <section fm-carousel class="testimonials">
                     <div class="fm-basic-carousel">
-                      <h1>From Our Employees </h1>
-                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)"></span></div>
+                      <h1 class="banner b-white">From Our Employees </h1>
+                      <div rn-carousel-indicator custom-indicator class="fm-carousel-controls"><span ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)" class="carousel-nav"></span></div>
                       <ul rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls>
                         <li class="fm-carousel-item">
                           <blockquote>Fannie Mae truly leverages its employees' knowledge to do the best job possible. It is refreshing to work for a company that wants its employees to succeed.
