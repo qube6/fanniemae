@@ -2639,9 +2639,38 @@ button[type="button"].header-search-btn span.icon {
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   text-align: center;
   font-size: 16px;
+  zoom: 1;
+}
+.article-share:before, .article-share:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.article-share:after {
+  clear: both;
 }
 .article-share .fa {
   margin: 0 5px;
+}
+.article-share .download {
+  float: left;
+}
+@media (max-width: 767px) {
+  .article-share .download {
+    float: none;
+    display: block;
+    white-space: nowrap;
+    margin-bottom: 30px;
+  }
+}
+.article-share .download + .st_sharethis_custom {
+  float: right;
+}
+@media (max-width: 767px) {
+  .article-share .download + .st_sharethis_custom {
+    float: none;
+  }
 }
 
 .article-teaser {
