@@ -1,8 +1,8 @@
 section.testimonials(fm-carousel)
   .fm-basic-carousel
-    h1 From Our Employees 
+    h1.banner.b-white From Our Employees 
     .fm-carousel-controls(rn-carousel-indicator custom-indicator)
-      span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
+      span.carousel-nav(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
     ul(rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls)
       li.fm-carousel-item
         blockquote Fannie Mae truly leverages its employees' knowledge to do the best job possible. It is refreshing to work for a company that wants its employees to succeed.

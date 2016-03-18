@@ -2778,6 +2778,8 @@ button[type="button"].header-search-btn span.icon {
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   text-align: center;
   font-size: 16px;
+  padding-left: 0;
+  padding-right: 0;
   zoom: 1;
 }
 .article-share:before, .article-share:after {
@@ -4774,6 +4776,7 @@ nav.top-navigation {
   position: relative;
   text-align: center;
   height: 80px;
+  z-index: 16;
 }
 nav.top-navigation .wrapper {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
