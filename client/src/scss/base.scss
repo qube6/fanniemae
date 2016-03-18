@@ -100,6 +100,25 @@ body{
   width: 60px;
   text-align: center;
   line-height: 54px;
+  .icon{
+    padding: 0;
+  }
+  &.s-dark{
+    height: auto;
+    width: auto;
+    text-align: right;
+    font-size: 20px;
+    padding: 10px;
+    background: $color-dark-blue;
+    color: $color-link-dark;
+    line-height: 20px;
+    .icon{
+      top: 0;
+    }
+    &:hover{
+      color: white !important;
+    }
+  }
   &:hover{
     color: $color-link-light-h !important;
   }

@@ -1454,6 +1454,25 @@ body {
   text-align: center;
   line-height: 54px;
 }
+.cta.special .icon {
+  padding: 0;
+}
+.cta.special.s-dark {
+  height: auto;
+  width: auto;
+  text-align: right;
+  font-size: 20px;
+  padding: 10px;
+  background: #000f2b;
+  color: #00acdc;
+  line-height: 20px;
+}
+.cta.special.s-dark .icon {
+  top: 0;
+}
+.cta.special.s-dark:hover {
+  color: white !important;
+}
 .cta.special:hover {
   color: #000f2b !important;
 }
@@ -2658,31 +2677,6 @@ button[type="button"].header-search-btn span.icon {
   color: white;
 }
 
-.article-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
-}
-.article-header h1 {
-  font-size: 30px;
-  line-height: 34px;
-  margin: 0;
-}
-.article-header h2 {
-  font-size: 18px;
-  line-height: 25px;
-  margin: 0;
-}
-.article-header .article-category {
-  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.article-header .article-date {
-  font-size: 12px;
-  margin: 10px 0 0;
-}
-
 .fm-accordion {
   width: 100%;
   margin: 20px 0 0;
@@ -2752,6 +2746,31 @@ button[type="button"].header-search-btn span.icon {
 }
 .fm-accordion li.open .fm-accordion-content {
   max-height: 9000px;
+}
+
+.article-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+.article-header h1 {
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0;
+}
+.article-header h2 {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+.article-header .article-category {
+  font-family: "Glyddon-Regular", "Georgia", "Century", serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.article-header .article-date {
+  font-size: 12px;
+  margin: 10px 0 0;
 }
 
 .article-share {
@@ -2859,19 +2878,11 @@ figure.bio-teaser p.bio-title {
     margin-right: 30px;
   }
 }
-figure.bio-teaser .icon-link {
+figure.bio-teaser .cta.special {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: auto;
-  text-align: right;
-  font-size: 20px;
-  padding: 10px;
-  background: #000f2b;
-  color: #00acdc;
-}
-figure.bio-teaser .icon-link:hover {
-  color: white;
+  left: auto;
 }
 @media (max-width: 1199px) {
   .rail-list figure.bio-teaser {
@@ -2948,7 +2959,7 @@ figure.bio-teaser .icon-link:hover {
   }
 }
 @media (min-width: 992px) {
-  .rich-text-block figure.bio-teaser .icon-link {
+  .rich-text-block figure.bio-teaser .cta.special {
     font-size: 30px;
   }
 }
