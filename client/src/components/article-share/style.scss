@@ -3,7 +3,23 @@
   border-top: 1px solid $color-hr;
   text-align: center;
   font-size: 16px;
+  @include clearfix;
   .fa{
     margin: 0 5px;
   }
+  .download{
+  	float: left;
+  	@media(max-width: $screen-xs-max){
+  		float: none;
+  		display: block;
+  		white-space: nowrap;
+  		margin-bottom: 30px;
+  	} 
+  	& + .st_sharethis_custom{
+  		float: right;
+  		@media(max-width: $screen-xs-max){
+  		  float: none;
+  		} 
+  	}
+	}
 }
