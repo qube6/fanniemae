@@ -297,6 +297,12 @@ block content
               span(ng-show="isActive(styleguide.button1)") View More
               span(ng-show="!isActive(styleguide.button1)") View Less
               i.icon.fm-plus.circle(aria-hidden="true" ng-class=" isActive(styleguide.button1) ? 'fm-minus' : 'fm-plus' ")
+            br
+            br
+            br            
+            br
+            br
+            a(href="").cta.special: i.icon.fm-arrow-right-circle(aria-hidden="true")
         hr
         h2 Link Styles
         .row
@@ -309,4 +315,74 @@ block content
               a(href="/") Short link on dark background
             .padding-20
               a.color-white(href="/") Copy link on dark background
+        hr
+        h2 Banners
+        .row
+          .col-sm-4
+            h1.banner .banner
+            .text-center
+              span #000f2b
+          .col-sm-4.dark-bg
+            h1.banner.b-white .banner.b-white
+            .text-center
+              span #ffffff
+          .col-sm-4
+            h1.banner.b-teal .banner.b-teal
+            .text-center
+              span #007697
+        hr
+        h2 Carousel Controls
+        br
+        br
+        .row
+          .text-center
+            p Carousel Navigation
+          .col-sm-6
+            .padding-20
+              .padding-5
+                span .carousel-nav (.active gives you the open circle)
+              span.carousel-nav
+              span.carousel-nav.active
+              span.carousel-nav
+          .col-sm-6.dark-bg
+            .padding-20
+              .padding-5
+                span .carousel-nav.c-white
+              span.carousel-nav.c-white
+              span.carousel-nav.c-white.active
+              span.carousel-nav.c-white
+        br
+        br
+        br
+        .row
+          .text-center
+            p Carousel Arrows
+          .col-sm-6
+            .row
+              .col-lg-6
+                span .rn-carousel-control.rn-carousel-control-prev
+              .col-lg-6
+                span .rn-carousel-control.rn-carousel-control-next
+            .row
+              .col-lg-6
+                .padding-30
+                  .rn-carousel-control.rn-carousel-control-prev
+              .col-lg-6
+                .padding-30
+                  .rn-carousel-control.rn-carousel-control-next
+          .col-sm-6
+            .row
+              .text-center
+                p Same classes but inside a .dark-bg div
+            .row
+              .col-lg-6.dark-bg
+                .padding-30
+                  .rn-carousel-control.rn-carousel-control-prev(style="top:20%;")   
+              .col-lg-6.dark-bg
+                .padding-30
+                  .rn-carousel-control.rn-carousel-control-next(style="top:20%;")
+
+
+      
+
 

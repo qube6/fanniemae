@@ -539,7 +539,7 @@
                       <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
                           <div class="cta-wrapper"><a class="cta">Read More<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a></div><br><br>
-                          <div class="cta-wrapper"><a class="cta dark-bg">Read More<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a></div><br><br><a ng-click="toggleActive(styleguide.button1)" class="more"><span ng-show="isActive(styleguide.button1)">View More</span><span ng-show="!isActive(styleguide.button1)">View Less</span><i aria-hidden="true" ng-class=" isActive(styleguide.button1) ? 'fm-minus' : 'fm-plus' " class="icon fm-plus circle"></i></a>
+                          <div class="cta-wrapper"><a class="cta dark-bg">Read More<i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a></div><br><br><a ng-click="toggleActive(styleguide.button1)" class="more"><span ng-show="isActive(styleguide.button1)">View More</span><span ng-show="!isActive(styleguide.button1)">View Less</span><i aria-hidden="true" ng-class=" isActive(styleguide.button1) ? 'fm-minus' : 'fm-plus' " class="icon fm-plus circle"></i></a><br><br><br><br><br><a href="" class="cta special"><i aria-hidden="true" class="icon fm-arrow-right-circle"></i></a>
                         </div>
                       </div>
                       <hr>
@@ -553,6 +553,81 @@
                         <div class="col-xs-12 dark-bg">
                           <div class="padding-20"><a href="/">Short link on dark background</a></div>
                           <div class="padding-20"><a href="/" class="color-white">Copy link on dark background</a></div>
+                        </div>
+                      </div>
+                      <hr>
+                      <h2>Banners</h2>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <h1 class="banner">.banner</h1>
+                          <div class="text-center"><span>#000f2b</span></div>
+                        </div>
+                        <div class="col-sm-4 dark-bg">
+                          <h1 class="banner b-white">.banner.b-white</h1>
+                          <div class="text-center"><span>#ffffff</span></div>
+                        </div>
+                        <div class="col-sm-4">
+                          <h1 class="banner b-teal">.banner.b-teal</h1>
+                          <div class="text-center"><span>#007697</span></div>
+                        </div>
+                      </div>
+                      <hr>
+                      <h2>Carousel Controls</h2><br><br>
+                      <div class="row">
+                        <div class="text-center">
+                          <p>Carousel Navigation</p>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="padding-20">
+                            <div class="padding-5"><span>.carousel-nav (.active gives you the open circle)</span></div><span class="carousel-nav"></span><span class="carousel-nav active"></span><span class="carousel-nav"></span>
+                          </div>
+                        </div>
+                        <div class="col-sm-6 dark-bg">
+                          <div class="padding-20">
+                            <div class="padding-5"><span>.carousel-nav.c-white</span></div><span class="carousel-nav c-white"></span><span class="carousel-nav c-white active"></span><span class="carousel-nav c-white"></span>
+                          </div>
+                        </div>
+                      </div><br><br><br>
+                      <div class="row">
+                        <div class="text-center">
+                          <p>Carousel Arrows</p>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-lg-6"><span>.rn-carousel-control.rn-carousel-control-prev</span></div>
+                            <div class="col-lg-6"><span>.rn-carousel-control.rn-carousel-control-next</span></div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="padding-30">
+                                <div class="rn-carousel-control rn-carousel-control-prev"></div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="padding-30">
+                                <div class="rn-carousel-control rn-carousel-control-next"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="text-center">
+                              <p>Same classes but inside a .dark-bg div</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 dark-bg">
+                              <div class="padding-30">
+                                <div style="top:20%;" class="rn-carousel-control rn-carousel-control-prev">  </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 dark-bg">
+                              <div class="padding-30">
+                                <div style="top:20%;" class="rn-carousel-control rn-carousel-control-next"></div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </form>

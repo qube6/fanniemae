@@ -1,6 +1,6 @@
 .fm-homepage-carousel(fm-carousel)
   div.fm-carousel-controls(rn-carousel-indicator custom-indicator)
-    span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
+    span.carousel-nav.c-white(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
   ul.pane-homepage-slider-slider-home(rn-carousel rn-carousel-auto-slide="6" rn-carousel-index="carouselIndex")
     li.fm-carousel-item
       figure.fm-carousel-figure
