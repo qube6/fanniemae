@@ -19,4 +19,4 @@ section.news-teaser(class=config.cls fm-carousel)
   a(class=config.linkCls href="/")= config.linkText
     i.icon.fm-arrow-right-circle(aria-hidden="true")
   div.mobile-only.fm-carousel-controls(rn-carousel-indicator custom-indicator)
-    span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
+    span.carousel-nav(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
