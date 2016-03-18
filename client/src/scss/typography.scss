@@ -166,15 +166,23 @@ blockquote{
   line-height: 34px;
   border: none;
   position: relative;
-  margin: 0 2px 20px; 
-  &.with-citation{
-    margin: 0 20px 50px; 
-  }
-  @media(min-width: $screen-sm){
-    margin: 0 50px 20px; 
-    &.with-citation{
-      margin: 0 50px 50px; 
+  margin: 0 2px 40px; 
+  footer{
+    display: block;
+    font-size: 80%;
+    line-height: 1.5;
+    color: $color-dark-blue;
+    position: absolute;
+    &:before{
+      content: '';
     }
+  }
+  cite{
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    top: 110%;
+    line-height: 18px;
   }
   &:before, &:after{
     font-size: 16px;
@@ -194,13 +202,6 @@ blockquote{
   &:after {
     content: "\f10e";
     padding-left: 5px;
-  }
-  footer{
-    position: absolute;
-    right: 0;
-    top: 100%;
-    color: $color-teal;
-    font-size: 60%;
   }
 }
 address {

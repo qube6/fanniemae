@@ -76,23 +76,4 @@
     left: $homepage-carousel-left-align;
     bottom: 50px;
   }
-  span {
-    height: 8px;
-    width: 8px;
-    background: white;
-    border-radius: 50%;
-    z-index: 5;
-    display: inline-block;
-    margin: 0 5px;
-    position: relative;
-    cursor: pointer;
-    &.active{
-      height: 12px;
-      width: 12px;
-      background: transparent;
-      border: 2px solid white;
-      top: 2px;
-      cursor: default;
-    }
-  }
 }

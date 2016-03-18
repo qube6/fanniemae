@@ -18,7 +18,8 @@
     background: $color-dark-blue;
     color: $color-link-dark;
     &:hover{
-      color: $color-link-dark-h;
+      text-decoration: underline;
+      color: $color-link-dark;
     }
   }
   img{

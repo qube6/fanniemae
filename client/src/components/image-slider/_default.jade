@@ -1,9 +1,9 @@
 .content-row
   section.fm-basic-carousel-wrap(fm-carousel)
     .fm-basic-carousel
-      h1 History 
+      h1.banner History 
       .fm-carousel-controls(rn-carousel-indicator custom-indicator)
-        span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
+        span.carousel-nav(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
       ul(rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls)
         li.fm-carousel-item
           p: a(href="/") Fannie Mae was born out of the Great Depression in 1938 to bolster the nation’s housing system. Since then, we’ve played a critical role in the nation’s housing finance system.
@@ -20,9 +20,9 @@
 .content-row
   section.fm-basic-carousel-wrap.theme-2(fm-carousel)
     .fm-basic-carousel
-      h1 By The Numbers 
+      h1.banner.b-teal By The Numbers 
       .fm-carousel-controls(rn-carousel-indicator custom-indicator)
-        span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
+        span.carousel-nav.c-white(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
       ul(rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls)
         li.fm-carousel-item
           p: a(href="/") We Provide Stability, Liquidity and  Affordability
@@ -40,7 +40,7 @@
 .content-row
   section.fm-basic-carousel-wrap.theme-3(fm-carousel)
     .fm-basic-carousel
-      h1 Innovations 
+      h1.banner Innovations 
       .fm-carousel-controls(rn-carousel-indicator custom-indicator)
         span(ng-repeat="slide in slides" ng-class="{active: isActiveSlide($index)}" ng-click="setActiveSlide($index)")
       ul(rn-carousel rn-carousel-index="carouselIndex" rn-carousel-controls)

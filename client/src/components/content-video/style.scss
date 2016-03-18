@@ -12,7 +12,8 @@
   }
 }
 
-.fm-play-circle, .fm-pause-circle{
+figure .fm-play-circle, figure .fm-pause-circle,
+img + .fm-play-circle{
   position: absolute;
   @include center-xy();
   z-index: 10;
@@ -27,7 +28,7 @@
   }
 }
 
-.fm-pause-circle{
+figure .fm-pause-circle{
   @include animation(fadeOut 2s forwards);
   &:hover{
     @media (min-width:$screen-lg){
