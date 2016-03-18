@@ -65,6 +65,34 @@ block content
       h4 Heading 4
       h5 Heading 5
       h6 Heading 6
+      .fm-subtitle Subtitle
+      hr
+      h1 Custom Icons
+      ul
+        li .icon.fm-arrow-left-circle
+          span.padding-10.icon.fm-arrow-left-circle(aria-hidden="true") 
+        li .icon.fm-arrow-left
+          span.padding-10.icon.fm-arrow-left(aria-hidden="true")
+        li .icon.fm-arrow-right-circle
+          span.padding-10.icon.fm-arrow-right-circle(aria-hidden="true")
+        li .icon.fm-arrow-right
+          span.padding-10.icon.fm-arrow-right(aria-hidden="true")
+        li .icon.fm-minus-circle
+          span.padding-10.icon.fm-minus-circle(aria-hidden="true")
+        li .icon.fm-minus
+          span.padding-10.icon.fm-minus(aria-hidden="true")
+        li .icon.fm-plus-circle
+          span.padding-10.icon.fm-plus-circle(aria-hidden="true")
+        li .icon.fm-plus
+          span.padding-10.icon.fm-plus(aria-hidden="true")
+        li .icon.fm-search-circle
+          span.padding-10.icon.fm-search-circle(aria-hidden="true")
+        li .icon.fm-search
+          span.padding-10.icon.fm-search(aria-hidden="true")
+        li .icon.fm-pause-circle
+          span.padding-10.icon.fm-pause-circle(aria-hidden="true")
+        li .icon.fm-play-circle
+          span.padding-10.icon.fm-play-circle(aria-hidden="true")
       hr
       h1 Paragraph
       p
@@ -98,10 +126,23 @@ block content
         li List Item 2
         li List Item 3
       hr
-      fieldset
-        legend Legend
-        p
-          | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.
+      h1 Link List
+      .row
+        .col-sm-6
+          ul.link-listing.custom-icons
+            li
+              a(href="/") 
+                | Lorem ipsum dolor sit
+                span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+            li
+              a(href="/") 
+                | Lorem ipsum dolor sit
+                span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+            li
+              a(href="/") 
+                |  Lorem ipsum dolor sit
+                span.list-icon.icon.fm-arrow-right(aria-hidden="true")
+      hr
       h1#misc Misc Paragraph Elements
       p
         | Lorem 
@@ -114,7 +155,7 @@ block content
         acronym(title='National Basketball Association') NBA
         |  Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  
       blockquote.with-citation
-        | This stylesheet is going to help so freaking much.
+        | This stylesheet is going to help so much.
         footer: cite Citation
       h1#tables Tables
       h2 Non-Responsive Table
@@ -182,9 +223,38 @@ block content
                   label(for="foo3") Label 
         .row
           .col-sm-12      
-            textarea(id="contact-comments" name="Comments" rows="6" placeholder="Textarea" required ng-model="contact.form.comments")
+            textarea(id="contact-comments" name="Comments" rows="6" placeholder="Textarea" required)
+            label.sr-only(for="contact-comments") Error message      hr
+      h1 Form Elements with Errors
+      form.show-errors
+        .row
+          .col-sm-6
+            input(id="contact-name" name="Name" type="text" placeholder="Text Input" required  ng-model="")
+            label.sr-only(for="contact-name") Error message
+          .col-sm-6
+            input(id="contact-company" name="Company" type="text" placeholder="Text Input" required ng-model="")
+            label.sr-only(for="contact-company") Error message
+        .row
+          .col-sm-12
+            fieldset
+              legend Radio buttons
+                | sup *
+              ul.inline
+                li
+                  input.styled-radio(type="radio" name="foo" value="foo1" id="foo1" required ng-model="") 
+                  label(for="foo1") Label 
+                li
+                  input.styled-radio(type="radio" name="foo" value="foo2" id="foo2" required ng-model="") 
+                  label(for="foo2") Label 
+                li
+                  input.styled-radio(type="radio" name="foo" value="foo3" id="foo3" required ng-model="") 
+                  label(for="foo3") Label 
+        .row
+          .col-sm-12      
+            textarea(id="contact-comments" name="Comments" rows="6" placeholder="Textarea" required ng-model="")
             label.sr-only(for="contact-comments") Error message
 
+        hr
         h2 Styled Select
         .row
           .col-sm-6
@@ -194,19 +264,49 @@ block content
                 option(value="foo1") Other Link 1
                 option(value="foo2") Other Link 2
                 option(value="foo3") Other Link 3
-        h2 Submit Button
+        h2 Submit Buttons
         .row
           .col-sm-12
-             button.more(ng-click="validateForm()") Submit
+             button.more() Submit
               i.icon.fm-arrow-right-circle(aria-hidden="true")
+        .row
+          .col-sm-12
+             button.more() Search
+              i.icon.fm-search-circle(aria-hidden="true")
+        .row
+          .col-sm-12
+             button.more() 
+              i.icon.fm-search-circle(aria-hidden="true")
+        br
+        br
         hr
-        h2 CTA Link
+        h2 CTA/Button Styles
         .row
           .col-sm-6.col-sm-offset-3
+            .cta-wrapper
+              a.cta Read More
+                i.icon.fm-arrow-right-circle(aria-hidden="true")
             br
             br
+            .cta-wrapper
+              a.cta.dark-bg Read More
+                i.icon.fm-arrow-right-circle(aria-hidden="true")
             br
-            a.cta Read More
-              i.icon.fm-arrow-right-circle(aria-hidden="true")
-
+            br
+            a.more( ng-click="toggleActive(styleguide.button1)" )
+              span(ng-show="isActive(styleguide.button1)") View More
+              span(ng-show="!isActive(styleguide.button1)") View Less
+              i.icon.fm-plus.circle(aria-hidden="true" ng-class=" isActive(styleguide.button1) ? 'fm-minus' : 'fm-plus' ")
+        hr
+        h2 Link Styles
+        .row
+          .col-xs-12
+            .padding-20
+              a(href="/") Short link on white background
+        .row
+          .col-xs-12.dark-bg
+            .padding-20
+              a(href="/") Short link on dark background
+            .padding-20
+              a.color-white(href="/") Copy link on dark background
 
