@@ -25,24 +25,31 @@
     display: inline-block;
     padding: 15px 30px;
     a{
-      margin-top: -7px;
+      position: relative;
+      margin-top: 11px;
       vertical-align: middle;
       color: #fff;
       @media(max-width: $screen-xs-max){
         margin-left: 10px;
       }
       svg{
-        position: relative;
-        top:10px;
+        position: absolute;
+        top:-7px;
         fill: #fff;
         width: 100px;
-        left:-25px;
+        right:-80px;
       }
       &:hover{
         color: $color-link-copy-dark-h;
         svg{
           fill: $color-link-copy-dark-h;
         }
+      }
+    }
+    .copyright{
+      display: none;
+      @media(max-width: $screen-md-max){
+        display: block;
       }
     }
     @media(max-width: $screen-md-max){
@@ -107,8 +114,11 @@
     padding-left: 40px;
     border-left: 1px solid $color-light-gray-50;
     @media(max-width: $screen-md-max){
+      display: none;
       border: none;
-      padding: 0;
+      float: right;
+      padding-left: 0;
+      margin-right: 10px;
     }
     @media only screen and (max-width:$screen-sm-max) {
       margin-left: 10px;
