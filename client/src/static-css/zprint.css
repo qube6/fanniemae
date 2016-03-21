@@ -49,9 +49,9 @@
 	}
 	.fm-homepage-carousel figcaption{
 		top: 140% !important;
-		color: black;
+		color: black !important;
 	}
-	.fm-homepage-carousel figcaption p {
-		color: black;
+	.fm-homepage-carousel figcaption p a{
+		color: black !important;
 	}
 }

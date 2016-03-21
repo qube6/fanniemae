@@ -51,7 +51,7 @@
 		top: 140% !important;
 		color: black;
 	}
-	.fm-homepage-carousel figcaption p {
+	.fm-homepage-carousel figcaption p a{
 		color: black;
 	}
 }
