@@ -13,7 +13,7 @@
     margin-bottom: 90px;
   }
   .links a{
-    color: $color-link-light-h;
+    color: #fff;
     &:hover{
       color: $color-link-light;
     }
@@ -24,6 +24,27 @@
     width: $footer-lead-width-lg;
     display: inline-block;
     padding: 15px 30px;
+    a{
+      margin-top: -7px;
+      vertical-align: middle;
+      color: #fff;
+      @media(max-width: $screen-xs-max){
+        margin-left: 50px;
+      }
+      svg{
+        position: relative;
+        top:10px;
+        fill: #fff;
+        width: 100px;
+        left:-25px;
+      }
+      &:hover{
+        color: $color-link-light;
+      }
+    }
+    @media(max-width: 1400px){
+      width: $footer-lead-width-sm;
+    }
     @media only screen and (max-width:$screen-sm-max) {
       width: 100%;
     }
@@ -40,7 +61,10 @@
     display: inline-block;
     height: 100%;
     padding: $footer-element-spacing;
-    background: white;
+    background: $color-dark-blue;
+    @media(max-width: 1400px){
+      width: calc(100% - #{$footer-lead-width-sm});
+    }
     @media only screen and (max-width:$screen-sm-max) {
       width: 100%;
     }
@@ -60,7 +84,7 @@
     }
     li{
       padding: 0 20px;
-      border-right: 1px solid $color-light-gray-50;
+      border: none;
       @media only screen and (max-width:$screen-xs-max) {
         width: 50%;
         float: left;
@@ -74,28 +98,18 @@
   .logo{
     height: 100%;
   }
-  .site-logo{
-    padding: 0;
-    height: 100%;
-    svg{
-      height: auto;
-      width: 150px;
-    }
-    @media (max-width: $screen-xs-max){
-      padding-top: 5px;
-      margin-left: 5%;
-      height: auto;
-    }
-  }
   .copyright{
     height: 100%;
     padding-left: 40px;
     border-left: 1px solid $color-light-gray-50;
     float: right;
+    @media(max-width: $screen-md-max){
+      border: none;
+      padding-left: 5px;
+    }
     @media only screen and (max-width:$screen-sm-max) {
       float: left;
       margin-left: 10px;
-      padding-left: 10px;
     }
   }
 }

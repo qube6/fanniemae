@@ -47,4 +47,11 @@
 	.subpage-teaser-listing img, .subpage-teaser-listing a{
 		position: relative !important;
 	}
+	.fm-homepage-carousel figcaption{
+		top: 140% !important;
+		color: black;
+	}
+	.fm-homepage-carousel figcaption p {
+		color: black;
+	}
 }
