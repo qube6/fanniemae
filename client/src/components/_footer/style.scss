@@ -34,10 +34,11 @@
       }
       svg{
         position: absolute;
-        top:-7px;
+        top:-9px;
         fill: #fff;
-        width: 100px;
-        right:-80px;
+        width: 31px;
+        height: 31px;
+        right:-50px;
       }
       &:hover{
         color: $color-link-copy-dark-h;
