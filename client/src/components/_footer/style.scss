@@ -29,6 +29,7 @@
       margin-top: 11px;
       vertical-align: middle;
       color: #fff;
+      margin-left: 20px;
       @media(max-width: $screen-xs-max){
         margin-left: 10px;
       }
@@ -91,6 +92,7 @@
     li{
       padding: 0 20px;
       border: none;
+      white-space: nowrap;
       @media only screen and (max-width:$screen-xs-max) {
         width: 50%;
         float: left;
