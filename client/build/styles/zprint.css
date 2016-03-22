@@ -1,0 +1,93 @@
+@media print{
+	img{
+		display: block !important;
+    page-break-inside: avoid !important; 
+	}
+	.breadcrumb{
+		display: none;
+	}
+	.padding-20, .padding-30, .padding-40{
+		padding: 5px !important;
+	}
+	.bio-teaser{
+		display: block !important;
+		width: 100% !important;
+		page-break-before: auto; 
+    page-break-after: auto; 
+    page-break-inside: avoid !important; 
+	}
+	section{
+		margin-top:5px;
+		margin-bottom:5px;
+	}
+	.col-sm-height, .table-row{
+		display: block !important;
+		height: auto !important;
+		margin-bottom: 15px !important;
+	}
+	.col-sm-height{
+		margin-bottom: 30px;
+	}
+	a.st_sharethis_custom{
+		display: none !important;
+	}
+  a.image-promo, a.image-promo figure{
+		float: none;
+		position: relative !important;
+		display: block !important;
+    page-break-before: auto !important; 
+    page-break-after: auto !important; 
+    page-break-inside: avoid !important; 
+	}
+	.fm-rail{
+		float: none !important;
+	}
+	.rail-row aside{
+		padding-bottom: 20px !important;
+	}
+	.fm-homepage-carousel ul{
+		overflow: visible !important;
+	}
+	.subpage-teaser-listing img, .subpage-teaser-listing a{
+		position: relative !important;
+	}
+	.fm-homepage-carousel figcaption{
+		top: 130% !important;
+		color: black !important;
+	}
+	.fm-homepage-carousel figcaption p a{
+		color: black !important;
+	}
+	.fm-primary-feature, .fm-primary-feature-img, .fm-primary-feature-caption, .fm-secondary-feature{
+		position: static !important;
+	}
+	section.fm-basic-carousel-wrap .fm-basic-carousel{
+		display: block !important;
+		page-break-inside: avoid !important; 
+	}
+	aside ul.bottom-border figure img{
+		float: none !important;
+		display: block !important;
+	}
+	section.news-teaser ul{
+		white-space: normal !important;
+	}
+	section.news-teaser li{
+		transform: translate3d(0,0,0) !important;
+		display: block !important;
+		position: relative;
+	}
+	h2.fm-subtitle{
+		margin-top: 30px;
+	}
+	section.subpage-teaser-listing h2{
+		display: block !important;
+		margin-top: 30px !important;
+	}
+	section.secondary-subpages{
+		min-height: 0;
+	}
+	section.secondary-subpages .cta{
+		bottom: -25px;
+	}
+}
