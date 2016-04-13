@@ -7,7 +7,7 @@ table{
 
   th {
     background-color: $color-light-blue;
-    font-weight: bold;
+    font-family: $font-sans-serif-bold;
     text-align: left;
     color: $color-dark;
   }
@@ -115,7 +115,6 @@ table{
   caption {
     margin-bottom: 1em;
     font-size: 1em;
-    //font-weight: bold;
     text-align: center;
     
     @media (min-width: $screen-md) {
@@ -147,7 +146,7 @@ table{
         text-align: left; 
       }
       &:before{
-        font-weight: bold;
+        font-family: $font-sans-serif-bold;
       }
     }
     

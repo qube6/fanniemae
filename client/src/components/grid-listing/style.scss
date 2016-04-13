@@ -1,7 +1,7 @@
 section.grid-listing{
   position: relative;
   h1{
-    font-weight: bold;
+    // font-family: $font-serif-bold;
   }
   ul{
     @include clearfix();

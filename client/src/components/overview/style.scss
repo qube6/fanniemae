@@ -13,7 +13,7 @@ section.overview{
     h1{
       font-size: 32px;
       font-family: $font-serif;
-      font-weight: bold;
+      font-family: $font-serif-bold;
       @media (min-width: $screen-sm){
         font-size: 52px;
       }
