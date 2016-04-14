@@ -24,22 +24,23 @@
     width: $footer-lead-width-lg;
     display: inline-block;
     padding: 15px 30px;
+    position: relative;
     a{
-      position: relative;
       margin-top: 11px;
       vertical-align: middle;
       color: #fff;
       margin-left: 20px;
+      padding: 0;
       @media(max-width: $screen-xs-max){
         margin-left: 10px;
       }
       svg{
         position: absolute;
-        top:-9px;
         fill: #fff;
         width: 31px;
         height: 31px;
-        right:-50px;
+        left: 170px;
+        top: 20px;
       }
       &:hover{
         color: $color-link-copy-dark-h;
@@ -63,6 +64,9 @@
       text-align: center;
       > *{
         display: inline-block;
+      }
+      a svg{
+        left: 125px;
       }
     }
   }
