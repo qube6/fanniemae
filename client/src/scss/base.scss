@@ -17,6 +17,7 @@ body{
   min-width: 160px;
   padding: 10px;
   z-index: 15;
+  font-family: $font-serif-bold;
 }
 .b-white{
   background: white;
@@ -55,7 +56,7 @@ body{
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
-  font-weight: bold;
+  font-family: $font-serif-bold;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
@@ -222,7 +223,7 @@ body{
   color: $color-dark-blue;
   font-size: 16px;
   display: inline-block;
-  font-weight: bold;
+  font-family: $font-serif-bold;
   width: 100%;
   position: relative;
   padding: 5px 0;
@@ -306,12 +307,6 @@ body{
   height: $cta-height;
 }
 
-.font-serif{
-  font-family: $font-serif;
-}
-.font-sans{
-  font-family: $font-sans-serif;
-}
 
 .dark-bg{
   background: $color-dark-blue;

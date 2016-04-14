@@ -31,8 +31,10 @@ $color-link-copy-dark-h:  rgba(0, 118, 151, 1);
 $color-cta: white;
 $color-cta-h: rgba(0, 15, 43, 1);
 
-$font-sans-serif: 'Urbano-Regular', 'Arial', sans-serif;
-$font-serif: 'Glyddon-Regular', 'Georgia', 'Century', serif;
+$font-sans-serif: "Univers LT W01_55 Roman1475956", 'Arial', sans-serif;
+$font-sans-serif-bold: "Univers LT W01_65 Bold1475968", 'Arial', sans-serif;
+$font-serif: "Glypha LT Pro W01 Regular", 'Georgia', 'Century', serif;
+$font-serif-bold: "Glypha LT Pro W01 Bold", 'Georgia', 'Century', serif;
 
 $full-width-max: 1440px;
 
@@ -48,8 +50,8 @@ $footer-height-sm: 140px;
 $footer-height-xs: 160px;
 $footer-element-height: 40px;
 $footer-element-spacing: ($footer-height-md - $footer-element-height) / 2;
-$footer-lead-width-lg: 450px;
-$footer-lead-width-sm: 325px;
+$footer-lead-width-lg: 400px;
+$footer-lead-width-sm: 260px;
 
 $homepage-carousel-left-align-xs: 11%;
 $homepage-carousel-left-align: 15%;

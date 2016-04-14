@@ -9,14 +9,21 @@
   .fa{
     margin: 0 5px;
   }
-  .download{
+  .more{
   	float: left;
+  	line-height: 19.2px;
+  	padding-top: 0;
+  	padding-bottom: 0;
   	@media(max-width: $screen-xs-max){
   		float: none;
   		display: block;
   		white-space: nowrap;
   		margin-bottom: 30px;
   	} 
+  	.fa{
+  	 	margin: 0;
+  		line-height: 10px;
+  	}
   	& + .st_sharethis_custom{
   		float: right;
   		@media(max-width: $screen-xs-max){

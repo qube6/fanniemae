@@ -30,6 +30,7 @@
     display: inline-block;
     min-width: 160px;
     z-index: 15;
+    font-family: $font-serif-bold;
     @media (max-width: $screen-xs-max){
       top: 20px;
     }

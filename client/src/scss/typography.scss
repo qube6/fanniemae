@@ -211,6 +211,65 @@ address {
   line-height: 20px;
 }
 
+.font-sans{
+  font-family: $font-sans-serif;
+}
+.font-sans.font-oblique, .font-oblique{
+  font-family: 'Univers LT W01_55 Obliq1475962';
+}
+.font-sans.font-bold, .font-bold{
+  font-family: $font-sans-serif-bold;
+}
+.font-sans.font-bold.font-oblique, .font-bold.font-oblique{
+  font-family: 'Univers LT W01_65 Bold_1475974';
+}
+.font-sans.font-light, .font-light{
+  font-family: 'Univers LT W01_45 Light1475944';
+}
+.font-sans.font-light.font-oblique, .font-light.font-oblique{
+  font-family: 'Univers LT W01_45 Light1475950';
+}
+.font-sans.font-black, .font-black{
+  font-family: 'Univers LT W01_75 Black1475980';
+}
+.font-sans.font-black.font-oblique, .font-black.font-oblique{
+  font-family: 'Univers LT W01_75 Black1475986';
+}
+
+.font-serif{
+  font-family: $font-serif;
+}
+.font-serif.font-oblique{
+  font-family: 'Glypha LT Pro W01 Italic';
+}
+.font-serif.font-bold{
+  font-family: $font-serif-bold;
+}
+.font-serif.font-bold.font-oblique{
+  font-family: 'Glypha LT Pro W01 Bold Italic';
+}
+.font-serif.font-light{
+  font-family: 'Glypha LT Pro W01 Light';
+}
+.font-serif.font-light.font-oblique{
+  font-family: 'Glypha LT Pro W01 Light Italic';
+}
+.font-serif.font-thin{
+  font-family: 'Glypha LT Pro W01 Thin';
+}
+.font-serif.font-thin.font-oblique{
+  font-family: 'Glypha LT Pro W01 Thin Italic';
+}
+.font-serif.font-black{
+  font-family: 'Glypha LT Pro W01 Black';
+}
+.font-serif.font-black.font-oblique{
+  font-family: 'Glypha LT Pro W01 Black Italic';
+}
+
+
+
+
 
 /*lists*/
 nav {

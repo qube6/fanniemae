@@ -13,9 +13,9 @@
     margin-bottom: 90px;
   }
   .links a{
-    color: $color-link-light-h;
+    color: #fff;
     &:hover{
-      color: $color-link-light;
+      color: $color-link-copy-dark-h;
     }
   }
   .footer-lead{
@@ -24,7 +24,38 @@
     width: $footer-lead-width-lg;
     display: inline-block;
     padding: 15px 30px;
-    @media only screen and (max-width:$screen-sm-max) {
+    a{
+      position: relative;
+      margin-top: 11px;
+      vertical-align: middle;
+      color: #fff;
+      margin-left: 20px;
+      @media(max-width: $screen-xs-max){
+        margin-left: 10px;
+      }
+      svg{
+        position: absolute;
+        top:-9px;
+        fill: #fff;
+        width: 31px;
+        height: 31px;
+        right:-50px;
+      }
+      &:hover{
+        color: $color-link-copy-dark-h;
+        svg{
+          fill: $color-link-copy-dark-h;
+        }
+      }
+    }
+    .copyright{
+      display: none;
+      @media(max-width: $screen-md-max){
+        display: block;
+      }
+    }
+    @media(max-width: $screen-md-max){
+      border-bottom: 1px solid rgba(255,255,255,.5);
       width: 100%;
     }
     @media only screen and (max-width:$screen-xs-max) {
@@ -40,8 +71,8 @@
     display: inline-block;
     height: 100%;
     padding: $footer-element-spacing;
-    background: white;
-    @media only screen and (max-width:$screen-sm-max) {
+    background: $color-dark-blue;
+    @media (max-width: $screen-md-max){
       width: 100%;
     }
     @media only screen and (max-width:$screen-xs-max) {
@@ -60,7 +91,8 @@
     }
     li{
       padding: 0 20px;
-      border-right: 1px solid $color-light-gray-50;
+      border: none;
+      white-space: nowrap;
       @media only screen and (max-width:$screen-xs-max) {
         width: 50%;
         float: left;
@@ -68,34 +100,31 @@
       }
       &:last-child{
         border: none;
+        white-space: nowrap;
+        @media(max-width: $screen-md-max){
+          position: absolute;
+          top: -68px;
+          right: 5px;
+        }
       }
     }
   }
   .logo{
     height: 100%;
   }
-  .site-logo{
-    padding: 0;
-    height: 100%;
-    svg{
-      height: auto;
-      width: 150px;
-    }
-    @media (max-width: $screen-xs-max){
-      padding-top: 5px;
-      margin-left: 5%;
-      height: auto;
-    }
-  }
   .copyright{
     height: 100%;
     padding-left: 40px;
     border-left: 1px solid $color-light-gray-50;
-    float: right;
+    @media(max-width: $screen-md-max){
+      display: none;
+      border: none;
+      float: right;
+      padding-left: 0;
+      margin-right: 10px;
+    }
     @media only screen and (max-width:$screen-sm-max) {
-      float: left;
       margin-left: 10px;
-      padding-left: 10px;
     }
   }
 }
